@@ -1,0 +1,12 @@
+D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\app\DTO\bin\Debug\DTO.dll.config
+D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\app\DTO\bin\Debug\DTO.dll
+D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\app\DTO\bin\Debug\DTO.pdb
+D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\app\DTO\bin\Debug\EntityFramework.dll
+D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\app\DTO\bin\Debug\EntityFramework.SqlServer.dll
+D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\app\DTO\bin\Debug\EntityFramework.xml
+D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\app\DTO\bin\Debug\EntityFramework.SqlServer.xml
+D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\app\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\app\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\app\DTO\obj\Debug\DTO.csproj.CopyComplete
+D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\app\DTO\obj\Debug\DTO.dll
+D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\app\DTO\obj\Debug\DTO.pdb
