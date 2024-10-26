@@ -2,17 +2,22 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 class KhachHang extends Authenticatable
 {
     //
+    use HasFactory, Notifiable;
     protected $table = 'khachhang';
-
     protected $fillable = [
-        'HOTEN', 'GIOITINH', 'NGAYSINH', 'SDT', 'DIEMTINNHIEM',
-        'AVATAR', 'CCCD', 'EMAIL', 'PASSWORD', 'ISDELETED'
+        'ID', 'HOTEN', 'GIOITINH', 'NGAYSINH', 'SDT', 'DIEMTINNHIEM',
+        'AVATAR', 'CCCD', 'EMAIL', 'PASSWORD', 'ISDELETED', 'remember_token'
     ];
+    
+    public $timestamps = false;
+    protected $primaryKey = 'ID';
 
     public function danhGia()
     {
@@ -31,12 +36,12 @@ class KhachHang extends Authenticatable
     protected $hidden = [
         'PASSWORD', 'remember_token',
     ];
-    public function getAuthIdentifierName()
-    {
-        return 'EMAIL';
-    }
     public function getAuthPassword()
     {
-        return $this->PASSWORD;
+        return $this->PASSWORD; 
+    }
+    public function username()
+    {
+        return 'EMAIL'; 
     }
 }

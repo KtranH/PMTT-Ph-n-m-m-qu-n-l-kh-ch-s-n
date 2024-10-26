@@ -40,11 +40,6 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
-
-        'khachhang' => [
-            'driver' => 'session',
-            'provider' => 'khachhang',
-        ],
     ],
 
     /*
@@ -66,10 +61,6 @@ return [
 
     'providers' => [
         'users' => [
-            'driver' => 'eloquent',
-            'model' => env('AUTH_MODEL', App\Models\KhachHang::class),
-        ],
-        'khachhang' => [
             'driver' => 'eloquent',
             'model' => env('AUTH_MODEL', App\Models\KhachHang::class),
         ],
