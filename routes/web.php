@@ -3,6 +3,7 @@
 use App\Http\Controllers\Account;
 use App\Http\Controllers\Email;
 use App\Http\Controllers\Home;
+use App\Http\Controllers\Test;
 use App\Http\Middleware\CheckResendCodeAuthEmail;
 use Illuminate\Support\Facades\Route;
 
@@ -47,5 +48,12 @@ Route::middleware('web')->group(function () {
 
     //ReSend code
     Route::get('/ReSendCodeAuthToEmail', [Email::class, 'ReSendCodeAuthToEmail'])->name('ReSendCodeAuthToEmail')->middleware(CheckResendCodeAuthEmail::class . ':2,1');
+    //---------------------------------------------------------------------------------------------------------------------//
+
+    //---------------------------------------------------TEST CONTROLLER---------------------------------------------------//
+    
+    //Test img
+    Route::get('/testImg', [Test::class, 'TestImg'])->name('TestImg');
+
     //---------------------------------------------------------------------------------------------------------------------//
 });

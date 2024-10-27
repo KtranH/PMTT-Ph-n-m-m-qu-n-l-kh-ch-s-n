@@ -8,18 +8,18 @@ trait Query
 {
     //
 
-    public function PushAvatarR2($name, $avatar)
+    public function PushAvatarR2($email, $avatar)
     {
-        if($avatar == "default")
+        if($avatar == null)
         {
-            $img = public_path('assets/img/default_avatar.jpg');
-            $path = "User/Avatar/{$name}/default_avatar.png";
+            $img = public_path("assets/img/default_avatar.jpg");
+            $path = "Avatar/{$email}/default_avatar.jpg";
         }
         else
         {
             $img = $avatar;
             $imgName = $avatar->getClientOriginalName();
-            $path = "User/Avatar/{$name}/{$avatar}.png";
+            $path = "Avatar/{$email}/{$imgName}.png";
         }
         Storage::disk('r2')->put($path, file_get_contents($img));
     }
