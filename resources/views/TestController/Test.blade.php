@@ -1,0 +1,1 @@
+<img src="{{ asset('assets/img/default_avatar.jpg')}}" alt="">
