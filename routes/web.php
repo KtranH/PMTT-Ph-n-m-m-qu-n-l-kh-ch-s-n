@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Account;
+use App\Http\Controllers\CategoryRoom;
 use App\Http\Controllers\Email;
 use App\Http\Controllers\Home;
 use App\Http\Controllers\Test;
@@ -63,6 +64,12 @@ Route::patch('/verifyCodeChangePassword', [Email::class, 'VerifyCodeChangePasswo
 //ReSend code
 Route::get('/reSendCodeAuthToEmail', [Email::class, 'ReSendCodeAuthToEmail'])->name('ReSendCodeAuthToEmail')->middleware(CheckResendCodeAuthEmail::class . ':2,1');
 //---------------------------------------------------------------------------------------------------------------------//
+
+//---------------------------------------------------CATEGORY ROOM CONTROLLER---------------------------------------------------//
+
+//All Category Room
+Route::get('/allCategoryRoom', [CategoryRoom::class, 'AllCateRoom'])->name('AllCategoryRoom');
+//-----------------------------------------------------------------------------------------------------------------------------//
 
 //---------------------------------------------------TEST CONTROLLER---------------------------------------------------//
 

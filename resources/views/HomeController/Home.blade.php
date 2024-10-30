@@ -103,14 +103,12 @@
                     font-optical-sizing: auto;
                     font-weight: 600;
                     font-style: normal;">Phòng <span>/Loại phòng tiêu biểu</span></h5>
-                    <div class="row bg-white" style="padding:20px;border-radius:20px;width:102%;display:flex;justify-content: space-around;
-                    ">
+                    <div class="row bg-white" style="padding:20px;border-radius:20px;width:102%;display:flex;justify-content: space-around;">
                       @foreach($roomFeature as $r)
                       @php
-                      $firstImage = $r->hinhLoaiPhong[0]->HINH;
-                      $format_cost = number_format($r->GIATHUE, 0, ',', '.');
+                        $firstImage = $r->hinhLoaiPhong[0]->HINH;
+                        $format_cost = number_format($r->GIATHUE, 0, ',', '.');
                       @endphp
-            
                       <div class="col-md-6 mb-4" style="max-width:800px">
                           <div class="Ha card my-specific-card {{$r->ISDELETE==1 ? 'disabled':''}}">
                               <div class="card-img">
