@@ -38,6 +38,8 @@
     <link href="{{ url('assets/css/style.css')}}" rel="stylesheet">
     <link href="{{ url('assets/css/khoi.css')}}" rel="stylesheet">
   
+    <!-- Jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
 <body>
       <main>
@@ -65,14 +67,29 @@
                         <p class="text-center small">Vui lòng truy cập vào email để lấy mã xác thực.</p>
                       </div>
     
-                      <form class="row g-3 needs-validation" novalidate method="GET" action="{{ route('VerifyCode') }}">
+                      <form class="row g-3 needs-validation" novalidate method="POST" action="{{ route('VerifyCodeChangePassword') }}">
                         @csrf
+                        @method('PATCH')
                         <div class="col-12">
                           <label for="yourUsername" class="form-label">Nhập mã xác thực 6 số</label>
                           <div class="input-group has-validation">
-                            <input type="number" name="code" class="form-control" id="yourUsername" minlength="6" maxlength="6" required>
+                            <input type="number" name="code" class="form-control" id="code" minlength="6" maxlength="6" required>
                             <div class="invalid-feedback">Vui lòng nhập mã xác thực!</div>
                           </div>
+                        </div>
+                        <div class="col-12">
+                            <label for="yourUsername" class="form-label">Nhập mật khẩu mới</label>
+                            <div class="input-group has-validation">
+                              <input type="password" name="password" class="form-control" id="pass" required>
+                              <div class="invalid-feedback">Vui lòng nhập mật khẩu hợp lệ!</div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <label for="yourUsername" class="form-label">Nhập lại mật khẩu</label>
+                            <div class="input-group has-validation">
+                              <input type="password" name="password2" class="form-control" id="pass2" required>
+                              <div class="invalid-feedback">Vui lòng nhập mật khẩu hợp lệ!</div>
+                            </div>
                         </div>
                       @if($errors->has("ExpiredCode"))
                           <p style="color: red; width:100%">Mã không đúng hoặc đã hết hạn!</p>
@@ -83,14 +100,15 @@
                       @if (Session::has('error'))
                           <p style="color: red; width:100%">{{ Session::get('error') }}</p>
                       @endif
-                      @if (Session::has('success'))
-                          <p style="color: green; width:100%">{{ Session::get('success') }}</p>
-                      @endif
                         <div class="col-12">
                           <div id="message" style="width:100%"></div>
                           <p class="small mb-0">Chưa nhận được mã? <a href="{{ route('ReSendCodeAuthToEmail') }}" class="resend_code">Gửi lại</a></p>
                         </div>
-                        <!--<script>
+                        <div class="col-12">
+                          <button class="btn btn-primary w-100" style="border-radius:20px" type="submit">Đổi mật khẩu</button>
+                        </div>
+                      </form>
+                    <script>
                           $(document).ready(function() {
                             $('.resend_code').click(function(e) {
                                 e.preventDefault();
@@ -103,12 +121,11 @@
                                         'Content-Type': 'application/json;charset=UTF-8'
                                     },
                                     data: {
+                                        state: '1'
                                         _token: ' csrf_token() }}'
                                     },
                                     success: function(response) {
-                                        if(response.message) {
-                                            $('#message').text(response.message).css('color', 'green');
-                                        }
+                                        $('#message').text(response.message).css('color', 'green');
                                     },
                                     error: function(xhr, status, error) {
                                         $('#message').text('Có lỗi xảy ra!').css('color', 'red');
@@ -117,17 +134,12 @@
                                 });
                             });
                         });
-                        </script> -->
-                        <div class="col-12">
-                          <button class="btn btn-primary w-100" style="border-radius:20px" type="submit">Xác thực</button>
-                        </div>
-                      </form>
+                    </script> 
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-    
           </section>
     
         </div>

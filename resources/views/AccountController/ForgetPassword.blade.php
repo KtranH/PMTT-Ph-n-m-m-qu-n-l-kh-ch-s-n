@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Xác thực tài khoản</title>
+    <title>Quên mật khẩu</title>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
   
@@ -61,65 +61,26 @@
                     <div class="card-body">
     
                       <div class="pt-4 pb-2">
-                        <h5 class="card-title text-center pb-0 fs-4" style="font-family: Montserrat, sans-serif;font-optical-sizing: auto;font-weight:600;">Xác thực email</h5>
-                        <p class="text-center small">Vui lòng truy cập vào email để lấy mã xác thực.</p>
+                        <h5 class="card-title text-center pb-0 fs-4" style="font-family: Montserrat, sans-serif;font-optical-sizing: auto;font-weight:600;">Quên mật khẩu</h5>
+                        <p class="text-center small">Vui lòng nhập email của bạn.</p>
                       </div>
     
-                      <form class="row g-3 needs-validation" novalidate method="GET" action="{{ route('VerifyCode') }}">
+                      <form class="row g-3 needs-validation" novalidate method="GET" action="{{ route('AuthEmailToChangePassword') }}">
                         @csrf
                         <div class="col-12">
-                          <label for="yourUsername" class="form-label">Nhập mã xác thực 6 số</label>
+                          <label for="yourUsername" class="form-label">Email của bạn</label>
                           <div class="input-group has-validation">
-                            <input type="number" name="code" class="form-control" id="yourUsername" minlength="6" maxlength="6" required>
-                            <div class="invalid-feedback">Vui lòng nhập mã xác thực!</div>
+                            <input type="email" name="email" class="form-control" id="yourUsername" required>
+                            <div class="invalid-feedback">Vui lòng nhập địa chỉ email hợp lệ!</div>
                           </div>
                         </div>
-                      @if($errors->has("ExpiredCode"))
-                          <p style="color: red; width:100%">Mã không đúng hoặc đã hết hạn!</p>
-                      @endif
-                      @if($errors->has("ManyTime"))
-                          <p style="color: red; width:100%">{{$errors->first("ManyTime")}}</p>
-                      @endif
-                      @if (Session::has('error'))
-                          <p style="color: red; width:100%">{{ Session::get('error') }}</p>
-                      @endif
-                      @if (Session::has('success'))
-                          <p style="color: green; width:100%">{{ Session::get('success') }}</p>
-                      @endif
                         <div class="col-12">
-                          <div id="message" style="width:100%"></div>
-                          <p class="small mb-0">Chưa nhận được mã? <a href="{{ route('ReSendCodeAuthToEmail') }}" class="resend_code">Gửi lại</a></p>
+                          <button class="btn btn-primary w-100" style="border-radius:20px" type="submit">Tiếp tục</button>
                         </div>
-                        <!--<script>
-                          $(document).ready(function() {
-                            $('.resend_code').click(function(e) {
-                                e.preventDefault();
-                                $.ajax({
-                                    url: " route('ReSendCodeAuthToEmail') }}",
-                                    type: "GET",
-                                    dataType: 'json',
-                                    headers: {
-                                        'Accept': 'application/json',
-                                        'Content-Type': 'application/json;charset=UTF-8'
-                                    },
-                                    data: {
-                                        _token: ' csrf_token() }}'
-                                    },
-                                    success: function(response) {
-                                        if(response.message) {
-                                            $('#message').text(response.message).css('color', 'green');
-                                        }
-                                    },
-                                    error: function(xhr, status, error) {
-                                        $('#message').text('Có lỗi xảy ra!').css('color', 'red');
-                                        console.log(xhr.responseText);
-                                    }
-                                });
-                            });
-                        });
-                        </script> -->
                         <div class="col-12">
-                          <button class="btn btn-primary w-100" style="border-radius:20px" type="submit">Xác thực</button>
+                          @if (Session::has('error'))
+                              <p class="text-danger" role="alert">{{ Session::get('error') }}</p>
+                          @endif
                         </div>
                       </form>
                     </div>

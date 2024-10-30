@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use Laravel\Socialite\Facades\Socialite;
-
+use App\Http\Controllers\Email;
 class Account extends Controller
 {
     //
@@ -58,7 +58,6 @@ class Account extends Controller
             Auth::attempt(["EMAIL" => $email, "password" => "20012158840792030230440707349054"], true);
             return redirect()->route("Home")->withCookie($cookie);
         } catch (Exception $e) {
-            dd($e);
             return redirect()->route("Login");
         }
     }
@@ -110,5 +109,53 @@ class Account extends Controller
     public function ShowAuth()
     {
         return view('AccountController.ShowAuth');
+    }
+    public function AccessLogin(Request $request)
+    {
+        $request->validate([
+            'email' => 'email|max:255',
+            'password' => 'min:6',
+        ], [
+            'email.email' => 'Email phải là email',
+            'email.max' => 'Email phải nhỏ hơn 255 ký tự',
+            'password.min' => 'Password phải nhiều hơn 6 ký tự',
+        ]);
+        $email = $request->input("email");
+        $password = $request->input("password");
+
+        $user = KhachHang::where("EMAIL", $email)->first();
+        if ($user && Hash::check($password, $user->PASSWORD)) {
+            if($request->has("remember")) {
+                $cookie = Cookie::make("token_account", $email, 43200);
+                Auth::attempt(["EMAIL" => $email, "password" => $password], true);
+            }
+            $cookie = Cookie::make("token_account", $email, 0);
+            Auth::attempt(["EMAIL" => $email, "password" => $password], false);
+            return redirect()->route("Home")->withCookie($cookie);
+        }
+        return redirect()->back()->with('error', 'Email hoặc mật khẩu không khớp');
+    }
+    public function ForgetPassword()
+    {
+        return view('AccountController.ForgetPassword');
+    }
+    public function AuthEmailToChangePassword(Request $request)
+    {
+        $request->validate([
+            'email' => 'max:255',
+        ], [
+            'email.max' => 'Email phải nhỏ hơn 255 ký tự',
+        ]);
+        $email = $request->input("email");
+        $user = KhachHang::where("EMAIL", $email)->first();
+        if (!$user) {
+            return redirect()->back()->with('error', 'Email không tìm thấy cho bất kì tài khoản nào');
+        }
+        $sendEmail = new Email();
+        return $sendEmail->SendCodeToChangePassword($user);
+    }
+    public function ShowAuthChangePassword()
+    {
+        return view('AccountController.ShowAuthChangePassword');
     }
 }
