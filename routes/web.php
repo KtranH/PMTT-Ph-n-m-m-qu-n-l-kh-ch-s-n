@@ -69,6 +69,15 @@ Route::get('/reSendCodeAuthToEmail', [Email::class, 'ReSendCodeAuthToEmail'])->n
 
 //All Category Room
 Route::get('/allCategoryRoom', [CategoryRoom::class, 'AllCateRoom'])->name('AllCategoryRoom');
+
+//Category Room has the accommodate of 1
+Route::get('/cateRoom_1', [CategoryRoom::class, 'CateRoom_1'])->name('CateRoom_1');
+
+//Category Room has the accommodate of 2
+Route::get('/cateRoom_2', [CategoryRoom::class, 'CateRoom_2'])->name('CateRoom_2');
+
+//Category Room has the accommodate of 4
+Route::get('/cateRoom_4', [CategoryRoom::class, 'CateRoom_4'])->name('CateRoom_4');
 //-----------------------------------------------------------------------------------------------------------------------------//
 
 //---------------------------------------------------TEST CONTROLLER---------------------------------------------------//

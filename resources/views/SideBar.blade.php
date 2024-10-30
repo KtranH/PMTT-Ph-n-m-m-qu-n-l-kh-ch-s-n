@@ -21,17 +21,17 @@
                       </a>
                   </li>
                   <li>
-                      <a href="">
+                      <a href="{{ route("CateRoom_1") }}">
                           <i class="bi bi-circle"></i><span>Loại 1 người</span>
                       </a>
                   </li>
                   <li>
-                      <a href="">
+                      <a href="{{ route("CateRoom_2") }}">
                           <i class="bi bi-circle"></i><span>Loại 2 người</span>
                       </a>
                   </li>
                   <li>
-                      <a href="">
+                      <a href="{{ route("CateRoom_4") }}">
                           <i class="bi bi-circle"></i><span>Loại 4 người</span>
                       </a>
                   </li>
