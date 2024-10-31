@@ -4,6 +4,7 @@ use App\Http\Controllers\Account;
 use App\Http\Controllers\CategoryRoom;
 use App\Http\Controllers\Email;
 use App\Http\Controllers\Home;
+use App\Http\Controllers\Service;
 use App\Http\Controllers\Test;
 use App\Http\Middleware\CheckResendCodeAuthEmail;
 use Illuminate\Support\Facades\Route;
@@ -78,8 +79,19 @@ Route::get('/cateRoom_2', [CategoryRoom::class, 'CateRoom_2'])->name('CateRoom_2
 
 //Category Room has the accommodate of 4
 Route::get('/cateRoom_4', [CategoryRoom::class, 'CateRoom_4'])->name('CateRoom_4');
+
+//Category Room Price High To Low
+Route::get('/cateRoom_PriceHighToLow', [CategoryRoom::class, 'CateRoom_PriceHighToLow'])->name('CateRoom_PriceHighToLow');
+
+//Category Room Price Low To High
+Route::get('/cateRoom_PriceLowToHigh', [CategoryRoom::class, 'CateRoom_PriceLowToHigh'])->name('CateRoom_PriceLowToHigh');
 //-----------------------------------------------------------------------------------------------------------------------------//
 
+//---------------------------------------------------SERVICE CONTROLLER---------------------------------------------------//
+
+//All Service
+Route::get('/allService', [Service::class, 'AllService'])->name('AllService');
+//------------------------------------------------------------------------------------------------------------------------//
 //---------------------------------------------------TEST CONTROLLER---------------------------------------------------//
 
 //Test img

@@ -47,12 +47,12 @@
               </a>
               <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                   <li>
-                      <a href="">
+                      <a href="{{ route("CateRoom_PriceHighToLow") }}">
                           <i class=" bi bi-circle"></i><span>Giá từ cao tới thấp</span>
                       </a>
                   </li>
                   <li>
-                      <a href="">
+                      <a href="{{ route("CateRoom_PriceLowToHigh") }}">
                           <i class="bi bi-circle"></i><span>Giá từ thấp tới cao</span>
                       </a>
                   </li>
@@ -66,37 +66,13 @@
               </a>
               <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                   <li>
-                      <a href="">
+                      <a href="{{ route("AllService") }}">
                           <i class="bi bi-circle"></i><span>Tất Cả Dịch Vụ</span>
                       </a>
                   </li>
               </ul>
           </li><!-- End Charts Nav -->
   
-          <li class="nav-item">
-              <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
-                  <i class="fa-solid fa-map-location-dot" style="color: #74C0FC;"></i><span>Bản đồ</span><i
-                      class="bi bi-chevron-down ms-auto"></i>
-              </a>
-              <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                  <li>
-                      <a href="">
-                          <i class="bi bi-circle"></i><span>Cơ sở 1</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="">
-                          <i class="bi bi-circle"></i><span>Cơ sở 2</span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="">
-                          <i class="bi bi-circle"></i><span>Cở sở 3</span>
-                      </a>
-                  </li>
-              </ul>
-          </li><!-- End Icons Nav -->
-      
           @if (Auth::check())
               <li class="nav-heading">Tài khoản</li>
         
