@@ -13,6 +13,6 @@ class HinhLoaiPhong extends Model
 
     public function loaiPhong()
     {
-        return $this->belongsTo(LoaiPhong::class, 'LOAIPHONG_ID');
+        return $this->belongsTo(LoaiPhong::class, 'LOAIPHONG_ID', 'ID');
     }
 }

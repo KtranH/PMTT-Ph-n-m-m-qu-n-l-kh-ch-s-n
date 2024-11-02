@@ -10,12 +10,12 @@ class LoaiPhong extends Model
     protected $table = 'loaiphong';
 
     protected $fillable = [
-        'TENLOAIPHONG', 'MOTA', 'SUCCHUA', 'GIATHUE', 'QUYDINH', 'NOITHAT', 'TIENICH', 'ISDELETED'
+        'ID', 'TENLOAIPHONG', 'MOTA', 'SUCCHUA', 'GIATHUE', 'QUYDINH', 'NOITHAT', 'TIENICH', 'ISDELETED'
     ];
 
     public function hinhLoaiPhong()
     {
-        return $this->hasMany(HinhLoaiPhong::class, 'LOAIPHONG_ID');
+        return $this->hasMany(HinhLoaiPhong::class, 'LOAIPHONG_ID', 'ID');
     }
 
     public function phong()
