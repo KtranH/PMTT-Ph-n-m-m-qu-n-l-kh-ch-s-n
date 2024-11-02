@@ -158,4 +158,9 @@ class Account extends Controller
     {
         return view('AccountController.ShowAuthChangePassword');
     }
+    public function HomeAccount()
+    {
+        $user = Auth::user();
+        return view('AccountController.HomeAccount', compact('user'));
+    }
 }

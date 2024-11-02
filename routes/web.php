@@ -6,6 +6,7 @@ use App\Http\Controllers\Email;
 use App\Http\Controllers\Home;
 use App\Http\Controllers\Service;
 use App\Http\Controllers\Test;
+use App\Http\Middleware\CheckLogin;
 use App\Http\Middleware\CheckResendCodeAuthEmail;
 use Illuminate\Support\Facades\Route;
 
@@ -48,6 +49,12 @@ Route::get('/authEmailToChangePassword', [Account::class, 'AuthEmailToChangePass
 
 //Show Auth Change Password
 Route::get('/showAuthChangePassword', [Account::class, 'ShowAuthChangePassword'])->name('ShowAuthChangePassword');
+
+//Need to login
+Route::middleware([CheckLogin::class])->group(function () {
+    //Access Home Account
+    Route::get('/homeAccount', [Account::class, 'HomeAccount'])->name('homeAccount');
+});
 
 //---------------------------------------------------------------------------------------------------------------------//
 
