@@ -39,7 +39,7 @@
   <link href="{{ url('assets/css/baotoan.css')}}" rel="stylesheet">
 
   <!-- Jquery -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   
   <!-- Tagify CSS -->
   <link href="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.css" rel="stylesheet" type="text/css" />

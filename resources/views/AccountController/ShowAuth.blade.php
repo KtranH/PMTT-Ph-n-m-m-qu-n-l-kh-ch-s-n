@@ -65,7 +65,7 @@
                         <p class="text-center small">Vui lòng truy cập vào email để lấy mã xác thực.</p>
                       </div>
     
-                      <form class="row g-3 needs-validation" novalidate method="POST" action="{{ route('VerifyCode') }}">
+                      <form class="row g-3 needs-validation" novalidate method="GET" action="{{ route('VerifyCode') }}">
                         @csrf
                         <div class="col-12">
                           <label for="yourUsername" class="form-label">Nhập mã xác thực 6 số</label>

@@ -99,8 +99,8 @@
         </div>
         
         <div class="content">
-            <p>Cảm ơn bạn đã đăng ký tài khoản tại GTX Hotel.</p>
-            <p>Để hoàn tất quá trình đăng ký, vui lòng sử dụng mã xác thực dưới đây:</p>
+            <p>Chúng tôi nhận được yêu cầu xác thực tài khoản của bạn.</p>
+            <p>Dưới đây là mã xác thực tài khoản của bạn, vui lòng chú ý mã chỉ tồn tại trong khoảng thời gian:</p>
             
             <div class="verification-code">
                 <div class="code">{{ $detail['code'] }}</div>

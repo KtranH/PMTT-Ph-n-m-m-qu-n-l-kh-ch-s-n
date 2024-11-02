@@ -37,7 +37,9 @@
     <!-- Template Main CSS File -->
     <link href="{{ url('assets/css/style.css')}}" rel="stylesheet">
     <link href="{{ url('assets/css/khoi.css')}}" rel="stylesheet">
-  
+
+    <!-- Jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
 <body>
       <main>
@@ -65,20 +67,20 @@
                         <p class="text-center small">Vui lòng nhập tên tài khoản và mật khẩu.</p>
                       </div>
     
-                      <form class="row g-3 needs-validation" novalidate method="POST" action="">
+                      <form class="row g-3 needs-validation" novalidate method="GET" action="{{ route('AccessLogin') }}">
                         @csrf
                         <div class="col-12">
                           <label for="yourUsername" class="form-label">Email</label>
                           <div class="input-group has-validation">
-                            <input type="email" name="username" class="form-control" id="yourUsername" required>
-                            <div class="invalid-feedback">Vui lòng nhập email!</div>
+                            <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="yourUsername" required>
+                            <div class="invalid-feedback">Vui lòng nhập email hợp lệ!</div>
                           </div>
                         </div>
     
                         <div class="col-12">
                           <label for="yourPassword" class="form-label">Mật khẩu</label>
-                          <input type="password" name="password" class="form-control" id="yourPassword" required>
-                          <div class="invalid-feedback">Vui lòng nhập mật khẩu!</div>
+                          <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" id="yourPassword" required>
+                          <div class="invalid-feedback">Vui lòng nhập mật khẩu hợp lệ!</div>
                         </div>
     
                         <div class="col-12">
@@ -88,7 +90,17 @@
                           </div>
                         </div>
                         <div class="col-12">
-                          <button class="btn btn-primary w-100" style="border-radius:20px" type="submit">Đăng nhập</button>
+                          <button class="btn btn-primary w-100 login-button" style="border-radius:20px" type="submit">
+                            <span class="button-text">Đăng nhập</span>
+                          </button>
+                        </div>
+                        <div class="col-12">
+                          @if (Session::has('error'))
+                            <p class="alert alert-danger">{{ session('error') }}</p>
+                          @endif
+                          @if (Session::has('success'))
+                            <p class="alert alert-success">{{ session('success') }}</p>
+                          @endif
                         </div>
                         <div class="col-12">
                           <p class="small mb-0">Chưa có tài khoản? <a href="{{ route('SignUp') }}">Tạo tài khoản ở đây</a></p>
@@ -109,12 +121,24 @@
                                   <span class="font_google">Đăng nhập bằng Google</span>
                               </a>
                       </form>
-    
+                      <script>
+                        $(document).ready(function(){
+                            $('.login-button').click(function(e){
+                                $(this).prop('disabled', true);
+                                
+                                $(this).removeClass('btn-primary').addClass('btn-secondary');
+                                
+                                $(this).find('.button-text').text('Đang xử lý...');
+                                
+                                $(this).closest('form').submit();
+                            });
+                        });
+                        </script>
                     </div>
                   </div>
     
                   <div class="credits" style="text-align: center">
-                    <span style="font-size: 14px">Quên mật khẩu? <a href="">Ấn vào đây!</a></span>
+                    <span style="font-size: 14px">Quên mật khẩu? <a href="{{ route('ForgetPassword') }}">Ấn vào đây!</a></span>
                   </div>
     
                 </div>
