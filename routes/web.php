@@ -54,6 +54,15 @@ Route::get('/showAuthChangePassword', [Account::class, 'ShowAuthChangePassword']
 Route::middleware([CheckLogin::class])->group(function () {
     //Access Home Account
     Route::get('/homeAccount', [Account::class, 'HomeAccount'])->name('homeAccount');
+
+    //Access Page Update Account
+    Route::get('/pageUpdateAccount', [Account::class, 'PageUpdateAccount'])->name('pageUpdateAccount');
+
+    //Update password
+    Route::patch('/changePassword', [Account::class, 'ChangePassword'])->name('changePassword');
+
+    //Update account
+    Route::put('/updateAccount', [Account::class, 'UpdateAccount'])->name('updateAccount');
 });
 
 //---------------------------------------------------------------------------------------------------------------------//
