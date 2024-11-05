@@ -63,6 +63,9 @@ Route::middleware([CheckLogin::class])->group(function () {
 
     //Update account
     Route::put('/updateAccount', [Account::class, 'UpdateAccount'])->name('updateAccount');
+
+    //Generate Avatar Img
+    Route::get('/generateAvatarImg', [Account::class, 'GenerateAvatarImg'])->name('generateAvatarImg');
 });
 
 //---------------------------------------------------------------------------------------------------------------------//

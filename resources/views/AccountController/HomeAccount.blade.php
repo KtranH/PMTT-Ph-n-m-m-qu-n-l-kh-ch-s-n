@@ -37,7 +37,7 @@
                         </div>
                         <div class="footer_account_khoi">
                           <p class="tag_account_khoi">Tạo ảnh bằng AI </p>
-                          <a href="" type="button" class="action_account_khoi">Bắt đầu ngay </a>
+                          <a href="{{ route("generateAvatarImg") }}" type="button" class="action_account_khoi">Bắt đầu ngay </a>
                         </div>
                     </div>
                 </div>

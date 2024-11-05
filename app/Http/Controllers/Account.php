@@ -228,4 +228,8 @@ class Account extends Controller
         Alert::toast('Đổi mật khẩu thành cảnh công', 'success')->position('top-left')->autoClose(3000);
         return $this->Logout();
     }
+    public function GenerateAvatarImg()
+    {
+        return view('AccountController.ShowGenAI');
+    }
 }
