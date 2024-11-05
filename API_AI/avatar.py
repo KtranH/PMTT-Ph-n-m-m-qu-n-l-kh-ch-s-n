@@ -62,7 +62,18 @@ def generate_image(Positive_Prompt, Seed, Width, Height):
         print("An error occurred:", str(e))
         return error_image_path
 
-with gr.Blocks(theme=gr.themes.Base()) as demo:
+
+css = """
+body {
+    background-color: #ffff;
+}
+#button_gen{
+    background-color: #74C0FC;
+    border-radius: 20px;
+}
+"""
+
+with gr.Blocks(css=css, theme=gr.themes.Base()) as demo:
     gr.Markdown("# Công cụ tạo ảnh avatar cùng Khách Sạn GTX")
     
     with gr.Row():
@@ -81,6 +92,7 @@ with gr.Blocks(theme=gr.themes.Base()) as demo:
                     value=500,
                     step=10,
                     label="Chiều rộng",
+                    elem_id="width_slider",
                     interactive=True
                 )
                 height_input = gr.Slider(
@@ -89,6 +101,7 @@ with gr.Blocks(theme=gr.themes.Base()) as demo:
                     value=500,
                     step=10,
                     label="Chiều dài",
+                    elem_id="height_slider",
                     interactive=True
                 )
             
@@ -100,8 +113,8 @@ with gr.Blocks(theme=gr.themes.Base()) as demo:
                 )
                 random_seed_btn = gr.Button("🎲 Random Seed", size="sm")
             
-            generate_btn = gr.Button("🎨 Tạo ảnh", variant="primary", size="lg")
-                    
+            generate_btn = gr.Button("🎨 Tạo ảnh", variant="primary", size="lg", elem_id="button_gen")
+
         # Cột output
         with gr.Column():
             image_output = gr.Image(
