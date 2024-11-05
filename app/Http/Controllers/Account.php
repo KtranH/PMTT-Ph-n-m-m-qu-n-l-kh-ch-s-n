@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\KhachHang;
+use App\Query;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -11,9 +12,12 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use Laravel\Socialite\Facades\Socialite;
 use App\Http\Controllers\Email;
+use RealRashid\SweetAlert\Facades\Alert;
+
 class Account extends Controller
 {
     //
+    use Query;
     public function Login(){
         return view('AccountController.Login');
     }
@@ -157,5 +161,75 @@ class Account extends Controller
     public function ShowAuthChangePassword()
     {
         return view('AccountController.ShowAuthChangePassword');
+    }
+    public function HomeAccount()
+    {
+        $user = Auth::user();
+        return view('AccountController.HomeAccount', compact('user'));
+    }
+    public function PageUpdateAccount()
+    {
+        $user = Auth::user();
+        return view('AccountController.ShowUpdateAccount', compact('user'));
+    }
+    public function UpdateAccount(Request $request)
+    {  
+        $name = $request->input("fullName");
+        $phone = $request->input("phone");
+        $cccd = $request->input("cccd");
+        $birthday = $request->input("birthday");
+        $gender = $request->input("gender");
+        $user = KhachHang::where("EMAIL", Auth::user()->EMAIL)->firstOrFail();
+        $user->HOTEN = $name;
+        $user->SDT = $phone;
+        $user->CCCD = $cccd;
+        $user->NGAYSINH = $birthday;
+        $user->GIOITINH = $gender;
+        try
+        {
+            if($request->hasFile('avatar')) {
+                $this->PushAvatarR2(Auth::user()->EMAIL, $request->file('avatar'));
+            }
+        }
+        catch (Exception $e)
+        {
+            Alert::toast('Cập nhật thất bại', 'error')->position('bottom-left')->autoClose(3000);
+            return redirect()->back();
+        }
+        $user->save();
+        Alert::toast('Cập nhật thành cảnh công', 'success')->position('bottom-left')->autoClose(3000);
+        return redirect()->back();
+    }
+    public function ChangePassword(Request $request)
+    {
+        $request->validate([
+            'password' => 'min:6',
+            'newpassword' => 'min:6',
+            'renewpassword' => 'min:6',
+        ], [
+            'password.min' => 'Password phải nhiều hơn 6 ký tự',
+            'newpassword.min' => 'Password phải nhiều hơn 6 ký tự',
+            'renewpassword.min' => 'Password phải nhiều hơn 6 ký tự',
+        ]);
+        $currentPassword = $request->input("password");
+        if(!Hash::check($currentPassword, Auth::user()->PASSWORD)) {
+            Alert::toast('Mật khẩu hiện tại không chính xác', 'error')->position('top-left')->autoClose(3000);
+            return redirect()->back();
+        }
+        $password = $request->input("newpassword");
+        $password2 = $request->input("renewpassword");
+        $user = KhachHang::where("EMAIL", Auth::user()->EMAIL)->firstOrFail();
+        if ($password != $password2) {
+            Alert::toast('Mật khẩu không khớp với nhau', 'error')->position('top-left')->autoClose(3000);
+            return redirect()->back();
+        }
+        $user->PASSWORD = Hash::make($password);
+        $user->save();
+        Alert::toast('Đổi mật khẩu thành cảnh công', 'success')->position('top-left')->autoClose(3000);
+        return $this->Logout();
+    }
+    public function GenerateAvatarImg()
+    {
+        return view('AccountController.ShowGenAI');
     }
 }

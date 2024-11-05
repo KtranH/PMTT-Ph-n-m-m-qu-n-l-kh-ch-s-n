@@ -92,10 +92,9 @@ namespace QLKS
             this.SlideBar.Controls.Add(this.guna2Panel1);
             this.SlideBar.Dock = System.Windows.Forms.DockStyle.Left;
             this.SlideBar.Location = new System.Drawing.Point(0, 0);
-            this.SlideBar.Margin = new System.Windows.Forms.Padding(4);
-            this.SlideBar.MaximumSize = new System.Drawing.Size(400, 1280);
+            this.SlideBar.MaximumSize = new System.Drawing.Size(300, 1040);
             this.SlideBar.Name = "SlideBar";
-            this.SlideBar.Size = new System.Drawing.Size(400, 1102);
+            this.SlideBar.Size = new System.Drawing.Size(300, 894);
             this.SlideBar.TabIndex = 0;
             // 
             // DANHMUC
@@ -105,12 +104,11 @@ namespace QLKS
             this.DANHMUC.Controls.Add(this.BTN_KHACHHANG);
             this.DANHMUC.Controls.Add(this.CN_DANHMUC);
             this.DANHMUC.Dock = System.Windows.Forms.DockStyle.Top;
-            this.DANHMUC.Location = new System.Drawing.Point(0, 848);
-            this.DANHMUC.Margin = new System.Windows.Forms.Padding(4);
-            this.DANHMUC.MaximumSize = new System.Drawing.Size(397, 249);
-            this.DANHMUC.MinimumSize = new System.Drawing.Size(397, 63);
+            this.DANHMUC.Location = new System.Drawing.Point(0, 688);
+            this.DANHMUC.MaximumSize = new System.Drawing.Size(298, 202);
+            this.DANHMUC.MinimumSize = new System.Drawing.Size(298, 51);
             this.DANHMUC.Name = "DANHMUC";
-            this.DANHMUC.Size = new System.Drawing.Size(397, 249);
+            this.DANHMUC.Size = new System.Drawing.Size(298, 202);
             this.DANHMUC.TabIndex = 12;
             // 
             // BTN_HOADON
@@ -128,10 +126,9 @@ namespace QLKS
             this.BTN_HOADON.Image = ((System.Drawing.Image)(resources.GetObject("BTN_HOADON.Image")));
             this.BTN_HOADON.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.BTN_HOADON.ImageSize = new System.Drawing.Size(25, 25);
-            this.BTN_HOADON.Location = new System.Drawing.Point(0, 186);
-            this.BTN_HOADON.Margin = new System.Windows.Forms.Padding(4);
+            this.BTN_HOADON.Location = new System.Drawing.Point(0, 150);
             this.BTN_HOADON.Name = "BTN_HOADON";
-            this.BTN_HOADON.Size = new System.Drawing.Size(397, 62);
+            this.BTN_HOADON.Size = new System.Drawing.Size(298, 50);
             this.BTN_HOADON.TabIndex = 3;
             this.BTN_HOADON.Text = "Hóa đơn";
             this.BTN_HOADON.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -152,10 +149,9 @@ namespace QLKS
             this.BTN_PDP.Image = ((System.Drawing.Image)(resources.GetObject("BTN_PDP.Image")));
             this.BTN_PDP.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.BTN_PDP.ImageSize = new System.Drawing.Size(25, 25);
-            this.BTN_PDP.Location = new System.Drawing.Point(0, 124);
-            this.BTN_PDP.Margin = new System.Windows.Forms.Padding(4);
+            this.BTN_PDP.Location = new System.Drawing.Point(0, 100);
             this.BTN_PDP.Name = "BTN_PDP";
-            this.BTN_PDP.Size = new System.Drawing.Size(397, 62);
+            this.BTN_PDP.Size = new System.Drawing.Size(298, 50);
             this.BTN_PDP.TabIndex = 2;
             this.BTN_PDP.Text = "Phiếu đặt phòng";
             this.BTN_PDP.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -176,10 +172,9 @@ namespace QLKS
             this.BTN_KHACHHANG.Image = ((System.Drawing.Image)(resources.GetObject("BTN_KHACHHANG.Image")));
             this.BTN_KHACHHANG.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.BTN_KHACHHANG.ImageSize = new System.Drawing.Size(25, 25);
-            this.BTN_KHACHHANG.Location = new System.Drawing.Point(0, 62);
-            this.BTN_KHACHHANG.Margin = new System.Windows.Forms.Padding(4);
+            this.BTN_KHACHHANG.Location = new System.Drawing.Point(0, 50);
             this.BTN_KHACHHANG.Name = "BTN_KHACHHANG";
-            this.BTN_KHACHHANG.Size = new System.Drawing.Size(397, 62);
+            this.BTN_KHACHHANG.Size = new System.Drawing.Size(298, 50);
             this.BTN_KHACHHANG.TabIndex = 1;
             this.BTN_KHACHHANG.Text = "Khách hàng";
             this.BTN_KHACHHANG.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -200,9 +195,8 @@ namespace QLKS
             this.CN_DANHMUC.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.CN_DANHMUC.ImageSize = new System.Drawing.Size(25, 25);
             this.CN_DANHMUC.Location = new System.Drawing.Point(0, 0);
-            this.CN_DANHMUC.Margin = new System.Windows.Forms.Padding(4);
             this.CN_DANHMUC.Name = "CN_DANHMUC";
-            this.CN_DANHMUC.Size = new System.Drawing.Size(397, 62);
+            this.CN_DANHMUC.Size = new System.Drawing.Size(298, 50);
             this.CN_DANHMUC.TabIndex = 0;
             this.CN_DANHMUC.Text = "Danh mục";
             this.CN_DANHMUC.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -213,12 +207,11 @@ namespace QLKS
             this.THONGTIN.Controls.Add(this.BTN_NHANVIEN);
             this.THONGTIN.Controls.Add(this.CN_THONGTIN);
             this.THONGTIN.Dock = System.Windows.Forms.DockStyle.Top;
-            this.THONGTIN.Location = new System.Drawing.Point(0, 724);
-            this.THONGTIN.Margin = new System.Windows.Forms.Padding(4);
-            this.THONGTIN.MaximumSize = new System.Drawing.Size(397, 124);
-            this.THONGTIN.MinimumSize = new System.Drawing.Size(397, 63);
+            this.THONGTIN.Location = new System.Drawing.Point(0, 587);
+            this.THONGTIN.MaximumSize = new System.Drawing.Size(298, 101);
+            this.THONGTIN.MinimumSize = new System.Drawing.Size(298, 51);
             this.THONGTIN.Name = "THONGTIN";
-            this.THONGTIN.Size = new System.Drawing.Size(397, 124);
+            this.THONGTIN.Size = new System.Drawing.Size(298, 101);
             this.THONGTIN.TabIndex = 11;
             // 
             // BTN_NHANVIEN
@@ -236,10 +229,9 @@ namespace QLKS
             this.BTN_NHANVIEN.Image = ((System.Drawing.Image)(resources.GetObject("BTN_NHANVIEN.Image")));
             this.BTN_NHANVIEN.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.BTN_NHANVIEN.ImageSize = new System.Drawing.Size(25, 25);
-            this.BTN_NHANVIEN.Location = new System.Drawing.Point(0, 62);
-            this.BTN_NHANVIEN.Margin = new System.Windows.Forms.Padding(4);
+            this.BTN_NHANVIEN.Location = new System.Drawing.Point(0, 50);
             this.BTN_NHANVIEN.Name = "BTN_NHANVIEN";
-            this.BTN_NHANVIEN.Size = new System.Drawing.Size(397, 62);
+            this.BTN_NHANVIEN.Size = new System.Drawing.Size(298, 50);
             this.BTN_NHANVIEN.TabIndex = 1;
             this.BTN_NHANVIEN.Text = "Nhân viên";
             this.BTN_NHANVIEN.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -260,9 +252,8 @@ namespace QLKS
             this.CN_THONGTIN.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.CN_THONGTIN.ImageSize = new System.Drawing.Size(25, 25);
             this.CN_THONGTIN.Location = new System.Drawing.Point(0, 0);
-            this.CN_THONGTIN.Margin = new System.Windows.Forms.Padding(4);
             this.CN_THONGTIN.Name = "CN_THONGTIN";
-            this.CN_THONGTIN.Size = new System.Drawing.Size(397, 62);
+            this.CN_THONGTIN.Size = new System.Drawing.Size(298, 50);
             this.CN_THONGTIN.TabIndex = 0;
             this.CN_THONGTIN.Text = "Thông tin";
             this.CN_THONGTIN.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -273,12 +264,11 @@ namespace QLKS
             this.THANHTOAN.Controls.Add(this.BTN_THANHTOANHD);
             this.THANHTOAN.Controls.Add(this.CN_THANHTOAN);
             this.THANHTOAN.Dock = System.Windows.Forms.DockStyle.Top;
-            this.THANHTOAN.Location = new System.Drawing.Point(0, 597);
-            this.THANHTOAN.Margin = new System.Windows.Forms.Padding(4);
-            this.THANHTOAN.MaximumSize = new System.Drawing.Size(397, 127);
-            this.THANHTOAN.MinimumSize = new System.Drawing.Size(397, 63);
+            this.THANHTOAN.Location = new System.Drawing.Point(0, 484);
+            this.THANHTOAN.MaximumSize = new System.Drawing.Size(298, 103);
+            this.THANHTOAN.MinimumSize = new System.Drawing.Size(298, 51);
             this.THANHTOAN.Name = "THANHTOAN";
-            this.THANHTOAN.Size = new System.Drawing.Size(397, 127);
+            this.THANHTOAN.Size = new System.Drawing.Size(298, 103);
             this.THANHTOAN.TabIndex = 9;
             // 
             // BTN_THANHTOANHD
@@ -296,10 +286,9 @@ namespace QLKS
             this.BTN_THANHTOANHD.Image = ((System.Drawing.Image)(resources.GetObject("BTN_THANHTOANHD.Image")));
             this.BTN_THANHTOANHD.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.BTN_THANHTOANHD.ImageSize = new System.Drawing.Size(25, 25);
-            this.BTN_THANHTOANHD.Location = new System.Drawing.Point(0, 62);
-            this.BTN_THANHTOANHD.Margin = new System.Windows.Forms.Padding(4);
+            this.BTN_THANHTOANHD.Location = new System.Drawing.Point(0, 50);
             this.BTN_THANHTOANHD.Name = "BTN_THANHTOANHD";
-            this.BTN_THANHTOANHD.Size = new System.Drawing.Size(397, 62);
+            this.BTN_THANHTOANHD.Size = new System.Drawing.Size(298, 50);
             this.BTN_THANHTOANHD.TabIndex = 1;
             this.BTN_THANHTOANHD.Text = "Thanh toán hóa đơn";
             this.BTN_THANHTOANHD.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -320,9 +309,8 @@ namespace QLKS
             this.CN_THANHTOAN.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.CN_THANHTOAN.ImageSize = new System.Drawing.Size(25, 25);
             this.CN_THANHTOAN.Location = new System.Drawing.Point(0, 0);
-            this.CN_THANHTOAN.Margin = new System.Windows.Forms.Padding(4);
             this.CN_THANHTOAN.Name = "CN_THANHTOAN";
-            this.CN_THANHTOAN.Size = new System.Drawing.Size(397, 62);
+            this.CN_THANHTOAN.Size = new System.Drawing.Size(298, 50);
             this.CN_THANHTOAN.TabIndex = 0;
             this.CN_THANHTOAN.Text = "Thanh toán";
             this.CN_THANHTOAN.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -333,12 +321,11 @@ namespace QLKS
             this.DATPHONG.Controls.Add(this.CN_PDPKH);
             this.DATPHONG.Controls.Add(this.BTN_DATPHONG);
             this.DATPHONG.Dock = System.Windows.Forms.DockStyle.Top;
-            this.DATPHONG.Location = new System.Drawing.Point(0, 470);
-            this.DATPHONG.Margin = new System.Windows.Forms.Padding(4);
-            this.DATPHONG.MaximumSize = new System.Drawing.Size(397, 127);
-            this.DATPHONG.MinimumSize = new System.Drawing.Size(397, 63);
+            this.DATPHONG.Location = new System.Drawing.Point(0, 381);
+            this.DATPHONG.MaximumSize = new System.Drawing.Size(298, 103);
+            this.DATPHONG.MinimumSize = new System.Drawing.Size(298, 51);
             this.DATPHONG.Name = "DATPHONG";
-            this.DATPHONG.Size = new System.Drawing.Size(397, 127);
+            this.DATPHONG.Size = new System.Drawing.Size(298, 103);
             this.DATPHONG.TabIndex = 8;
             // 
             // CN_PDPKH
@@ -356,10 +343,9 @@ namespace QLKS
             this.CN_PDPKH.Image = ((System.Drawing.Image)(resources.GetObject("CN_PDPKH.Image")));
             this.CN_PDPKH.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.CN_PDPKH.ImageSize = new System.Drawing.Size(25, 25);
-            this.CN_PDPKH.Location = new System.Drawing.Point(0, 62);
-            this.CN_PDPKH.Margin = new System.Windows.Forms.Padding(4);
+            this.CN_PDPKH.Location = new System.Drawing.Point(0, 50);
             this.CN_PDPKH.Name = "CN_PDPKH";
-            this.CN_PDPKH.Size = new System.Drawing.Size(397, 62);
+            this.CN_PDPKH.Size = new System.Drawing.Size(298, 50);
             this.CN_PDPKH.TabIndex = 1;
             this.CN_PDPKH.Text = "Danh sách nhận phòng";
             this.CN_PDPKH.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -380,9 +366,8 @@ namespace QLKS
             this.BTN_DATPHONG.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.BTN_DATPHONG.ImageSize = new System.Drawing.Size(25, 25);
             this.BTN_DATPHONG.Location = new System.Drawing.Point(0, 0);
-            this.BTN_DATPHONG.Margin = new System.Windows.Forms.Padding(4);
             this.BTN_DATPHONG.Name = "BTN_DATPHONG";
-            this.BTN_DATPHONG.Size = new System.Drawing.Size(397, 62);
+            this.BTN_DATPHONG.Size = new System.Drawing.Size(298, 50);
             this.BTN_DATPHONG.TabIndex = 0;
             this.BTN_DATPHONG.Text = "Nhận phòng";
             this.BTN_DATPHONG.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -394,12 +379,11 @@ namespace QLKS
             this.PHONG.Controls.Add(this.CN_DSPHONG);
             this.PHONG.Controls.Add(this.BTN_PHONG);
             this.PHONG.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PHONG.Location = new System.Drawing.Point(0, 290);
-            this.PHONG.Margin = new System.Windows.Forms.Padding(4);
-            this.PHONG.MaximumSize = new System.Drawing.Size(397, 180);
-            this.PHONG.MinimumSize = new System.Drawing.Size(397, 63);
+            this.PHONG.Location = new System.Drawing.Point(0, 235);
+            this.PHONG.MaximumSize = new System.Drawing.Size(298, 146);
+            this.PHONG.MinimumSize = new System.Drawing.Size(298, 51);
             this.PHONG.Name = "PHONG";
-            this.PHONG.Size = new System.Drawing.Size(397, 180);
+            this.PHONG.Size = new System.Drawing.Size(298, 146);
             this.PHONG.TabIndex = 7;
             // 
             // CN_DSDV
@@ -416,10 +400,9 @@ namespace QLKS
             this.CN_DSDV.Image = ((System.Drawing.Image)(resources.GetObject("CN_DSDV.Image")));
             this.CN_DSDV.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.CN_DSDV.ImageSize = new System.Drawing.Size(25, 25);
-            this.CN_DSDV.Location = new System.Drawing.Point(0, 124);
-            this.CN_DSDV.Margin = new System.Windows.Forms.Padding(4);
+            this.CN_DSDV.Location = new System.Drawing.Point(0, 100);
             this.CN_DSDV.Name = "CN_DSDV";
-            this.CN_DSDV.Size = new System.Drawing.Size(397, 58);
+            this.CN_DSDV.Size = new System.Drawing.Size(298, 47);
             this.CN_DSDV.TabIndex = 2;
             this.CN_DSDV.Text = "Danh sách dịch vụ";
             this.CN_DSDV.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -440,10 +423,9 @@ namespace QLKS
             this.CN_DSPHONG.Image = ((System.Drawing.Image)(resources.GetObject("CN_DSPHONG.Image")));
             this.CN_DSPHONG.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.CN_DSPHONG.ImageSize = new System.Drawing.Size(25, 25);
-            this.CN_DSPHONG.Location = new System.Drawing.Point(0, 62);
-            this.CN_DSPHONG.Margin = new System.Windows.Forms.Padding(4);
+            this.CN_DSPHONG.Location = new System.Drawing.Point(0, 50);
             this.CN_DSPHONG.Name = "CN_DSPHONG";
-            this.CN_DSPHONG.Size = new System.Drawing.Size(397, 62);
+            this.CN_DSPHONG.Size = new System.Drawing.Size(298, 50);
             this.CN_DSPHONG.TabIndex = 1;
             this.CN_DSPHONG.Text = "Danh sách phòng";
             this.CN_DSPHONG.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -464,9 +446,8 @@ namespace QLKS
             this.BTN_PHONG.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.BTN_PHONG.ImageSize = new System.Drawing.Size(25, 25);
             this.BTN_PHONG.Location = new System.Drawing.Point(0, 0);
-            this.BTN_PHONG.Margin = new System.Windows.Forms.Padding(4);
             this.BTN_PHONG.Name = "BTN_PHONG";
-            this.BTN_PHONG.Size = new System.Drawing.Size(397, 62);
+            this.BTN_PHONG.Size = new System.Drawing.Size(298, 50);
             this.BTN_PHONG.TabIndex = 0;
             this.BTN_PHONG.Text = "Phòng";
             this.BTN_PHONG.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -485,10 +466,9 @@ namespace QLKS
             this.BtnExit.Image = ((System.Drawing.Image)(resources.GetObject("BtnExit.Image")));
             this.BtnExit.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.BtnExit.ImageSize = new System.Drawing.Size(25, 25);
-            this.BtnExit.Location = new System.Drawing.Point(0, 1040);
-            this.BtnExit.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnExit.Location = new System.Drawing.Point(0, 844);
             this.BtnExit.Name = "BtnExit";
-            this.BtnExit.Size = new System.Drawing.Size(400, 62);
+            this.BtnExit.Size = new System.Drawing.Size(300, 50);
             this.BtnExit.TabIndex = 6;
             this.BtnExit.Text = "Quay lại";
             this.BtnExit.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -498,10 +478,9 @@ namespace QLKS
             // 
             this.guna2Panel2.Controls.Add(this.BTN_TRANGCHU);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel2.Location = new System.Drawing.Point(0, 228);
-            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Panel2.Location = new System.Drawing.Point(0, 185);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(400, 62);
+            this.guna2Panel2.Size = new System.Drawing.Size(300, 50);
             this.guna2Panel2.TabIndex = 5;
             // 
             // BTN_TRANGCHU
@@ -519,9 +498,8 @@ namespace QLKS
             this.BTN_TRANGCHU.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.BTN_TRANGCHU.ImageSize = new System.Drawing.Size(25, 25);
             this.BTN_TRANGCHU.Location = new System.Drawing.Point(0, 0);
-            this.BTN_TRANGCHU.Margin = new System.Windows.Forms.Padding(4);
             this.BTN_TRANGCHU.Name = "BTN_TRANGCHU";
-            this.BTN_TRANGCHU.Size = new System.Drawing.Size(400, 62);
+            this.BTN_TRANGCHU.Size = new System.Drawing.Size(300, 50);
             this.BTN_TRANGCHU.TabIndex = 0;
             this.BTN_TRANGCHU.Text = "Trang chủ";
             this.BTN_TRANGCHU.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -533,9 +511,8 @@ namespace QLKS
             this.guna2Panel1.Controls.Add(this.guna2CirclePictureBox1);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(400, 228);
+            this.guna2Panel1.Size = new System.Drawing.Size(300, 185);
             this.guna2Panel1.TabIndex = 0;
             // 
             // guna2HtmlLabel3
@@ -543,10 +520,9 @@ namespace QLKS
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(104, 134);
-            this.guna2HtmlLabel3.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(78, 109);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(153, 32);
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(129, 27);
             this.guna2HtmlLabel3.TabIndex = 1;
             this.guna2HtmlLabel3.Text = "GTX - Menu";
             // 
@@ -554,11 +530,10 @@ namespace QLKS
             // 
             this.guna2CirclePictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox1.Image")));
             this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(132, 38);
-            this.guna2CirclePictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(99, 31);
             this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
             this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(100, 89);
+            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(75, 72);
             this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2CirclePictureBox1.TabIndex = 0;
             this.guna2CirclePictureBox1.TabStop = false;
@@ -572,29 +547,26 @@ namespace QLKS
             this.SlideMain.Controls.Add(this.Title);
             this.SlideMain.Controls.Add(this.guna2DateTimePicker1);
             this.SlideMain.Dock = System.Windows.Forms.DockStyle.Left;
-            this.SlideMain.Location = new System.Drawing.Point(400, 0);
-            this.SlideMain.Margin = new System.Windows.Forms.Padding(4);
+            this.SlideMain.Location = new System.Drawing.Point(300, 0);
             this.SlideMain.Name = "SlideMain";
-            this.SlideMain.Size = new System.Drawing.Size(2163, 1102);
+            this.SlideMain.Size = new System.Drawing.Size(1622, 894);
             this.SlideMain.TabIndex = 1;
             this.SlideMain.Paint += new System.Windows.Forms.PaintEventHandler(this.SlideMain_Paint);
             // 
             // ConvertForm
             // 
-            this.ConvertForm.Location = new System.Drawing.Point(56, 182);
-            this.ConvertForm.Margin = new System.Windows.Forms.Padding(4);
+            this.ConvertForm.Location = new System.Drawing.Point(42, 148);
             this.ConvertForm.Name = "ConvertForm";
-            this.ConvertForm.Size = new System.Drawing.Size(2091, 1083);
+            this.ConvertForm.Size = new System.Drawing.Size(1568, 880);
             this.ConvertForm.TabIndex = 27;
             // 
             // guna2PictureBox1
             // 
             this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(85, 33);
-            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(64, 27);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(103, 94);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(77, 76);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox1.TabIndex = 25;
             this.guna2PictureBox1.TabStop = false;
@@ -603,10 +575,9 @@ namespace QLKS
             // 
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(221, 89);
-            this.guna2HtmlLabel2.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(166, 72);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(260, 32);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(220, 27);
             this.guna2HtmlLabel2.TabIndex = 22;
             this.guna2HtmlLabel2.Text = "Hôm nay bạn thế nào?";
             // 
@@ -614,10 +585,9 @@ namespace QLKS
             // 
             this.Title.BackColor = System.Drawing.Color.Transparent;
             this.Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
-            this.Title.Location = new System.Drawing.Point(221, 25);
-            this.Title.Margin = new System.Windows.Forms.Padding(4);
+            this.Title.Location = new System.Drawing.Point(166, 20);
             this.Title.Name = "Title";
-            this.Title.Size = new System.Drawing.Size(148, 40);
+            this.Title.Size = new System.Drawing.Size(125, 33);
             this.Title.TabIndex = 21;
             this.Title.Text = "Xin chào! ";
             // 
@@ -630,12 +600,11 @@ namespace QLKS
             this.guna2DateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2DateTimePicker1.ForeColor = System.Drawing.Color.White;
             this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.guna2DateTimePicker1.Location = new System.Drawing.Point(1664, 25);
-            this.guna2DateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2DateTimePicker1.Location = new System.Drawing.Point(1248, 20);
             this.guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.guna2DateTimePicker1.Name = "guna2DateTimePicker1";
-            this.guna2DateTimePicker1.Size = new System.Drawing.Size(483, 63);
+            this.guna2DateTimePicker1.Size = new System.Drawing.Size(362, 51);
             this.guna2DateTimePicker1.TabIndex = 20;
             this.guna2DateTimePicker1.Value = new System.DateTime(2023, 12, 4, 10, 24, 21, 0);
             // 
@@ -666,15 +635,14 @@ namespace QLKS
             // 
             // TrangChu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1942, 1102);
+            this.ClientSize = new System.Drawing.Size(1456, 894);
             this.Controls.Add(this.SlideMain);
             this.Controls.Add(this.SlideBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "TrangChu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "GTX - Trang chủ";

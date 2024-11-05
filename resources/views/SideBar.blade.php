@@ -77,7 +77,7 @@
               <li class="nav-heading">Tài khoản</li>
         
               <li class="nav-item">
-                <a class="nav-link collapsed" href="">
+                <a class="nav-link collapsed" href="{{ route("homeAccount" )}}">
                   <i class="fa-solid fa-user" style="color: #74C0FC;"></i>
                   <span>Trang cá nhân</span>
                 </a>

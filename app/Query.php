@@ -8,6 +8,7 @@ trait Query
 {
     //
 
+/*************  ✨ Codeium Command 🌟  *************/
     public function PushAvatarR2($email, $avatar)
     {
         if($avatar == null)
@@ -23,4 +24,5 @@ trait Query
         }
         Storage::disk('r2')->put($path, file_get_contents($img));
     }
+/******  a7235be7-5050-4b1a-9f19-0c4020667014  *******/
 }
