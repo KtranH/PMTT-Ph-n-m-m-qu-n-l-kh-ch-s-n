@@ -104,6 +104,9 @@ Route::get('/cateRoom_PriceHighToLow', [CategoryRoom::class, 'CateRoom_PriceHigh
 
 //Category Room Price Low To High
 Route::get('/cateRoom_PriceLowToHigh', [CategoryRoom::class, 'CateRoom_PriceLowToHigh'])->name('CateRoom_PriceLowToHigh');
+
+//Overview Category Room
+Route::get('/overviewCateRoom/{id}', [CategoryRoom::class, 'Overview_CateRoom'])->name('Overview_CateRoom');
 //-----------------------------------------------------------------------------------------------------------------------------//
 
 //---------------------------------------------------SERVICE CONTROLLER---------------------------------------------------//
@@ -117,4 +120,14 @@ Route::get('/allService', [Service::class, 'AllService'])->name('AllService');
 Route::get('/testImg', [Test::class, 'TestImg'])->name('TestImg');
 
 //---------------------------------------------------------------------------------------------------------------------//
+
+//---------------------------------------------------OTHER---------------------------------------------------//
+
+//Contact Page
+Route::view('/Other/Contact', 'Other.Contact')->name('Contact');
+
+//About Page
+Route::view('/Other/Information', 'Other.Information')->name('Information');
+
+//-----------------------------------------------------------------------------------------------------------//
 

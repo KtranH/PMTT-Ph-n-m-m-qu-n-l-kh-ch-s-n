@@ -98,14 +98,14 @@
               </li><!-- End Contact Page Nav -->
   
               <li class="nav-item">
-                <a class="nav-link collapsed" href="">
+                <a class="nav-link collapsed" href="{{ route("Contact" ) }}">
                   <i class="fa-solid fa-question" style="color: #74C0FC;"></i>
                   <span>Liên hệ</span>
                 </a>
               </li><!-- End Error 404 Page Nav -->
         
               <li class="nav-item">
-                <a class="nav-link collapsed" href="">
+                <a class="nav-link collapsed" href="{{ route("Information") }}">
                   <i class="fa-solid fa-circle-info" style="color: #74C0FC;"></i>
                   <span>Thông tin</span>
                 </a>
@@ -126,14 +126,14 @@
               </li><!-- End Login Page Nav -->
         
               <li class="nav-item">
-                <a class="nav-link collapsed" href="">
+                <a class="nav-link collapsed" href="{{ route("Contact" ) }}">
                   <i class="fa-solid fa-question" style="color: #74C0FC;"></i>
                   <span>Liên hệ</span>
                 </a>
               </li><!-- End Error 404 Page Nav -->
         
               <li class="nav-item">
-                <a class="nav-link collapsed" href="">
+                <a class="nav-link collapsed" href="{{ route("Information") }}">
                   <i class="fa-solid fa-circle-info" style="color: #74C0FC;"></i>
                   <span>Thông tin</span>
                 </a>

@@ -38,4 +38,9 @@ class CategoryRoom extends Controller
         $categoryroom_price_lowtohigh = LoaiPhong::orderBy('GIATHUE', 'asc')->paginate(6);
         return view('CategoryRoomController.CategoryRoom_PriceLowToHigh', compact('categoryroom_price_lowtohigh'));
     }
+    public function Overview_CateRoom($id)
+    {
+        $Overview_CateRoom = LoaiPhong::find($id);
+        return view('CategoryRoomController.OverviewRoom', compact('Overview_CateRoom'));
+    }
 }
