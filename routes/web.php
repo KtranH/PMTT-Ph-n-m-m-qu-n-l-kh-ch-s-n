@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Account;
+use App\Http\Controllers\Booking;
 use App\Http\Controllers\CategoryRoom;
 use App\Http\Controllers\Email;
 use App\Http\Controllers\Home;
@@ -66,6 +67,12 @@ Route::middleware([CheckLogin::class])->group(function () {
 
     //Generate Avatar Img
     Route::get('/generateAvatarImg', [Account::class, 'GenerateAvatarImg'])->name('generateAvatarImg');
+
+    //---------------------------------------------------BOOKING CONTROLLER----------------------------------------------------------//
+    
+    //List Booking
+    Route::get('/listBooking', [Booking::class, 'Booking'])->name('listBooking');
+    //-------------------------------------------------------------------------------------------------------------------------------//
 });
 
 //---------------------------------------------------------------------------------------------------------------------//

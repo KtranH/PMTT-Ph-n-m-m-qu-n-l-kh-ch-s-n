@@ -84,7 +84,7 @@
               </li><!-- End Profile Page Nav -->
         
               <li class="nav-item">
-                <a class="nav-link collapsed" href="">
+                <a class="nav-link collapsed" href="{{ route("listBooking" )}}">
                   <i class="fa-solid fa-tag" style="color: #74C0FC;"></i>
                   <span>Đặt phòng</span>
                 </a>

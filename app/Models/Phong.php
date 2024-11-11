@@ -10,7 +10,7 @@ class Phong extends Model
     protected $table = 'phong';
 
     protected $fillable = [
-        'TENPHONG', 'VITRI', 'LOAIPHONG_ID', 'TRANGTHAI'
+        'ID', 'TENPHONG', 'VITRI', 'LOAIPHONG_ID', 'TRANGTHAI'
     ];
 
     public function loaiPhong()

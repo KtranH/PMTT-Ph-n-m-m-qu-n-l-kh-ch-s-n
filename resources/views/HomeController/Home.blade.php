@@ -35,7 +35,7 @@
                     </div>
                     <div class="ps-3">
                       <h6>
-                       50
+                       {{ $countCustomer}}
                       </h6>
                       <span class="text-success small pt-1 fw-bold">Đã</span><span class="text-muted small pt-2 ps-1">ghé thăm</span>
                     </div>
@@ -60,7 +60,7 @@
                     </div>
                     <div class="ps-3">
                       <h6>
-                       30
+                       {{ $countRoom }}
                       </h6>
                       <span class="text-success small pt-1 fw-bold">Vẫn còn</span><span class="text-muted small pt-2 ps-1">trống</span>
                     </div>
@@ -85,7 +85,7 @@
                     </div>
                     <div class="ps-3">
                       <h6>
-                       20
+                       {{ $countReview }}
                       </h6>
                       <span class="text-danger small pt-1 fw-bold">Đánh giá</span><span class="text-muted small pt-2 ps-1">trải nghiệm</span>
                     </div>
@@ -251,13 +251,6 @@
               font-style: normal;">Số lượng <span>| từng loại phòng</span></h5>
 
               <div id="trafficChart" style="min-height: 400px;" class="echart"></div>
-
-              @php
-                  $cc = 50;
-                  $pt = 20;
-                  $gr = 10;
-              @endphp
-
               <script>
                 document.addEventListener("DOMContentLoaded", () => {
                   echarts.init(document.querySelector("#trafficChart")).setOption({
@@ -287,18 +280,13 @@
                       labelLine: {
                         show: false
                       },
-                      data: [{
-                          value: {{ $cc }},
-                          name: 'Phòng cao cấp'
-                        },
-                        {
-                          value: {{ $pt }},
-                          name: 'Phòng phổ thông'
-                        },
-                        {
-                          value: {{ $gr }},
-                          name: 'Phòng giá rẻ'
-                        }
+                      data: [
+                        @foreach ($listCateRoom as $x)
+                          {
+                            value: {{ $x->phong->count() }},
+                            name: "{{ $x->TENLOAIPHONG }}"
+                          },
+                        @endforeach
                       ]
                     }]
                   });
