@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Account;
 use App\Http\Controllers\Booking;
+use App\Http\Controllers\Cart;
 use App\Http\Controllers\CategoryRoom;
 use App\Http\Controllers\Email;
 use App\Http\Controllers\Home;
@@ -81,6 +82,23 @@ Route::middleware([CheckLogin::class])->group(function () {
     //Review
     Route::get('/review', [Review::class, 'Review'])->name('review');
     //------------------------------------------------------------------------------------------------------------------------//
+
+
+    //---------------------------------------------------CART CONTROLLER---------------------------------------------------//
+
+    //Cart
+    Route::get('/cart', [Cart::class, 'Cart'])->name('cart');
+
+    //Add Cart
+    Route::post('/addCart', [Cart::class, 'AddCart'])->name('addCart');
+
+    //Delete Cart
+    Route::delete('/deleteCart', [Cart::class, 'DeleteCart'])->name('deleteCart');
+
+    //Delete All Cart
+    Route::delete('/deleteAllCart', [Cart::class, 'DeleteAllCart'])->name('deleteAllCart');
+
+    //--------------------------------------------------------------------------------------------------------------------//
 });
 
 //---------------------------------------------------------------------------------------------------------------------//

@@ -298,7 +298,21 @@
         .slider-nav .slick-slide:hover .slide-image-container:after {
             background: rgba(52, 152, 219, 0.1);
         }
+        #cart-icon.cart-added {
+            animation: bounce 0.5s ease;
+        }
 
+        @keyframes bounce {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
         @media (max-width: 768px) {
             .slider-nav img {
                 height: 70px;
@@ -416,6 +430,35 @@
                     centerMode: true,
                     focusOnSelect: true
                 });
+                $('.add-to-cart').click(function() {
+                    var roomID = {{ $Overview_CateRoom->ID }};
+                        $.ajax({
+                            url: '/addCart',
+                            type: 'POST',
+                            data: {
+                                roomID: roomID,
+                                _token: '{{ csrf_token() }}'
+                            },
+                            success: function(response) {
+                                $('#cart-count').text(response.countCart);
+                                $('#cart-icon').addClass('cart-added');
+                                setTimeout(function() {
+                                    $('#cart-icon').removeClass('cart-added');
+                                }, 1000);
+                                Swal.fire({
+                                icon: 'success',
+                                title: 'Thêm thành công',
+                                toast: true,
+                                position: 'bottom-right',
+                                showConfirmButton: false,
+                                timer: 3000
+                            });
+                            },
+                            error: function(xhr, status, error) {
+                                alert(error);
+                            }
+                        });
+                    })
             });
         </script>
     </section>
