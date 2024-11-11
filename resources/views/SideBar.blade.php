@@ -91,7 +91,7 @@
               </li><!-- End F.A.Q Page Nav -->
         
               <li class="nav-item">
-                <a class="nav-link collapsed" href="">
+                <a class="nav-link collapsed" href="{{ route("review" ) }}">
                   <i class="fa-solid fa-star" style="color: #74C0FC;"></i>
                   <span>Đánh giá</span>
                 </a>

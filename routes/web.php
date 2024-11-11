@@ -5,6 +5,7 @@ use App\Http\Controllers\Booking;
 use App\Http\Controllers\CategoryRoom;
 use App\Http\Controllers\Email;
 use App\Http\Controllers\Home;
+use App\Http\Controllers\Review;
 use App\Http\Controllers\Service;
 use App\Http\Controllers\Test;
 use App\Http\Middleware\CheckLogin;
@@ -72,7 +73,14 @@ Route::middleware([CheckLogin::class])->group(function () {
     
     //List Booking
     Route::get('/listBooking', [Booking::class, 'Booking'])->name('listBooking');
+
     //-------------------------------------------------------------------------------------------------------------------------------//
+
+    //---------------------------------------------------REVIEW CONTROLLER----------------------------------------------------//
+
+    //Review
+    Route::get('/review', [Review::class, 'Review'])->name('review');
+    //------------------------------------------------------------------------------------------------------------------------//
 });
 
 //---------------------------------------------------------------------------------------------------------------------//

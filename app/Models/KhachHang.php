@@ -21,7 +21,7 @@ class KhachHang extends Authenticatable
 
     public function danhGia()
     {
-        return $this->hasMany(DanhGia::class);
+        return $this->hasMany(DanhGia::class, 'KHACHHANG_ID', 'ID');
     }
 
     public function gioHang()
