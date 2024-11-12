@@ -34,6 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DTO">
+      <HintPath>..\..\DTO\bin\Debug\DTO.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -61,6 +64,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="DICHVU_DAL.cs" />
+    <Compile Include="KHACHHANG_DAL.cs" />
+    <Compile Include="LOAIPHONG_DAL.cs" />
+    <Compile Include="NHANVIEN_DAL.cs" />
+    <Compile Include="PHIEUDATPHONG_DAL.cs" />
+    <Compile Include="PHONG_DAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
