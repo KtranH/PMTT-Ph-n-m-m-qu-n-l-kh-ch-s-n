@@ -14,7 +14,7 @@ namespace GUI
 {
     public partial class Form1 : Form
     {
-        public WEB_APP_QLKSEntities DB = new WEB_APP_QLKSEntities();
+        
         public Form1()
         {
             InitializeComponent();
@@ -22,7 +22,7 @@ namespace GUI
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = DB.KHACHHANGs.ToList();
+            
         }
     }
 }

@@ -36,6 +36,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BLL">
+      <HintPath>..\..\..\app\Services\BLL\bin\Debug\BLL.dll</HintPath>
+    </Reference>
     <Reference Include="DTO">
       <HintPath>..\..\..\app\DTO\bin\Debug\DTO.dll</HintPath>
     </Reference>

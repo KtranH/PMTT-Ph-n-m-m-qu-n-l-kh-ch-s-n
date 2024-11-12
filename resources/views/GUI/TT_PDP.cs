@@ -1,3 +1,4 @@
+using BLL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,8 +12,8 @@ namespace QLKS
 {
     public partial class TT_PDP : Form
     {
-        
-        DataTable PDP = new DataTable();    
+
+        PHIEUDATPHONG_BLL PDP = new PHIEUDATPHONG_BLL();    
         public TT_PDP()
         {
             InitializeComponent();
@@ -28,14 +29,9 @@ namespace QLKS
         }
         public void LoadPDP()
         {
-            PDP = new DataTable();
-            PDP.Columns.Add("Mã đặt phòng");
-            PDP.Columns.Add("Tên phòng");
-            PDP.Columns.Add("Mã nhân viên");
-            PDP.Columns.Add("Ngày đặt");
-            PDP.Columns.Add("Tình trạng");
+          
             
-            DT_DS_PDP.DataSource = PDP;
+            DT_DS_PDP.DataSource = PDP.GetAllPDT();
             DT_DS_PDP.AllowUserToAddRows = false;
             DT_DS_PDP.ReadOnly = true;
         }
@@ -47,65 +43,7 @@ namespace QLKS
 
         private void OP_PDP_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(OP_PDP.Text != "Tất cả")
-            {
-                if (OP_PDP.Text == "Đặt trước")
-                {
-                    PDP = new DataTable();
-                    PDP.Columns.Add("Mã đặt phòng");
-                    PDP.Columns.Add("Tên phòng");
-                    PDP.Columns.Add("Mã nhân viên");
-                    PDP.Columns.Add("Ngày đặt");
-                    PDP.Columns.Add("Tình trạng");
-                   
-                    DT_DS_PDP.DataSource = PDP;
-                    DT_DS_PDP.AllowUserToAddRows = false;
-                    DT_DS_PDP.ReadOnly = true;
-                }
-                else if (OP_PDP.Text == "Đã xác nhận")
-                {
-                    PDP = new DataTable();
-                    PDP.Columns.Add("Mã đặt phòng");
-                    PDP.Columns.Add("Tên phòng");
-                    PDP.Columns.Add("Mã nhân viên");
-                    PDP.Columns.Add("Ngày đặt");
-                    PDP.Columns.Add("Tình trạng");
-                   
-                    DT_DS_PDP.DataSource = PDP;
-                    DT_DS_PDP.AllowUserToAddRows = false;
-                    DT_DS_PDP.ReadOnly = true;
-                }
-                else if (OP_PDP.Text == "Đã thanh toán")
-                {
-                    PDP = new DataTable();
-                    PDP.Columns.Add("Mã đặt phòng");
-                    PDP.Columns.Add("Tên phòng");
-                    PDP.Columns.Add("Mã nhân viên");
-                    PDP.Columns.Add("Ngày đặt");
-                    PDP.Columns.Add("Tình trạng");
-                    
-                    DT_DS_PDP.DataSource = PDP;
-                    DT_DS_PDP.AllowUserToAddRows = false;
-                    DT_DS_PDP.ReadOnly = true;
-                }
-                else if (OP_PDP.Text == "Đã hủy")
-                {
-                    PDP = new DataTable();
-                    PDP.Columns.Add("Mã đặt phòng");
-                    PDP.Columns.Add("Tên phòng");
-                    PDP.Columns.Add("Mã nhân viên");
-                    PDP.Columns.Add("Ngày đặt");
-                    PDP.Columns.Add("Tình trạng");
-                   
-                    DT_DS_PDP.DataSource = PDP;
-                    DT_DS_PDP.AllowUserToAddRows = false;
-                    DT_DS_PDP.ReadOnly = true;
-                }
-            }    
-            else
-            {
-                LoadPDP();
-            }    
+           
         }
 
         private void CHECKBOX_KH_Click(object sender, EventArgs e)
@@ -153,18 +91,7 @@ namespace QLKS
 
         private void BTN_XEMCHITIET_Click(object sender, EventArgs e)
         {
-            if(TEXT_MAPDP.Text.Trim() != "")
-            {
-                TC_PDP tuyChinh = new TC_PDP() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-                tuyChinh.MAPDP = TEXT_MAPDP.Text.ToString();
-                this.Controls.Clear();
-                this.Controls.Add(tuyChinh);
-                tuyChinh.Show();
-            }   
-            else
-            {
-                MessageBox.Show("Vui lòng chọn một phiếu đặt phòng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
         }
 
         private void DT_DS_PDP_CellContentClick(object sender, DataGridViewCellEventArgs e)
