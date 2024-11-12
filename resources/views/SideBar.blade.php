@@ -77,35 +77,35 @@
               <li class="nav-heading">Tài khoản</li>
         
               <li class="nav-item">
-                <a class="nav-link collapsed" href="">
+                <a class="nav-link collapsed" href="{{ route("homeAccount" )}}">
                   <i class="fa-solid fa-user" style="color: #74C0FC;"></i>
                   <span>Trang cá nhân</span>
                 </a>
               </li><!-- End Profile Page Nav -->
         
               <li class="nav-item">
-                <a class="nav-link collapsed" href="">
+                <a class="nav-link collapsed" href="{{ route("listBooking" )}}">
                   <i class="fa-solid fa-tag" style="color: #74C0FC;"></i>
                   <span>Đặt phòng</span>
                 </a>
               </li><!-- End F.A.Q Page Nav -->
         
               <li class="nav-item">
-                <a class="nav-link collapsed" href="">
+                <a class="nav-link collapsed" href="{{ route("review" ) }}">
                   <i class="fa-solid fa-star" style="color: #74C0FC;"></i>
                   <span>Đánh giá</span>
                 </a>
               </li><!-- End Contact Page Nav -->
   
               <li class="nav-item">
-                <a class="nav-link collapsed" href="">
+                <a class="nav-link collapsed" href="{{ route("Contact" ) }}">
                   <i class="fa-solid fa-question" style="color: #74C0FC;"></i>
                   <span>Liên hệ</span>
                 </a>
               </li><!-- End Error 404 Page Nav -->
         
               <li class="nav-item">
-                <a class="nav-link collapsed" href="">
+                <a class="nav-link collapsed" href="{{ route("Information") }}">
                   <i class="fa-solid fa-circle-info" style="color: #74C0FC;"></i>
                   <span>Thông tin</span>
                 </a>
@@ -126,14 +126,14 @@
               </li><!-- End Login Page Nav -->
         
               <li class="nav-item">
-                <a class="nav-link collapsed" href="">
+                <a class="nav-link collapsed" href="{{ route("Contact" ) }}">
                   <i class="fa-solid fa-question" style="color: #74C0FC;"></i>
                   <span>Liên hệ</span>
                 </a>
               </li><!-- End Error 404 Page Nav -->
         
               <li class="nav-item">
-                <a class="nav-link collapsed" href="">
+                <a class="nav-link collapsed" href="{{ route("Information") }}">
                   <i class="fa-solid fa-circle-info" style="color: #74C0FC;"></i>
                   <span>Thông tin</span>
                 </a>

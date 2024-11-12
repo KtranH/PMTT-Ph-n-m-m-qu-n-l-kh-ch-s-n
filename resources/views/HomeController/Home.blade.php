@@ -22,7 +22,7 @@
           <div class="row">
 
             <!-- Sales Card -->
-            <div class="col-xxl-4 col-md-6">
+            <div class="col-xxl-4 col-md-6" data-aos="fade-right">
               <div class="card info-card sales-card" style="border-radius:20px">
                 <div class="card-body">
                   <h5 class="card-title" style="margin-top:-10px; font-family: 'Montserrat', sans-serif;
@@ -35,7 +35,7 @@
                     </div>
                     <div class="ps-3">
                       <h6>
-                       50
+                       {{ $countCustomer}}
                       </h6>
                       <span class="text-success small pt-1 fw-bold">Đã</span><span class="text-muted small pt-2 ps-1">ghé thăm</span>
                     </div>
@@ -46,7 +46,7 @@
             </div><!-- End Sales Card -->
 
             <!-- Revenue Card -->
-            <div class="col-xxl-4 col-md-6">
+            <div class="col-xxl-4 col-md-6" data-aos="fade-right" data-aos-delay="200">
               <div class="card info-card revenue-card" style="border-radius:20px">
                 <div class="card-body">
                   <h5 class="card-title" style="margin-top:-10px; font-family: 'Montserrat', sans-serif;
@@ -60,7 +60,7 @@
                     </div>
                     <div class="ps-3">
                       <h6>
-                       30
+                       {{ $countRoom }}
                       </h6>
                       <span class="text-success small pt-1 fw-bold">Vẫn còn</span><span class="text-muted small pt-2 ps-1">trống</span>
                     </div>
@@ -71,7 +71,7 @@
             </div><!-- End Revenue Card -->
 
             <!-- Customers Card -->
-            <div class="col-xxl-4 col-xl-12">
+            <div class="col-xxl-4 col-xl-12" data-aos="fade-right" data-aos-delay="400">
               <div class="card info-card customers-card" style="border-radius:20px">
                 <div class="card-body">
                   <h5 class="card-title" style="margin-top:-10px; font-family: 'Montserrat', sans-serif;
@@ -85,7 +85,7 @@
                     </div>
                     <div class="ps-3">
                       <h6>
-                       20
+                       {{ $countReview }}
                       </h6>
                       <span class="text-danger small pt-1 fw-bold">Đánh giá</span><span class="text-muted small pt-2 ps-1">trải nghiệm</span>
                     </div>
@@ -97,7 +97,7 @@
             </div><!-- End Customers Card -->
 
             <!-- Reports -->
-            <div class="col-12">
+            <div class="col-12" data-aos="fade-up" data-aos-delay="200">
                 <div class="card-body">
                     <h5 class="card-title" style="margin-top:-10px; font-family: 'Montserrat', sans-serif;
                     font-optical-sizing: auto;
@@ -111,32 +111,32 @@
                       @endphp
                       <div class="col-md-6 mb-4" style="max-width:800px">
                           <div class="Ha card my-specific-card {{$r->ISDELETE==1 ? 'disabled':''}}">
-                              <div class="card-img">
-                                  <img src="{{$firstImage}}" alt="" class="{{$r->ISDELETE==1? 'grayscale':''}}">
+                              <div class="card-img" data-aos="fade-up" data-aos-delay="500">
+                                  <img src="{{$firstImage}}" loading="lazy" alt="" class="{{$r->ISDELETE==1? 'grayscale':''}}">
                               </div>
                               <div class="card-info">
-                                  <p class="text-title"> {{ $r->TENLOAIPHONG }}</p>
+                                  <p class="text-title" data-aos="fade-up" data-aos-delay="600"> {{ $r->TENLOAIPHONG }}</p>
                                   <p class="card-text">
             
                                   </p>
                                   @if ($r->ISDELETE==1)
-                                  <p class="card-text"><i class="fa-solid fa-couch"
+                                  <p class="card-text" data-aos="fade-up" data-aos-delay="600"><i class="fa-solid fa-couch"
                                       style="color:gray;margin-right:10px;"></i><span style="font-weight:bold;">Nội thất:</span>
                                       {{ $r->NOITHAT }}
                                   </p>
                                   
-                                  <p class="card-text"><i class="fa-solid fa-hotel"
+                                  <p class="card-text" data-aos="fade-up" data-aos-delay="600"><i class="fa-solid fa-hotel"
                                           style="color:gray;margin-right:10px;"></i><span style="font-weight:bold;">Diện
                                           tích:</span>
                                       {{ $r->TIENICH }}
                                   </p>
             
             
-                                  <p class="card-text"><i class="fa-solid fa-box" style="color:#gray;"></i><span
+                                  <p class="card-text" data-aos="fade-up" data-aos-delay="600"><i class="fa-solid fa-box" style="color:#gray;"></i><span
                                           style="font-weight:bold;margin-left:10px;">Sức chứa tối
                                           đa:</span> {{ $r->SUCCHUA }}</p>
                                   <p class="card-text">
-                                  <p class="card-text"><i class="fa-solid fa-ban" style="color:#gray;margin-right:5px;"></i>
+                                  <p class="card-text" data-aos="fade-up" data-aos-delay="600"><i class="fa-solid fa-ban" style="color:#gray;margin-right:5px;"></i>
                                       {{ $r->QUYDINH }}
                                   </p>
                                   </p>
@@ -146,20 +146,20 @@
                                   <span class="text-title" style="color:white;">Không còn hoạt động</span>
             
                                   @else
-                                        <p class="card-text"><i class="fa-solid fa-couch" style="color: #74C0FC;margin-right:10px"></i><span style="font-weight:bold;">Nội thất: </span>{{ $r->NOITHAT }}
+                                        <p class="card-text" data-aos="fade-up" data-aos-delay="600"><i class="fa-solid fa-couch" style="color: #74C0FC;margin-right:10px"></i><span style="font-weight:bold;">Nội thất: </span>{{ $r->NOITHAT }}
                                         </p>
-                                        <p class="card-text"><i class="fa-solid fa-hotel"
+                                        <p class="card-text" data-aos="fade-up" data-aos-delay="600"><i class="fa-solid fa-hotel"
                                                 style="color:#74C0FC;margin-right:10px;"></i><span style="font-weight:bold;">Diện
                                                 tích:</span>
                                             {{ $r->TIENICH }}
                                         </p>
                   
                   
-                                        <p class="card-text"><i class="fa-solid fa-box" style="color:#74C0FC;"></i><span
+                                        <p class="card-text" data-aos="fade-up" data-aos-delay="600"><i class="fa-solid fa-box" style="color:#74C0FC;"></i><span
                                                 style="font-weight:bold;margin-left:10px;">Sức chứa tối
                                                 đa:</span> {{ $r->SUCCHUA }}</p>
                                         <p class="card-text">
-                                        <p class="card-text"><i class="fa-solid fa-ban" style="color:#74C0FC;margin-right:5px;"></i>
+                                        <p class="card-text" data-aos="fade-up" data-aos-delay="600"><i class="fa-solid fa-ban" style="color:#74C0FC;margin-right:5px;"></i>
                                             <span style="font-weight:bold;">Quy định:</span>
                                             {{ $r->QUYDINH }}
                                         </p>
@@ -169,7 +169,7 @@
                                   <div class="card-footer" style="border-radius:20px">
                                   <span class="text-title" style="color:white;">{{ $format_cost }}<sup>đ</sup></span>
                                   @endif
-                                  <a class="card-button" href="">
+                                  <a class="card-button" href="{{ route('Overview_CateRoom', ['id' => $r->ID]) }}">
                                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
                                           <path fill="#fafafa"
                                               d="M320 32c0-9.9-4.5-19.2-12.3-25.2S289.8-1.4 280.2 1l-179.9 45C79 51.3 64 70.5 64 92.5V448H32c-17.7 0-32 14.3-32 32s14.3 32 32 32H96 288h32V480 32zM256 256c0 17.7-10.7 32-24 32s-24-14.3-24-32s10.7-32 24-32s24 14.3 24 32zm96-128h96V480c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32s-14.3-32-32-32H512V128c0-35.3-28.7-64-64-64H352v64z" />
@@ -186,7 +186,7 @@
 
             <!-- Top Selling -->
             <div class="col-12">
-              <div class="card top-selling overflow-auto" style="border-radius:20px">
+              <div class="card top-selling overflow-auto" style="border-radius:20px" data-aos="zoom-in-up">
                 <div class="card-body pb-0">
                   <h5 class="card-title" style="margin-top:-10px; font-family: 'Montserrat', sans-serif;
                   font-optical-sizing: auto;
@@ -219,7 +219,7 @@
         <div class="col-lg-4">
 
           <!-- Recent Activity -->
-          <div class="card" style="border-radius:20px">
+          <div class="card" style="border-radius:20px" data-aos="fade-left">
             <div class="card-body">
               <h5 class="card-title" style="margin-top:-10px; font-family: 'Montserrat', sans-serif;
               font-optical-sizing: auto;
@@ -243,7 +243,7 @@
           </div><!-- End Recent Activity -->
 
           <!-- Website Traffic --> 
-          <div class="card" style="border-radius:20px">
+          <div class="card" style="border-radius:20px" data-aos="fade-left">
             <div class="card-body pb-0">
               <h5 class="card-title" style="margin-top:-10px; font-family: 'Montserrat', sans-serif;
               font-optical-sizing: auto;
@@ -251,13 +251,6 @@
               font-style: normal;">Số lượng <span>| từng loại phòng</span></h5>
 
               <div id="trafficChart" style="min-height: 400px;" class="echart"></div>
-
-              @php
-                  $cc = 50;
-                  $pt = 20;
-                  $gr = 10;
-              @endphp
-
               <script>
                 document.addEventListener("DOMContentLoaded", () => {
                   echarts.init(document.querySelector("#trafficChart")).setOption({
@@ -287,18 +280,13 @@
                       labelLine: {
                         show: false
                       },
-                      data: [{
-                          value: {{ $cc }},
-                          name: 'Phòng cao cấp'
-                        },
-                        {
-                          value: {{ $pt }},
-                          name: 'Phòng phổ thông'
-                        },
-                        {
-                          value: {{ $gr }},
-                          name: 'Phòng giá rẻ'
-                        }
+                      data: [
+                        @foreach ($listCateRoom as $x)
+                          {
+                            value: {{ $x->phong->count() }},
+                            name: "{{ $x->TENLOAIPHONG }}"
+                          },
+                        @endforeach
                       ]
                     }]
                   });
@@ -309,7 +297,7 @@
           </div><!-- End Website Traffic -->
 
           <!-- News & Updates Traffic -->
-          <div class="card" style="border-radius:20px">
+          <div class="card" style="border-radius:20px" data-aos="zoom-in-left">
             <div class="card-body pb-0">
               <h5 class="card-title" style="margin-top:-10px; font-family: 'Montserrat', sans-serif;
               font-optical-sizing: auto;

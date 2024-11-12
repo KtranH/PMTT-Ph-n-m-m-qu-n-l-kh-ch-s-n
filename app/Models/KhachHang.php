@@ -21,7 +21,7 @@ class KhachHang extends Authenticatable
 
     public function danhGia()
     {
-        return $this->hasMany(DanhGia::class);
+        return $this->hasMany(DanhGia::class, 'KHACHHANG_ID', 'ID');
     }
 
     public function gioHang()
@@ -31,7 +31,11 @@ class KhachHang extends Authenticatable
 
     public function phieuDatPhong()
     {
-        return $this->hasMany(ChiTietPhieuDatPhong::class, 'KHACHHANG_ID');
+        return $this->hasMany(PhieuDatPhong::class, 'KHACHHANG_ID', 'ID');
+    }
+    public function chiTietPhieuNhanPhong()
+    {
+        return $this->hasMany(ChiTietPhieuNhanPhong::class, 'KHACHHANG_ID', 'ID');
     }
     protected $hidden = [
         'PASSWORD', 'remember_token',

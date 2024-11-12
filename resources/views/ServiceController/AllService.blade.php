@@ -28,10 +28,10 @@
                                     @php
                                     $format_cost = number_format($dv->GIA, 0, ',', '.');
                                     @endphp
-                                    <div class="col-md-6 mb-4" style="max-width:400px">
+                                    <div class="col-md-6 mb-4" style="max-width:400px" data-aos="fade-up">
                                          <div class="Ha card my-specific-card {{ $dv->ISDELETE == 1 ? 'disabled' : '' }}">
                                             <div class="card-img">
-                                                <img src="{{$dv->HINH}}" alt="" class="{{ $dv->ISDELETE == 1 ? 'grayscale' : '' }}"> 
+                                                <img src="{{$dv->HINH}}" loading="lazy" alt="" class="{{ $dv->ISDELETE == 1 ? 'grayscale' : '' }}"> 
                                             </div>
                                             <div class="card-info">
                                                 <p class="text-title"> {{ $dv->TENDICHVU }}</p>

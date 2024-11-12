@@ -12,14 +12,14 @@
     <nav class="header-nav ms-auto">
         <ul class="d-flex align-items-center">
             <li style="width:110px;margin-right:30px">
-                <button class="button_cart_khoi" style="width:100px;height:5px;margin-right:20px" title="Bạn đang có 0 sản phẩm trong giỏ">
-                    <span style="color: #ffffff">0</span>
+                <a class="button_cart_khoi" href="{{ route('cart') }}" style="width:100px;height:5px;margin-right:20px; cursor: pointer" id="cart-icon">
+                    <span id="cart-count" style="color: #ffffff">{{ $countCart }}</span>
                     <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i>
-                </button>
+                </a>
             </li>
             @if (Auth::check())
             <li class="nav-item dropdown pe-3">
-                <a class="nav-link nav-profile d-flex align-items-center pe-0" href="" data-bs-toggle="dropdown">
+                <a class="nav-link nav-profile d-flex align-items-center pe-0" href="{{route("homeAccount")}}" data-bs-toggle="dropdown">
                     <img src="{{ Auth::user()->AVATAR }}" alt="Profile" class="rounded-circle">
                     <span class="d-none d-md-block dropdown-toggle ps-2"> {{ Auth::user()->HOTEN }} </span>
                 </a><!-- End Profile Iamge Icon -->
@@ -34,7 +34,7 @@
                     </li>
 
                     <li>
-                        <a class="dropdown-item d-flex align-items-center" href="">
+                        <a class="dropdown-item d-flex align-items-center" href="{{ route("homeAccount") }}">
                             <i class="bi bi-person"></i>
                             <span>Tài khoản của bạn</span>
                         </a>
@@ -44,7 +44,7 @@
                     </li>
 
                     <li>
-                        <a class="dropdown-item d-flex align-items-center" href="">
+                        <a class="dropdown-item d-flex align-items-center" href="{{ route("homeAccount") }}">
                             <i class="bi bi-gear"></i>
                             <span>Tùy chỉnh</span>
                         </a>

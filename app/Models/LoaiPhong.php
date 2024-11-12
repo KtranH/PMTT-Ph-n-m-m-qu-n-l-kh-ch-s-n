@@ -20,7 +20,7 @@ class LoaiPhong extends Model
 
     public function phong()
     {
-        return $this->hasMany(Phong::class, 'LOAIPHONG_ID');
+        return $this->hasMany(Phong::class, 'LOAIPHONG_ID', 'ID');
     }
 
     public function gioHang()
@@ -30,6 +30,6 @@ class LoaiPhong extends Model
 
     public function phieuDatPhong()
     {
-        return $this->hasMany(PhieuDatPhong::class, 'LOAIPHONG_ID');
+        return $this->hasMany(PhieuDatPhong::class, 'LOAIPHONG_ID', 'ID');
     }
 }
