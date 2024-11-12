@@ -28,7 +28,8 @@ class Cart extends Controller
         $user = KhachHang::find(Auth::user()->ID);
         $user->gioHang()->detach($request->cartID);
         $countCart = $user->gioHang()->count();
-        return response()->json(['success' => true, 'countCart' => $countCart]);
+        $sumCart = $user->gioHang()->sum('GIATHUE');
+        return response()->json(['success' => true, 'countCart' => $countCart , 'sumCart' => $sumCart]);
     }
     public function DeleteAllCart()
     {

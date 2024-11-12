@@ -75,6 +75,9 @@ Route::middleware([CheckLogin::class])->group(function () {
     //List Booking
     Route::get('/listBooking', [Booking::class, 'Booking'])->name('listBooking');
 
+    //Setup Booking
+    Route::get('/setupBooking/{id}', [Booking::class, 'SetupBooking'])->name('setupBooking');
+
     //-------------------------------------------------------------------------------------------------------------------------------//
 
     //---------------------------------------------------REVIEW CONTROLLER----------------------------------------------------//

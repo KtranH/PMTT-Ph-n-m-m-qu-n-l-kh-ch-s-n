@@ -57,7 +57,9 @@
                                         </tbody>
                                     </table>        
                                     <div style="width:100%;display:flex; justify-content: flex-end;" data-aos="fade-up" data-aos-delay="600">
-                                        <h5 style="margin-right:20px">Tổng tiền trong giỏ: <span style="font-weight:bold;color:#fb5032">{{ number_format($selectCart->sum('GIATHUE')) }} VNĐ</span></h5>
+                                        <h5 style="margin-right:20px">
+                                            Tổng tiền trong giỏ: <span id="total-price" style="font-weight:bold;color:#fb5032">{{ number_format($selectCart->sum('GIATHUE')) }} VNĐ</span>
+                                        </h5>                                       
                                         <a class="button_over_khoi" href="" style="outline: 0;
                                         border: 0;
                                         display:flex;
@@ -152,6 +154,7 @@
                                                 }).then((result) => {
                                                     if (result.isConfirmed) {
                                                         var cartID = $(this).data('cart-id');
+                                                        var row = $(this).closest('tr');  
                                                             $.ajax({
                                                                 url: '{{ route("deleteCart") }}',
                                                                 type: 'DELETE',
@@ -166,6 +169,8 @@
                                                                         setTimeout(function() {
                                                                             $('#cart-icon').removeClass('cart-added');
                                                                         }, 1000);
+                                                                        $('#total-price').text(response.sumCart + " VNĐ");
+                                                                        row.remove();
                                                                         Swal.fire({
                                                                             icon: 'success',
                                                                             title: 'Đã xóa lựa  chọn',
@@ -174,6 +179,7 @@
                                                                             showConfirmButton: false,
                                                                             timer: 3000
                                                                         })
+                                                                        
                                                                     }
                                                                 },
                                                                 error: function(xhr, status, error) {

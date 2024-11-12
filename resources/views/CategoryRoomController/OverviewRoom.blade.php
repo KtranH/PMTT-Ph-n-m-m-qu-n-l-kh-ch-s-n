@@ -403,7 +403,7 @@
                         <i class="fa-solid fa-cart-shopping"></i>
                         Thêm vào danh sách!
                     </a>
-                    <a href="#" class="action-button book-now">
+                    <a href="{{ route('setupBooking', ['id' => $Overview_CateRoom->ID]) }}" class="action-button book-now">
                         <i class="fa-solid fa-receipt"></i>
                         Đặt ngay!
                     </a>
