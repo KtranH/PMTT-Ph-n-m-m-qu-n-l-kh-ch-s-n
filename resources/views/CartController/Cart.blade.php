@@ -1,5 +1,6 @@
 @extends('Layout')
 @section('body')
+
 <title>GTX - Giỏ hàng của bạn</title>
 
 <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
@@ -42,6 +43,7 @@
                                             <th scope="col">Tiện ích</th>
                                             <th scope="col">Số lượng</th>
                                             <th scope="col">Chức năng</th>
+                                            <th scope="col">Đặt phòng</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -52,15 +54,17 @@
                                                     <td>{{ number_format($item->GIATHUE) }} VNĐ</td>
                                                     <td>{{ $item->TIENICH }}</td>
                                                     <td>{{ $item->pivot->SOLUONG }}</td>
-                                                    <td><a type="button" href="{{ route("Overview_CateRoom", ['id' => $item->ID]) }}" class="btn btn-info" style="border-radius:20%;margin-right:20px;color:white;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;background-color:#74C0FC"><i class="fi fi-rr-file-edit"></i></a>
-                                                        <a type="button" class="btn btn-danger delete_cart" href="" style="border-radius:20%; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;" data-cart-id="{{ $item->ID }}"><i class="fi fi-br-cross"></i></a></td>
+                                                    <td><a href="" class="btn btn-info add_cart" style="border-radius:20%;margin-right:20px;color:white;background-color:#74C0FC" data-cart-id="{{ $item->ID }}"><i class="fa-solid fa-plus"></i></a>
+                                                        <a class="btn btn-danger delete_cart" href="" style="border-radius:20%; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;" data-cart-id="{{ $item->ID }}"><i class="fi fi-br-cross"></i></a>
+                                                    </td>
+                                                    <td><a href="" class="btn btn-success"><i class="fa-solid fa-check"></i></a></td>
                                                 </tr>              
                                             @endforeach
                                         </tbody>
                                     </table>        
                                     <div style="width:100%;display:flex; justify-content: flex-end;" data-aos="fade-up" data-aos-delay="600">
                                         <h5 style="margin-right:20px">
-                                            Tổng tiền trong giỏ: <span id="total-price" style="font-weight:bold;color:#fb5032">{{ number_format($selectCart->sum('GIATHUE')) }} VNĐ</span>
+                                            Tổng tiền trong giỏ: <span id="total-price" style="font-weight:bold;color:#fb5032">{{ number_format($selectCart->sum(function($item) { return $item->pivot->DONGIA; })) }} VNĐ</span>
                                         </h5>                                       
                                         <a class="button_over_khoi" href="" style="outline: 0;
                                         border: 0;
@@ -87,8 +91,8 @@
                                         justify-content: center;
                                         align-items: center;
                                         background: none;
+                                        background-color: #CC0F32;
                                         border-radius: 10px;
-                                        background-color: #fb5032;
                                         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
                                         padding: 15px;
                                         margin-top:-20px;
@@ -129,7 +133,7 @@
                                                                         icon: 'success',
                                                                         title: 'Làm mới thành công',
                                                                         toast: true,
-                                                                        position: 'bottom-right',
+                                                                        position: 'bottom-left',
                                                                         showConfirmButton: false,
                                                                         timer: 3000
                                                                     })
@@ -142,8 +146,24 @@
                                                     }
                                                 })
                                             });
+                                            let lastTimeDeleteCart = 0;
                                             $('.delete_cart').click(function(e) {
                                                 e.preventDefault();
+                                                const currentTime = new Date().getTime();
+                                                if (currentTime - lastTimeDeleteCart < 5000) {
+                                                    Swal.fire({
+                                                        icon: 'warning',
+                                                        title: 'Vui lòng đợi 5 giây trước khi thêm tiếp',
+                                                        toast: true,
+                                                        position: 'bottom-left',
+                                                        showConfirmButton: false,
+                                                        timer: 3000
+                                                    });
+                                                    return;
+                                                }
+
+                                                lastTimeDeleteCart = currentTime;
+
                                                 Swal.fire({
                                                     icon: 'warning',
                                                     title: 'Cảnh báo',
@@ -155,33 +175,65 @@
                                                     cancelButtonText: 'Hủy',
                                                 }).then((result) => {
                                                     if (result.isConfirmed) {
-                                                        var cartID = $(this).data('cart-id');
+                                                        var roomID = $(this).data('cart-id');
                                                         var row = $(this).closest('tr');  
+                                                        var quantityCell = $(this).closest('tr').find('td.green');
+
                                                             $.ajax({
                                                                 url: '{{ route("deleteCart") }}',
                                                                 type: 'DELETE',
                                                                 data: {
-                                                                    cartID: cartID,
+                                                                    roomID: roomID,
                                                                     _token: '{{ csrf_token() }}'
                                                                 },
                                                                 success: function(response) {
                                                                     if (response.success) {
-                                                                        $('#cart-count').text(response.countCart);
-                                                                        $('#cart-icon').addClass('cart-added');
-                                                                        setTimeout(function() {
-                                                                            $('#cart-icon').removeClass('cart-added');
-                                                                        }, 1000);
-                                                                        $('#total-price').text(response.sumCart + " VNĐ");
-                                                                        row.remove();
-                                                                        Swal.fire({
-                                                                            icon: 'success',
-                                                                            title: 'Đã xóa lựa  chọn',
-                                                                            toast: true,
-                                                                            position: 'bottom-right',
-                                                                            showConfirmButton: false,
-                                                                            timer: 3000
-                                                                        })
-                                                                        
+                                                                        if(response.delete)
+                                                                        {
+                                                                            console.log("check");
+                                                                            $('#cart-count').text(response.countCart);
+                                                                            $('#cart-icon').addClass('cart-added');
+                                                                            setTimeout(function() {
+                                                                                $('#cart-icon').removeClass('cart-added');
+                                                                            }, 1000);
+
+                                                                            $('#total-price').text(response.sumCart.toLocaleString('vi-VN') + " VNĐ");
+
+                                                                            row.remove();
+
+                                                                            Swal.fire({
+                                                                                icon: 'success',
+                                                                                title: 'Đã xóa lựa chọn 2',
+                                                                                toast: true,
+                                                                                position: 'bottom-left',
+                                                                                showConfirmButton: false,
+                                                                                timer: 3000
+                                                                            }) 
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            $('#cart-count').text(response.countCart);
+                                                                            $('#cart-icon').addClass('cart-added');
+                                                                            setTimeout(function() {
+                                                                                $('#cart-icon').removeClass('cart-added');
+                                                                            }, 1000);
+
+                                                                            $('#total-price').text(response.sumCart.toLocaleString('vi-VN') + " VNĐ");
+
+                                                                            quantityCell.slideUp(200, function() {
+                                                                                quantityCell.text(response.quantity); 
+                                                                                quantityCell.slideDown(200); 
+                                                                            });
+
+                                                                            Swal.fire({
+                                                                                icon: 'success',
+                                                                                title: 'Đã xóa lựa chọn',
+                                                                                toast: true,
+                                                                                position: 'bottom-left',
+                                                                                showConfirmButton: false,
+                                                                                timer: 3000
+                                                                            }) 
+                                                                        }
                                                                     }
                                                                 },
                                                                 error: function(xhr, status, error) {
@@ -191,6 +243,78 @@
                                                         }
                                                     })
                                             });
+                                            let lastTimeAddCart = 0;
+                                            $('.add_cart').click(function (e) {
+                                                e.preventDefault();
+                                                const currentTime = new Date().getTime();
+                                                if (currentTime - lastTimeAddCart < 5000) {
+                                                    Swal.fire({
+                                                        icon: 'warning',
+                                                        title: 'Vui lòng đợi 5 giây trước khi thêm tiếp',
+                                                        toast: true,
+                                                        position: 'bottom-left',
+                                                        showConfirmButton: false,
+                                                        timer: 3000,
+                                                    });
+                                                    return;
+                                                }
+
+                                                lastTimeAddCart = currentTime;
+
+                                                var roomID = $(this).data('cart-id');
+                                                var quantityCell = $(this).closest('tr').find('td.green');
+
+                                                $.ajax({
+                                                    url: '{{ route("addCart") }}',
+                                                    type: 'POST',
+                                                    data: {
+                                                        roomID: roomID,
+                                                        _token: '{{ csrf_token() }}',
+                                                    },
+                                                    success: function (response) {
+                                                        if (response.success) {
+                                                           
+                                                            quantityCell.slideUp(200, function() {
+                                                                quantityCell.text(response.quantity); 
+                                                                quantityCell.slideDown(200); 
+                                                            });
+
+                                                            $('#total-price').text(response.sumCart.toLocaleString('vi-VN') + " VNĐ");
+                                                            
+                                                            Swal.fire({
+                                                                icon: 'success',
+                                                                title: 'Thêm thành công',
+                                                                toast: true,
+                                                                position: 'bottom-left',
+                                                                showConfirmButton: false,
+                                                                timer: 3000,
+                                                            });
+                                                        } else {
+                                                            Swal.fire({
+                                                                icon: 'error',
+                                                                title: 'Có lỗi xảy ra',
+                                                                text: response.message,
+                                                                toast: true,
+                                                                position: 'bottom-left',
+                                                                showConfirmButton: false,
+                                                                timer: 3000,
+                                                            });
+                                                        }
+                                                    },
+                                                    error: function () {
+                                                        Swal.fire({
+                                                            icon: 'error',
+                                                            title: 'Lỗi',
+                                                            text: 'Không thể thêm sản phẩm vào giỏ hàng',
+                                                            toast: true,
+                                                            position: 'bottom-left',
+                                                            showConfirmButton: false,
+                                                            timer: 3000,
+                                                        });
+                                                    },
+                                                });
+                                            });
+
                                         });
                                     </script>
                                    @else

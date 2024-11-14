@@ -25,23 +25,55 @@ class Cart extends Controller
                 ->first();
             
             $user->gioHang()->updateExistingPivot($request->roomID, [
-                'SOLUONG' => $currentItem->pivot->SOLUONG + 1
+                'SOLUONG' => $currentItem->pivot->SOLUONG + 1, 'DONGIA' => $currentItem->GIATHUE * ($currentItem->pivot->SOLUONG + 1)
             ]);
         }
         else
         {
             $user->gioHang()->attach($request->roomID);
+            $user->gioHang()->updateExistingPivot($request->roomID, [
+                'DONGIA' => $user->gioHang()->wherePivot('LOAIPHONG_ID', $request->roomID)->first()->GIATHUE
+            ]);
         }
         $countCart = $user->gioHang()->count();
-        return response()->json(['success' => true, 'countCart' => $countCart]);
+        $quantity = $user->gioHang()->wherePivot('LOAIPHONG_ID', $request->roomID)->first()->pivot->SOLUONG;
+        $sumCart = $user->gioHang()->get()->sum(function ($item) {
+            return $item->pivot->DONGIA;
+        });
+        return response()->json(['success' => true, 'countCart' => $countCart, 'quantity' => $quantity, 'sumCart' => $sumCart]);
     }
     public function DeleteCart(Request $request)
     {
         $user = KhachHang::find(Auth::user()->ID);
-        $user->gioHang()->detach($request->cartID);
+        if($user->gioHang()->wherePivot('LOAIPHONG_ID', $request->roomID)->wherePivot('SOLUONG', '>', 1)->exists()) {
+            $currentItem = $user->gioHang()
+                ->wherePivot('LOAIPHONG_ID', $request->roomID)
+                ->first();
+            
+            $user->gioHang()->updateExistingPivot($request->roomID, [
+                'SOLUONG' => $currentItem->pivot->SOLUONG - 1, 'DONGIA' => $currentItem->GIATHUE * ($currentItem->pivot->SOLUONG - 1)
+            ]);
+            $flag = 0;
+        }
+        else
+        {
+            $user->gioHang()->detach($request->roomID);
+            $flag = 1;
+        }
         $countCart = $user->gioHang()->count();
-        $sumCart = $user->gioHang()->sum('GIATHUE');
-        return response()->json(['success' => true, 'countCart' => $countCart , 'sumCart' => $sumCart]);
+        $sumCart = $user->gioHang()->get()->sum(function ($item) {
+            return $item->pivot->DONGIA;
+        });
+        if($flag == 1)
+        {
+            $quantity = null;
+            return response()->json(['success' => true, 'countCart' => $countCart , 'sumCart' => $sumCart, 'quantity' => $quantity, 'delete' => true]);
+        }
+        else
+        {
+            $quantity = $user->gioHang()->wherePivot('LOAIPHONG_ID', $request->roomID)->first()->pivot->SOLUONG;
+            return response()->json(['success' => true, 'countCart' => $countCart , 'sumCart' => $sumCart, 'quantity' => $quantity, 'delete' => false]);
+        }
     }
     public function DeleteAllCart()
     {

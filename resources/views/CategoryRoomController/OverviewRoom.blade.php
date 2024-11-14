@@ -358,7 +358,7 @@
 
                 <!-- Room title and price -->
                 <div>
-                    <h2 class="room-title" style="font-weight: bold;">Loại phòng: {{ $Overview_CateRoom->TENLOAIPHONG }}</h2>
+                    <h2 class="room-title action-button book-now" style="font-weight: bold; width: 100%;color: white; padding: 10px; border-radius: 10px; box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">Loại phòng: {{ $Overview_CateRoom->TENLOAIPHONG }}</h2>
                     <div class="room-price" style="font-weight: bold;">Giá 1 đêm: {{ $Overview_CateRoom->GIATHUE }} VNĐ</div>
                 </div>
     
@@ -439,7 +439,7 @@
                             icon: 'warning',
                             title: 'Vui lòng đợi 5 giây trước khi thêm tiếp',
                             toast: true,
-                            position: 'bottom-right',
+                            position: 'bottom-left',
                             showConfirmButton: false,
                             timer: 3000
                         });
@@ -468,7 +468,7 @@
                                 icon: 'success',
                                 title: 'Thêm thành công',
                                 toast: true,
-                                position: 'bottom-right',
+                                position: 'bottom-left',
                                 showConfirmButton: false,
                                 timer: 3000
                                 });
@@ -479,7 +479,7 @@
                                 icon: 'error',
                                 title: 'Thao tác thất bại',
                                 toast: true,
-                                position: 'bottom-right',
+                                position: 'bottom-left',
                                 showConfirmButton: false,
                                 timer: 3000
                                 });

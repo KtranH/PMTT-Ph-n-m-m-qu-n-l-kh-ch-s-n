@@ -27,7 +27,8 @@ class KhachHang extends Authenticatable
     public function gioHang()
     {
         return $this->belongsToMany(LoaiPhong::class, 'giohang', 'KHACHHANG_ID', 'LOAIPHONG_ID')
-                    ->withPivot('SOLUONG');
+                    ->withPivot('SOLUONG')
+                    ->withPivot('DONGIA');
     }
 
     public function phieuDatPhong()
