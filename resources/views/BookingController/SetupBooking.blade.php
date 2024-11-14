@@ -1,5 +1,10 @@
 @extends('Layout')
 @section('body')
+    @php
+        $total_price = 0;
+        $booking_date = null;
+        $checkin_date = null;
+    @endphp
     <title>GTX - Thanh toán</title>
 
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
