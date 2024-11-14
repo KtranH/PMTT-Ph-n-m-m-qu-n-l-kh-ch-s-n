@@ -89,6 +89,7 @@
     <Compile Include="HINHLOAIPHONG.cs">
       <DependentUpon>DB_QLKS.tt</DependentUpon>
     </Compile>
+    <Compile Include="HOADON_DTO.cs" />
     <Compile Include="KHACHHANG.cs">
       <DependentUpon>DB_QLKS.tt</DependentUpon>
     </Compile>

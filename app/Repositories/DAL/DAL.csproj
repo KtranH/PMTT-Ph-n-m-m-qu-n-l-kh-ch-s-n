@@ -64,9 +64,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="DANGNHAP_DAL.cs" />
     <Compile Include="DICHVU_DAL.cs" />
+    <Compile Include="HOADON_DAL.cs" />
     <Compile Include="KHACHHANG_DAL.cs" />
     <Compile Include="LOAIPHONG_DAL.cs" />
+    <Compile Include="DATPHONG_DAL.cs" />
     <Compile Include="NHANVIEN_DAL.cs" />
     <Compile Include="PHIEUDATPHONG_DAL.cs" />
     <Compile Include="PHONG_DAL.cs" />
