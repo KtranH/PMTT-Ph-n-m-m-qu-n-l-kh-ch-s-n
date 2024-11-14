@@ -430,7 +430,26 @@
                     centerMode: true,
                     focusOnSelect: true
                 });
-                $('.add-to-cart').click(function() {
+                let lastClickTime = 0;
+                $('.add-to-cart').click(function(e) {
+                    e.preventDefault();
+                    const currentTime = new Date().getTime();
+                    if (currentTime - lastClickTime < 5000) { 
+                        Swal.fire({
+                            icon: 'warning',
+                            title: 'Vui lòng đợi 5 giây trước khi thêm tiếp',
+                            toast: true,
+                            position: 'bottom-right',
+                            showConfirmButton: false,
+                            timer: 3000
+                        });
+                        return;
+                    }
+
+                    lastClickTime = currentTime;
+                    const $button = $(this);
+                    $button.prop('disabled', true);
+
                     var roomID = {{ $Overview_CateRoom->ID }};
                         $.ajax({
                             url: '/addCart',
@@ -452,10 +471,23 @@
                                 position: 'bottom-right',
                                 showConfirmButton: false,
                                 timer: 3000
-                            });
+                                });
                             },
                             error: function(xhr, status, error) {
                                 alert(error);
+                                Swal.fire({
+                                icon: 'error',
+                                title: 'Thao tác thất bại',
+                                toast: true,
+                                position: 'bottom-right',
+                                showConfirmButton: false,
+                                timer: 3000
+                                });
+                            },
+                            complete: function() {
+                                setTimeout(function() {
+                                    $button.prop('disabled', false);
+                                }, 5000);
                             }
                         });
                     })

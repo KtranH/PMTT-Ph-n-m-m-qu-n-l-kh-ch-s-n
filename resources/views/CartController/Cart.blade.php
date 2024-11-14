@@ -40,16 +40,18 @@
                                             <th scope="col">Sức chứa</th>
                                             <th scope="col">Giá thuê</th>
                                             <th scope="col">Tiện ích</th>
+                                            <th scope="col">Số lượng</th>
                                             <th scope="col">Chức năng</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                             @foreach ($selectCart as $item)
                                                 <tr>
-                                                    <th scope="row"><a href="#" class="text-primary">{{ $item->TENLOAIPHONG }}</a></th>
+                                                    <th scope="row"><a href="{{ route("Overview_CateRoom", ['id' => $item->ID]) }}" class="text-primary">{{ $item->TENLOAIPHONG }}</a></th>
                                                     <td>{{ $item->SUCCHUA }}</td>
-                                                    <td>{{ number_format($item->GIATHUE) }}</td>
+                                                    <td>{{ number_format($item->GIATHUE) }} VNĐ</td>
                                                     <td>{{ $item->TIENICH }}</td>
+                                                    <td>{{ $item->pivot->SOLUONG }}</td>
                                                     <td><a type="button" href="{{ route("Overview_CateRoom", ['id' => $item->ID]) }}" class="btn btn-info" style="border-radius:20%;margin-right:20px;color:white;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;background-color:#74C0FC"><i class="fi fi-rr-file-edit"></i></a>
                                                         <a type="button" class="btn btn-danger delete_cart" href="" style="border-radius:20%; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;" data-cart-id="{{ $item->ID }}"><i class="fi fi-br-cross"></i></a></td>
                                                 </tr>              
