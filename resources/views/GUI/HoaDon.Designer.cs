@@ -69,11 +69,12 @@ namespace QLKS
             this.GR_DSPHONG.Controls.Add(this.FindBill);
             this.GR_DSPHONG.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(223)))), ((int)(((byte)(229)))));
             this.GR_DSPHONG.CustomBorderThickness = new System.Windows.Forms.Padding(0);
-            this.GR_DSPHONG.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GR_DSPHONG.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GR_DSPHONG.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.GR_DSPHONG.Location = new System.Drawing.Point(12, 12);
+            this.GR_DSPHONG.Location = new System.Drawing.Point(16, 15);
+            this.GR_DSPHONG.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.GR_DSPHONG.Name = "GR_DSPHONG";
-            this.GR_DSPHONG.Size = new System.Drawing.Size(1512, 401);
+            this.GR_DSPHONG.Size = new System.Drawing.Size(1479, 446);
             this.GR_DSPHONG.TabIndex = 6;
             this.GR_DSPHONG.Text = "Danh sách hóa đơn khả dụng";
             this.GR_DSPHONG.TextOffset = new System.Drawing.Point(0, 10);
@@ -84,7 +85,7 @@ namespace QLKS
             this.DT_DS_HD.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -94,17 +95,19 @@ namespace QLKS
             this.DT_DS_HD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DT_DS_HD.DefaultCellStyle = dataGridViewCellStyle3;
             this.DT_DS_HD.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.DT_DS_HD.Location = new System.Drawing.Point(3, 57);
+            this.DT_DS_HD.Location = new System.Drawing.Point(8, 84);
+            this.DT_DS_HD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DT_DS_HD.Name = "DT_DS_HD";
             this.DT_DS_HD.RowHeadersVisible = false;
-            this.DT_DS_HD.Size = new System.Drawing.Size(1506, 333);
+            this.DT_DS_HD.RowHeadersWidth = 51;
+            this.DT_DS_HD.Size = new System.Drawing.Size(1451, 336);
             this.DT_DS_HD.TabIndex = 11;
             this.DT_DS_HD.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.DT_DS_HD.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -115,14 +118,14 @@ namespace QLKS
             this.DT_DS_HD.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.DT_DS_HD.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.DT_DS_HD.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.DT_DS_HD.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DT_DS_HD.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DT_DS_HD.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.DT_DS_HD.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.DT_DS_HD.ThemeStyle.HeaderStyle.Height = 30;
             this.DT_DS_HD.ThemeStyle.ReadOnly = false;
             this.DT_DS_HD.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.DT_DS_HD.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.DT_DS_HD.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DT_DS_HD.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DT_DS_HD.ThemeStyle.RowsStyle.ForeColor = System.Drawing.SystemColors.WindowText;
             this.DT_DS_HD.ThemeStyle.RowsStyle.Height = 22;
             this.DT_DS_HD.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
@@ -145,12 +148,13 @@ namespace QLKS
             this.FindBill.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.FindBill.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.FindBill.IconRight = ((System.Drawing.Image)(resources.GetObject("FindBill.IconRight")));
-            this.FindBill.Location = new System.Drawing.Point(993, 15);
+            this.FindBill.Location = new System.Drawing.Point(791, 17);
+            this.FindBill.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.FindBill.Name = "FindBill";
             this.FindBill.PasswordChar = '\0';
             this.FindBill.PlaceholderText = "";
             this.FindBill.SelectedText = "";
-            this.FindBill.Size = new System.Drawing.Size(501, 36);
+            this.FindBill.Size = new System.Drawing.Size(668, 44);
             this.FindBill.TabIndex = 6;
             this.FindBill.Click += new System.EventHandler(this.FindBill_Click);
             this.FindBill.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FindBill_KeyDown);
@@ -164,11 +168,12 @@ namespace QLKS
             this.guna2GroupBox1.Controls.Add(this.guna2TextBox1);
             this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(223)))), ((int)(((byte)(229)))));
             this.guna2GroupBox1.CustomBorderThickness = new System.Windows.Forms.Padding(0);
-            this.guna2GroupBox1.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2GroupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.guna2GroupBox1.Location = new System.Drawing.Point(15, 447);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(24, 478);
+            this.guna2GroupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.Size = new System.Drawing.Size(722, 382);
+            this.guna2GroupBox1.Size = new System.Drawing.Size(854, 370);
             this.guna2GroupBox1.TabIndex = 7;
             this.guna2GroupBox1.Text = "Chi tiết đặt phòng";
             this.guna2GroupBox1.TextOffset = new System.Drawing.Point(0, 10);
@@ -179,7 +184,7 @@ namespace QLKS
             this.DT_DS_KH.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -189,17 +194,19 @@ namespace QLKS
             this.DT_DS_KH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DT_DS_KH.DefaultCellStyle = dataGridViewCellStyle6;
             this.DT_DS_KH.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.DT_DS_KH.Location = new System.Drawing.Point(3, 48);
+            this.DT_DS_KH.Location = new System.Drawing.Point(20, 59);
+            this.DT_DS_KH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DT_DS_KH.Name = "DT_DS_KH";
             this.DT_DS_KH.RowHeadersVisible = false;
-            this.DT_DS_KH.Size = new System.Drawing.Size(716, 321);
+            this.DT_DS_KH.RowHeadersWidth = 51;
+            this.DT_DS_KH.Size = new System.Drawing.Size(813, 278);
             this.DT_DS_KH.TabIndex = 11;
             this.DT_DS_KH.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.DT_DS_KH.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -210,14 +217,14 @@ namespace QLKS
             this.DT_DS_KH.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.DT_DS_KH.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.DT_DS_KH.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.DT_DS_KH.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DT_DS_KH.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DT_DS_KH.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.DT_DS_KH.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.DT_DS_KH.ThemeStyle.HeaderStyle.Height = 30;
             this.DT_DS_KH.ThemeStyle.ReadOnly = false;
             this.DT_DS_KH.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.DT_DS_KH.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.DT_DS_KH.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DT_DS_KH.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DT_DS_KH.ThemeStyle.RowsStyle.ForeColor = System.Drawing.SystemColors.WindowText;
             this.DT_DS_KH.ThemeStyle.RowsStyle.Height = 22;
             this.DT_DS_KH.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
@@ -238,12 +245,13 @@ namespace QLKS
             this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox1.IconRight = ((System.Drawing.Image)(resources.GetObject("guna2TextBox1.IconRight")));
-            this.guna2TextBox1.Location = new System.Drawing.Point(993, 15);
+            this.guna2TextBox1.Location = new System.Drawing.Point(1324, 18);
+            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.guna2TextBox1.Name = "guna2TextBox1";
             this.guna2TextBox1.PasswordChar = '\0';
             this.guna2TextBox1.PlaceholderText = "";
             this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(501, 36);
+            this.guna2TextBox1.Size = new System.Drawing.Size(668, 44);
             this.guna2TextBox1.TabIndex = 6;
             // 
             // guna2GroupBox2
@@ -264,11 +272,12 @@ namespace QLKS
             this.guna2GroupBox2.Controls.Add(this.guna2TextBox2);
             this.guna2GroupBox2.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(223)))), ((int)(((byte)(229)))));
             this.guna2GroupBox2.CustomBorderThickness = new System.Windows.Forms.Padding(0);
-            this.guna2GroupBox2.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2GroupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox2.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.guna2GroupBox2.Location = new System.Drawing.Point(773, 447);
+            this.guna2GroupBox2.Location = new System.Drawing.Point(894, 478);
+            this.guna2GroupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
-            this.guna2GroupBox2.Size = new System.Drawing.Size(751, 382);
+            this.guna2GroupBox2.Size = new System.Drawing.Size(601, 370);
             this.guna2GroupBox2.TabIndex = 8;
             this.guna2GroupBox2.Text = "Thông tin hóa đơn thanh toán";
             this.guna2GroupBox2.TextOffset = new System.Drawing.Point(0, 10);
@@ -287,13 +296,14 @@ namespace QLKS
             this.MAPDP.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.MAPDP.ForeColor = System.Drawing.Color.White;
             this.MAPDP.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.MAPDP.Location = new System.Drawing.Point(649, 347);
+            this.MAPDP.Location = new System.Drawing.Point(865, 427);
+            this.MAPDP.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MAPDP.Name = "MAPDP";
             this.MAPDP.PasswordChar = '\0';
             this.MAPDP.PlaceholderForeColor = System.Drawing.Color.White;
             this.MAPDP.PlaceholderText = "";
             this.MAPDP.SelectedText = "";
-            this.MAPDP.Size = new System.Drawing.Size(87, 22);
+            this.MAPDP.Size = new System.Drawing.Size(116, 27);
             this.MAPDP.TabIndex = 12;
             // 
             // TEXT_TENPHONG
@@ -311,22 +321,24 @@ namespace QLKS
             this.TEXT_TENPHONG.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TEXT_TENPHONG.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TEXT_TENPHONG.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TEXT_TENPHONG.Location = new System.Drawing.Point(385, 210);
+            this.TEXT_TENPHONG.Location = new System.Drawing.Point(224, 207);
+            this.TEXT_TENPHONG.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TEXT_TENPHONG.Name = "TEXT_TENPHONG";
             this.TEXT_TENPHONG.PasswordChar = '\0';
             this.TEXT_TENPHONG.PlaceholderText = "";
             this.TEXT_TENPHONG.ReadOnly = true;
             this.TEXT_TENPHONG.SelectedText = "";
-            this.TEXT_TENPHONG.Size = new System.Drawing.Size(351, 41);
+            this.TEXT_TENPHONG.Size = new System.Drawing.Size(357, 50);
             this.TEXT_TENPHONG.TabIndex = 48;
             // 
             // guna2HtmlLabel3
             // 
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Montserrat", 12.25F);
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(385, 185);
+            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(224, 177);
+            this.guna2HtmlLabel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(91, 24);
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(98, 27);
             this.guna2HtmlLabel3.TabIndex = 47;
             this.guna2HtmlLabel3.Text = "Tên phòng";
             // 
@@ -345,22 +357,24 @@ namespace QLKS
             this.TEXT_MAPDP.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TEXT_MAPDP.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TEXT_MAPDP.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TEXT_MAPDP.Location = new System.Drawing.Point(14, 210);
+            this.TEXT_MAPDP.Location = new System.Drawing.Point(19, 207);
+            this.TEXT_MAPDP.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TEXT_MAPDP.Name = "TEXT_MAPDP";
             this.TEXT_MAPDP.PasswordChar = '\0';
             this.TEXT_MAPDP.PlaceholderText = "";
             this.TEXT_MAPDP.ReadOnly = true;
             this.TEXT_MAPDP.SelectedText = "";
-            this.TEXT_MAPDP.Size = new System.Drawing.Size(343, 41);
+            this.TEXT_MAPDP.Size = new System.Drawing.Size(176, 50);
             this.TEXT_MAPDP.TabIndex = 46;
             // 
             // guna2HtmlLabel2
             // 
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Montserrat", 12.25F);
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(14, 185);
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(19, 177);
+            this.guna2HtmlLabel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(166, 24);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(176, 27);
             this.guna2HtmlLabel2.TabIndex = 45;
             this.guna2HtmlLabel2.Text = "Mã phiếu đặt phòng";
             // 
@@ -379,22 +393,24 @@ namespace QLKS
             this.TEXT_NV.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TEXT_NV.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TEXT_NV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TEXT_NV.Location = new System.Drawing.Point(382, 98);
+            this.TEXT_NV.Location = new System.Drawing.Point(220, 101);
+            this.TEXT_NV.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TEXT_NV.Name = "TEXT_NV";
             this.TEXT_NV.PasswordChar = '\0';
             this.TEXT_NV.PlaceholderText = "";
             this.TEXT_NV.ReadOnly = true;
             this.TEXT_NV.SelectedText = "";
-            this.TEXT_NV.Size = new System.Drawing.Size(354, 41);
+            this.TEXT_NV.Size = new System.Drawing.Size(361, 50);
             this.TEXT_NV.TabIndex = 44;
             // 
             // guna2HtmlLabel1
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Montserrat", 12.25F);
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(385, 73);
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(224, 70);
+            this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(166, 24);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(175, 27);
             this.guna2HtmlLabel1.TabIndex = 43;
             this.guna2HtmlLabel1.Text = "Nhân viên thực hiện";
             // 
@@ -413,22 +429,24 @@ namespace QLKS
             this.TEXT_MAHD.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TEXT_MAHD.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TEXT_MAHD.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TEXT_MAHD.Location = new System.Drawing.Point(14, 98);
+            this.TEXT_MAHD.Location = new System.Drawing.Point(19, 101);
+            this.TEXT_MAHD.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TEXT_MAHD.Name = "TEXT_MAHD";
             this.TEXT_MAHD.PasswordChar = '\0';
             this.TEXT_MAHD.PlaceholderText = "";
             this.TEXT_MAHD.ReadOnly = true;
             this.TEXT_MAHD.SelectedText = "";
-            this.TEXT_MAHD.Size = new System.Drawing.Size(343, 41);
+            this.TEXT_MAHD.Size = new System.Drawing.Size(176, 50);
             this.TEXT_MAHD.TabIndex = 42;
             // 
             // guna2HtmlLabel6
             // 
             this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel6.Font = new System.Drawing.Font("Montserrat", 12.25F);
-            this.guna2HtmlLabel6.Location = new System.Drawing.Point(14, 73);
+            this.guna2HtmlLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.guna2HtmlLabel6.Location = new System.Drawing.Point(19, 70);
+            this.guna2HtmlLabel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
-            this.guna2HtmlLabel6.Size = new System.Drawing.Size(97, 24);
+            this.guna2HtmlLabel6.Size = new System.Drawing.Size(107, 27);
             this.guna2HtmlLabel6.TabIndex = 41;
             this.guna2HtmlLabel6.Text = "Mã hóa đơn";
             // 
@@ -443,12 +461,13 @@ namespace QLKS
             this.BTN_THANHTOAN.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.BTN_THANHTOAN.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.BTN_THANHTOAN.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(223)))), ((int)(((byte)(229)))));
-            this.BTN_THANHTOAN.Font = new System.Drawing.Font("Montserrat Black", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTN_THANHTOAN.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTN_THANHTOAN.ForeColor = System.Drawing.Color.White;
             this.BTN_THANHTOAN.Image = ((System.Drawing.Image)(resources.GetObject("BTN_THANHTOAN.Image")));
-            this.BTN_THANHTOAN.Location = new System.Drawing.Point(416, 327);
+            this.BTN_THANHTOAN.Location = new System.Drawing.Point(354, 296);
+            this.BTN_THANHTOAN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BTN_THANHTOAN.Name = "BTN_THANHTOAN";
-            this.BTN_THANHTOAN.Size = new System.Drawing.Size(151, 42);
+            this.BTN_THANHTOAN.Size = new System.Drawing.Size(201, 52);
             this.BTN_THANHTOAN.TabIndex = 40;
             this.BTN_THANHTOAN.Text = "Thanh toán";
             this.BTN_THANHTOAN.Click += new System.EventHandler(this.BTN_THANHTOAN_Click);
@@ -464,12 +483,13 @@ namespace QLKS
             this.BTN_HUY.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.BTN_HUY.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.BTN_HUY.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(223)))), ((int)(((byte)(229)))));
-            this.BTN_HUY.Font = new System.Drawing.Font("Montserrat Black", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTN_HUY.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTN_HUY.ForeColor = System.Drawing.Color.White;
             this.BTN_HUY.Image = ((System.Drawing.Image)(resources.GetObject("BTN_HUY.Image")));
-            this.BTN_HUY.Location = new System.Drawing.Point(182, 327);
+            this.BTN_HUY.Location = new System.Drawing.Point(42, 296);
+            this.BTN_HUY.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BTN_HUY.Name = "BTN_HUY";
-            this.BTN_HUY.Size = new System.Drawing.Size(151, 42);
+            this.BTN_HUY.Size = new System.Drawing.Size(201, 52);
             this.BTN_HUY.TabIndex = 39;
             this.BTN_HUY.Text = "Hủy";
             this.BTN_HUY.Click += new System.EventHandler(this.BTN_HUY_Click);
@@ -489,25 +509,27 @@ namespace QLKS
             this.guna2TextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox2.IconRight = ((System.Drawing.Image)(resources.GetObject("guna2TextBox2.IconRight")));
-            this.guna2TextBox2.Location = new System.Drawing.Point(993, 15);
+            this.guna2TextBox2.Location = new System.Drawing.Point(1324, 18);
+            this.guna2TextBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.guna2TextBox2.Name = "guna2TextBox2";
             this.guna2TextBox2.PasswordChar = '\0';
             this.guna2TextBox2.PlaceholderText = "";
             this.guna2TextBox2.SelectedText = "";
-            this.guna2TextBox2.Size = new System.Drawing.Size(501, 36);
+            this.guna2TextBox2.Size = new System.Drawing.Size(668, 44);
             this.guna2TextBox2.TabIndex = 6;
             // 
             // HoaDon
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.ClientSize = new System.Drawing.Size(1536, 841);
+            this.ClientSize = new System.Drawing.Size(1942, 1035);
             this.Controls.Add(this.guna2GroupBox2);
             this.Controls.Add(this.guna2GroupBox1);
             this.Controls.Add(this.GR_DSPHONG);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "HoaDon";
             this.Text = "GTX - Thanh toán";
             this.Load += new System.EventHandler(this.HoaDon_Load);

@@ -10,21 +10,19 @@ class PhieuDatPhong extends Model
     protected $table = 'phieudatphong';
 
     protected $fillable = [
-        'LOAIPHONG_ID', 'NGAYNHANPHONG', 'NGAYTRAPHONGDUKIEN', 'THANHTOAN', 'TINHTRANG'
+        'LOAIPHONG_ID', 'NGAYNHANPHONG', 'NGAYTRAPHONGDUKIEN', 'THANHTOAN', 'TINHTRANG', 'KHACHHANG_ID'
     ];
 
     public function loaiPhong()
     {
         return $this->belongsTo(LoaiPhong::class, 'LOAIPHONG_ID');
     }
-
-    public function chiTietPhieuDatPhong()
-    {
-        return $this->hasMany(ChiTietPhieuDatPhong::class, 'PHIEUDATPHONG_ID');
-    }
-
     public function phieuNhanPhong()
     {
         return $this->hasOne(PhieuNhanPhong::class, 'PHIEUDATPHONG_ID');
+    }
+    public function khachDatPhong()
+    {
+        return $this->belongsTo(KhachHang::class, 'KHACHHANG_ID');
     }
 }

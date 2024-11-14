@@ -1,3 +1,4 @@
+using BLL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,19 +15,15 @@ namespace QLKS
     public partial class KhachHang : Form
     {
         //NET_QLKS1Entities DB = new NET_QLKS1Entities();
-        DataTable KH = new DataTable();
+        KHACHHANG_BLL KH = new KHACHHANG_BLL();
         public KhachHang()
         {
             InitializeComponent();
         }
         public void LoadKH()
         {
-            KH = new DataTable();
-            KH.Columns.Add("Mã khách hàng");
-            KH.Columns.Add("Tên khách hàng");
-            KH.Columns.Add("Số điện thoại");
-            KH.Columns.Add("Căn cước công dân");
-            DT_DS_KH.DataSource = KH;
+           
+            DT_DS_KH.DataSource = KH.GetAllKhachHang();
             DT_DS_KH.AllowUserToAddRows = false;
             DT_DS_KH.ReadOnly = true;
         }

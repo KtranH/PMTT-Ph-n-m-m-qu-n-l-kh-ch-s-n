@@ -32,4 +32,8 @@ class PhieuNhanPhong extends Model
     {
         return $this->hasOne(PhieuTraPhong::class, 'PHIEUNHANPHONG_ID');
     }
+    public function chiTietPhieuNhanPhong()
+    {
+        return $this->hasMany(ChiTietPhieuNhanPhong::class, 'PHIEUNHANPHONG_ID');
+    }
 }

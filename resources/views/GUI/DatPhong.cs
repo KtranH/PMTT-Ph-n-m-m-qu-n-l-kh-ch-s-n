@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL;
 
 
 namespace QLKS
@@ -15,10 +16,12 @@ namespace QLKS
     {
         //NET_QLKS1Entities DB = new NET_QLKS1Entities();
         DataTable phong = new DataTable();
+        private DATPHONG_BLL datPhongBLL;
         public string UserCurrentDatPhong { get; set; }
         public DatPhong()
         {
             InitializeComponent();
+            datPhongBLL = new DATPHONG_BLL();
         }
        
         public void LoadTinhTrang()
@@ -30,14 +33,11 @@ namespace QLKS
         }
         public void LoadPhong()
         {
-            phong = new DataTable();
-            phong.Columns.Add("Mã phòng");
-            phong.Columns.Add("Tên phòng");
-            phong.Columns.Add("Vị trí");
-            phong.Columns.Add("Giá thuê");
-            phong.Columns.Add("Tình trạng");
-            phong.Columns.Add("Loại phòng");
-          
+            DataTable datPhong = datPhongBLL.GetDatPhongList();
+            DT_DS_PHONG.DataSource = datPhong;
+            DT_DS_PHONG.ReadOnly = true;
+            DT_DS_PHONG.Refresh();
+
         }
         public void ConnectionControl(DataTable dt)
         {
@@ -46,7 +46,7 @@ namespace QLKS
         }
         private void DatPhong_Load(object sender, EventArgs e)
         {
-          
+            LoadPhong();
         }
 
         private void OP_PHONG_SelectedValueChanged(object sender, EventArgs e)
@@ -86,25 +86,21 @@ namespace QLKS
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if (FindRoom.Text.Trim() != "")
+                string tenPH = FindRoom.Text.Trim();
+                if (!string.IsNullOrEmpty(tenPH))
                 {
-                    string tenPH = FindRoom.Text.Trim();
                     tenPH = tenPH.ToLower();
-                    //var find = DB.PHONGs.Where(x => x.TENPHONG.ToLower().Contains(tenPH) && x.TINHTRANG.Equals("Trống")).ToList();
-                    phong = new DataTable();
-                    phong.Columns.Add("Mã phòng");
-                    phong.Columns.Add("Tên phòng");
-                    phong.Columns.Add("Vị trí");
-                    phong.Columns.Add("Giá thuê");
-                    phong.Columns.Add("Tình trạng");
-                    phong.Columns.Add("Tên loại phòng");
-                    //foreach (var item in find)
-                    //{
-                    //    phong.Rows.Add(item.MAPH, item.TENPHONG, item.VITRI, item.GIATHUE, item.TINHTRANG, item.LOAIPHONG.TENLOAI);
-                    //}
-                    DT_DS_PHONG.DataSource = phong;
-                    DT_DS_PHONG.ReadOnly = true;
-                    DT_DS_PHONG.Refresh();
+                    var filteredRows = phong.AsEnumerable()
+                                            .Where(row => row.Field<string>("Tên phòng").ToLower().Contains(tenPH))
+                                            .ToList();
+
+                    DataTable filteredPhong = phong.Clone();
+                    foreach (var row in filteredRows)
+                    {
+                        filteredPhong.ImportRow(row);
+                    }
+
+                    DT_DS_PHONG.DataSource = filteredPhong;
                 }
                 else
                 {
@@ -115,7 +111,12 @@ namespace QLKS
 
         private void DT_DS_PHONG_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            ConnectionControl(phong);
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = DT_DS_PHONG.Rows[e.RowIndex];
+                string tenPhong = row.Cells["Tên phòng"].Value.ToString();
+                TEXT_PHONGKHADUNG.Text = tenPhong;
+            }
         }
 
         private void BTN_CONTINUE_Click(object sender, EventArgs e)
@@ -158,15 +159,15 @@ namespace QLKS
 
         private void OP_STATE_SelectedValueChanged(object sender, EventArgs e)
         {
-            if(OP_STATE.Text == "Đã xác nhận")
+            if (OP_STATE.SelectedItem.ToString() == "Đã xác nhận")
             {
                 DATE_DATPHONG.Value = DateTime.Now;
                 DATE_DATPHONG.Enabled = false;
-            }    
+            }
             else
             {
                 DATE_DATPHONG.Enabled = true;
-            }    
+            }
         }
     }
 }

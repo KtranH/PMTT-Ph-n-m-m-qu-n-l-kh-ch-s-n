@@ -64,18 +64,20 @@ namespace QLKS
             this.guna2GroupBox1.CustomBorderThickness = new System.Windows.Forms.Padding(0);
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2GroupBox1.Location = new System.Drawing.Point(12, 12);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(16, 15);
+            this.guna2GroupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.Size = new System.Drawing.Size(870, 817);
+            this.guna2GroupBox1.Size = new System.Drawing.Size(1520, 569);
             this.guna2GroupBox1.TabIndex = 0;
             // 
             // guna2HtmlLabel8
             // 
             this.guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel8.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel8.Location = new System.Drawing.Point(28, 10);
+            this.guna2HtmlLabel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel8.Location = new System.Drawing.Point(21, 14);
+            this.guna2HtmlLabel8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2HtmlLabel8.Name = "guna2HtmlLabel8";
-            this.guna2HtmlLabel8.Size = new System.Drawing.Size(349, 17);
+            this.guna2HtmlLabel8.Size = new System.Drawing.Size(410, 19);
             this.guna2HtmlLabel8.TabIndex = 9;
             this.guna2HtmlLabel8.Text = "Lưu ý: Mọi thứ chỉ được lưu lại khi bạn ấn vào nút lưu và thay đổi!";
             // 
@@ -91,11 +93,12 @@ namespace QLKS
             this.BTN_SAVEDV.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.BTN_SAVEDV.Enabled = false;
             this.BTN_SAVEDV.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(223)))), ((int)(((byte)(229)))));
-            this.BTN_SAVEDV.Font = new System.Drawing.Font("Montserrat Black", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTN_SAVEDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTN_SAVEDV.ForeColor = System.Drawing.Color.White;
-            this.BTN_SAVEDV.Location = new System.Drawing.Point(28, 33);
+            this.BTN_SAVEDV.Location = new System.Drawing.Point(21, 41);
+            this.BTN_SAVEDV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BTN_SAVEDV.Name = "BTN_SAVEDV";
-            this.BTN_SAVEDV.Size = new System.Drawing.Size(151, 42);
+            this.BTN_SAVEDV.Size = new System.Drawing.Size(201, 52);
             this.BTN_SAVEDV.TabIndex = 23;
             this.BTN_SAVEDV.Text = "Lưu và thay đổi";
             this.BTN_SAVEDV.Click += new System.EventHandler(this.BTN_SAVEDV_Click);
@@ -116,12 +119,13 @@ namespace QLKS
             this.FindDV.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.FindDV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.FindDV.IconRight = ((System.Drawing.Image)(resources.GetObject("FindDV.IconRight")));
-            this.FindDV.Location = new System.Drawing.Point(639, 39);
+            this.FindDV.Location = new System.Drawing.Point(1215, 48);
+            this.FindDV.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.FindDV.Name = "FindDV";
             this.FindDV.PasswordChar = '\0';
             this.FindDV.PlaceholderText = "";
             this.FindDV.SelectedText = "";
-            this.FindDV.Size = new System.Drawing.Size(202, 36);
+            this.FindDV.Size = new System.Drawing.Size(269, 44);
             this.FindDV.TabIndex = 22;
             this.FindDV.Click += new System.EventHandler(this.FindDV_Click);
             this.FindDV.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FindDV_KeyDown);
@@ -150,10 +154,12 @@ namespace QLKS
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DT_DS_DV.DefaultCellStyle = dataGridViewCellStyle3;
             this.DT_DS_DV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.DT_DS_DV.Location = new System.Drawing.Point(3, 82);
+            this.DT_DS_DV.Location = new System.Drawing.Point(21, 101);
+            this.DT_DS_DV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DT_DS_DV.Name = "DT_DS_DV";
             this.DT_DS_DV.RowHeadersVisible = false;
-            this.DT_DS_DV.Size = new System.Drawing.Size(864, 671);
+            this.DT_DS_DV.RowHeadersWidth = 51;
+            this.DT_DS_DV.Size = new System.Drawing.Size(1463, 357);
             this.DT_DS_DV.TabIndex = 0;
             this.DT_DS_DV.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.DT_DS_DV.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -190,12 +196,13 @@ namespace QLKS
             this.BTN_THEMDV.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.BTN_THEMDV.Enabled = false;
             this.BTN_THEMDV.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(223)))), ((int)(((byte)(229)))));
-            this.BTN_THEMDV.Font = new System.Drawing.Font("Montserrat Black", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTN_THEMDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTN_THEMDV.ForeColor = System.Drawing.Color.White;
             this.BTN_THEMDV.Image = ((System.Drawing.Image)(resources.GetObject("BTN_THEMDV.Image")));
-            this.BTN_THEMDV.Location = new System.Drawing.Point(701, 759);
+            this.BTN_THEMDV.Location = new System.Drawing.Point(1283, 482);
+            this.BTN_THEMDV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BTN_THEMDV.Name = "BTN_THEMDV";
-            this.BTN_THEMDV.Size = new System.Drawing.Size(151, 42);
+            this.BTN_THEMDV.Size = new System.Drawing.Size(201, 52);
             this.BTN_THEMDV.TabIndex = 21;
             this.BTN_THEMDV.Text = "Thêm dịch vụ";
             this.BTN_THEMDV.Click += new System.EventHandler(this.BTN_THEMDV_Click);
@@ -213,29 +220,32 @@ namespace QLKS
             this.guna2GroupBox2.CustomBorderThickness = new System.Windows.Forms.Padding(0);
             this.guna2GroupBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.Black;
-            this.guna2GroupBox2.Location = new System.Drawing.Point(923, 265);
+            this.guna2GroupBox2.Location = new System.Drawing.Point(20, 608);
+            this.guna2GroupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
-            this.guna2GroupBox2.Size = new System.Drawing.Size(601, 290);
+            this.guna2GroupBox2.Size = new System.Drawing.Size(1516, 146);
             this.guna2GroupBox2.TabIndex = 1;
             // 
             // guna2HtmlLabel1
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Montserrat", 12.25F);
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(38, 129);
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(797, 23);
+            this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(91, 24);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(100, 27);
             this.guna2HtmlLabel1.TabIndex = 28;
             this.guna2HtmlLabel1.Text = "Giá dịch vụ";
             // 
             // guna2HtmlLabel5
             // 
             this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Montserrat", 12.25F);
+            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.guna2HtmlLabel5.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(38, 51);
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(17, 23);
+            this.guna2HtmlLabel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            this.guna2HtmlLabel5.Size = new System.Drawing.Size(96, 24);
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(105, 27);
             this.guna2HtmlLabel5.TabIndex = 27;
             this.guna2HtmlLabel5.Text = "Tên dịch vụ";
             // 
@@ -254,13 +264,14 @@ namespace QLKS
             this.MADV.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.MADV.ForeColor = System.Drawing.Color.White;
             this.MADV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.MADV.Location = new System.Drawing.Point(38, 235);
+            this.MADV.Location = new System.Drawing.Point(1090, 59);
+            this.MADV.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MADV.Name = "MADV";
             this.MADV.PasswordChar = '\0';
             this.MADV.PlaceholderForeColor = System.Drawing.Color.White;
             this.MADV.PlaceholderText = "";
             this.MADV.SelectedText = "";
-            this.MADV.Size = new System.Drawing.Size(124, 41);
+            this.MADV.Size = new System.Drawing.Size(165, 50);
             this.MADV.TabIndex = 25;
             this.MADV.Visible = false;
             // 
@@ -280,12 +291,13 @@ namespace QLKS
             this.TEXT_GIADV.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TEXT_GIADV.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TEXT_GIADV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TEXT_GIADV.Location = new System.Drawing.Point(38, 159);
+            this.TEXT_GIADV.Location = new System.Drawing.Point(797, 59);
+            this.TEXT_GIADV.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TEXT_GIADV.Name = "TEXT_GIADV";
             this.TEXT_GIADV.PasswordChar = '\0';
             this.TEXT_GIADV.PlaceholderText = "Giá dịch vụ";
             this.TEXT_GIADV.SelectedText = "";
-            this.TEXT_GIADV.Size = new System.Drawing.Size(308, 41);
+            this.TEXT_GIADV.Size = new System.Drawing.Size(257, 50);
             this.TEXT_GIADV.TabIndex = 24;
             this.TEXT_GIADV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TEXT_GIADV_KeyPress);
             // 
@@ -305,12 +317,13 @@ namespace QLKS
             this.TEXT_TENDV.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TEXT_TENDV.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TEXT_TENDV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TEXT_TENDV.Location = new System.Drawing.Point(38, 82);
+            this.TEXT_TENDV.Location = new System.Drawing.Point(17, 59);
+            this.TEXT_TENDV.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TEXT_TENDV.Name = "TEXT_TENDV";
             this.TEXT_TENDV.PasswordChar = '\0';
             this.TEXT_TENDV.PlaceholderText = "Tên dịch vụ";
             this.TEXT_TENDV.SelectedText = "";
-            this.TEXT_TENDV.Size = new System.Drawing.Size(308, 41);
+            this.TEXT_TENDV.Size = new System.Drawing.Size(751, 50);
             this.TEXT_TENDV.TabIndex = 23;
             // 
             // BTN_UPDATEDV
@@ -325,26 +338,28 @@ namespace QLKS
             this.BTN_UPDATEDV.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.BTN_UPDATEDV.Enabled = false;
             this.BTN_UPDATEDV.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(223)))), ((int)(((byte)(229)))));
-            this.BTN_UPDATEDV.Font = new System.Drawing.Font("Montserrat Black", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTN_UPDATEDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTN_UPDATEDV.ForeColor = System.Drawing.Color.White;
             this.BTN_UPDATEDV.Image = ((System.Drawing.Image)(resources.GetObject("BTN_UPDATEDV.Image")));
-            this.BTN_UPDATEDV.Location = new System.Drawing.Point(416, 120);
+            this.BTN_UPDATEDV.Location = new System.Drawing.Point(1279, 57);
+            this.BTN_UPDATEDV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BTN_UPDATEDV.Name = "BTN_UPDATEDV";
-            this.BTN_UPDATEDV.Size = new System.Drawing.Size(151, 42);
+            this.BTN_UPDATEDV.Size = new System.Drawing.Size(201, 52);
             this.BTN_UPDATEDV.TabIndex = 22;
             this.BTN_UPDATEDV.Text = "Cập nhật dịch vụ";
             this.BTN_UPDATEDV.Click += new System.EventHandler(this.BTN_UPDATEDV_Click);
             // 
             // Dichvu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.ClientSize = new System.Drawing.Size(1536, 841);
+            this.ClientSize = new System.Drawing.Size(1942, 1083);
             this.Controls.Add(this.guna2GroupBox2);
             this.Controls.Add(this.guna2GroupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Dichvu";
             this.Text = "GTX - Dịch vụ";
             this.Load += new System.EventHandler(this.Dichvu_Load);

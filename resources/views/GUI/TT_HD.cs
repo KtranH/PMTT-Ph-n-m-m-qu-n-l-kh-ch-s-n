@@ -7,29 +7,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL;
 
 
 namespace QLKS
 {
     public partial class TT_HD : Form
     {
-        //NET_QLKS1Entities DB = new NET_QLKS1Entities();
-        DataTable HD = new DataTable();
+        private HOADON_BLL hoaDonBLL = new HOADON_BLL();
+        private DataTable HD = new DataTable();
         public TT_HD()
         {
             InitializeComponent();
         }
         public void LoadHD()
         {
-            HD = new DataTable();
-            HD.Columns.Add("Mã hóa đơn");
-            HD.Columns.Add("Mã đặt phòng");
-            HD.Columns.Add("Mã nhân viên");
-            HD.Columns.Add("Ngày lập");
-            HD.Columns.Add("Thành tiền");
-            
-            DT_DS_HD.AllowUserToAddRows = false;
-            DT_DS_HD.ReadOnly = true;
+            try
+            {
+                HD = hoaDonBLL.GetHoaDons();
+
+                DT_DS_HD.DataSource = HD;
+                DT_DS_HD.AllowUserToAddRows = false;
+                DT_DS_HD.ReadOnly = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải danh sách hóa đơn: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void TT_HD_Load(object sender, EventArgs e)
         {

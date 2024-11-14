@@ -65,9 +65,9 @@ namespace QLKS
             this.GR_DSPHONG.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GR_DSPHONG.ForeColor = System.Drawing.SystemColors.WindowText;
             this.GR_DSPHONG.Location = new System.Drawing.Point(16, 15);
-            this.GR_DSPHONG.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GR_DSPHONG.Margin = new System.Windows.Forms.Padding(4);
             this.GR_DSPHONG.Name = "GR_DSPHONG";
-            this.GR_DSPHONG.Size = new System.Drawing.Size(1045, 958);
+            this.GR_DSPHONG.Size = new System.Drawing.Size(1045, 627);
             this.GR_DSPHONG.TabIndex = 5;
             this.GR_DSPHONG.Text = "Danh sách phòng đã nhận";
             this.GR_DSPHONG.TextOffset = new System.Drawing.Point(0, 10);
@@ -95,12 +95,12 @@ namespace QLKS
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DT_DS_PHONG.DefaultCellStyle = dataGridViewCellStyle3;
             this.DT_DS_PHONG.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.DT_DS_PHONG.Location = new System.Drawing.Point(4, 66);
-            this.DT_DS_PHONG.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DT_DS_PHONG.Location = new System.Drawing.Point(16, 66);
+            this.DT_DS_PHONG.Margin = new System.Windows.Forms.Padding(4);
             this.DT_DS_PHONG.Name = "DT_DS_PHONG";
             this.DT_DS_PHONG.RowHeadersVisible = false;
             this.DT_DS_PHONG.RowHeadersWidth = 51;
-            this.DT_DS_PHONG.Size = new System.Drawing.Size(1037, 887);
+            this.DT_DS_PHONG.Size = new System.Drawing.Size(1008, 536);
             this.DT_DS_PHONG.TabIndex = 11;
             this.DT_DS_PHONG.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.DT_DS_PHONG.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -141,7 +141,7 @@ namespace QLKS
             this.FindRoom.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.FindRoom.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.FindRoom.IconRight = ((System.Drawing.Image)(resources.GetObject("FindRoom.IconRight")));
-            this.FindRoom.Location = new System.Drawing.Point(539, 15);
+            this.FindRoom.Location = new System.Drawing.Point(384, 15);
             this.FindRoom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.FindRoom.Name = "FindRoom";
             this.FindRoom.PasswordChar = '\0';
@@ -166,8 +166,8 @@ namespace QLKS
             this.OP_PHONG.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.OP_PHONG.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.OP_PHONG.ItemHeight = 30;
-            this.OP_PHONG.Location = new System.Drawing.Point(811, 15);
-            this.OP_PHONG.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.OP_PHONG.Location = new System.Drawing.Point(656, 15);
+            this.OP_PHONG.Margin = new System.Windows.Forms.Padding(4);
             this.OP_PHONG.Name = "OP_PHONG";
             this.OP_PHONG.Size = new System.Drawing.Size(177, 36);
             this.OP_PHONG.TabIndex = 2;
@@ -191,10 +191,10 @@ namespace QLKS
             this.guna2GroupBox2.CustomBorderThickness = new System.Windows.Forms.Padding(0);
             this.guna2GroupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox2.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.guna2GroupBox2.Location = new System.Drawing.Point(1112, 15);
-            this.guna2GroupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2GroupBox2.Location = new System.Drawing.Point(1072, 15);
+            this.guna2GroupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
-            this.guna2GroupBox2.Size = new System.Drawing.Size(941, 478);
+            this.guna2GroupBox2.Size = new System.Drawing.Size(400, 589);
             this.guna2GroupBox2.TabIndex = 7;
             this.guna2GroupBox2.Text = "Thông tin nhận phòng";
             this.guna2GroupBox2.TextOffset = new System.Drawing.Point(0, 10);
@@ -204,7 +204,7 @@ namespace QLKS
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(519, 325);
+            this.label1.Location = new System.Drawing.Point(19, 449);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(293, 51);
@@ -227,7 +227,7 @@ namespace QLKS
             this.TEXT_PHONGKHADUNG.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TEXT_PHONGKHADUNG.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TEXT_PHONGKHADUNG.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TEXT_PHONGKHADUNG.Location = new System.Drawing.Point(68, 251);
+            this.TEXT_PHONGKHADUNG.Location = new System.Drawing.Point(22, 195);
             this.TEXT_PHONGKHADUNG.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TEXT_PHONGKHADUNG.Name = "TEXT_PHONGKHADUNG";
             this.TEXT_PHONGKHADUNG.PasswordChar = '\0';
@@ -251,8 +251,8 @@ namespace QLKS
             this.BTN_CONTINUE.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTN_CONTINUE.ForeColor = System.Drawing.Color.White;
             this.BTN_CONTINUE.Image = ((System.Drawing.Image)(resources.GetObject("BTN_CONTINUE.Image")));
-            this.BTN_CONTINUE.Location = new System.Drawing.Point(384, 400);
-            this.BTN_CONTINUE.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BTN_CONTINUE.Location = new System.Drawing.Point(77, 520);
+            this.BTN_CONTINUE.Margin = new System.Windows.Forms.Padding(4);
             this.BTN_CONTINUE.Name = "BTN_CONTINUE";
             this.BTN_CONTINUE.Size = new System.Drawing.Size(201, 52);
             this.BTN_CONTINUE.TabIndex = 38;
@@ -272,8 +272,8 @@ namespace QLKS
             this.OP_STATE.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.OP_STATE.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.OP_STATE.ItemHeight = 30;
-            this.OP_STATE.Location = new System.Drawing.Point(523, 257);
-            this.OP_STATE.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.OP_STATE.Location = new System.Drawing.Point(22, 396);
+            this.OP_STATE.Margin = new System.Windows.Forms.Padding(4);
             this.OP_STATE.Name = "OP_STATE";
             this.OP_STATE.Size = new System.Drawing.Size(347, 36);
             this.OP_STATE.TabIndex = 37;
@@ -283,8 +283,8 @@ namespace QLKS
             // 
             this.guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.guna2HtmlLabel7.Location = new System.Drawing.Point(523, 220);
-            this.guna2HtmlLabel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2HtmlLabel7.Location = new System.Drawing.Point(22, 359);
+            this.guna2HtmlLabel7.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel7.Name = "guna2HtmlLabel7";
             this.guna2HtmlLabel7.Size = new System.Drawing.Size(91, 27);
             this.guna2HtmlLabel7.TabIndex = 36;
@@ -294,8 +294,8 @@ namespace QLKS
             // 
             this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.guna2HtmlLabel6.Location = new System.Drawing.Point(68, 220);
-            this.guna2HtmlLabel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2HtmlLabel6.Location = new System.Drawing.Point(22, 164);
+            this.guna2HtmlLabel6.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
             this.guna2HtmlLabel6.Size = new System.Drawing.Size(177, 27);
             this.guna2HtmlLabel6.TabIndex = 34;
@@ -310,8 +310,8 @@ namespace QLKS
             this.DATE_DATPHONG.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DATE_DATPHONG.ForeColor = System.Drawing.Color.White;
             this.DATE_DATPHONG.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.DATE_DATPHONG.Location = new System.Drawing.Point(523, 132);
-            this.DATE_DATPHONG.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DATE_DATPHONG.Location = new System.Drawing.Point(22, 291);
+            this.DATE_DATPHONG.Margin = new System.Windows.Forms.Padding(4);
             this.DATE_DATPHONG.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.DATE_DATPHONG.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.DATE_DATPHONG.Name = "DATE_DATPHONG";
@@ -323,8 +323,8 @@ namespace QLKS
             // 
             this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(523, 95);
-            this.guna2HtmlLabel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(22, 254);
+            this.guna2HtmlLabel5.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
             this.guna2HtmlLabel5.Size = new System.Drawing.Size(98, 27);
             this.guna2HtmlLabel5.TabIndex = 31;
@@ -334,8 +334,8 @@ namespace QLKS
             // 
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(68, 95);
-            this.guna2HtmlLabel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(22, 63);
+            this.guna2HtmlLabel3.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             this.guna2HtmlLabel3.Size = new System.Drawing.Size(175, 27);
             this.guna2HtmlLabel3.TabIndex = 29;
@@ -356,7 +356,7 @@ namespace QLKS
             this.TEXT_TENNV.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TEXT_TENNV.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TEXT_TENNV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TEXT_TENNV.Location = new System.Drawing.Point(68, 132);
+            this.TEXT_TENNV.Location = new System.Drawing.Point(22, 100);
             this.TEXT_TENNV.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TEXT_TENNV.Name = "TEXT_TENNV";
             this.TEXT_TENNV.PasswordChar = '\0';
@@ -371,7 +371,7 @@ namespace QLKS
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1108, 516);
+            this.label2.Location = new System.Drawing.Point(1069, 608);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(658, 34);
@@ -390,7 +390,7 @@ namespace QLKS
             this.Controls.Add(this.GR_DSPHONG);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "DatPhong";
             this.Text = "GTX - Đặt phòng";
             this.Load += new System.EventHandler(this.DatPhong_Load);

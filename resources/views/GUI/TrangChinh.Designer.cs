@@ -1,4 +1,4 @@
-﻿namespace QLKS
+namespace QLKS
 {
     partial class TrangChinh
     {
@@ -57,12 +57,8 @@
             this.guna2HtmlLabel12 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.EmailUser = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.DiaChiUser = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.QueQuanUser = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.NgSinhUser = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel18 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel19 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.ChucVuUser = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.TenUser = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -93,12 +89,13 @@
             this.guna2GroupBox2.Controls.Add(this.ChartRoom);
             this.guna2GroupBox2.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(183)))), ((int)(((byte)(201)))));
             this.guna2GroupBox2.CustomBorderThickness = new System.Windows.Forms.Padding(0, 60, 0, 0);
-            this.guna2GroupBox2.Font = new System.Drawing.Font("Montserrat Black", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2GroupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.White;
-            this.guna2GroupBox2.Location = new System.Drawing.Point(686, 19);
+            this.guna2GroupBox2.Location = new System.Drawing.Point(676, 13);
+            this.guna2GroupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
             this.guna2GroupBox2.ShadowDecoration.BorderRadius = 5;
-            this.guna2GroupBox2.Size = new System.Drawing.Size(842, 266);
+            this.guna2GroupBox2.Size = new System.Drawing.Size(801, 327);
             this.guna2GroupBox2.TabIndex = 25;
             this.guna2GroupBox2.Text = "Sơ đồ phòng hiện tại";
             this.guna2GroupBox2.TextOffset = new System.Drawing.Point(0, 10);
@@ -106,22 +103,24 @@
             // SLTRONG
             // 
             this.SLTRONG.BackColor = System.Drawing.Color.Transparent;
-            this.SLTRONG.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SLTRONG.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SLTRONG.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.SLTRONG.Location = new System.Drawing.Point(523, 181);
+            this.SLTRONG.Location = new System.Drawing.Point(642, 223);
+            this.SLTRONG.Margin = new System.Windows.Forms.Padding(4);
             this.SLTRONG.Name = "SLTRONG";
-            this.SLTRONG.Size = new System.Drawing.Size(93, 31);
+            this.SLTRONG.Size = new System.Drawing.Size(104, 32);
             this.SLTRONG.TabIndex = 25;
             this.SLTRONG.Text = "Chức vụ: ";
             // 
             // SLTHUE
             // 
             this.SLTHUE.BackColor = System.Drawing.Color.Transparent;
-            this.SLTHUE.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SLTHUE.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SLTHUE.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.SLTHUE.Location = new System.Drawing.Point(523, 109);
+            this.SLTHUE.Location = new System.Drawing.Point(642, 134);
+            this.SLTHUE.Margin = new System.Windows.Forms.Padding(4);
             this.SLTHUE.Name = "SLTHUE";
-            this.SLTHUE.Size = new System.Drawing.Size(93, 31);
+            this.SLTHUE.Size = new System.Drawing.Size(104, 32);
             this.SLTHUE.TabIndex = 24;
             this.SLTHUE.Text = "Chức vụ: ";
             // 
@@ -135,10 +134,11 @@
             this.guna2CircleButton2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(223)))), ((int)(((byte)(229)))));
             this.guna2CircleButton2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton2.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton2.Location = new System.Drawing.Point(640, 116);
+            this.guna2CircleButton2.Location = new System.Drawing.Point(853, 143);
+            this.guna2CircleButton2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2CircleButton2.Name = "guna2CircleButton2";
             this.guna2CircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleButton2.Size = new System.Drawing.Size(24, 24);
+            this.guna2CircleButton2.Size = new System.Drawing.Size(32, 30);
             this.guna2CircleButton2.TabIndex = 23;
             // 
             // guna2CircleButton1
@@ -151,31 +151,34 @@
             this.guna2CircleButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(183)))), ((int)(((byte)(201)))));
             this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton1.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton1.Location = new System.Drawing.Point(640, 188);
+            this.guna2CircleButton1.Location = new System.Drawing.Point(853, 231);
+            this.guna2CircleButton1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2CircleButton1.Name = "guna2CircleButton1";
             this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleButton1.Size = new System.Drawing.Size(24, 24);
+            this.guna2CircleButton1.Size = new System.Drawing.Size(32, 30);
             this.guna2CircleButton1.TabIndex = 22;
             // 
             // guna2HtmlLabel5
             // 
             this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Montserrat Black", 15F, System.Drawing.FontStyle.Bold);
+            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
             this.guna2HtmlLabel5.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(291, 111);
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(333, 137);
+            this.guna2HtmlLabel5.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            this.guna2HtmlLabel5.Size = new System.Drawing.Size(155, 29);
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(173, 31);
             this.guna2HtmlLabel5.TabIndex = 21;
             this.guna2HtmlLabel5.Text = "Phòng đã đặt:";
             // 
             // guna2HtmlLabel6
             // 
             this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel6.Font = new System.Drawing.Font("Montserrat Black", 15F, System.Drawing.FontStyle.Bold);
+            this.guna2HtmlLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
             this.guna2HtmlLabel6.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.guna2HtmlLabel6.Location = new System.Drawing.Point(291, 183);
+            this.guna2HtmlLabel6.Location = new System.Drawing.Point(333, 225);
+            this.guna2HtmlLabel6.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
-            this.guna2HtmlLabel6.Size = new System.Drawing.Size(192, 29);
+            this.guna2HtmlLabel6.Size = new System.Drawing.Size(211, 31);
             this.guna2HtmlLabel6.TabIndex = 20;
             this.guna2HtmlLabel6.Text = "Phòng còn trống:";
             // 
@@ -185,13 +188,14 @@
             this.ChartRoom.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(183)))), ((int)(((byte)(201)))));
             this.ChartRoom.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.ChartRoom.ForeColor = System.Drawing.Color.White;
-            this.ChartRoom.Location = new System.Drawing.Point(71, 82);
+            this.ChartRoom.Location = new System.Drawing.Point(40, 101);
+            this.ChartRoom.Margin = new System.Windows.Forms.Padding(4);
             this.ChartRoom.Minimum = 1;
             this.ChartRoom.Name = "ChartRoom";
             this.ChartRoom.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(223)))), ((int)(((byte)(229)))));
             this.ChartRoom.ProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(223)))), ((int)(((byte)(229)))));
             this.ChartRoom.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.ChartRoom.Size = new System.Drawing.Size(153, 153);
+            this.ChartRoom.Size = new System.Drawing.Size(188, 188);
             this.ChartRoom.TabIndex = 19;
             this.ChartRoom.Text = "guna2CircleProgressBar2";
             this.ChartRoom.Value = 50;
@@ -204,20 +208,17 @@
             this.guna2GroupBox3.Controls.Add(this.guna2HtmlLabel12);
             this.guna2GroupBox3.Controls.Add(this.EmailUser);
             this.guna2GroupBox3.Controls.Add(this.guna2HtmlLabel10);
-            this.guna2GroupBox3.Controls.Add(this.DiaChiUser);
-            this.guna2GroupBox3.Controls.Add(this.guna2HtmlLabel7);
-            this.guna2GroupBox3.Controls.Add(this.QueQuanUser);
             this.guna2GroupBox3.Controls.Add(this.NgSinhUser);
             this.guna2GroupBox3.Controls.Add(this.guna2HtmlLabel18);
-            this.guna2GroupBox3.Controls.Add(this.guna2HtmlLabel19);
             this.guna2GroupBox3.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(223)))), ((int)(((byte)(229)))));
             this.guna2GroupBox3.CustomBorderThickness = new System.Windows.Forms.Padding(0, 60, 0, 0);
-            this.guna2GroupBox3.Font = new System.Drawing.Font("Montserrat Black", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2GroupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox3.ForeColor = System.Drawing.Color.White;
-            this.guna2GroupBox3.Location = new System.Drawing.Point(25, 322);
+            this.guna2GroupBox3.Location = new System.Drawing.Point(13, 369);
+            this.guna2GroupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.guna2GroupBox3.Name = "guna2GroupBox3";
             this.guna2GroupBox3.ShadowDecoration.BorderRadius = 5;
-            this.guna2GroupBox3.Size = new System.Drawing.Size(625, 445);
+            this.guna2GroupBox3.Size = new System.Drawing.Size(655, 375);
             this.guna2GroupBox3.TabIndex = 24;
             this.guna2GroupBox3.Text = "Thông tin khác";
             this.guna2GroupBox3.TextOffset = new System.Drawing.Point(0, 10);
@@ -225,112 +226,74 @@
             // DTUser
             // 
             this.DTUser.BackColor = System.Drawing.Color.Transparent;
-            this.DTUser.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DTUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DTUser.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.DTUser.Location = new System.Drawing.Point(188, 382);
+            this.DTUser.Location = new System.Drawing.Point(251, 293);
+            this.DTUser.Margin = new System.Windows.Forms.Padding(4);
             this.DTUser.Name = "DTUser";
-            this.DTUser.Size = new System.Drawing.Size(93, 31);
+            this.DTUser.Size = new System.Drawing.Size(104, 32);
             this.DTUser.TabIndex = 11;
             this.DTUser.Text = "Chức vụ: ";
             // 
             // guna2HtmlLabel12
             // 
             this.guna2HtmlLabel12.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel12.Font = new System.Drawing.Font("Montserrat Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel12.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel12.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.guna2HtmlLabel12.Location = new System.Drawing.Point(27, 378);
+            this.guna2HtmlLabel12.Location = new System.Drawing.Point(36, 288);
+            this.guna2HtmlLabel12.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel12.Name = "guna2HtmlLabel12";
-            this.guna2HtmlLabel12.Size = new System.Drawing.Size(145, 35);
+            this.guna2HtmlLabel12.Size = new System.Drawing.Size(156, 38);
             this.guna2HtmlLabel12.TabIndex = 10;
             this.guna2HtmlLabel12.Text = "Điện thoại:";
             // 
             // EmailUser
             // 
             this.EmailUser.BackColor = System.Drawing.Color.Transparent;
-            this.EmailUser.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmailUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EmailUser.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.EmailUser.Location = new System.Drawing.Point(188, 313);
+            this.EmailUser.Location = new System.Drawing.Point(251, 208);
+            this.EmailUser.Margin = new System.Windows.Forms.Padding(4);
             this.EmailUser.Name = "EmailUser";
-            this.EmailUser.Size = new System.Drawing.Size(93, 31);
+            this.EmailUser.Size = new System.Drawing.Size(104, 32);
             this.EmailUser.TabIndex = 9;
             this.EmailUser.Text = "Chức vụ: ";
             // 
             // guna2HtmlLabel10
             // 
             this.guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel10.Font = new System.Drawing.Font("Montserrat Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel10.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.guna2HtmlLabel10.Location = new System.Drawing.Point(27, 309);
+            this.guna2HtmlLabel10.Location = new System.Drawing.Point(36, 203);
+            this.guna2HtmlLabel10.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel10.Name = "guna2HtmlLabel10";
-            this.guna2HtmlLabel10.Size = new System.Drawing.Size(82, 35);
+            this.guna2HtmlLabel10.Size = new System.Drawing.Size(90, 38);
             this.guna2HtmlLabel10.TabIndex = 8;
             this.guna2HtmlLabel10.Text = "Email:";
-            // 
-            // DiaChiUser
-            // 
-            this.DiaChiUser.BackColor = System.Drawing.Color.Transparent;
-            this.DiaChiUser.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DiaChiUser.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.DiaChiUser.Location = new System.Drawing.Point(188, 243);
-            this.DiaChiUser.Name = "DiaChiUser";
-            this.DiaChiUser.Size = new System.Drawing.Size(93, 31);
-            this.DiaChiUser.TabIndex = 7;
-            this.DiaChiUser.Text = "Chức vụ: ";
-            // 
-            // guna2HtmlLabel7
-            // 
-            this.guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel7.Font = new System.Drawing.Font("Montserrat Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel7.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.guna2HtmlLabel7.Location = new System.Drawing.Point(27, 239);
-            this.guna2HtmlLabel7.Name = "guna2HtmlLabel7";
-            this.guna2HtmlLabel7.Size = new System.Drawing.Size(100, 35);
-            this.guna2HtmlLabel7.TabIndex = 6;
-            this.guna2HtmlLabel7.Text = "Địa chỉ:";
-            // 
-            // QueQuanUser
-            // 
-            this.QueQuanUser.BackColor = System.Drawing.Color.Transparent;
-            this.QueQuanUser.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.QueQuanUser.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.QueQuanUser.Location = new System.Drawing.Point(188, 172);
-            this.QueQuanUser.Name = "QueQuanUser";
-            this.QueQuanUser.Size = new System.Drawing.Size(93, 31);
-            this.QueQuanUser.TabIndex = 5;
-            this.QueQuanUser.Text = "Chức vụ: ";
             // 
             // NgSinhUser
             // 
             this.NgSinhUser.BackColor = System.Drawing.Color.Transparent;
-            this.NgSinhUser.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NgSinhUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NgSinhUser.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.NgSinhUser.Location = new System.Drawing.Point(188, 100);
+            this.NgSinhUser.Location = new System.Drawing.Point(251, 123);
+            this.NgSinhUser.Margin = new System.Windows.Forms.Padding(4);
             this.NgSinhUser.Name = "NgSinhUser";
-            this.NgSinhUser.Size = new System.Drawing.Size(93, 31);
+            this.NgSinhUser.Size = new System.Drawing.Size(104, 32);
             this.NgSinhUser.TabIndex = 4;
             this.NgSinhUser.Text = "Chức vụ: ";
             // 
             // guna2HtmlLabel18
             // 
             this.guna2HtmlLabel18.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel18.Font = new System.Drawing.Font("Montserrat Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel18.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel18.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.guna2HtmlLabel18.Location = new System.Drawing.Point(27, 96);
+            this.guna2HtmlLabel18.Location = new System.Drawing.Point(36, 118);
+            this.guna2HtmlLabel18.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel18.Name = "guna2HtmlLabel18";
-            this.guna2HtmlLabel18.Size = new System.Drawing.Size(139, 35);
+            this.guna2HtmlLabel18.Size = new System.Drawing.Size(155, 38);
             this.guna2HtmlLabel18.TabIndex = 2;
             this.guna2HtmlLabel18.Text = "Ngày sinh:";
-            // 
-            // guna2HtmlLabel19
-            // 
-            this.guna2HtmlLabel19.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel19.Font = new System.Drawing.Font("Montserrat Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel19.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.guna2HtmlLabel19.Location = new System.Drawing.Point(27, 168);
-            this.guna2HtmlLabel19.Name = "guna2HtmlLabel19";
-            this.guna2HtmlLabel19.Size = new System.Drawing.Size(136, 35);
-            this.guna2HtmlLabel19.TabIndex = 1;
-            this.guna2HtmlLabel19.Text = "Quê quán:";
             // 
             // guna2GroupBox1
             // 
@@ -342,12 +305,13 @@
             this.guna2GroupBox1.Controls.Add(this.guna2HtmlLabel1);
             this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(223)))), ((int)(((byte)(229)))));
             this.guna2GroupBox1.CustomBorderThickness = new System.Windows.Forms.Padding(0, 60, 0, 0);
-            this.guna2GroupBox1.Font = new System.Drawing.Font("Montserrat Black", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2GroupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.White;
-            this.guna2GroupBox1.Location = new System.Drawing.Point(25, 19);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(13, 13);
+            this.guna2GroupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.ShadowDecoration.BorderRadius = 5;
-            this.guna2GroupBox1.Size = new System.Drawing.Size(625, 266);
+            this.guna2GroupBox1.Size = new System.Drawing.Size(655, 327);
             this.guna2GroupBox1.TabIndex = 23;
             this.guna2GroupBox1.Text = "Thông tin cơ bản";
             this.guna2GroupBox1.TextOffset = new System.Drawing.Point(0, 10);
@@ -355,44 +319,48 @@
             // ChucVuUser
             // 
             this.ChucVuUser.BackColor = System.Drawing.Color.Transparent;
-            this.ChucVuUser.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChucVuUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ChucVuUser.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.ChucVuUser.Location = new System.Drawing.Point(188, 166);
+            this.ChucVuUser.Location = new System.Drawing.Point(251, 204);
+            this.ChucVuUser.Margin = new System.Windows.Forms.Padding(4);
             this.ChucVuUser.Name = "ChucVuUser";
-            this.ChucVuUser.Size = new System.Drawing.Size(93, 31);
+            this.ChucVuUser.Size = new System.Drawing.Size(104, 32);
             this.ChucVuUser.TabIndex = 5;
             this.ChucVuUser.Text = "Chức vụ: ";
             // 
             // TenUser
             // 
             this.TenUser.BackColor = System.Drawing.Color.Transparent;
-            this.TenUser.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TenUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TenUser.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.TenUser.Location = new System.Drawing.Point(188, 94);
+            this.TenUser.Location = new System.Drawing.Point(251, 116);
+            this.TenUser.Margin = new System.Windows.Forms.Padding(4);
             this.TenUser.Name = "TenUser";
-            this.TenUser.Size = new System.Drawing.Size(93, 31);
+            this.TenUser.Size = new System.Drawing.Size(104, 32);
             this.TenUser.TabIndex = 3;
             this.TenUser.Text = "Chức vụ: ";
             // 
             // guna2HtmlLabel4
             // 
             this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Montserrat Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel4.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(27, 162);
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(36, 199);
+            this.guna2HtmlLabel4.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            this.guna2HtmlLabel4.Size = new System.Drawing.Size(116, 35);
+            this.guna2HtmlLabel4.Size = new System.Drawing.Size(129, 38);
             this.guna2HtmlLabel4.TabIndex = 1;
             this.guna2HtmlLabel4.Text = "Chức vụ: ";
             // 
             // guna2HtmlLabel1
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Montserrat Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(27, 90);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(36, 111);
+            this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(96, 35);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(105, 38);
             this.guna2HtmlLabel1.TabIndex = 0;
             this.guna2HtmlLabel1.Text = "Họ tên:";
             // 
@@ -403,12 +371,13 @@
             this.guna2GroupBox4.Controls.Add(this.SD_PDP);
             this.guna2GroupBox4.CustomBorderColor = System.Drawing.Color.White;
             this.guna2GroupBox4.CustomBorderThickness = new System.Windows.Forms.Padding(0, 60, 0, 0);
-            this.guna2GroupBox4.Font = new System.Drawing.Font("Montserrat Black", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2GroupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox4.ForeColor = System.Drawing.Color.White;
-            this.guna2GroupBox4.Location = new System.Drawing.Point(686, 322);
+            this.guna2GroupBox4.Location = new System.Drawing.Point(676, 369);
+            this.guna2GroupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.guna2GroupBox4.Name = "guna2GroupBox4";
             this.guna2GroupBox4.ShadowDecoration.BorderRadius = 5;
-            this.guna2GroupBox4.Size = new System.Drawing.Size(842, 445);
+            this.guna2GroupBox4.Size = new System.Drawing.Size(801, 375);
             this.guna2GroupBox4.TabIndex = 26;
             this.guna2GroupBox4.Text = "Sơ đồ phiếu đặt phòng";
             this.guna2GroupBox4.TextOffset = new System.Drawing.Point(0, 10);
@@ -422,9 +391,10 @@
             this.PDP_THANHTOAN});
             chartFont1.FontName = "Arial";
             this.SD_PDP.Legend.LabelFont = chartFont1;
-            this.SD_PDP.Location = new System.Drawing.Point(3, 0);
+            this.SD_PDP.Location = new System.Drawing.Point(4, 15);
+            this.SD_PDP.Margin = new System.Windows.Forms.Padding(4);
             this.SD_PDP.Name = "SD_PDP";
-            this.SD_PDP.Size = new System.Drawing.Size(863, 442);
+            this.SD_PDP.Size = new System.Drawing.Size(793, 356);
             this.SD_PDP.TabIndex = 0;
             chartFont2.FontName = "Arial";
             chartFont2.Size = 12;
@@ -484,16 +454,17 @@
             // 
             // TrangChinh
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.ClientSize = new System.Drawing.Size(1552, 786);
+            this.ClientSize = new System.Drawing.Size(1942, 1083);
             this.Controls.Add(this.guna2GroupBox4);
             this.Controls.Add(this.guna2GroupBox2);
             this.Controls.Add(this.guna2GroupBox3);
             this.Controls.Add(this.guna2GroupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "TrangChinh";
             this.Text = "GTX - Trang chủ";
             this.Load += new System.EventHandler(this.TrangChinh_Load);
@@ -523,12 +494,8 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel12;
         private Guna.UI2.WinForms.Guna2HtmlLabel EmailUser;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel10;
-        private Guna.UI2.WinForms.Guna2HtmlLabel DiaChiUser;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
-        private Guna.UI2.WinForms.Guna2HtmlLabel QueQuanUser;
         private Guna.UI2.WinForms.Guna2HtmlLabel NgSinhUser;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel18;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel19;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
         private Guna.UI2.WinForms.Guna2HtmlLabel ChucVuUser;
         private Guna.UI2.WinForms.Guna2HtmlLabel TenUser;

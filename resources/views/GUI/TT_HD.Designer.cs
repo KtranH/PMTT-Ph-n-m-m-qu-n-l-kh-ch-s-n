@@ -74,9 +74,10 @@ namespace QLKS
             this.CHECK_PHONG.CheckedState.BorderThickness = 0;
             this.CHECK_PHONG.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.CHECK_PHONG.ForeColor = System.Drawing.Color.White;
-            this.CHECK_PHONG.Location = new System.Drawing.Point(36, 373);
+            this.CHECK_PHONG.Location = new System.Drawing.Point(39, 459);
+            this.CHECK_PHONG.Margin = new System.Windows.Forms.Padding(4);
             this.CHECK_PHONG.Name = "CHECK_PHONG";
-            this.CHECK_PHONG.Size = new System.Drawing.Size(20, 20);
+            this.CHECK_PHONG.Size = new System.Drawing.Size(27, 25);
             this.CHECK_PHONG.TabIndex = 69;
             this.CHECK_PHONG.Text = "guna2CustomCheckBox4";
             this.CHECK_PHONG.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -93,9 +94,10 @@ namespace QLKS
             this.CHECK_PDP.CheckedState.BorderThickness = 0;
             this.CHECK_PDP.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.CHECK_PDP.ForeColor = System.Drawing.Color.White;
-            this.CHECK_PDP.Location = new System.Drawing.Point(36, 258);
+            this.CHECK_PDP.Location = new System.Drawing.Point(39, 318);
+            this.CHECK_PDP.Margin = new System.Windows.Forms.Padding(4);
             this.CHECK_PDP.Name = "CHECK_PDP";
-            this.CHECK_PDP.Size = new System.Drawing.Size(20, 20);
+            this.CHECK_PDP.Size = new System.Drawing.Size(27, 25);
             this.CHECK_PDP.TabIndex = 68;
             this.CHECK_PDP.Text = "guna2CustomCheckBox3";
             this.CHECK_PDP.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -112,9 +114,10 @@ namespace QLKS
             this.CHECK_NGAY.CheckedState.BorderThickness = 0;
             this.CHECK_NGAY.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.CHECK_NGAY.ForeColor = System.Drawing.Color.White;
-            this.CHECK_NGAY.Location = new System.Drawing.Point(36, 143);
+            this.CHECK_NGAY.Location = new System.Drawing.Point(39, 176);
+            this.CHECK_NGAY.Margin = new System.Windows.Forms.Padding(4);
             this.CHECK_NGAY.Name = "CHECK_NGAY";
-            this.CHECK_NGAY.Size = new System.Drawing.Size(20, 20);
+            this.CHECK_NGAY.Size = new System.Drawing.Size(27, 25);
             this.CHECK_NGAY.TabIndex = 67;
             this.CHECK_NGAY.Text = "guna2CustomCheckBox2";
             this.CHECK_NGAY.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -131,9 +134,10 @@ namespace QLKS
             this.CHECK_KH.CheckedState.BorderThickness = 0;
             this.CHECK_KH.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.CHECK_KH.ForeColor = System.Drawing.Color.White;
-            this.CHECK_KH.Location = new System.Drawing.Point(36, 28);
+            this.CHECK_KH.Location = new System.Drawing.Point(39, 34);
+            this.CHECK_KH.Margin = new System.Windows.Forms.Padding(4);
             this.CHECK_KH.Name = "CHECK_KH";
-            this.CHECK_KH.Size = new System.Drawing.Size(20, 20);
+            this.CHECK_KH.Size = new System.Drawing.Size(27, 25);
             this.CHECK_KH.TabIndex = 66;
             this.CHECK_KH.Text = "guna2CustomCheckBox1";
             this.CHECK_KH.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -145,20 +149,22 @@ namespace QLKS
             // guna2HtmlLabel7
             // 
             this.guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel7.Font = new System.Drawing.Font("Montserrat Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel7.Location = new System.Drawing.Point(62, 369);
+            this.guna2HtmlLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel7.Location = new System.Drawing.Point(74, 454);
+            this.guna2HtmlLabel7.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel7.Name = "guna2HtmlLabel7";
-            this.guna2HtmlLabel7.Size = new System.Drawing.Size(214, 24);
+            this.guna2HtmlLabel7.Size = new System.Drawing.Size(237, 27);
             this.guna2HtmlLabel7.TabIndex = 64;
             this.guna2HtmlLabel7.Text = "Tìm hóa đơn theo phòng";
             // 
             // guna2HtmlLabel8
             // 
             this.guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel8.Font = new System.Drawing.Font("Montserrat", 12.25F);
-            this.guna2HtmlLabel8.Location = new System.Drawing.Point(31, 407);
+            this.guna2HtmlLabel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.guna2HtmlLabel8.Location = new System.Drawing.Point(32, 501);
+            this.guna2HtmlLabel8.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel8.Name = "guna2HtmlLabel8";
-            this.guna2HtmlLabel8.Size = new System.Drawing.Size(155, 24);
+            this.guna2HtmlLabel8.Size = new System.Drawing.Size(165, 27);
             this.guna2HtmlLabel8.TabIndex = 63;
             this.guna2HtmlLabel8.Text = "Tên phòng cần tìm";
             // 
@@ -178,13 +184,14 @@ namespace QLKS
             this.TEXT_PH.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TEXT_PH.ForeColor = System.Drawing.SystemColors.ControlText;
             this.TEXT_PH.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TEXT_PH.Location = new System.Drawing.Point(31, 437);
+            this.TEXT_PH.Location = new System.Drawing.Point(32, 538);
+            this.TEXT_PH.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TEXT_PH.Name = "TEXT_PH";
             this.TEXT_PH.PasswordChar = '\0';
             this.TEXT_PH.PlaceholderForeColor = System.Drawing.SystemColors.ControlText;
             this.TEXT_PH.PlaceholderText = "";
             this.TEXT_PH.SelectedText = "";
-            this.TEXT_PH.Size = new System.Drawing.Size(587, 41);
+            this.TEXT_PH.Size = new System.Drawing.Size(374, 50);
             this.TEXT_PH.TabIndex = 62;
             // 
             // DATE_NGAYLAP
@@ -196,31 +203,34 @@ namespace QLKS
             this.DATE_NGAYLAP.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DATE_NGAYLAP.ForeColor = System.Drawing.Color.White;
             this.DATE_NGAYLAP.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.DATE_NGAYLAP.Location = new System.Drawing.Point(31, 207);
+            this.DATE_NGAYLAP.Location = new System.Drawing.Point(32, 255);
+            this.DATE_NGAYLAP.Margin = new System.Windows.Forms.Padding(4);
             this.DATE_NGAYLAP.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.DATE_NGAYLAP.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.DATE_NGAYLAP.Name = "DATE_NGAYLAP";
-            this.DATE_NGAYLAP.Size = new System.Drawing.Size(587, 41);
+            this.DATE_NGAYLAP.Size = new System.Drawing.Size(374, 50);
             this.DATE_NGAYLAP.TabIndex = 61;
             this.DATE_NGAYLAP.Value = new System.DateTime(2023, 12, 8, 5, 46, 55, 952);
             // 
             // guna2HtmlLabel5
             // 
             this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Montserrat Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(62, 254);
+            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(74, 313);
+            this.guna2HtmlLabel5.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            this.guna2HtmlLabel5.Size = new System.Drawing.Size(300, 24);
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(332, 27);
             this.guna2HtmlLabel5.TabIndex = 60;
             this.guna2HtmlLabel5.Text = "Tìm hóa đơn theo phiếu đặt phòng";
             // 
             // guna2HtmlLabel6
             // 
             this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel6.Font = new System.Drawing.Font("Montserrat", 12.25F);
-            this.guna2HtmlLabel6.Location = new System.Drawing.Point(31, 292);
+            this.guna2HtmlLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.guna2HtmlLabel6.Location = new System.Drawing.Point(32, 359);
+            this.guna2HtmlLabel6.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
-            this.guna2HtmlLabel6.Size = new System.Drawing.Size(230, 24);
+            this.guna2HtmlLabel6.Size = new System.Drawing.Size(243, 27);
             this.guna2HtmlLabel6.TabIndex = 59;
             this.guna2HtmlLabel6.Text = "Mã phiếu đặt phòng cần tìm";
             // 
@@ -240,42 +250,46 @@ namespace QLKS
             this.TEXT_PDP.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TEXT_PDP.ForeColor = System.Drawing.SystemColors.ControlText;
             this.TEXT_PDP.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TEXT_PDP.Location = new System.Drawing.Point(31, 322);
+            this.TEXT_PDP.Location = new System.Drawing.Point(32, 396);
+            this.TEXT_PDP.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TEXT_PDP.Name = "TEXT_PDP";
             this.TEXT_PDP.PasswordChar = '\0';
             this.TEXT_PDP.PlaceholderForeColor = System.Drawing.SystemColors.ControlText;
             this.TEXT_PDP.PlaceholderText = "";
             this.TEXT_PDP.SelectedText = "";
-            this.TEXT_PDP.Size = new System.Drawing.Size(587, 41);
+            this.TEXT_PDP.Size = new System.Drawing.Size(374, 50);
             this.TEXT_PDP.TabIndex = 58;
             // 
             // guna2HtmlLabel3
             // 
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Montserrat Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(62, 139);
+            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(74, 171);
+            this.guna2HtmlLabel3.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(201, 24);
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(224, 27);
             this.guna2HtmlLabel3.TabIndex = 57;
             this.guna2HtmlLabel3.Text = "Tìm hóa đơn theo ngày";
             // 
             // guna2HtmlLabel4
             // 
             this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Montserrat", 12.25F);
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(31, 177);
+            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(32, 218);
+            this.guna2HtmlLabel4.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            this.guna2HtmlLabel4.Size = new System.Drawing.Size(109, 24);
+            this.guna2HtmlLabel4.Size = new System.Drawing.Size(116, 27);
             this.guna2HtmlLabel4.TabIndex = 56;
             this.guna2HtmlLabel4.Text = "Ngày cần tìm";
             // 
             // guna2HtmlLabel1
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Montserrat Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(62, 24);
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(74, 30);
+            this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(260, 24);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(289, 27);
             this.guna2HtmlLabel1.TabIndex = 54;
             this.guna2HtmlLabel1.Text = "Tìm hóa đơn theo khách hàng";
             // 
@@ -290,12 +304,13 @@ namespace QLKS
             this.BTN_TIMKIEM.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.BTN_TIMKIEM.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.BTN_TIMKIEM.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(223)))), ((int)(((byte)(229)))));
-            this.BTN_TIMKIEM.Font = new System.Drawing.Font("Montserrat Black", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTN_TIMKIEM.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTN_TIMKIEM.ForeColor = System.Drawing.Color.White;
             this.BTN_TIMKIEM.Image = ((System.Drawing.Image)(resources.GetObject("BTN_TIMKIEM.Image")));
-            this.BTN_TIMKIEM.Location = new System.Drawing.Point(267, 652);
+            this.BTN_TIMKIEM.Location = new System.Drawing.Point(132, 775);
+            this.BTN_TIMKIEM.Margin = new System.Windows.Forms.Padding(4);
             this.BTN_TIMKIEM.Name = "BTN_TIMKIEM";
-            this.BTN_TIMKIEM.Size = new System.Drawing.Size(151, 42);
+            this.BTN_TIMKIEM.Size = new System.Drawing.Size(201, 52);
             this.BTN_TIMKIEM.TabIndex = 53;
             this.BTN_TIMKIEM.Text = "Tìm kiếm";
             this.BTN_TIMKIEM.Click += new System.EventHandler(this.BTN_TIMKIEM_Click);
@@ -303,10 +318,11 @@ namespace QLKS
             // guna2HtmlLabel2
             // 
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Montserrat", 12.25F);
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(31, 62);
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(32, 76);
+            this.guna2HtmlLabel2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(203, 24);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(224, 27);
             this.guna2HtmlLabel2.TabIndex = 37;
             this.guna2HtmlLabel2.Text = "CCCD của khách cần tìm";
             // 
@@ -326,13 +342,14 @@ namespace QLKS
             this.TEXT_MAKH.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TEXT_MAKH.ForeColor = System.Drawing.SystemColors.ControlText;
             this.TEXT_MAKH.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TEXT_MAKH.Location = new System.Drawing.Point(31, 92);
+            this.TEXT_MAKH.Location = new System.Drawing.Point(32, 113);
+            this.TEXT_MAKH.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TEXT_MAKH.Name = "TEXT_MAKH";
             this.TEXT_MAKH.PasswordChar = '\0';
             this.TEXT_MAKH.PlaceholderForeColor = System.Drawing.SystemColors.ControlText;
             this.TEXT_MAKH.PlaceholderText = "";
             this.TEXT_MAKH.SelectedText = "";
-            this.TEXT_MAKH.Size = new System.Drawing.Size(587, 41);
+            this.TEXT_MAKH.Size = new System.Drawing.Size(374, 50);
             this.TEXT_MAKH.TabIndex = 36;
             // 
             // BTN_RESET
@@ -346,11 +363,12 @@ namespace QLKS
             this.BTN_RESET.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.BTN_RESET.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.BTN_RESET.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(223)))), ((int)(((byte)(229)))));
-            this.BTN_RESET.Font = new System.Drawing.Font("Montserrat Black", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTN_RESET.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTN_RESET.ForeColor = System.Drawing.Color.White;
-            this.BTN_RESET.Location = new System.Drawing.Point(264, 12);
+            this.BTN_RESET.Location = new System.Drawing.Point(910, 13);
+            this.BTN_RESET.Margin = new System.Windows.Forms.Padding(4);
             this.BTN_RESET.Name = "BTN_RESET";
-            this.BTN_RESET.Size = new System.Drawing.Size(102, 36);
+            this.BTN_RESET.Size = new System.Drawing.Size(136, 44);
             this.BTN_RESET.TabIndex = 55;
             this.BTN_RESET.Text = "Làm mới";
             this.BTN_RESET.Click += new System.EventHandler(this.BTN_RESET_Click);
@@ -371,12 +389,13 @@ namespace QLKS
             this.FindHD.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.FindHD.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.FindHD.IconRight = ((System.Drawing.Image)(resources.GetObject("FindHD.IconRight")));
-            this.FindHD.Location = new System.Drawing.Point(413, 12);
+            this.FindHD.Location = new System.Drawing.Point(368, 13);
+            this.FindHD.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.FindHD.Name = "FindHD";
             this.FindHD.PasswordChar = '\0';
             this.FindHD.PlaceholderText = "Tìm kiếm hóa đơn";
             this.FindHD.SelectedText = "";
-            this.FindHD.Size = new System.Drawing.Size(368, 36);
+            this.FindHD.Size = new System.Drawing.Size(491, 44);
             this.FindHD.TabIndex = 54;
             this.FindHD.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FindHD_KeyDown);
             // 
@@ -386,7 +405,7 @@ namespace QLKS
             this.DT_DS_HD.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -396,17 +415,19 @@ namespace QLKS
             this.DT_DS_HD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DT_DS_HD.DefaultCellStyle = dataGridViewCellStyle3;
             this.DT_DS_HD.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.DT_DS_HD.Location = new System.Drawing.Point(3, 70);
+            this.DT_DS_HD.Location = new System.Drawing.Point(14, 86);
+            this.DT_DS_HD.Margin = new System.Windows.Forms.Padding(4);
             this.DT_DS_HD.Name = "DT_DS_HD";
             this.DT_DS_HD.RowHeadersVisible = false;
-            this.DT_DS_HD.Size = new System.Drawing.Size(797, 602);
+            this.DT_DS_HD.RowHeadersWidth = 51;
+            this.DT_DS_HD.Size = new System.Drawing.Size(1032, 485);
             this.DT_DS_HD.TabIndex = 11;
             this.DT_DS_HD.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.DT_DS_HD.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -417,14 +438,14 @@ namespace QLKS
             this.DT_DS_HD.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.DT_DS_HD.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.DT_DS_HD.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.DT_DS_HD.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DT_DS_HD.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DT_DS_HD.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.DT_DS_HD.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.DT_DS_HD.ThemeStyle.HeaderStyle.Height = 30;
             this.DT_DS_HD.ThemeStyle.ReadOnly = false;
             this.DT_DS_HD.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.DT_DS_HD.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.DT_DS_HD.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DT_DS_HD.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DT_DS_HD.ThemeStyle.RowsStyle.ForeColor = System.Drawing.SystemColors.WindowText;
             this.DT_DS_HD.ThemeStyle.RowsStyle.Height = 22;
             this.DT_DS_HD.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
@@ -458,11 +479,12 @@ namespace QLKS
             this.guna2GroupBox1.Controls.Add(this.TEXT_MAKH);
             this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(223)))), ((int)(((byte)(229)))));
             this.guna2GroupBox1.CustomBorderThickness = new System.Windows.Forms.Padding(0);
-            this.guna2GroupBox1.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2GroupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.guna2GroupBox1.Location = new System.Drawing.Point(857, 12);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(1092, 15);
+            this.guna2GroupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.Size = new System.Drawing.Size(651, 720);
+            this.guna2GroupBox1.Size = new System.Drawing.Size(441, 886);
             this.guna2GroupBox1.TabIndex = 14;
             this.guna2GroupBox1.TextOffset = new System.Drawing.Point(0, 10);
             // 
@@ -474,9 +496,10 @@ namespace QLKS
             this.CHECK_NV.CheckedState.BorderThickness = 0;
             this.CHECK_NV.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.CHECK_NV.ForeColor = System.Drawing.Color.White;
-            this.CHECK_NV.Location = new System.Drawing.Point(36, 485);
+            this.CHECK_NV.Location = new System.Drawing.Point(39, 597);
+            this.CHECK_NV.Margin = new System.Windows.Forms.Padding(4);
             this.CHECK_NV.Name = "CHECK_NV";
-            this.CHECK_NV.Size = new System.Drawing.Size(20, 20);
+            this.CHECK_NV.Size = new System.Drawing.Size(27, 25);
             this.CHECK_NV.TabIndex = 73;
             this.CHECK_NV.Text = "guna2CustomCheckBox5";
             this.CHECK_NV.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -488,20 +511,22 @@ namespace QLKS
             // guna2HtmlLabel9
             // 
             this.guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel9.Font = new System.Drawing.Font("Montserrat Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel9.Location = new System.Drawing.Point(62, 481);
+            this.guna2HtmlLabel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel9.Location = new System.Drawing.Point(74, 592);
+            this.guna2HtmlLabel9.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel9.Name = "guna2HtmlLabel9";
-            this.guna2HtmlLabel9.Size = new System.Drawing.Size(243, 24);
+            this.guna2HtmlLabel9.Size = new System.Drawing.Size(271, 27);
             this.guna2HtmlLabel9.TabIndex = 72;
             this.guna2HtmlLabel9.Text = "Tìm hóa đơn theo nhân viên";
             // 
             // guna2HtmlLabel10
             // 
             this.guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel10.Font = new System.Drawing.Font("Montserrat", 12.25F);
-            this.guna2HtmlLabel10.Location = new System.Drawing.Point(31, 519);
+            this.guna2HtmlLabel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.guna2HtmlLabel10.Location = new System.Drawing.Point(32, 639);
+            this.guna2HtmlLabel10.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel10.Name = "guna2HtmlLabel10";
-            this.guna2HtmlLabel10.Size = new System.Drawing.Size(181, 24);
+            this.guna2HtmlLabel10.Size = new System.Drawing.Size(195, 27);
             this.guna2HtmlLabel10.TabIndex = 71;
             this.guna2HtmlLabel10.Text = "Tên nhân viên cần tìm";
             // 
@@ -521,13 +546,14 @@ namespace QLKS
             this.TEXT_NV.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TEXT_NV.ForeColor = System.Drawing.SystemColors.ControlText;
             this.TEXT_NV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TEXT_NV.Location = new System.Drawing.Point(31, 549);
+            this.TEXT_NV.Location = new System.Drawing.Point(32, 676);
+            this.TEXT_NV.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TEXT_NV.Name = "TEXT_NV";
             this.TEXT_NV.PasswordChar = '\0';
             this.TEXT_NV.PlaceholderForeColor = System.Drawing.SystemColors.ControlText;
             this.TEXT_NV.PlaceholderText = "";
             this.TEXT_NV.SelectedText = "";
-            this.TEXT_NV.Size = new System.Drawing.Size(587, 41);
+            this.TEXT_NV.Size = new System.Drawing.Size(374, 50);
             this.TEXT_NV.TabIndex = 70;
             // 
             // GR_DSPHONG
@@ -542,11 +568,12 @@ namespace QLKS
             this.GR_DSPHONG.Controls.Add(this.DT_DS_HD);
             this.GR_DSPHONG.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(223)))), ((int)(((byte)(229)))));
             this.GR_DSPHONG.CustomBorderThickness = new System.Windows.Forms.Padding(0);
-            this.GR_DSPHONG.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GR_DSPHONG.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GR_DSPHONG.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.GR_DSPHONG.Location = new System.Drawing.Point(12, 12);
+            this.GR_DSPHONG.Location = new System.Drawing.Point(16, 15);
+            this.GR_DSPHONG.Margin = new System.Windows.Forms.Padding(4);
             this.GR_DSPHONG.Name = "GR_DSPHONG";
-            this.GR_DSPHONG.Size = new System.Drawing.Size(803, 778);
+            this.GR_DSPHONG.Size = new System.Drawing.Size(1068, 884);
             this.GR_DSPHONG.TabIndex = 13;
             this.GR_DSPHONG.Text = "Danh sách hóa đơn";
             this.GR_DSPHONG.TextOffset = new System.Drawing.Point(0, 10);
@@ -562,12 +589,13 @@ namespace QLKS
             this.BTN_XEMCHITIET.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.BTN_XEMCHITIET.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.BTN_XEMCHITIET.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(223)))), ((int)(((byte)(229)))));
-            this.BTN_XEMCHITIET.Font = new System.Drawing.Font("Montserrat Black", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTN_XEMCHITIET.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTN_XEMCHITIET.ForeColor = System.Drawing.Color.White;
             this.BTN_XEMCHITIET.Image = ((System.Drawing.Image)(resources.GetObject("BTN_XEMCHITIET.Image")));
-            this.BTN_XEMCHITIET.Location = new System.Drawing.Point(264, 722);
+            this.BTN_XEMCHITIET.Location = new System.Drawing.Point(339, 674);
+            this.BTN_XEMCHITIET.Margin = new System.Windows.Forms.Padding(4);
             this.BTN_XEMCHITIET.Name = "BTN_XEMCHITIET";
-            this.BTN_XEMCHITIET.Size = new System.Drawing.Size(151, 42);
+            this.BTN_XEMCHITIET.Size = new System.Drawing.Size(201, 52);
             this.BTN_XEMCHITIET.TabIndex = 58;
             this.BTN_XEMCHITIET.Text = "Tùy chỉnh";
             this.BTN_XEMCHITIET.Click += new System.EventHandler(this.BTN_XEMCHITIET_Click);
@@ -575,10 +603,11 @@ namespace QLKS
             // guna2HtmlLabel11
             // 
             this.guna2HtmlLabel11.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel11.Font = new System.Drawing.Font("Montserrat", 12.25F);
-            this.guna2HtmlLabel11.Location = new System.Drawing.Point(20, 693);
+            this.guna2HtmlLabel11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.guna2HtmlLabel11.Location = new System.Drawing.Point(14, 638);
+            this.guna2HtmlLabel11.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel11.Name = "guna2HtmlLabel11";
-            this.guna2HtmlLabel11.Size = new System.Drawing.Size(97, 24);
+            this.guna2HtmlLabel11.Size = new System.Drawing.Size(107, 27);
             this.guna2HtmlLabel11.TabIndex = 57;
             this.guna2HtmlLabel11.Text = "Mã hóa đơn";
             // 
@@ -598,26 +627,28 @@ namespace QLKS
             this.TEXT_MAHOADON.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TEXT_MAHOADON.ForeColor = System.Drawing.SystemColors.ControlText;
             this.TEXT_MAHOADON.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TEXT_MAHOADON.Location = new System.Drawing.Point(20, 723);
+            this.TEXT_MAHOADON.Location = new System.Drawing.Point(14, 675);
+            this.TEXT_MAHOADON.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TEXT_MAHOADON.Name = "TEXT_MAHOADON";
             this.TEXT_MAHOADON.PasswordChar = '\0';
             this.TEXT_MAHOADON.PlaceholderForeColor = System.Drawing.SystemColors.ControlText;
             this.TEXT_MAHOADON.PlaceholderText = "";
             this.TEXT_MAHOADON.ReadOnly = true;
             this.TEXT_MAHOADON.SelectedText = "";
-            this.TEXT_MAHOADON.Size = new System.Drawing.Size(220, 41);
+            this.TEXT_MAHOADON.Size = new System.Drawing.Size(293, 50);
             this.TEXT_MAHOADON.TabIndex = 56;
             // 
             // TT_HD
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.ClientSize = new System.Drawing.Size(1520, 802);
+            this.ClientSize = new System.Drawing.Size(1942, 987);
             this.Controls.Add(this.guna2GroupBox1);
             this.Controls.Add(this.GR_DSPHONG);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "TT_HD";
             this.Text = "GTX - Danh sách hóa đơn";
             this.Load += new System.EventHandler(this.TT_HD_Load);
