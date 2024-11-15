@@ -23,12 +23,12 @@
                         <div class="card" style="border-radius:20px">
                             <div class="card-body">
                                 <h5 class="card-title">Dịch vụ <span>/Tất cả</span></h5>
-                                <div class="row bg-white" style="padding:20px;border-radius:20px;width:100%;display:flex;justify-content: space-around;">
+                                <div class="row bg-white" style="padding:20px;border-radius:20px;width:100%;display:flex;justify-content: space-between;">
                                     @foreach($service as $dv)
                                     @php
                                     $format_cost = number_format($dv->GIA, 0, ',', '.');
                                     @endphp
-                                    <div class="col-md-6 mb-4" style="max-width:400px" data-aos="fade-up">
+                                    <div class="col-md-6 mb-4" style="max-width:450px" data-aos="fade-up">
                                          <div class="Ha card my-specific-card {{ $dv->ISDELETE == 1 ? 'disabled' : '' }}">
                                             <div class="card-img">
                                                 <img src="{{$dv->HINH}}" loading="lazy" alt="" class="{{ $dv->ISDELETE == 1 ? 'grayscale' : '' }}"> 

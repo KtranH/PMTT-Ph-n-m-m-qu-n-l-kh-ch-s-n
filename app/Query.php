@@ -2,13 +2,14 @@
 
 namespace App;
 
+use App\Models\KhachHang;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 trait Query
 {
     //
 
-/*************  ✨ Codeium Command 🌟  *************/
     public function PushAvatarR2($email, $avatar)
     {
         if($avatar == null)
@@ -24,5 +25,19 @@ trait Query
         }
         Storage::disk('r2')->put($path, file_get_contents($img));
     }
-/******  a7235be7-5050-4b1a-9f19-0c4020667014  *******/
+    public function CheckQuantityRoomInCart()
+    {
+        $user = KhachHang::find(Auth::user()->ID);
+        $total_quantity = $user->gioHang()->get()->sum(function ($item) {
+            return $item->pivot->SOLUONG;
+        });
+        if($total_quantity >= 5)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
 }

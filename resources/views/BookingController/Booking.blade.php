@@ -21,7 +21,7 @@
                 <div class="card" style="border-radius:20px;">
                     <div class="card-body pt-3">
                         <!-- Bordered Tabs -->
-                        <ul class="nav nav-tabs nav-tabs-bordered">
+                        <ul class="nav nav-tabs nav-tabs-bordered" data-aos="fade-up">
                             <li class="nav-item">
                                 <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#danhSachPhong">Danh sách đặt phòng</button>
                             </li>
@@ -31,11 +31,11 @@
                         </ul>
                                 <div class="tab-content pt-2">
 
-                          <div class="tab-pane fade active show profile-overview" id="danhSachPhong">
+                          <div class="tab-pane fade active show profile-overview" id="danhSachPhong" data-aos="fade-up" data-aos-delay="200">
                              <h5 class="card-title" style="font-family: 'Montserrat', sans-serif;
                              font-optical-sizing: auto;
                              font-weight: 400;
-                             font-style: normal;" data-aos="fade-up">Danh sách đặt phòng</h5>
+                             font-style: normal;" data-aos="fade-right" data-aos-delay="200">Danh sách đặt phòng</h5>
 
                             @if (count($listBooking) == 0)
                             <div class="card_dp_khoi" data-aos="fade-down" data-aos-delay="400">
@@ -85,8 +85,8 @@
                                       <td>{{ $item->loaiPhong->TENLOAIPHONG }}</td>
                                       <td><a href="#" class="text-primary">{{ $item->NGAYNHANPHONG }}</a></td>
                                       <td>{{ $item->NGAYTRAPHONGDUKIEN }}</td>
-                                      <td>{{ $item->THANHTOAN }}</td>
-                                      @if ($item->TINHTRANG == "Đã nhận phòng")
+                                      <td>{{ number_format($item->THANHTOAN) }} VNĐ</td>
+                                      @if ($item->TINHTRANG == "Đã đặt phòng")
                                         <td><span class="badge bg-success">{{ $item->TINHTRANG }}</span></td>
                                       @else
                                         <td><span class="badge bg-danger">{{ $item->TINHTRANG }}</span></td>

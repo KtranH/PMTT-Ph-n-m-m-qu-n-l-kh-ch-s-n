@@ -7,6 +7,7 @@ use App\Models\LoaiPhong;
 use App\Models\PhieuDatPhong;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class Booking extends Controller
 {
@@ -35,5 +36,49 @@ class Booking extends Controller
             $listRoom = $user->gioHang()->wherePivot('LOAIPHONG_ID', $id)->get();
         }
         return view('BookingController.SetupBookingManyRooms', compact('listRoom'));
+    }
+    public function ConfirmBooking(Request $request)
+    {
+        $user = KhachHang::find(Auth::user()->ID);
+        if($user->phieuDatPhong()->where('TINHTRANG', 'Đã đặt phòng')->count() >= 5) {
+            return response()->json(['success' => false, 'message' => 'Bạn chỉ được phép đặt trước đối đa 5 phòng!']);
+        }
+        try
+        {
+            $user->phieuDatPhong()->create([
+            'LOAIPHONG_ID' => $request->roomID,
+            'NGAYNHANPHONG' => $request->checkIn,
+            'NGAYTRAPHONGDUKIEN' => $request->checkOut,
+            'THANHTOAN' => $request->payment,
+            'TINHTRANG' => 'Đã đặt phòng',
+            ]);
+            return response()->json(['success' => true]);
+        }
+        catch(\Exception $e)
+        {
+            return response()->json(['success' => false, 'message' => $e->getMessage()]);
+        }
+    }
+    public function ConfirmBookingManyRooms(Request $request)
+    {
+        try
+        {
+            $user = KhachHang::find(Auth::user()->ID);
+            foreach ($request->roomID as $roomID) {
+                $cateRoom = LoaiPhong::find($roomID);
+                $user->phieuDatPhong()->create([
+                'LOAIPHONG_ID' => $roomID,
+                'NGAYNHANPHONG' => $request->checkIn,
+                'NGAYTRAPHONGDUKIEN' => $request->checkOut,
+                'THANHTOAN' => $cateRoom->GIATHUE,
+                'TINHTRANG' => 'Đã đặt phòng',
+                ]);
+            }
+            return response()->json(['success' => true]);
+        }
+        catch(\Exception $e)
+        {
+            return response()->json(['success' => false, 'message' => $e->getMessage()]);
+        }
     }
 }

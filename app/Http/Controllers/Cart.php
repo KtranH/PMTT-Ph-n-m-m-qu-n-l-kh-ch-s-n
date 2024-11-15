@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\KhachHang;
+use App\Query;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -10,6 +11,7 @@ use RealRashid\SweetAlert\Facades\Alert;
 class Cart extends Controller
 {
     //
+    use Query;
     public function Cart()
     {   
         $user = KhachHang::find(Auth::user()->ID);
@@ -18,6 +20,9 @@ class Cart extends Controller
     }
     public function AddCart(Request $request)
     {
+        if(!$this->CheckQuantityRoomInCart()) {
+            return response()->json(['success' => false]);
+        }
         $user = KhachHang::find(Auth::user()->ID);
         if($user->gioHang()->wherePivot('LOAIPHONG_ID', $request->roomID)->exists()) {
             $currentItem = $user->gioHang()

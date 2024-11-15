@@ -437,11 +437,14 @@
                     if (currentTime - lastClickTime < 5000) { 
                         Swal.fire({
                             icon: 'warning',
+                            iconColor: 'white',
                             title: 'Vui lòng đợi 5 giây trước khi thêm tiếp',
+                            color: 'white',
                             toast: true,
                             position: 'bottom-left',
                             showConfirmButton: false,
-                            timer: 3000
+                            timer: 3000,
+                            background: '#F0D56E'
                         });
                         return;
                     }
@@ -459,29 +462,48 @@
                                 _token: '{{ csrf_token() }}'
                             },
                             success: function(response) {
-                                $('#cart-count').text(response.countCart);
-                                $('#cart-icon').addClass('cart-added');
-                                setTimeout(function() {
-                                    $('#cart-icon').removeClass('cart-added');
-                                }, 1000);
-                                Swal.fire({
-                                icon: 'success',
-                                title: 'Thêm thành công',
-                                toast: true,
-                                position: 'bottom-left',
-                                showConfirmButton: false,
-                                timer: 3000
-                                });
+                                if (response.success) {
+                                    $('#cart-count').text(response.countCart);
+                                    $('#cart-icon').addClass('cart-added');
+                                    setTimeout(function() {
+                                        $('#cart-icon').removeClass('cart-added');
+                                    }, 1000);
+                                    Swal.fire({
+                                    icon: 'success',
+                                    iconColor: 'white',
+                                    title: 'Thêm thành công',
+                                    color: 'white',
+                                    toast: true,
+                                    position: 'bottom-left',
+                                    showConfirmButton: false,
+                                    timer: 3000,
+                                    background: '#73D06F'
+                                    });
+                                }
+                                else {
+                                    Swal.fire({
+                                    icon: 'error',
+                                    title: 'Cảnh báo',
+                                    text: 'Bạn chỉ có thể đặt trước tối đa 5 phòng',
+                                    showConfirmButton: false,
+                                    showCancelButton: true,
+                                    cancelButtonText: 'Đồng ý',
+                                    cancelButtonColor: '#d33',
+                                    });
+                                }
                             },
                             error: function(xhr, status, error) {
                                 alert(error);
                                 Swal.fire({
                                 icon: 'error',
+                                iconColor: 'white',
                                 title: 'Thao tác thất bại',
+                                color: 'white',
                                 toast: true,
                                 position: 'bottom-left',
                                 showConfirmButton: false,
-                                timer: 3000
+                                timer: 3000,
+                                background: '#FF6A74'
                                 });
                             },
                             complete: function() {

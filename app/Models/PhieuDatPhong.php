@@ -12,7 +12,7 @@ class PhieuDatPhong extends Model
     protected $fillable = [
         'LOAIPHONG_ID', 'NGAYNHANPHONG', 'NGAYTRAPHONGDUKIEN', 'THANHTOAN', 'TINHTRANG', 'KHACHHANG_ID'
     ];
-
+    public $timestamps = false;
     public function loaiPhong()
     {
         return $this->belongsTo(LoaiPhong::class, 'LOAIPHONG_ID');
@@ -25,4 +25,5 @@ class PhieuDatPhong extends Model
     {
         return $this->belongsTo(KhachHang::class, 'KHACHHANG_ID');
     }
+
 }

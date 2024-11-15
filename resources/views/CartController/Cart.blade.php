@@ -156,11 +156,14 @@
                                                                     location.reload();
                                                                     Swal.fire({
                                                                         icon: 'success',
+                                                                        iconColor: 'white',
                                                                         title: 'Làm mới thành công',
+                                                                        color: 'white',
                                                                         toast: true,
                                                                         position: 'bottom-left',
                                                                         showConfirmButton: false,
-                                                                        timer: 3000
+                                                                        timer: 3000,
+                                                                        background: '#74C0FC'
                                                                     })
                                                                 }
                                                             },
@@ -178,11 +181,14 @@
                                                 if (currentTime - lastTimeDeleteCart < 5000) {
                                                     Swal.fire({
                                                         icon: 'warning',
+                                                        iconColor: 'white',
                                                         title: 'Vui lòng đợi 5 giây trước khi thêm tiếp',
+                                                        color: 'white',
                                                         toast: true,
                                                         position: 'bottom-left',
                                                         showConfirmButton: false,
-                                                        timer: 3000
+                                                        timer: 3000,
+                                                        background: '#F0D56E'
                                                     });
                                                     return;
                                                 }
@@ -228,11 +234,14 @@
 
                                                                             Swal.fire({
                                                                                 icon: 'success',
-                                                                                title: 'Đã xóa lựa chọn 2',
+                                                                                iconColor: 'white',
+                                                                                title: 'Đã xóa lựa chọn',
+                                                                                color: 'white',
                                                                                 toast: true,
                                                                                 position: 'bottom-left',
                                                                                 showConfirmButton: false,
-                                                                                timer: 3000
+                                                                                timer: 3000,
+                                                                                background: '#73D06F'
                                                                             }) 
                                                                         }
                                                                         else
@@ -252,11 +261,14 @@
 
                                                                             Swal.fire({
                                                                                 icon: 'success',
+                                                                                iconColor: 'white',
                                                                                 title: 'Đã xóa lựa chọn',
+                                                                                color: 'white',
                                                                                 toast: true,
                                                                                 position: 'bottom-left',
                                                                                 showConfirmButton: false,
-                                                                                timer: 3000
+                                                                                timer: 3000,
+                                                                                background: '#73D06F'
                                                                             }) 
                                                                         }
                                                                     }
@@ -275,11 +287,14 @@
                                                 if (currentTime - lastTimeAddCart < 5000) {
                                                     Swal.fire({
                                                         icon: 'warning',
+                                                        iconColor: 'white',
                                                         title: 'Vui lòng đợi 5 giây trước khi thêm tiếp',
+                                                        color: 'white',
                                                         toast: true,
                                                         position: 'bottom-left',
                                                         showConfirmButton: false,
                                                         timer: 3000,
+                                                        background: '#F0D56E'
                                                     });
                                                     return;
                                                 }
@@ -323,33 +338,42 @@
                                                             
                                                             Swal.fire({
                                                                 icon: 'success',
+                                                                iconColor: 'white',
                                                                 title: 'Thêm thành công',
+                                                                color: 'white',
                                                                 toast: true,
                                                                 position: 'bottom-left',
                                                                 showConfirmButton: false,
                                                                 timer: 3000,
+                                                                background: '#73D06F'
                                                             });
                                                         } else {
                                                             Swal.fire({
                                                                 icon: 'error',
+                                                                iconColor: 'white',
                                                                 title: 'Có lỗi xảy ra',
                                                                 text: response.message,
+                                                                color: 'white',
                                                                 toast: true,
                                                                 position: 'bottom-left',
                                                                 showConfirmButton: false,
                                                                 timer: 3000,
+                                                                background: '#FF6A74'
                                                             });
                                                         }
                                                     },
                                                     error: function () {
                                                         Swal.fire({
                                                             icon: 'error',
+                                                            iconColor: 'white',
                                                             title: 'Lỗi',
                                                             text: 'Không thể thêm sản phẩm vào giỏ hàng',
+                                                            color: 'white',
                                                             toast: true,
                                                             position: 'bottom-left',
                                                             showConfirmButton: false,
                                                             timer: 3000,
+                                                            background: '#FF6A74'
                                                         });
                                                     },
                                                 });

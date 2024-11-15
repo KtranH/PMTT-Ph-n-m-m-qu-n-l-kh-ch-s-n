@@ -150,17 +150,80 @@
                                                                     <strong id="review_content_price">
                                                                         ...
                                                                     </strong>
+                                                                    <span id="payment" hidden></span>
                                                                 </span>
                                                             </li>
                                                         </ul>
                                                         <div class="action">
-                                                            <a id="pay" class="button" href="">
+                                                            <a id="pay" class="button confirm-button" href="">
                                                                 Xác nhận
                                                             </a>
                                                         </div>
+                                                        <script>
+                                                            $(document).ready(function() {
+                                                                $('.confirm-button').click(function(e) {
+                                                                    e.preventDefault();
+                                                                    var review_content_price = $('#review_content_price').text();
+                                                                    if(review_content_price.includes('...')) {
+                                                                        Swal.fire({
+                                                                            icon: 'warning',
+                                                                            title: 'Cảnh báo',
+                                                                            text: 'Vui lòng xác nhận ngày nhận phòng và ngày trả phòng!',
+                                                                            showConfirmButton: false,
+                                                                            showCancelButton: true,
+                                                                            cancelButtonText: 'Đồng ý',
+                                                                            cancelButtonColor: '#d33',
+                                                                        })
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        $(this).disabled = true;
+                                                                        $('#calculate-days').disabled = true;
+                                                                        $(window).on('beforeunload', function(event) {
+                                                                            event.preventDefault();
+                                                                            return '';
+                                                                        })
+                                                                        var checkIn = $('#dater').val();
+                                                                        var checkOut = $('#datep').val();
+                                                                        var roomID = {{ $cateRoom->ID}};
+                                                                        var payment = $('#payment').text();
+                                                                        $.ajax({
+                                                                            url: "{{ route('confirmBooking') }}",
+                                                                            type: "POST",
+                                                                            data: {
+                                                                                _token: "{{ csrf_token() }}",
+                                                                                checkIn: checkIn,
+                                                                                checkOut: checkOut,
+                                                                                roomID: roomID,
+                                                                                payment: payment
+                                                                            },
+                                                                            success: function(response) {
+                                                                                if (response.success) {
+                                                                                    window.location.href = "{{ route('listBooking') }}";
+                                                                                }
+                                                                                else
+                                                                                {
+                                                                                    Swal.fire({
+                                                                                        icon: 'error',
+                                                                                        title: 'Lỗi',
+                                                                                        text: response.message,
+                                                                                        showConfirmButton: false,
+                                                                                        showCancelButton: true,
+                                                                                        cancelButtonText: 'Đồng ý',
+                                                                                        cancelButtonColor: '#d33',
+                                                                                    });
+                                                                                }
+                                                                            },
+                                                                            error: function(xhr, status, error) {
+                                                                                alert(error);
+                                                                            }
+                                                                        });
+                                                                    }
+                                                                })
+                                                            })
+                                                        </script>
                                                     </div>
                                                 </div>
-
                                             </div>
                                         </div>
 
@@ -264,10 +327,13 @@
                                                 if (checkOutDate <= checkInDate) {
                                                     Swal.fire({
                                                         icon: 'warning',
+                                                        iconColor: 'white',
                                                         title: 'Cảnh báo',
                                                         text: 'Ngày trả phòng phải lớn hơn ngày nhận phòng.',
+                                                        color: 'white',
                                                         showConfirmButton: false,
-                                                        timer: 1500
+                                                        timer: 3000,
+                                                        background: '#F0D56E'
                                                     })
                                                     $(this).val(formatDate(tomorrow)); 
                                                 }
@@ -289,6 +355,7 @@
                                                 $('#days-rented').text(daysRented);
                                                 $('#total-price').text(new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(totalPrice));
                                                 $('#review_price').text(new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(totalPrice));
+                                                $('#payment').text(totalPrice);
                                                 $('#review_content_price').text(new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(totalPrice));
                                             });
                                         });
