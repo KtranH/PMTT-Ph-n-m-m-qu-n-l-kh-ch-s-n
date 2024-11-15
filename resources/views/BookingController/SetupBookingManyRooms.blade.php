@@ -3,6 +3,7 @@
 
 @php
     $total_price = 0;
+    $total_quantity = 0;
 @endphp
     <title>GTX - Thanh toán</title>
 
@@ -66,6 +67,7 @@
                                                                 <td>{{ number_format($item->pivot->DONGIA) }} VNĐ</td>
                                                                 @php
                                                                     $total_price += $item->pivot->DONGIA;
+                                                                    $total_quantity += $item->pivot->SOLUONG;
                                                                 @endphp
                                                             </tr>
                                                         @endforeach
@@ -165,10 +167,76 @@
                                                             </li>
                                                         </ul>
                                                         <div class="action">
-                                                            <a id="pay" class="button" href="">
+                                                            <a id="pay" class="button confirm-button" href="">
                                                                 Xác nhận
                                                             </a>
                                                         </div>
+                                                        <script>
+                                                            $(document).ready(function() {
+                                                                $('.confirm-button').click(function(e) {
+                                                                    e.preventDefault();
+                                                                    var review_content_price = $('#review_content_price').text();
+                                                                    if(review_content_price.includes('...')) {
+                                                                        Swal.fire({
+                                                                            icon: 'warning',
+                                                                            title: 'Cảnh báo',
+                                                                            text: 'Vui lòng xác nhận ngày nhận phòng và ngày trả phòng!',
+                                                                            showConfirmButton: false,
+                                                                            showCancelButton: true,
+                                                                            cancelButtonText: 'Đồng ý',
+                                                                            cancelButtonColor: '#d33',
+                                                                        })
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        $(this).disabled = true;
+                                                                        $('#calculate-days').disabled = true;
+                                                                        $(window).on('beforeunload', function(event) {
+                                                                            event.preventDefault();
+                                                                            return '';
+                                                                        })
+
+                                                                        var checkIn = $('#dater').val();
+                                                                        var checkOut = $('#datep').val();
+                                                                        var listRoom = @json($listRoom);
+                                                                        var quantity = {{ $total_quantity }};
+
+                                                                        console.log(listRoom);
+                                                                        $.ajax({
+                                                                            url: "{{ route('confirmBookingManyRooms') }}",
+                                                                            type: "POST",
+                                                                            data: {
+                                                                                _token: "{{ csrf_token() }}",
+                                                                                checkIn: checkIn,
+                                                                                checkOut: checkOut,
+                                                                                listRoom: listRoom,
+                                                                                quantity: quantity
+                                                                            },
+                                                                            success: function(response) {
+                                                                                if (response.success) {
+                                                                                    window.location.href = "{{ route('listBooking') }}";
+                                                                                }
+                                                                                else
+                                                                                {
+                                                                                    Swal.fire({
+                                                                                        icon: 'error',
+                                                                                        title: 'Lỗi',
+                                                                                        text: response.message,
+                                                                                        showConfirmButton: false,
+                                                                                        showCancelButton: true,
+                                                                                        cancelButtonText: 'Đồng ý',
+                                                                                        cancelButtonColor: '#d33',
+                                                                                    });
+                                                                                }
+                                                                            },
+                                                                            error: function(xhr, status, error) {
+                                                                                alert(error);
+                                                                            }
+                                                                        });
+                                                                    }
+                                                                })
+                                                            })
+                                                        </script>
                                                     </div>
                                                 </div>
 

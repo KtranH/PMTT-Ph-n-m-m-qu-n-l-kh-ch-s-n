@@ -6,6 +6,7 @@ use App\Models\KhachHang;
 use App\Models\LoaiPhong;
 use App\Models\PhieuDatPhong;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -61,18 +62,26 @@ class Booking extends Controller
     }
     public function ConfirmBookingManyRooms(Request $request)
     {
+        $user = KhachHang::find(Auth::user()->ID);
+        if($user->phieuDatPhong()->where('TINHTRANG', 'Đã đặt phòng')->count() + $request->quantity >= 5) {
+            return response()->json(['success' => false, 'message' => 'Bạn chỉ được phép đặt trước đối đa 5 phòng!']);
+        }
         try
         {
-            $user = KhachHang::find(Auth::user()->ID);
-            foreach ($request->roomID as $roomID) {
-                $cateRoom = LoaiPhong::find($roomID);
-                $user->phieuDatPhong()->create([
-                'LOAIPHONG_ID' => $roomID,
-                'NGAYNHANPHONG' => $request->checkIn,
-                'NGAYTRAPHONGDUKIEN' => $request->checkOut,
-                'THANHTOAN' => $cateRoom->GIATHUE,
-                'TINHTRANG' => 'Đã đặt phòng',
-                ]);
+            $checkIn = Carbon::parse($request->checkIn);
+            $checkOut = Carbon::parse($request->checkOut);
+            $duration = $checkIn->diffInDays($checkOut);
+            foreach ($request->listRoom as $item) {
+                for ($i = 0; $i < $item['pivot']['SOLUONG']; $i++) {
+                    $user->phieuDatPhong()->create([
+                    'LOAIPHONG_ID' => $item['ID'],
+                    'NGAYNHANPHONG' => $request->checkIn,
+                    'NGAYTRAPHONGDUKIEN' => $request->checkOut,
+                    'THANHTOAN' => ($item['pivot']['DONGIA'] / $item['pivot']['SOLUONG']) * $duration,
+                    'TINHTRANG' => 'Đã đặt phòng',
+                    ]);
+                }
+                $user->gioHang()->detach($item['ID']);
             }
             return response()->json(['success' => true]);
         }
