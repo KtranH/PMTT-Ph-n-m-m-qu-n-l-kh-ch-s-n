@@ -1,5 +1,9 @@
 @extends('Layout')
 @section('body')
+
+@php
+    $total_price = 0;
+@endphp
     <title>GTX - Thanh toán</title>
 
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
@@ -44,20 +48,27 @@
                                                             <th scope="col">Tên loại</th>
                                                             <th scope="col" style="width:25%">Nội thất</th>
                                                             <th scope="col">Sức chứa</th>
+                                                            <th scope="col">Số lượng</th>
                                                             <th scope="col">Giá thuê</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <tr>
-                                                            <th scope="row"><img
-                                                                    src="{{ $cateRoom->hinhLoaiPhong[0]->HINH }}"
-                                                                    style="width:50px; height:50px; border-radius:10px; box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; object-fit: cover;"
-                                                                    alt=""></th>
-                                                            <td>{{ $cateRoom->TENLOAIPHONG }}.</td>
-                                                            <td>{{ $cateRoom->NOITHAT }}.</td>
-                                                            <td>{{ $cateRoom->SUCCHUA }}</td>
-                                                            <td>{{ number_format($cateRoom->GIATHUE) }} VNĐ</td>
-                                                        </tr>
+                                                        @foreach ($listRoom as $item)
+                                                            <tr>
+                                                                <th scope="row"><img
+                                                                        src="{{ $item->hinhLoaiPhong[0]->HINH }}"
+                                                                        style="width:50px; height:50px; border-radius:10px; box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; object-fit: cover;"
+                                                                        alt=""></th>
+                                                                <td>{{ $item->TENLOAIPHONG }}.</td>
+                                                                <td>{{ $item->NOITHAT }}.</td>
+                                                                <td>{{ $item->SUCCHUA }}</td>
+                                                                <td>{{ $item->pivot->SOLUONG }}</td>
+                                                                <td>{{ number_format($item->pivot->DONGIA) }} VNĐ</td>
+                                                                @php
+                                                                    $total_price += $item->pivot->DONGIA;
+                                                                @endphp
+                                                            </tr>
+                                                        @endforeach
                                                     </tbody>
                                                 </table>
 
@@ -102,7 +113,7 @@
                                                                         </path>
                                                                     </svg>
                                                                 </span>
-                                                                <span><strong>Ngân hàng:</strong> ABCDF</span>
+                                                                <span>Ngân hàng:<strong> ABCDF</strong></span>
                                                             </li>
                                                             <li>
                                                                 <span class="icon">
@@ -245,7 +256,7 @@
 
                                             const formatDate = (date) => date.toISOString().split('T')[0];
 
-                                            const roomPrice = {{ $cateRoom->GIATHUE }}; 
+                                            const roomPrice = {{ $total_price }}; 
 
                                             $('#dater').val(formatDate(today));
                                             $('#datep').val(formatDate(tomorrow));

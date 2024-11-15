@@ -25,4 +25,15 @@ class Booking extends Controller
         $cateRoom = LoaiPhong::find($id);
         return view('BookingController.SetupBooking', compact('cateRoom'));
     }
+    public function SetupBookingManyRooms($id = null)
+    {
+        $user = KhachHang::find(Auth::user()->ID);  
+        if($id == null) {
+            $listRoom = $user->gioHang()->get();
+        }
+        else {
+            $listRoom = $user->gioHang()->wherePivot('LOAIPHONG_ID', $id)->get();
+        }
+        return view('BookingController.SetupBookingManyRooms', compact('listRoom'));
+    }
 }

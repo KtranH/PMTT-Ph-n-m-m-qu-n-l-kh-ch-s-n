@@ -1,6 +1,10 @@
 @extends('Layout')
 @section('body')
 
+@php
+    $total_quantity = 0;
+@endphp
+
 <title>GTX - Giỏ hàng của bạn</title>
 
 <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
@@ -57,7 +61,10 @@
                                                     <td><a href="" class="btn btn-info add_cart" style="border-radius:20%;margin-right:20px;color:white;background-color:#74C0FC" data-cart-id="{{ $item->ID }}"><i class="fa-solid fa-plus"></i></a>
                                                         <a class="btn btn-danger delete_cart" href="" style="border-radius:20%; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;" data-cart-id="{{ $item->ID }}"><i class="fi fi-br-cross"></i></a>
                                                     </td>
-                                                    <td><a href="" class="btn btn-success"><i class="fa-solid fa-check"></i></a></td>
+                                                    <td><a href="{{ route("setupBookingManyRooms", ['id' => $item->ID]) }}" class="btn btn-success"><i class="fa-solid fa-check"></i></a></td>
+                                                    @php
+                                                        $total_quantity += $item->pivot->SOLUONG;
+                                                    @endphp
                                                 </tr>              
                                             @endforeach
                                         </tbody>
@@ -66,7 +73,7 @@
                                         <h5 style="margin-right:20px">
                                             Tổng tiền trong giỏ: <span id="total-price" style="font-weight:bold;color:#fb5032">{{ number_format($selectCart->sum(function($item) { return $item->pivot->DONGIA; })) }} VNĐ</span>
                                         </h5>                                       
-                                        <a class="button_over_khoi" href="" style="outline: 0;
+                                        <a class="button_over_khoi add_all_cart" href="" style="outline: 0;
                                         border: 0;
                                         display:flex;
                                         justify-content: center;
@@ -107,6 +114,24 @@
                                     </div>
                                     <script>
                                         $(document).ready(function() {
+                                            $('.add_all_cart').click(function(e) {
+                                                e.preventDefault();
+                                                Swal.fire({
+                                                    icon: 'warning',
+                                                    title: 'Cảnh báo',
+                                                    text: 'Bạn muốn đặt tất cả các phòng không?',
+                                                    showCancelButton: true,
+                                                    confirmButtonColor: '#3085d6',
+                                                    cancelButtonColor: '#d33',
+                                                    confirmButtonText: 'Đặt',
+                                                    cancelButtonText: 'Hủy',
+                                                }).then((result) => {
+                                                        if (result.isConfirmed) {
+                                                            $(this).disabled = true;
+                                                            window.location.href = '{{ route("setupBookingManyRooms") }}';
+                                                        }
+                                                })
+                                            })
                                             $('.delete_all_cart').click(function(e) {
                                                 e.preventDefault();
                                                 Swal.fire({
@@ -263,6 +288,21 @@
 
                                                 var roomID = $(this).data('cart-id');
                                                 var quantityCell = $(this).closest('tr').find('td.green');
+                                                var quantityRoom = {{ $total_quantity }};
+                                                console.log(quantityRoom);
+                                                if(quantityRoom >= 5)
+                                                {
+                                                    Swal.fire({
+                                                        icon: 'error',
+                                                        title: 'Cảnh báo',
+                                                        text: 'Bạn chỉ có thể đặt trước tối đa 5 phòng',
+                                                        showCancelButton: true,
+                                                        showConfirmButton: false,
+                                                        cancelButtonText: 'Đồng ý',
+                                                        cancelButtonColor: '#d33',
+                                                    });
+                                                    return;
+                                                }
 
                                                 $.ajax({
                                                     url: '{{ route("addCart") }}',

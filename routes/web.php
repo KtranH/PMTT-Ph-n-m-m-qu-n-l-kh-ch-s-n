@@ -78,6 +78,9 @@ Route::middleware([CheckLogin::class])->group(function () {
     //Setup Booking
     Route::get('/setupBooking/{id}', [Booking::class, 'SetupBooking'])->name('setupBooking');
 
+    //Setup Booking Many Rooms
+    Route::get('/setupBookingManyRooms/{id?}', [Booking::class, 'SetupBookingManyRooms'])->name('setupBookingManyRooms');
+
     //-------------------------------------------------------------------------------------------------------------------------------//
 
     //---------------------------------------------------REVIEW CONTROLLER----------------------------------------------------//
