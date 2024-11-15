@@ -1,11 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="WEB_APP_QLKSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityType Name="CHITIETPHIEUDATPHONG">
+  <EntityType Name="cache">
     <Key>
-      <PropertyRef Name="PHIEUDATPHONG_ID" />
+      <PropertyRef Name="key" />
+    </Key>
+    <Property Name="key" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="value" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="expiration" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="cache_locks">
+    <Key>
+      <PropertyRef Name="key" />
+    </Key>
+    <Property Name="key" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="owner" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="expiration" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CHITIETPHIEUNHANPHONG">
+    <Key>
+      <PropertyRef Name="PHIEUNHANPHONG_ID" />
       <PropertyRef Name="KHACHHANG_ID" />
     </Key>
-    <Property Name="PHIEUDATPHONG_ID" Type="int" Nullable="false" />
+    <Property Name="PHIEUNHANPHONG_ID" Type="int" Nullable="false" />
     <Property Name="KHACHHANG_ID" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="CHITIETTRAPHONG">
@@ -40,6 +56,18 @@
     <Property Name="HINH" Type="nvarchar(max)" />
     <Property Name="ISDELETED" Type="bit" />
   </EntityType>
+  <EntityType Name="failed_jobs">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="uuid" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="connection" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="queue" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="payload" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="exception" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="failed_at" Type="datetime" Nullable="false" />
+  </EntityType>
   <EntityType Name="GIOHANG">
     <Key>
       <PropertyRef Name="KHACHHANG_ID" />
@@ -47,6 +75,8 @@
     </Key>
     <Property Name="KHACHHANG_ID" Type="int" Nullable="false" />
     <Property Name="LOAIPHONG_ID" Type="int" Nullable="false" />
+    <Property Name="SOLUONG" Type="int" />
+    <Property Name="DONGIA" Type="float" />
   </EntityType>
   <EntityType Name="HINHLOAIPHONG">
     <Key>
@@ -55,6 +85,33 @@
     </Key>
     <Property Name="LOAIPHONG_ID" Type="int" Nullable="false" />
     <Property Name="HINH" Type="nvarchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="job_batches">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="total_jobs" Type="int" Nullable="false" />
+    <Property Name="pending_jobs" Type="int" Nullable="false" />
+    <Property Name="failed_jobs" Type="int" Nullable="false" />
+    <Property Name="failed_job_ids" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="options" Type="nvarchar(max)" />
+    <Property Name="cancelled_at" Type="int" />
+    <Property Name="created_at" Type="int" Nullable="false" />
+    <Property Name="finished_at" Type="int" />
+  </EntityType>
+  <EntityType Name="jobs">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="queue" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="payload" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="attempts" Type="tinyint" Nullable="false" />
+    <Property Name="reserved_at" Type="int" />
+    <Property Name="available_at" Type="int" Nullable="false" />
+    <Property Name="created_at" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="KHACHHANG">
     <Key>
@@ -87,6 +144,14 @@
     <Property Name="TIENICH" Type="nvarchar(max)" />
     <Property Name="ISDELETED" Type="bit" />
   </EntityType>
+  <EntityType Name="migrations">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="migration" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="batch" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="NHANVIEN">
     <Key>
       <PropertyRef Name="ID" />
@@ -101,6 +166,14 @@
     <Property Name="CHUCVU" Type="nvarchar" MaxLength="255" />
     <Property Name="ISDELETED" Type="bit" />
   </EntityType>
+  <EntityType Name="password_reset_tokens">
+    <Key>
+      <PropertyRef Name="email" />
+    </Key>
+    <Property Name="email" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="token" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="created_at" Type="datetime" />
+  </EntityType>
   <EntityType Name="PHIEUDATPHONG">
     <Key>
       <PropertyRef Name="ID" />
@@ -111,6 +184,7 @@
     <Property Name="NGAYTRAPHONGDUKIEN" Type="date" />
     <Property Name="THANHTOAN" Type="decimal" Precision="18" Scale="2" />
     <Property Name="TINHTRANG" Type="nvarchar" MaxLength="50" />
+    <Property Name="KHACHHANG_ID" Type="int" />
   </EntityType>
   <EntityType Name="PHIEUNHANPHONG">
     <Key>
@@ -145,6 +219,17 @@
     <Property Name="LOAIPHONG_ID" Type="int" />
     <Property Name="TRANGTHAI" Type="nvarchar" MaxLength="50" />
   </EntityType>
+  <EntityType Name="sessions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="user_id" Type="bigint" />
+    <Property Name="ip_address" Type="nvarchar" MaxLength="45" />
+    <Property Name="user_agent" Type="nvarchar(max)" />
+    <Property Name="payload" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="last_activity" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
       <PropertyRef Name="diagram_id" />
@@ -155,27 +240,40 @@
     <Property Name="version" Type="int" />
     <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
-  <Association Name="FK__CHITIETPH__KHACH__52593CB8">
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="email_verified_at" Type="datetime" />
+    <Property Name="password" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="remember_token" Type="nvarchar" MaxLength="100" />
+    <Property Name="created_at" Type="datetime" />
+    <Property Name="updated_at" Type="datetime" />
+  </EntityType>
+  <Association Name="FK__CHITIETPH__KHACH__17F790F9">
     <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
-    <End Role="CHITIETPHIEUDATPHONG" Type="Self.CHITIETPHIEUDATPHONG" Multiplicity="*" />
+    <End Role="CHITIETPHIEUNHANPHONG" Type="Self.CHITIETPHIEUNHANPHONG" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="KHACHHANG">
         <PropertyRef Name="ID" />
       </Principal>
-      <Dependent Role="CHITIETPHIEUDATPHONG">
+      <Dependent Role="CHITIETPHIEUNHANPHONG">
         <PropertyRef Name="KHACHHANG_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__CHITIETPH__PHIEU__5165187F">
-    <End Role="PHIEUDATPHONG" Type="Self.PHIEUDATPHONG" Multiplicity="1" />
-    <End Role="CHITIETPHIEUDATPHONG" Type="Self.CHITIETPHIEUDATPHONG" Multiplicity="*" />
+  <Association Name="FK__CHITIETPH__PHIEU__17036CC0">
+    <End Role="PHIEUNHANPHONG" Type="Self.PHIEUNHANPHONG" Multiplicity="1" />
+    <End Role="CHITIETPHIEUNHANPHONG" Type="Self.CHITIETPHIEUNHANPHONG" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="PHIEUDATPHONG">
+      <Principal Role="PHIEUNHANPHONG">
         <PropertyRef Name="ID" />
       </Principal>
-      <Dependent Role="CHITIETPHIEUDATPHONG">
-        <PropertyRef Name="PHIEUDATPHONG_ID" />
+      <Dependent Role="CHITIETPHIEUNHANPHONG">
+        <PropertyRef Name="PHIEUNHANPHONG_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -347,28 +445,49 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_KHACHHANG_DATPHONG">
+    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="0..1" />
+    <End Role="PHIEUDATPHONG" Type="Self.PHIEUDATPHONG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACHHANG">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PHIEUDATPHONG">
+        <PropertyRef Name="KHACHHANG_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="WEB_APP_QLKSModelStoreContainer">
-    <EntitySet Name="CHITIETPHIEUDATPHONG" EntityType="Self.CHITIETPHIEUDATPHONG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cache" EntityType="Self.cache" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cache_locks" EntityType="Self.cache_locks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CHITIETPHIEUNHANPHONG" EntityType="Self.CHITIETPHIEUNHANPHONG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CHITIETTRAPHONG" EntityType="Self.CHITIETTRAPHONG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DANHGIA" EntityType="Self.DANHGIA" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DICHVU" EntityType="Self.DICHVU" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="failed_jobs" EntityType="Self.failed_jobs" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="GIOHANG" EntityType="Self.GIOHANG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="HINHLOAIPHONG" EntityType="Self.HINHLOAIPHONG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="job_batches" EntityType="Self.job_batches" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="jobs" EntityType="Self.jobs" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="KHACHHANG" EntityType="Self.KHACHHANG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LOAIPHONG" EntityType="Self.LOAIPHONG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="migrations" EntityType="Self.migrations" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NHANVIEN" EntityType="Self.NHANVIEN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="password_reset_tokens" EntityType="Self.password_reset_tokens" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PHIEUDATPHONG" EntityType="Self.PHIEUDATPHONG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PHIEUNHANPHONG" EntityType="Self.PHIEUNHANPHONG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PHIEUTRAPHONG" EntityType="Self.PHIEUTRAPHONG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PHONG" EntityType="Self.PHONG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sessions" EntityType="Self.sessions" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__CHITIETPH__KHACH__52593CB8" Association="Self.FK__CHITIETPH__KHACH__52593CB8">
+    <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__CHITIETPH__KHACH__17F790F9" Association="Self.FK__CHITIETPH__KHACH__17F790F9">
       <End Role="KHACHHANG" EntitySet="KHACHHANG" />
-      <End Role="CHITIETPHIEUDATPHONG" EntitySet="CHITIETPHIEUDATPHONG" />
+      <End Role="CHITIETPHIEUNHANPHONG" EntitySet="CHITIETPHIEUNHANPHONG" />
     </AssociationSet>
-    <AssociationSet Name="FK__CHITIETPH__PHIEU__5165187F" Association="Self.FK__CHITIETPH__PHIEU__5165187F">
-      <End Role="PHIEUDATPHONG" EntitySet="PHIEUDATPHONG" />
-      <End Role="CHITIETPHIEUDATPHONG" EntitySet="CHITIETPHIEUDATPHONG" />
+    <AssociationSet Name="FK__CHITIETPH__PHIEU__17036CC0" Association="Self.FK__CHITIETPH__PHIEU__17036CC0">
+      <End Role="PHIEUNHANPHONG" EntitySet="PHIEUNHANPHONG" />
+      <End Role="CHITIETPHIEUNHANPHONG" EntitySet="CHITIETPHIEUNHANPHONG" />
     </AssociationSet>
     <AssociationSet Name="FK__CHITIETTR__DICHV__5CD6CB2B" Association="Self.FK__CHITIETTR__DICHV__5CD6CB2B">
       <End Role="DICHVU" EntitySet="DICHVU" />
@@ -425,6 +544,10 @@
     <AssociationSet Name="FK__PHONG__LOAIPHONG__4316F928" Association="Self.FK__PHONG__LOAIPHONG__4316F928">
       <End Role="LOAIPHONG" EntitySet="LOAIPHONG" />
       <End Role="PHONG" EntitySet="PHONG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KHACHHANG_DATPHONG" Association="Self.FK_KHACHHANG_DATPHONG">
+      <End Role="KHACHHANG" EntitySet="KHACHHANG" />
+      <End Role="PHIEUDATPHONG" EntitySet="PHIEUDATPHONG" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

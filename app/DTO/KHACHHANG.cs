@@ -18,8 +18,9 @@ namespace DTO
         public KHACHHANG()
         {
             this.DANHGIAs = new HashSet<DANHGIA>();
+            this.GIOHANGs = new HashSet<GIOHANG>();
             this.PHIEUDATPHONGs = new HashSet<PHIEUDATPHONG>();
-            this.LOAIPHONGs = new HashSet<LOAIPHONG>();
+            this.PHIEUNHANPHONGs = new HashSet<PHIEUNHANPHONG>();
         }
     
         public int ID { get; set; }
@@ -38,8 +39,10 @@ namespace DTO
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DANHGIA> DANHGIAs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<GIOHANG> GIOHANGs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PHIEUDATPHONG> PHIEUDATPHONGs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LOAIPHONG> LOAIPHONGs { get; set; }
+        public virtual ICollection<PHIEUNHANPHONG> PHIEUNHANPHONGs { get; set; }
     }
 }

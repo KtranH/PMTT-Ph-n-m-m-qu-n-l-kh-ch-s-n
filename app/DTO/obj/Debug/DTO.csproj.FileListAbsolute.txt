@@ -40,3 +40,6 @@ C:\Users\nguye\Downloads\PMTT_QLKS-main\app\DTO\obj\Debug\DTO.csproj.CoreCompile
 C:\Users\nguye\Downloads\PMTT_QLKS-main\app\DTO\obj\Debug\DTO.csproj.Up2Date
 C:\Users\nguye\Downloads\PMTT_QLKS-main\app\DTO\obj\Debug\DTO.dll
 C:\Users\nguye\Downloads\PMTT_QLKS-main\app\DTO\obj\Debug\DTO.pdb
+D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\app\DTO\bin\Debug\Guna.Charts.WinForms.dll
+D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\app\DTO\bin\Debug\Guna.UI2.dll
+D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\app\DTO\bin\Debug\Guna.Charts.WinForms.xml

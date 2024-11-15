@@ -1,5 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="WEB_APP_QLKSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="cache">
+    <Key>
+      <PropertyRef Name="key" />
+    </Key>
+    <Property Name="key" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="expiration" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="cache_locks">
+    <Key>
+      <PropertyRef Name="key" />
+    </Key>
+    <Property Name="key" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="owner" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="expiration" Type="Int32" Nullable="false" />
+  </EntityType>
   <EntityType Name="CHITIETTRAPHONG">
     <Key>
       <PropertyRef Name="PHIEUTRAPHONG_ID" />
@@ -37,6 +53,30 @@
     <Property Name="ISDELETED" Type="Boolean" />
     <NavigationProperty Name="CHITIETTRAPHONGs" Relationship="Self.FK__CHITIETTR__DICHV__5CD6CB2B" FromRole="DICHVU" ToRole="CHITIETTRAPHONG" />
   </EntityType>
+  <EntityType Name="failed_jobs">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uuid" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="connection" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="queue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="payload" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="exception" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="failed_at" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="GIOHANG">
+    <Key>
+      <PropertyRef Name="KHACHHANG_ID" />
+      <PropertyRef Name="LOAIPHONG_ID" />
+    </Key>
+    <Property Name="KHACHHANG_ID" Type="Int32" Nullable="false" />
+    <Property Name="LOAIPHONG_ID" Type="Int32" Nullable="false" />
+    <Property Name="SOLUONG" Type="Int32" />
+    <Property Name="DONGIA" Type="Double" />
+    <NavigationProperty Name="KHACHHANG" Relationship="Self.FK__GIOHANG__KHACHHA__45F365D3" FromRole="GIOHANG" ToRole="KHACHHANG" />
+    <NavigationProperty Name="LOAIPHONG" Relationship="Self.FK__GIOHANG__LOAIPHO__46E78A0C" FromRole="GIOHANG" ToRole="LOAIPHONG" />
+  </EntityType>
   <EntityType Name="HINHLOAIPHONG">
     <Key>
       <PropertyRef Name="LOAIPHONG_ID" />
@@ -45,6 +85,33 @@
     <Property Name="LOAIPHONG_ID" Type="Int32" Nullable="false" />
     <Property Name="HINH" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="LOAIPHONG" Relationship="Self.FK__HINHLOAIP__LOAIP__403A8C7D" FromRole="HINHLOAIPHONG" ToRole="LOAIPHONG" />
+  </EntityType>
+  <EntityType Name="job_batches">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="total_jobs" Type="Int32" Nullable="false" />
+    <Property Name="pending_jobs" Type="Int32" Nullable="false" />
+    <Property Name="failed_jobs" Type="Int32" Nullable="false" />
+    <Property Name="failed_job_ids" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="options" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="cancelled_at" Type="Int32" />
+    <Property Name="created_at" Type="Int32" Nullable="false" />
+    <Property Name="finished_at" Type="Int32" />
+  </EntityType>
+  <EntityType Name="job">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="queue" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="payload" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="attempts" Type="Byte" Nullable="false" />
+    <Property Name="reserved_at" Type="Int32" />
+    <Property Name="available_at" Type="Int32" Nullable="false" />
+    <Property Name="created_at" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="KHACHHANG">
     <Key>
@@ -63,8 +130,9 @@
     <Property Name="ISDELETED" Type="Boolean" />
     <Property Name="remember_token" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="DANHGIAs" Relationship="Self.FK__DANHGIA__KHACHHA__6FE99F9F" FromRole="KHACHHANG" ToRole="DANHGIA" />
-    <NavigationProperty Name="PHIEUDATPHONGs" Relationship="Self.CHITIETPHIEUDATPHONG" FromRole="KHACHHANG" ToRole="PHIEUDATPHONG" />
-    <NavigationProperty Name="LOAIPHONGs" Relationship="Self.GIOHANG" FromRole="KHACHHANG" ToRole="LOAIPHONG" />
+    <NavigationProperty Name="GIOHANGs" Relationship="Self.FK__GIOHANG__KHACHHA__45F365D3" FromRole="KHACHHANG" ToRole="GIOHANG" />
+    <NavigationProperty Name="PHIEUDATPHONGs" Relationship="Self.FK_KHACHHANG_DATPHONG" FromRole="KHACHHANG" ToRole="PHIEUDATPHONG" />
+    <NavigationProperty Name="PHIEUNHANPHONGs" Relationship="Self.CHITIETPHIEUNHANPHONG" FromRole="KHACHHANG" ToRole="PHIEUNHANPHONG" />
   </EntityType>
   <EntityType Name="LOAIPHONG">
     <Key>
@@ -79,10 +147,18 @@
     <Property Name="NOITHAT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="TIENICH" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="ISDELETED" Type="Boolean" />
+    <NavigationProperty Name="GIOHANGs" Relationship="Self.FK__GIOHANG__LOAIPHO__46E78A0C" FromRole="LOAIPHONG" ToRole="GIOHANG" />
     <NavigationProperty Name="HINHLOAIPHONGs" Relationship="Self.FK__HINHLOAIP__LOAIP__403A8C7D" FromRole="LOAIPHONG" ToRole="HINHLOAIPHONG" />
     <NavigationProperty Name="PHIEUDATPHONGs" Relationship="Self.FK__PHIEUDATP__LOAIP__49C3F6B7" FromRole="LOAIPHONG" ToRole="PHIEUDATPHONG" />
     <NavigationProperty Name="PHONGs" Relationship="Self.FK__PHONG__LOAIPHONG__4316F928" FromRole="LOAIPHONG" ToRole="PHONG" />
-    <NavigationProperty Name="KHACHHANGs" Relationship="Self.GIOHANG" FromRole="LOAIPHONG" ToRole="KHACHHANG" />
+  </EntityType>
+  <EntityType Name="migration">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="migration1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="batch" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="NHANVIEN">
     <Key>
@@ -100,6 +176,14 @@
     <NavigationProperty Name="PHIEUNHANPHONGs" Relationship="Self.FK__PHIEUNHAN__NHANV__4CA06362" FromRole="NHANVIEN" ToRole="PHIEUNHANPHONG" />
     <NavigationProperty Name="PHIEUTRAPHONGs" Relationship="Self.FK__PHIEUTRAP__NHANV__5812160E" FromRole="NHANVIEN" ToRole="PHIEUTRAPHONG" />
   </EntityType>
+  <EntityType Name="password_reset_tokens">
+    <Key>
+      <PropertyRef Name="email" />
+    </Key>
+    <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="token" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="created_at" Type="DateTime" Precision="3" />
+  </EntityType>
   <EntityType Name="PHIEUDATPHONG">
     <Key>
       <PropertyRef Name="ID" />
@@ -110,9 +194,10 @@
     <Property Name="NGAYTRAPHONGDUKIEN" Type="DateTime" Precision="0" />
     <Property Name="THANHTOAN" Type="Decimal" Precision="18" Scale="2" />
     <Property Name="TINHTRANG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="KHACHHANG_ID" Type="Int32" />
+    <NavigationProperty Name="KHACHHANG" Relationship="Self.FK_KHACHHANG_DATPHONG" FromRole="PHIEUDATPHONG" ToRole="KHACHHANG" />
     <NavigationProperty Name="LOAIPHONG" Relationship="Self.FK__PHIEUDATP__LOAIP__49C3F6B7" FromRole="PHIEUDATPHONG" ToRole="LOAIPHONG" />
     <NavigationProperty Name="PHIEUNHANPHONGs" Relationship="Self.FK__PHIEUNHAN__PHIEU__4D94879B" FromRole="PHIEUDATPHONG" ToRole="PHIEUNHANPHONG" />
-    <NavigationProperty Name="KHACHHANGs" Relationship="Self.CHITIETPHIEUDATPHONG" FromRole="PHIEUDATPHONG" ToRole="KHACHHANG" />
   </EntityType>
   <EntityType Name="PHIEUNHANPHONG">
     <Key>
@@ -128,6 +213,7 @@
     <NavigationProperty Name="PHIEUDATPHONG" Relationship="Self.FK__PHIEUNHAN__PHIEU__4D94879B" FromRole="PHIEUNHANPHONG" ToRole="PHIEUDATPHONG" />
     <NavigationProperty Name="PHONG" Relationship="Self.FK__PHIEUNHAN__PHONG__4E88ABD4" FromRole="PHIEUNHANPHONG" ToRole="PHONG" />
     <NavigationProperty Name="PHIEUTRAPHONGs" Relationship="Self.FK__PHIEUTRAP__PHIEU__59063A47" FromRole="PHIEUNHANPHONG" ToRole="PHIEUTRAPHONG" />
+    <NavigationProperty Name="KHACHHANGs" Relationship="Self.CHITIETPHIEUNHANPHONG" FromRole="PHIEUNHANPHONG" ToRole="KHACHHANG" />
   </EntityType>
   <EntityType Name="PHIEUTRAPHONG">
     <Key>
@@ -157,6 +243,17 @@
     <NavigationProperty Name="LOAIPHONG" Relationship="Self.FK__PHONG__LOAIPHONG__4316F928" FromRole="PHONG" ToRole="LOAIPHONG" />
     <NavigationProperty Name="PHIEUNHANPHONGs" Relationship="Self.FK__PHIEUNHAN__PHONG__4E88ABD4" FromRole="PHONG" ToRole="PHIEUNHANPHONG" />
   </EntityType>
+  <EntityType Name="session">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="user_id" Type="Int64" />
+    <Property Name="ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="true" />
+    <Property Name="user_agent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="payload" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="last_activity" Type="Int32" Nullable="false" />
+  </EntityType>
   <EntityType Name="sysdiagram">
     <Key>
       <PropertyRef Name="diagram_id" />
@@ -166,6 +263,19 @@
     <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="version" Type="Int32" />
     <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="email_verified_at" Type="DateTime" Precision="3" />
+    <Property Name="password" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="remember_token" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="created_at" Type="DateTime" Precision="3" />
+    <Property Name="updated_at" Type="DateTime" Precision="3" />
   </EntityType>
   <Association Name="FK__CHITIETTR__DICHV__5CD6CB2B">
     <End Role="DICHVU" Type="Self.DICHVU" Multiplicity="1" />
@@ -215,6 +325,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK__GIOHANG__KHACHHA__45F365D3">
+    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
+    <End Role="GIOHANG" Type="Self.GIOHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACHHANG">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GIOHANG">
+        <PropertyRef Name="KHACHHANG_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__GIOHANG__LOAIPHO__46E78A0C">
+    <End Role="LOAIPHONG" Type="Self.LOAIPHONG" Multiplicity="1" />
+    <End Role="GIOHANG" Type="Self.GIOHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOAIPHONG">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GIOHANG">
+        <PropertyRef Name="LOAIPHONG_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK__HINHLOAIP__LOAIP__403A8C7D">
     <End Role="LOAIPHONG" Type="Self.LOAIPHONG" Multiplicity="1" />
     <End Role="HINHLOAIPHONG" Type="Self.HINHLOAIPHONG" Multiplicity="*" />
@@ -224,6 +358,18 @@
       </Principal>
       <Dependent Role="HINHLOAIPHONG">
         <PropertyRef Name="LOAIPHONG_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KHACHHANG_DATPHONG">
+    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="0..1" />
+    <End Role="PHIEUDATPHONG" Type="Self.PHIEUDATPHONG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACHHANG">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PHIEUDATPHONG">
+        <PropertyRef Name="KHACHHANG_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -311,27 +457,33 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="CHITIETPHIEUDATPHONG">
+  <Association Name="CHITIETPHIEUNHANPHONG">
     <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="*" />
-    <End Role="PHIEUDATPHONG" Type="Self.PHIEUDATPHONG" Multiplicity="*" />
-  </Association>
-  <Association Name="GIOHANG">
-    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="*" />
-    <End Role="LOAIPHONG" Type="Self.LOAIPHONG" Multiplicity="*" />
+    <End Role="PHIEUNHANPHONG" Type="Self.PHIEUNHANPHONG" Multiplicity="*" />
   </Association>
   <EntityContainer Name="WEB_APP_QLKSEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="caches" EntityType="Self.cache" />
+    <EntitySet Name="cache_locks" EntityType="Self.cache_locks" />
     <EntitySet Name="CHITIETTRAPHONGs" EntityType="Self.CHITIETTRAPHONG" />
     <EntitySet Name="DANHGIAs" EntityType="Self.DANHGIA" />
     <EntitySet Name="DICHVUs" EntityType="Self.DICHVU" />
+    <EntitySet Name="failed_jobs" EntityType="Self.failed_jobs" />
+    <EntitySet Name="GIOHANGs" EntityType="Self.GIOHANG" />
     <EntitySet Name="HINHLOAIPHONGs" EntityType="Self.HINHLOAIPHONG" />
+    <EntitySet Name="job_batches" EntityType="Self.job_batches" />
+    <EntitySet Name="jobs" EntityType="Self.job" />
     <EntitySet Name="KHACHHANGs" EntityType="Self.KHACHHANG" />
     <EntitySet Name="LOAIPHONGs" EntityType="Self.LOAIPHONG" />
+    <EntitySet Name="migrations" EntityType="Self.migration" />
     <EntitySet Name="NHANVIENs" EntityType="Self.NHANVIEN" />
+    <EntitySet Name="password_reset_tokens" EntityType="Self.password_reset_tokens" />
     <EntitySet Name="PHIEUDATPHONGs" EntityType="Self.PHIEUDATPHONG" />
     <EntitySet Name="PHIEUNHANPHONGs" EntityType="Self.PHIEUNHANPHONG" />
     <EntitySet Name="PHIEUTRAPHONGs" EntityType="Self.PHIEUTRAPHONG" />
     <EntitySet Name="PHONGs" EntityType="Self.PHONG" />
+    <EntitySet Name="sessions" EntityType="Self.session" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="users" EntityType="Self.user" />
     <AssociationSet Name="FK__CHITIETTR__DICHV__5CD6CB2B" Association="Self.FK__CHITIETTR__DICHV__5CD6CB2B">
       <End Role="DICHVU" EntitySet="DICHVUs" />
       <End Role="CHITIETTRAPHONG" EntitySet="CHITIETTRAPHONGs" />
@@ -348,9 +500,21 @@
       <End Role="PHIEUTRAPHONG" EntitySet="PHIEUTRAPHONGs" />
       <End Role="DANHGIA" EntitySet="DANHGIAs" />
     </AssociationSet>
+    <AssociationSet Name="FK__GIOHANG__KHACHHA__45F365D3" Association="Self.FK__GIOHANG__KHACHHA__45F365D3">
+      <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
+      <End Role="GIOHANG" EntitySet="GIOHANGs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__GIOHANG__LOAIPHO__46E78A0C" Association="Self.FK__GIOHANG__LOAIPHO__46E78A0C">
+      <End Role="LOAIPHONG" EntitySet="LOAIPHONGs" />
+      <End Role="GIOHANG" EntitySet="GIOHANGs" />
+    </AssociationSet>
     <AssociationSet Name="FK__HINHLOAIP__LOAIP__403A8C7D" Association="Self.FK__HINHLOAIP__LOAIP__403A8C7D">
       <End Role="LOAIPHONG" EntitySet="LOAIPHONGs" />
       <End Role="HINHLOAIPHONG" EntitySet="HINHLOAIPHONGs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KHACHHANG_DATPHONG" Association="Self.FK_KHACHHANG_DATPHONG">
+      <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
+      <End Role="PHIEUDATPHONG" EntitySet="PHIEUDATPHONGs" />
     </AssociationSet>
     <AssociationSet Name="FK__PHIEUDATP__LOAIP__49C3F6B7" Association="Self.FK__PHIEUDATP__LOAIP__49C3F6B7">
       <End Role="LOAIPHONG" EntitySet="LOAIPHONGs" />
@@ -380,13 +544,9 @@
       <End Role="PHIEUNHANPHONG" EntitySet="PHIEUNHANPHONGs" />
       <End Role="PHIEUTRAPHONG" EntitySet="PHIEUTRAPHONGs" />
     </AssociationSet>
-    <AssociationSet Name="CHITIETPHIEUDATPHONG" Association="Self.CHITIETPHIEUDATPHONG">
+    <AssociationSet Name="CHITIETPHIEUNHANPHONG" Association="Self.CHITIETPHIEUNHANPHONG">
       <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
-      <End Role="PHIEUDATPHONG" EntitySet="PHIEUDATPHONGs" />
-    </AssociationSet>
-    <AssociationSet Name="GIOHANG" Association="Self.GIOHANG">
-      <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
-      <End Role="LOAIPHONG" EntitySet="LOAIPHONGs" />
+      <End Role="PHIEUNHANPHONG" EntitySet="PHIEUNHANPHONGs" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

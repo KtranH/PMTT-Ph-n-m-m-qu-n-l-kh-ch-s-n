@@ -17,10 +17,10 @@ namespace DTO
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public LOAIPHONG()
         {
+            this.GIOHANGs = new HashSet<GIOHANG>();
             this.HINHLOAIPHONGs = new HashSet<HINHLOAIPHONG>();
             this.PHIEUDATPHONGs = new HashSet<PHIEUDATPHONG>();
             this.PHONGs = new HashSet<PHONG>();
-            this.KHACHHANGs = new HashSet<KHACHHANG>();
         }
     
         public int ID { get; set; }
@@ -34,12 +34,12 @@ namespace DTO
         public Nullable<bool> ISDELETED { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<GIOHANG> GIOHANGs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HINHLOAIPHONG> HINHLOAIPHONGs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PHIEUDATPHONG> PHIEUDATPHONGs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PHONG> PHONGs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<KHACHHANG> KHACHHANGs { get; set; }
     }
 }

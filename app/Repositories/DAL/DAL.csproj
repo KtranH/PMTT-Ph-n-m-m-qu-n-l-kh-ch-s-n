@@ -63,7 +63,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="DICHVU_DAL.cs" />
     <Compile Include="KHACHHANG_DAL.cs" />
     <Compile Include="LOAIPHONG_DAL.cs" />

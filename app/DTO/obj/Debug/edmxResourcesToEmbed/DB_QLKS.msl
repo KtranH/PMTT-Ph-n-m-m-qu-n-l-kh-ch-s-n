@@ -1,6 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="WEB_APP_QLKSModelStoreContainer" CdmEntityContainer="WEB_APP_QLKSEntities">
+    <EntitySetMapping Name="caches">
+      <EntityTypeMapping TypeName="WEB_APP_QLKSModel.cache">
+        <MappingFragment StoreEntitySet="cache">
+          <ScalarProperty Name="key" ColumnName="key" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="expiration" ColumnName="expiration" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cache_locks">
+      <EntityTypeMapping TypeName="WEB_APP_QLKSModel.cache_locks">
+        <MappingFragment StoreEntitySet="cache_locks">
+          <ScalarProperty Name="key" ColumnName="key" />
+          <ScalarProperty Name="owner" ColumnName="owner" />
+          <ScalarProperty Name="expiration" ColumnName="expiration" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="CHITIETTRAPHONGs">
       <EntityTypeMapping TypeName="WEB_APP_QLKSModel.CHITIETTRAPHONG">
         <MappingFragment StoreEntitySet="CHITIETTRAPHONG">
@@ -35,11 +53,63 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="failed_jobs">
+      <EntityTypeMapping TypeName="WEB_APP_QLKSModel.failed_jobs">
+        <MappingFragment StoreEntitySet="failed_jobs">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="uuid" ColumnName="uuid" />
+          <ScalarProperty Name="connection" ColumnName="connection" />
+          <ScalarProperty Name="queue" ColumnName="queue" />
+          <ScalarProperty Name="payload" ColumnName="payload" />
+          <ScalarProperty Name="exception" ColumnName="exception" />
+          <ScalarProperty Name="failed_at" ColumnName="failed_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GIOHANGs">
+      <EntityTypeMapping TypeName="WEB_APP_QLKSModel.GIOHANG">
+        <MappingFragment StoreEntitySet="GIOHANG">
+          <ScalarProperty Name="KHACHHANG_ID" ColumnName="KHACHHANG_ID" />
+          <ScalarProperty Name="LOAIPHONG_ID" ColumnName="LOAIPHONG_ID" />
+          <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
+          <ScalarProperty Name="DONGIA" ColumnName="DONGIA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="HINHLOAIPHONGs">
       <EntityTypeMapping TypeName="WEB_APP_QLKSModel.HINHLOAIPHONG">
         <MappingFragment StoreEntitySet="HINHLOAIPHONG">
           <ScalarProperty Name="LOAIPHONG_ID" ColumnName="LOAIPHONG_ID" />
           <ScalarProperty Name="HINH" ColumnName="HINH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="job_batches">
+      <EntityTypeMapping TypeName="WEB_APP_QLKSModel.job_batches">
+        <MappingFragment StoreEntitySet="job_batches">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="total_jobs" ColumnName="total_jobs" />
+          <ScalarProperty Name="pending_jobs" ColumnName="pending_jobs" />
+          <ScalarProperty Name="failed_jobs" ColumnName="failed_jobs" />
+          <ScalarProperty Name="failed_job_ids" ColumnName="failed_job_ids" />
+          <ScalarProperty Name="options" ColumnName="options" />
+          <ScalarProperty Name="cancelled_at" ColumnName="cancelled_at" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="finished_at" ColumnName="finished_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="jobs">
+      <EntityTypeMapping TypeName="WEB_APP_QLKSModel.job">
+        <MappingFragment StoreEntitySet="jobs">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="queue" ColumnName="queue" />
+          <ScalarProperty Name="payload" ColumnName="payload" />
+          <ScalarProperty Name="attempts" ColumnName="attempts" />
+          <ScalarProperty Name="reserved_at" ColumnName="reserved_at" />
+          <ScalarProperty Name="available_at" ColumnName="available_at" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -76,6 +146,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="migrations">
+      <EntityTypeMapping TypeName="WEB_APP_QLKSModel.migration">
+        <MappingFragment StoreEntitySet="migrations">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="migration1" ColumnName="migration" />
+          <ScalarProperty Name="batch" ColumnName="batch" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="NHANVIENs">
       <EntityTypeMapping TypeName="WEB_APP_QLKSModel.NHANVIEN">
         <MappingFragment StoreEntitySet="NHANVIEN">
@@ -91,6 +170,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="password_reset_tokens">
+      <EntityTypeMapping TypeName="WEB_APP_QLKSModel.password_reset_tokens">
+        <MappingFragment StoreEntitySet="password_reset_tokens">
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="token" ColumnName="token" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="PHIEUDATPHONGs">
       <EntityTypeMapping TypeName="WEB_APP_QLKSModel.PHIEUDATPHONG">
         <MappingFragment StoreEntitySet="PHIEUDATPHONG">
@@ -100,6 +188,7 @@
           <ScalarProperty Name="NGAYTRAPHONGDUKIEN" ColumnName="NGAYTRAPHONGDUKIEN" />
           <ScalarProperty Name="THANHTOAN" ColumnName="THANHTOAN" />
           <ScalarProperty Name="TINHTRANG" ColumnName="TINHTRANG" />
+          <ScalarProperty Name="KHACHHANG_ID" ColumnName="KHACHHANG_ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -139,6 +228,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="sessions">
+      <EntityTypeMapping TypeName="WEB_APP_QLKSModel.session">
+        <MappingFragment StoreEntitySet="sessions">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="ip_address" ColumnName="ip_address" />
+          <ScalarProperty Name="user_agent" ColumnName="user_agent" />
+          <ScalarProperty Name="payload" ColumnName="payload" />
+          <ScalarProperty Name="last_activity" ColumnName="last_activity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="sysdiagrams">
       <EntityTypeMapping TypeName="WEB_APP_QLKSModel.sysdiagram">
         <MappingFragment StoreEntitySet="sysdiagrams">
@@ -150,20 +251,26 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="CHITIETPHIEUDATPHONG" TypeName="WEB_APP_QLKSModel.CHITIETPHIEUDATPHONG" StoreEntitySet="CHITIETPHIEUDATPHONG">
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="WEB_APP_QLKSModel.user">
+        <MappingFragment StoreEntitySet="users">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="email_verified_at" ColumnName="email_verified_at" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="remember_token" ColumnName="remember_token" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="updated_at" ColumnName="updated_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="CHITIETPHIEUNHANPHONG" TypeName="WEB_APP_QLKSModel.CHITIETPHIEUNHANPHONG" StoreEntitySet="CHITIETPHIEUNHANPHONG">
       <EndProperty Name="KHACHHANG">
         <ScalarProperty Name="ID" ColumnName="KHACHHANG_ID" />
       </EndProperty>
-      <EndProperty Name="PHIEUDATPHONG">
-        <ScalarProperty Name="ID" ColumnName="PHIEUDATPHONG_ID" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="GIOHANG" TypeName="WEB_APP_QLKSModel.GIOHANG" StoreEntitySet="GIOHANG">
-      <EndProperty Name="KHACHHANG">
-        <ScalarProperty Name="ID" ColumnName="KHACHHANG_ID" />
-      </EndProperty>
-      <EndProperty Name="LOAIPHONG">
-        <ScalarProperty Name="ID" ColumnName="LOAIPHONG_ID" />
+      <EndProperty Name="PHIEUNHANPHONG">
+        <ScalarProperty Name="ID" ColumnName="PHIEUNHANPHONG_ID" />
       </EndProperty>
     </AssociationSetMapping>
   </EntityContainerMapping>

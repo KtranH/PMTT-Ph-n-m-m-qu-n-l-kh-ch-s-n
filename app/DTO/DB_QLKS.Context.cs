@@ -25,17 +25,27 @@ namespace DTO
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<cache> caches { get; set; }
+        public virtual DbSet<cache_locks> cache_locks { get; set; }
         public virtual DbSet<CHITIETTRAPHONG> CHITIETTRAPHONGs { get; set; }
         public virtual DbSet<DANHGIA> DANHGIAs { get; set; }
         public virtual DbSet<DICHVU> DICHVUs { get; set; }
+        public virtual DbSet<failed_jobs> failed_jobs { get; set; }
+        public virtual DbSet<GIOHANG> GIOHANGs { get; set; }
         public virtual DbSet<HINHLOAIPHONG> HINHLOAIPHONGs { get; set; }
+        public virtual DbSet<job_batches> job_batches { get; set; }
+        public virtual DbSet<job> jobs { get; set; }
         public virtual DbSet<KHACHHANG> KHACHHANGs { get; set; }
         public virtual DbSet<LOAIPHONG> LOAIPHONGs { get; set; }
+        public virtual DbSet<migration> migrations { get; set; }
         public virtual DbSet<NHANVIEN> NHANVIENs { get; set; }
+        public virtual DbSet<password_reset_tokens> password_reset_tokens { get; set; }
         public virtual DbSet<PHIEUDATPHONG> PHIEUDATPHONGs { get; set; }
         public virtual DbSet<PHIEUNHANPHONG> PHIEUNHANPHONGs { get; set; }
         public virtual DbSet<PHIEUTRAPHONG> PHIEUTRAPHONGs { get; set; }
         public virtual DbSet<PHONG> PHONGs { get; set; }
+        public virtual DbSet<session> sessions { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<user> users { get; set; }
     }
 }
