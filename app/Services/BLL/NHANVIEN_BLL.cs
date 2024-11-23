@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BCrypt.Net;
 
 namespace BLL
 {
@@ -15,6 +16,18 @@ namespace BLL
         public List<NHANVIEN> GetAllNhanVien()
         {
             return db.GetAllNhanVien();
+        }
+        public NHANVIEN GetNhanVien(String emai)
+        {
+            return db.GetNhanVienByEmail(emai);
+        }
+        public bool CheckNhanVien(NHANVIEN x, String password)
+        {
+            if(BCrypt.Net.BCrypt.Verify(password, x.PASSWORD))
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

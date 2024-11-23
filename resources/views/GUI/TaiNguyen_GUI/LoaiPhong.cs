@@ -1,0 +1,151 @@
+using BLL;
+using DTO;
+using Guna.UI2.WinForms;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Net.Http;
+
+namespace GUI.TaiNguyen_GUI.Phong_GUI
+{
+    public partial class LoaiPhong : Form
+    {
+        public LOAIPHONG_BLL db = new LOAIPHONG_BLL();
+        public R2 R2 = new R2();
+        public XuLy_LoaiPhong xuLyLoaiPhong = new XuLy_LoaiPhong();
+        public LoaiPhong()
+        {
+            InitializeComponent();
+        }
+        private void LoaiPhong_Load(object sender, EventArgs e)
+        {
+            ShowImage.Padding = new Padding(10);
+            LoadData();
+        }
+        //-----------------------------------------------------------------------------------------------------
+        //Lấy dữ liệu vào combobox
+        public void LoadData()
+        {
+            List<LOAIPHONG> listLoaiPhong = new List<LOAIPHONG>();
+            listLoaiPhong = db.GetAllLoaiPhong();
+            combox_LoaiPhong.DataSource = listLoaiPhong;
+            combox_LoaiPhong.DisplayMember = "TENLOAIPHONG";
+            combox_LoaiPhong.ValueMember = "ID";
+        }
+        public async void LoadImage(int ID)
+        {
+            List<HINHLOAIPHONG> listHinh = new List<HINHLOAIPHONG>();
+            listHinh = db.GetHinhPhong(ID);
+            foreach (HINHLOAIPHONG item in listHinh)
+            {
+                Guna2PictureBox pictureBox = new Guna2PictureBox()
+                {
+                    Size = new Size(150, 150),
+                    SizeMode = PictureBoxSizeMode.Zoom,
+                    BackColor = Color.Transparent,
+                    FillColor = Color.Transparent,
+                    BorderRadius = 10,
+                    BorderStyle = BorderStyle.None,
+                    Margin = new Padding(10),
+                };
+                var image = await XuLy_LoaiPhong.DownloadImageAsync(item.HINH);
+                if(image != null)
+                {
+                    pictureBox.Image = image;
+                    pictureBox.Tag = item.HINH;
+                    pictureBox.Click += PictureBox_Click;
+                    Guna2Button btnClose = new Guna2Button()
+                    {
+                        Text = "X",
+                        Size = new Size(30, 30),
+                        Location = new Point(pictureBox.Width - 35, 5),  
+                        FillColor = Color.FromArgb(243, 69, 63),  
+                        ForeColor = Color.White,  
+                        BorderThickness = 0,
+                        BorderRadius = 15,
+                        Cursor = Cursors.Hand,  
+                        Font = new Font("Segoe UI", 12, FontStyle.Bold),  
+                        TextAlign = HorizontalAlignment.Center,  
+                        TextOffset = new Point(0, 0),  
+                        Animated = true,  
+                        HoverState = {
+                        FillColor = Color.DarkRed,  
+                        ForeColor = Color.White
+                    }
+                    };
+                    btnClose.Padding = new Padding(0);
+                    btnClose.TextFormatNoPrefix = true;
+
+                    pictureBox.Controls.Add(btnClose);
+                    ShowImage.Controls.Add(pictureBox);
+                }    
+            }
+        }
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Xử lý khi click nào một ảnh
+        private void PictureBox_Click(object sender, EventArgs e)
+        {
+            Guna2PictureBox clickedPictureBox = sender as Guna2PictureBox;
+            if (clickedPictureBox != null)
+            {
+                string imageUrl = clickedPictureBox.Tag as string;
+                if (imageUrl != null)
+                {
+                    MessageBox.Show("Đã click vào PictureBox với link ảnh: " + imageUrl);
+                }
+            }
+        }
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Thay đổi ảnh và thông tin khi theo combobox
+        private void combox_LoaiPhong_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if(combox_LoaiPhong.SelectedValue != null && Int32.TryParse(combox_LoaiPhong.SelectedValue.ToString(), out int ID))
+            {
+                ShowImage.Controls.Clear();
+                LoadImage(ID);
+                ShowInfo(ID);
+            }    
+        }
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Hiển thị thông tin loại phòng
+        public void ShowInfo(int ID)
+        {
+            LOAIPHONG loaiPhong = db.GetLoaiPhong(ID);
+            Textbox_TenLoaiPhong.Text = loaiPhong.TENLOAIPHONG.ToString();
+            Textbox_GiaThue.Text = loaiPhong.GIATHUE.ToString() + " VNĐ";
+            Textbox_MoTa.Text = loaiPhong.MOTA.ToString();
+            Textbox_NoiThat.Text = loaiPhong.NOITHAT.ToString();
+            Textbox_SucChua.Text = loaiPhong.SUCCHUA.ToString();
+            Textbox_QuyDinh.Text = loaiPhong.QUYDINH.ToString();
+            Textbox_TienIch.Text = loaiPhong.TIENICH.ToString();
+        }
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Xử lý nút thêm ảnh
+        private void Button_ThemAnh_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int ID = Int32.Parse(combox_LoaiPhong.SelectedValue.ToString());
+                String nameCate = combox_LoaiPhong.Text;
+                xuLyLoaiPhong.uploadImage(ID, nameCate);
+                ShowImage.Controls.Clear();
+                LoadImage(ID);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        //-----------------------------------------------------------------------------------------------------
+    }
+}

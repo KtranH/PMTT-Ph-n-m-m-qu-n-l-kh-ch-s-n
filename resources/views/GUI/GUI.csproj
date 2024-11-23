@@ -36,6 +36,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AWSSDK.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\AWSSDK.Core.3.7.400.57\lib\net45\AWSSDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.S3, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\AWSSDK.S3.3.7.407.1\lib\net45\AWSSDK.S3.dll</HintPath>
+    </Reference>
+    <Reference Include="BCrypt.Net-Next, Version=4.0.3.0, Culture=neutral, PublicKeyToken=1e11be04b6288443, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\BCrypt.Net-Next.4.0.3\lib\net472\BCrypt.Net-Next.dll</HintPath>
+    </Reference>
     <Reference Include="BLL">
       <HintPath>..\..\..\app\Services\BLL\bin\Debug\BLL.dll</HintPath>
     </Reference>
@@ -55,6 +64,9 @@
       <HintPath>..\..\..\packages\Guna.UI2.WinForms.2.0.4.6\lib\net472\Guna.UI2.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
@@ -62,6 +74,16 @@
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Design" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -74,132 +96,133 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CT_HoaDon.cs">
+    <Compile Include="TaiNguyen_GUI\LoaiPhong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CT_HoaDon.Designer.cs">
+    <Compile Include="TaiNguyen_GUI\LoaiPhong.Designer.cs">
+      <DependentUpon>LoaiPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TaiNguyen_GUI\XuLy_LoaiPhong.cs" />
+    <Compile Include="TraPhong_GUI\CT_HoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TraPhong_GUI\CT_HoaDon.Designer.cs">
       <DependentUpon>CT_HoaDon.cs</DependentUpon>
     </Compile>
-    <Compile Include="CT_PhieuDatPhong.cs">
+    <Compile Include="DatNhanPhong_GUI\CT_PhieuDatPhong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CT_PhieuDatPhong.Designer.cs">
+    <Compile Include="DatNhanPhong_GUI\CT_PhieuDatPhong.Designer.cs">
       <DependentUpon>CT_PhieuDatPhong.cs</DependentUpon>
     </Compile>
-    <Compile Include="DangNhap.cs">
+    <Compile Include="DangNhap_GUI\DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DangNhap.Designer.cs">
+    <Compile Include="DangNhap_GUI\DangNhap.Designer.cs">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="DatPhong.cs">
+    <Compile Include="DatNhanPhong_GUI\DatPhong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DatPhong.Designer.cs">
+    <Compile Include="DatNhanPhong_GUI\DatPhong.Designer.cs">
       <DependentUpon>DatPhong.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dichvu.cs">
+    <Compile Include="TaiNguyen_GUI\Dichvu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dichvu.Designer.cs">
+    <Compile Include="TaiNguyen_GUI\Dichvu.Designer.cs">
       <DependentUpon>Dichvu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="TraPhong_GUI\HoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HoaDon.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HoaDon.Designer.cs">
+    <Compile Include="TraPhong_GUI\HoaDon.Designer.cs">
       <DependentUpon>HoaDon.cs</DependentUpon>
     </Compile>
-    <Compile Include="KhachHang.cs">
+    <Compile Include="TraCuu_GUI\KhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="KhachHang.Designer.cs">
+    <Compile Include="TraCuu_GUI\KhachHang.Designer.cs">
       <DependentUpon>KhachHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="NhanVien.cs">
+    <Compile Include="TraCuu_GUI\NhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NhanVien.Designer.cs">
+    <Compile Include="TraCuu_GUI\NhanVien.Designer.cs">
       <DependentUpon>NhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="Phong.cs">
+    <Compile Include="TaiNguyen_GUI\Phong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Phong.Designer.cs">
+    <Compile Include="TaiNguyen_GUI\Phong.Designer.cs">
       <DependentUpon>Phong.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TC_HD.cs">
+    <Compile Include="TraCuu_GUI\TC_HD.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TC_HD.Designer.cs">
+    <Compile Include="TraCuu_GUI\TC_HD.Designer.cs">
       <DependentUpon>TC_HD.cs</DependentUpon>
     </Compile>
-    <Compile Include="TC_PDP.cs">
+    <Compile Include="TraCuu_GUI\TC_PDP.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TC_PDP.Designer.cs">
+    <Compile Include="TraCuu_GUI\TC_PDP.Designer.cs">
       <DependentUpon>TC_PDP.cs</DependentUpon>
     </Compile>
-    <Compile Include="TrangChinh.cs">
+    <Compile Include="TrangChu_GUI\TrangChinh.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TrangChinh.Designer.cs">
+    <Compile Include="TrangChu_GUI\TrangChinh.Designer.cs">
       <DependentUpon>TrangChinh.cs</DependentUpon>
     </Compile>
-    <Compile Include="TrangChu.cs">
+    <Compile Include="TrangChu_GUI\TrangChu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TrangChu.Designer.cs">
+    <Compile Include="TrangChu_GUI\TrangChu.Designer.cs">
       <DependentUpon>TrangChu.cs</DependentUpon>
     </Compile>
-    <Compile Include="TT_HD.cs">
+    <Compile Include="TraCuu_GUI\TT_HD.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TT_HD.Designer.cs">
+    <Compile Include="TraCuu_GUI\TT_HD.Designer.cs">
       <DependentUpon>TT_HD.cs</DependentUpon>
     </Compile>
-    <Compile Include="TT_PDP.cs">
+    <Compile Include="TraCuu_GUI\TT_PDP.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TT_PDP.Designer.cs">
+    <Compile Include="TraCuu_GUI\TT_PDP.Designer.cs">
       <DependentUpon>TT_PDP.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CT_HoaDon.resx">
+    <EmbeddedResource Include="TaiNguyen_GUI\LoaiPhong.resx">
+      <DependentUpon>LoaiPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TraPhong_GUI\CT_HoaDon.resx">
       <DependentUpon>CT_HoaDon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CT_PhieuDatPhong.resx">
+    <EmbeddedResource Include="DatNhanPhong_GUI\CT_PhieuDatPhong.resx">
       <DependentUpon>CT_PhieuDatPhong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DangNhap.resx">
+    <EmbeddedResource Include="DangNhap_GUI\DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DatPhong.resx">
+    <EmbeddedResource Include="DatNhanPhong_GUI\DatPhong.resx">
       <DependentUpon>DatPhong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dichvu.resx">
+    <EmbeddedResource Include="TaiNguyen_GUI\Dichvu.resx">
       <DependentUpon>Dichvu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HoaDon.resx">
+    <EmbeddedResource Include="TraPhong_GUI\HoaDon.resx">
       <DependentUpon>HoaDon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="KhachHang.resx">
+    <EmbeddedResource Include="TraCuu_GUI\KhachHang.resx">
       <DependentUpon>KhachHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NhanVien.resx">
+    <EmbeddedResource Include="TraCuu_GUI\NhanVien.resx">
       <DependentUpon>NhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Phong.resx">
+    <EmbeddedResource Include="TaiNguyen_GUI\Phong.resx">
       <DependentUpon>Phong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -211,22 +234,22 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="TC_HD.resx">
+    <EmbeddedResource Include="TraCuu_GUI\TC_HD.resx">
       <DependentUpon>TC_HD.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TC_PDP.resx">
+    <EmbeddedResource Include="TraCuu_GUI\TC_PDP.resx">
       <DependentUpon>TC_PDP.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TrangChinh.resx">
+    <EmbeddedResource Include="TrangChu_GUI\TrangChinh.resx">
       <DependentUpon>TrangChinh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TrangChu.resx">
+    <EmbeddedResource Include="TrangChu_GUI\TrangChu.resx">
       <DependentUpon>TrangChu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TT_HD.resx">
+    <EmbeddedResource Include="TraCuu_GUI\TT_HD.resx">
       <DependentUpon>TT_HD.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TT_PDP.resx">
+    <EmbeddedResource Include="TraCuu_GUI\TT_PDP.resx">
       <DependentUpon>TT_PDP.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -243,6 +266,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\..\..\packages\AWSSDK.S3.3.7.407.1\analyzers\dotnet\cs\AWSSDK.S3.CodeAnalysis.dll" />
+    <Analyzer Include="..\..\..\packages\AWSSDK.S3.3.7.407.1\analyzers\dotnet\cs\SharedAnalysisCode.dll" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

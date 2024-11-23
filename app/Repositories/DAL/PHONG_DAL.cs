@@ -10,13 +10,22 @@ namespace DAL
     public  class PHONG_DAL
     {
         public PHONG_DAL() { }
-       WEB_APP_QLKSEntities db = new WEB_APP_QLKSEntities();
-
+        WEB_APP_QLKSEntities db = new WEB_APP_QLKSEntities();
         public List<PHONG> GetAllPhong()
         {
-           
             return db.PHONGs.ToList();
         }
-
+        public int CountEmptyRoom()
+        {
+            return db.PHONGs.Where(p => p.TRANGTHAI == "Trống").Count();
+        }
+        public int CountNotEmptyRoom()
+        {
+            return db.PHONGs.Where(p => p.TRANGTHAI != "Trống").Count();
+        }
+        public int CountRoom()
+        {
+            return db.PHONGs.Count();
+        }    
     }
 }

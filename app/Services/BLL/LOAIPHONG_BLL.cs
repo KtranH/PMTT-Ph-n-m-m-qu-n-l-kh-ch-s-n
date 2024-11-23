@@ -18,6 +18,21 @@ namespace BLL
         {
             return DB.GetAllLoaiPhong();
         }
-
+        public List<HINHLOAIPHONG> GetHinhPhong(int ID)
+        {
+            return DB.HinhLoaiPhong(ID);
+        }
+        public LOAIPHONG GetLoaiPhong(int ID)
+        {
+            return DB.GetLoaiPhong(ID);
+        }
+        public int GetCountLoaiPhong(int ID)
+        {
+            return DB.CountHinhLoaiPhong(ID);
+        }
+        public void AddHinhLoaiPhong(HINHLOAIPHONG x)
+        {
+            DB.SaveImageLoaiPhong(x);
+        }
     }
 }

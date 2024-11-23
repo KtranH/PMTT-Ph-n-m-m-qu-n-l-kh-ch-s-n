@@ -15,5 +15,9 @@ namespace DAL
         {
             return DB.NHANVIENs.ToList();
         }
+        public NHANVIEN GetNhanVienByEmail(String Email)
+        {
+            return DB.NHANVIENs.Where(p => p.EMAIL == Email).FirstOrDefault();
+        }
     }
 }

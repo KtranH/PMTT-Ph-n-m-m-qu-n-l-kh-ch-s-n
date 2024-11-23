@@ -12,10 +12,21 @@ namespace BLL
     {
         public PHONG_BLL() { }
         PHONG_DAL db = new PHONG_DAL();
-
         public List<PHONG> GetAllPhong()
         {
             return db.GetAllPhong();
         }
+        public int GetCountEmptyRoom()
+        {
+            return db.CountEmptyRoom();
+        }
+        public int GetCountNotEmptyRoom()
+        {
+            return db.CountNotEmptyRoom();
+        }
+        public int GetCountRoom()
+        {
+            return db.CountRoom();
+        }   
     }
 }

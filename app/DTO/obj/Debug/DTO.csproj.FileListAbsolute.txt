@@ -43,3 +43,13 @@ C:\Users\nguye\Downloads\PMTT_QLKS-main\app\DTO\obj\Debug\DTO.pdb
 D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\app\DTO\bin\Debug\Guna.Charts.WinForms.dll
 D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\app\DTO\bin\Debug\Guna.UI2.dll
 D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\app\DTO\bin\Debug\Guna.Charts.WinForms.xml
+D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\app\DTO\bin\Debug\BCrypt.Net-Next.dll
+D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\app\DTO\bin\Debug\System.Buffers.dll
+D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\app\DTO\bin\Debug\System.Memory.dll
+D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\app\DTO\bin\Debug\System.Numerics.Vectors.dll
+D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\app\DTO\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\app\DTO\bin\Debug\BCrypt.Net-Next.xml
+D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\app\DTO\bin\Debug\System.Buffers.xml
+D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\app\DTO\bin\Debug\System.Memory.xml
+D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\app\DTO\bin\Debug\System.Numerics.Vectors.xml
+D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\app\DTO\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml

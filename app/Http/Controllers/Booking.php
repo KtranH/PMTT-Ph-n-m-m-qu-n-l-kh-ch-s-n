@@ -63,7 +63,7 @@ class Booking extends Controller
     public function ConfirmBookingManyRooms(Request $request)
     {
         $user = KhachHang::find(Auth::user()->ID);
-        if($user->phieuDatPhong()->where('TINHTRANG', 'Đã đặt phòng')->count() + $request->quantity >= 5) {
+        if($user->phieuDatPhong()->where('TINHTRANG', 'Đã đặt phòng')->count() + $request->quantity > 5) {
             return response()->json(['success' => false, 'message' => 'Bạn chỉ được phép đặt trước đối đa 5 phòng!']);
         }
         try
