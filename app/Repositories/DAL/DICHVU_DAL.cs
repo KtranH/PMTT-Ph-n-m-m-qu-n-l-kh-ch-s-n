@@ -15,5 +15,9 @@ namespace DAL
         {
             return db.DICHVUs.ToList();
         }
+        public List<DICHVU> FindDichVu(string find)
+        {
+            return db.DICHVUs.Where(p => p.TENDICHVU.Contains(find)).ToList();
+        }
     }
 }

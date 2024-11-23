@@ -101,7 +101,7 @@
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.Black;
             this.guna2GroupBox2.Location = new System.Drawing.Point(787, 12);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
-            this.guna2GroupBox2.Size = new System.Drawing.Size(755, 823);
+            this.guna2GroupBox2.Size = new System.Drawing.Size(773, 823);
             this.guna2GroupBox2.TabIndex = 3;
             // 
             // guna2HtmlLabel8
@@ -153,7 +153,7 @@
             this.Button_Luu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Button_Luu.ForeColor = System.Drawing.Color.White;
             this.Button_Luu.Image = ((System.Drawing.Image)(resources.GetObject("Button_Luu.Image")));
-            this.Button_Luu.Location = new System.Drawing.Point(594, 775);
+            this.Button_Luu.Location = new System.Drawing.Point(596, 775);
             this.Button_Luu.Name = "Button_Luu";
             this.Button_Luu.Size = new System.Drawing.Size(151, 42);
             this.Button_Luu.TabIndex = 39;
@@ -193,7 +193,7 @@
             this.Button_Xoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Button_Xoa.ForeColor = System.Drawing.Color.White;
             this.Button_Xoa.Image = ((System.Drawing.Image)(resources.GetObject("Button_Xoa.Image")));
-            this.Button_Xoa.Location = new System.Drawing.Point(437, 775);
+            this.Button_Xoa.Location = new System.Drawing.Point(439, 775);
             this.Button_Xoa.Name = "Button_Xoa";
             this.Button_Xoa.Size = new System.Drawing.Size(151, 42);
             this.Button_Xoa.TabIndex = 37;
@@ -476,7 +476,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.ClientSize = new System.Drawing.Size(1546, 841);
+            this.ClientSize = new System.Drawing.Size(1561, 841);
             this.Controls.Add(this.guna2HtmlLabel1);
             this.Controls.Add(this.Button_ThemAnh);
             this.Controls.Add(this.combox_LoaiPhong);

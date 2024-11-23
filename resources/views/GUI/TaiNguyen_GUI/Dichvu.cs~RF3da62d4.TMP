@@ -26,7 +26,6 @@ namespace QLKS
         private void Dichvu_Load(object sender, EventArgs e)
         {
             loadDV();
-            loadCombox();
         }
         //-----------------------------------------------------------------------------------------------------
         //Lấy dữ liệu dịch vụ vào datagrid view
@@ -40,46 +39,6 @@ namespace QLKS
             Data_DichVu.Columns[1].HeaderText = "Tên dịch vụ";
             Data_DichVu.Columns[2].HeaderText = "Giá dịch vụ";
             Data_DichVu.Columns[3].HeaderText = "Mô tả";
-        }
-        //-----------------------------------------------------------------------------------------------------
-        //-----------------------------------------------------------------------------------------------------
-        //Hiển thị dữ liệu từ data vào textbox
-        private void Data_DichVu_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if(e.RowIndex >= 0)
-            {
-                DataGridViewRow row = Data_DichVu.Rows[e.RowIndex];
-                Textbox_TenDichVu.Text = row.Cells[1].Value.ToString();
-                Textbox_GiaDichVu.Text = row.Cells[2].Value.ToString();
-                Textbox_MoTa.Text = row.Cells[3].Value.ToString();
-            }    
-        }
-        //-----------------------------------------------------------------------------------------------------
-        //-----------------------------------------------------------------------------------------------------
-        //Thêm dữ liệu vào combobox tình trạng
-        public void loadCombox()
-        {
-            List<string> listTinhTrang = new List<string>();
-            listTinhTrang.Add("Khả dụng");
-            listTinhTrang.Add("Không khả dụng");
-            Combox_TinhTrang.DataSource = listTinhTrang;
-        }
-        //-----------------------------------------------------------------------------------------------------
-        //-----------------------------------------------------------------------------------------------------
-        //Tìm kiếm dịch vụ
-        private void TextBox_Find_TenDichVu_TextChanged(object sender, EventArgs e)
-        {
-            if(TextBox_Find_TenDichVu.Text.Trim() != "")
-            {
-                List<DICHVU> listDV = new List<DICHVU>();
-                string find = TextBox_Find_TenDichVu.Text;
-                listDV = db.GetFindDichVu(find);
-                Data_DichVu.DataSource = listDV.Select(p => new { p.ID, p.TENDICHVU, p.GIA, p.MOTA }).ToList();
-            }
-            else
-            {
-                loadDV();
-            }    
         }
         //-----------------------------------------------------------------------------------------------------
         public void LockControl()
@@ -137,6 +96,10 @@ namespace QLKS
             {
                 e.Handled = true; 
             }
+        }
+        private void Data_DichVu_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

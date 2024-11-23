@@ -32,5 +32,10 @@ namespace DAL
             db.HINHLOAIPHONGs.Add(hinhloaiphong);
             db.SaveChanges();
         }
+        public void RemoveImageLoaiPhong(HINHLOAIPHONG x)
+        {
+            db.HINHLOAIPHONGs.Remove(x);
+            db.SaveChanges();
+        }
     }
 }

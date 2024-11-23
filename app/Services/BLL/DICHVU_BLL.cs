@@ -16,5 +16,9 @@ namespace BLL
         {
             return db.GetAllDichVu();
         }
+        public List<DICHVU> GetFindDichVu(string find)
+        {
+            return db.FindDichVu(find);
+        }
     }
 }

@@ -36,19 +36,23 @@ namespace QLKS
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.BTN_SAVEDV = new Guna.UI2.WinForms.Guna2Button();
-            this.FindDV = new Guna.UI2.WinForms.Guna2TextBox();
-            this.DT_DS_DV = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.BTN_THEMDV = new Guna.UI2.WinForms.Guna2Button();
+            this.Button_Luu = new Guna.UI2.WinForms.Guna2Button();
+            this.TextBox_Find_TenDichVu = new Guna.UI2.WinForms.Guna2TextBox();
+            this.Data_DichVu = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.Button_ThemDichVu = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.Textbox_MoTa = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.MADV = new Guna.UI2.WinForms.Guna2TextBox();
-            this.TEXT_GIADV = new Guna.UI2.WinForms.Guna2TextBox();
-            this.TEXT_TENDV = new Guna.UI2.WinForms.Guna2TextBox();
-            this.BTN_UPDATEDV = new Guna.UI2.WinForms.Guna2Button();
+            this.Textbox_GiaDichVu = new Guna.UI2.WinForms.Guna2TextBox();
+            this.Textbox_TenDichVu = new Guna.UI2.WinForms.Guna2TextBox();
+            this.Button_CapNhat = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.Combox_TinhTrang = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2GroupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DT_DS_DV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Data_DichVu)).BeginInit();
             this.guna2GroupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,10 +61,10 @@ namespace QLKS
             this.guna2GroupBox1.BorderColor = System.Drawing.Color.White;
             this.guna2GroupBox1.BorderRadius = 10;
             this.guna2GroupBox1.Controls.Add(this.guna2HtmlLabel8);
-            this.guna2GroupBox1.Controls.Add(this.BTN_SAVEDV);
-            this.guna2GroupBox1.Controls.Add(this.FindDV);
-            this.guna2GroupBox1.Controls.Add(this.DT_DS_DV);
-            this.guna2GroupBox1.Controls.Add(this.BTN_THEMDV);
+            this.guna2GroupBox1.Controls.Add(this.Button_Luu);
+            this.guna2GroupBox1.Controls.Add(this.TextBox_Find_TenDichVu);
+            this.guna2GroupBox1.Controls.Add(this.Data_DichVu);
+            this.guna2GroupBox1.Controls.Add(this.Button_ThemDichVu);
             this.guna2GroupBox1.CustomBorderThickness = new System.Windows.Forms.Padding(0);
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -72,65 +76,65 @@ namespace QLKS
             // guna2HtmlLabel8
             // 
             this.guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel8.Font = new System.Drawing.Font("Montserrat", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel8.Location = new System.Drawing.Point(28, 10);
             this.guna2HtmlLabel8.Name = "guna2HtmlLabel8";
-            this.guna2HtmlLabel8.Size = new System.Drawing.Size(349, 17);
+            this.guna2HtmlLabel8.Size = new System.Drawing.Size(313, 15);
             this.guna2HtmlLabel8.TabIndex = 9;
             this.guna2HtmlLabel8.Text = "Lưu ý: Mọi thứ chỉ được lưu lại khi bạn ấn vào nút lưu và thay đổi!";
             // 
-            // BTN_SAVEDV
+            // Button_Luu
             // 
-            this.BTN_SAVEDV.Animated = true;
-            this.BTN_SAVEDV.AnimatedGIF = true;
-            this.BTN_SAVEDV.BackColor = System.Drawing.Color.Transparent;
-            this.BTN_SAVEDV.BorderRadius = 20;
-            this.BTN_SAVEDV.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.BTN_SAVEDV.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.BTN_SAVEDV.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.BTN_SAVEDV.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.BTN_SAVEDV.Enabled = false;
-            this.BTN_SAVEDV.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(223)))), ((int)(((byte)(229)))));
-            this.BTN_SAVEDV.Font = new System.Drawing.Font("Montserrat Black", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTN_SAVEDV.ForeColor = System.Drawing.Color.White;
-            this.BTN_SAVEDV.Location = new System.Drawing.Point(28, 33);
-            this.BTN_SAVEDV.Name = "BTN_SAVEDV";
-            this.BTN_SAVEDV.Size = new System.Drawing.Size(151, 42);
-            this.BTN_SAVEDV.TabIndex = 23;
-            this.BTN_SAVEDV.Text = "Lưu và thay đổi";
-            this.BTN_SAVEDV.Click += new System.EventHandler(this.BTN_SAVEDV_Click);
+            this.Button_Luu.Animated = true;
+            this.Button_Luu.AnimatedGIF = true;
+            this.Button_Luu.BackColor = System.Drawing.Color.Transparent;
+            this.Button_Luu.BorderRadius = 20;
+            this.Button_Luu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Button_Luu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Button_Luu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Button_Luu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Button_Luu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(223)))), ((int)(((byte)(229)))));
+            this.Button_Luu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button_Luu.ForeColor = System.Drawing.Color.White;
+            this.Button_Luu.Location = new System.Drawing.Point(28, 33);
+            this.Button_Luu.Name = "Button_Luu";
+            this.Button_Luu.Size = new System.Drawing.Size(151, 42);
+            this.Button_Luu.TabIndex = 23;
+            this.Button_Luu.Text = "Lưu và thay đổi";
+            this.Button_Luu.Click += new System.EventHandler(this.BTN_SAVEDV_Click);
             // 
-            // FindDV
+            // TextBox_Find_TenDichVu
             // 
-            this.FindDV.BackColor = System.Drawing.Color.Transparent;
-            this.FindDV.BorderColor = System.Drawing.Color.White;
-            this.FindDV.BorderRadius = 15;
-            this.FindDV.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.FindDV.DefaultText = "Tìm kiếm dịch vụ";
-            this.FindDV.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.FindDV.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.FindDV.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.FindDV.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.FindDV.FillColor = System.Drawing.SystemColors.Control;
-            this.FindDV.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.FindDV.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.FindDV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.FindDV.IconRight = ((System.Drawing.Image)(resources.GetObject("FindDV.IconRight")));
-            this.FindDV.Location = new System.Drawing.Point(639, 39);
-            this.FindDV.Name = "FindDV";
-            this.FindDV.PasswordChar = '\0';
-            this.FindDV.PlaceholderText = "";
-            this.FindDV.SelectedText = "";
-            this.FindDV.Size = new System.Drawing.Size(202, 36);
-            this.FindDV.TabIndex = 22;
-            this.FindDV.Click += new System.EventHandler(this.FindDV_Click);
-            this.FindDV.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FindDV_KeyDown);
-            this.FindDV.Leave += new System.EventHandler(this.FindDV_Leave);
+            this.TextBox_Find_TenDichVu.BackColor = System.Drawing.Color.Transparent;
+            this.TextBox_Find_TenDichVu.BorderColor = System.Drawing.Color.White;
+            this.TextBox_Find_TenDichVu.BorderRadius = 15;
+            this.TextBox_Find_TenDichVu.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TextBox_Find_TenDichVu.DefaultText = "Tìm kiếm dịch vụ";
+            this.TextBox_Find_TenDichVu.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.TextBox_Find_TenDichVu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.TextBox_Find_TenDichVu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TextBox_Find_TenDichVu.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TextBox_Find_TenDichVu.FillColor = System.Drawing.SystemColors.Control;
+            this.TextBox_Find_TenDichVu.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TextBox_Find_TenDichVu.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBox_Find_TenDichVu.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TextBox_Find_TenDichVu.IconRight = ((System.Drawing.Image)(resources.GetObject("TextBox_Find_TenDichVu.IconRight")));
+            this.TextBox_Find_TenDichVu.Location = new System.Drawing.Point(639, 39);
+            this.TextBox_Find_TenDichVu.Name = "TextBox_Find_TenDichVu";
+            this.TextBox_Find_TenDichVu.PasswordChar = '\0';
+            this.TextBox_Find_TenDichVu.PlaceholderText = "";
+            this.TextBox_Find_TenDichVu.SelectedText = "";
+            this.TextBox_Find_TenDichVu.Size = new System.Drawing.Size(202, 36);
+            this.TextBox_Find_TenDichVu.TabIndex = 22;
+            this.TextBox_Find_TenDichVu.TextChanged += new System.EventHandler(this.TextBox_Find_TenDichVu_TextChanged);
+            this.TextBox_Find_TenDichVu.Click += new System.EventHandler(this.FindDV_Click);
+            this.TextBox_Find_TenDichVu.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FindDV_KeyDown);
+            this.TextBox_Find_TenDichVu.Leave += new System.EventHandler(this.FindDV_Leave);
             // 
-            // DT_DS_DV
+            // Data_DichVu
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.DT_DS_DV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.Data_DichVu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -138,9 +142,9 @@ namespace QLKS
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DT_DS_DV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.DT_DS_DV.ColumnHeadersHeight = 30;
-            this.DT_DS_DV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.Data_DichVu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.Data_DichVu.ColumnHeadersHeight = 30;
+            this.Data_DichVu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -148,94 +152,133 @@ namespace QLKS
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DT_DS_DV.DefaultCellStyle = dataGridViewCellStyle3;
-            this.DT_DS_DV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.DT_DS_DV.Location = new System.Drawing.Point(3, 82);
-            this.DT_DS_DV.Name = "DT_DS_DV";
-            this.DT_DS_DV.RowHeadersVisible = false;
-            this.DT_DS_DV.Size = new System.Drawing.Size(864, 671);
-            this.DT_DS_DV.TabIndex = 0;
-            this.DT_DS_DV.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.DT_DS_DV.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.DT_DS_DV.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.DT_DS_DV.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.DT_DS_DV.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.DT_DS_DV.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.DT_DS_DV.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.DT_DS_DV.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.DT_DS_DV.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.DT_DS_DV.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.DT_DS_DV.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.DT_DS_DV.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.DT_DS_DV.ThemeStyle.HeaderStyle.Height = 30;
-            this.DT_DS_DV.ThemeStyle.ReadOnly = false;
-            this.DT_DS_DV.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.DT_DS_DV.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.DT_DS_DV.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.DT_DS_DV.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.DT_DS_DV.ThemeStyle.RowsStyle.Height = 22;
-            this.DT_DS_DV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.DT_DS_DV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.DT_DS_DV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DT_DS_DV_CellContentClick);
+            this.Data_DichVu.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Data_DichVu.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.Data_DichVu.Location = new System.Drawing.Point(3, 82);
+            this.Data_DichVu.Name = "Data_DichVu";
+            this.Data_DichVu.ReadOnly = true;
+            this.Data_DichVu.RowHeadersVisible = false;
+            this.Data_DichVu.Size = new System.Drawing.Size(864, 671);
+            this.Data_DichVu.TabIndex = 0;
+            this.Data_DichVu.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.Data_DichVu.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.Data_DichVu.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.Data_DichVu.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.Data_DichVu.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.Data_DichVu.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.Data_DichVu.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.Data_DichVu.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.Data_DichVu.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.Data_DichVu.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Data_DichVu.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.Data_DichVu.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.Data_DichVu.ThemeStyle.HeaderStyle.Height = 30;
+            this.Data_DichVu.ThemeStyle.ReadOnly = true;
+            this.Data_DichVu.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.Data_DichVu.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.Data_DichVu.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Data_DichVu.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.Data_DichVu.ThemeStyle.RowsStyle.Height = 22;
+            this.Data_DichVu.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.Data_DichVu.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.Data_DichVu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Data_DichVu_CellContentClick);
             // 
-            // BTN_THEMDV
+            // Button_ThemDichVu
             // 
-            this.BTN_THEMDV.Animated = true;
-            this.BTN_THEMDV.AnimatedGIF = true;
-            this.BTN_THEMDV.BackColor = System.Drawing.Color.Transparent;
-            this.BTN_THEMDV.BorderRadius = 20;
-            this.BTN_THEMDV.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.BTN_THEMDV.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.BTN_THEMDV.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.BTN_THEMDV.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.BTN_THEMDV.Enabled = false;
-            this.BTN_THEMDV.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(223)))), ((int)(((byte)(229)))));
-            this.BTN_THEMDV.Font = new System.Drawing.Font("Montserrat Black", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTN_THEMDV.ForeColor = System.Drawing.Color.White;
-            this.BTN_THEMDV.Image = ((System.Drawing.Image)(resources.GetObject("BTN_THEMDV.Image")));
-            this.BTN_THEMDV.Location = new System.Drawing.Point(701, 759);
-            this.BTN_THEMDV.Name = "BTN_THEMDV";
-            this.BTN_THEMDV.Size = new System.Drawing.Size(151, 42);
-            this.BTN_THEMDV.TabIndex = 21;
-            this.BTN_THEMDV.Text = "Thêm dịch vụ";
-            this.BTN_THEMDV.Click += new System.EventHandler(this.BTN_THEMDV_Click);
+            this.Button_ThemDichVu.Animated = true;
+            this.Button_ThemDichVu.AnimatedGIF = true;
+            this.Button_ThemDichVu.BackColor = System.Drawing.Color.Transparent;
+            this.Button_ThemDichVu.BorderRadius = 20;
+            this.Button_ThemDichVu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Button_ThemDichVu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Button_ThemDichVu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Button_ThemDichVu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Button_ThemDichVu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(223)))), ((int)(((byte)(229)))));
+            this.Button_ThemDichVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button_ThemDichVu.ForeColor = System.Drawing.Color.White;
+            this.Button_ThemDichVu.Image = ((System.Drawing.Image)(resources.GetObject("Button_ThemDichVu.Image")));
+            this.Button_ThemDichVu.Location = new System.Drawing.Point(701, 759);
+            this.Button_ThemDichVu.Name = "Button_ThemDichVu";
+            this.Button_ThemDichVu.Size = new System.Drawing.Size(151, 42);
+            this.Button_ThemDichVu.TabIndex = 21;
+            this.Button_ThemDichVu.Text = "Thêm dịch vụ";
+            this.Button_ThemDichVu.Click += new System.EventHandler(this.BTN_THEMDV_Click);
             // 
             // guna2GroupBox2
             // 
             this.guna2GroupBox2.BorderColor = System.Drawing.Color.White;
             this.guna2GroupBox2.BorderRadius = 10;
+            this.guna2GroupBox2.Controls.Add(this.Combox_TinhTrang);
+            this.guna2GroupBox2.Controls.Add(this.guna2HtmlLabel3);
+            this.guna2GroupBox2.Controls.Add(this.guna2HtmlLabel2);
+            this.guna2GroupBox2.Controls.Add(this.Textbox_MoTa);
             this.guna2GroupBox2.Controls.Add(this.guna2HtmlLabel1);
             this.guna2GroupBox2.Controls.Add(this.guna2HtmlLabel5);
             this.guna2GroupBox2.Controls.Add(this.MADV);
-            this.guna2GroupBox2.Controls.Add(this.TEXT_GIADV);
-            this.guna2GroupBox2.Controls.Add(this.TEXT_TENDV);
-            this.guna2GroupBox2.Controls.Add(this.BTN_UPDATEDV);
+            this.guna2GroupBox2.Controls.Add(this.Textbox_GiaDichVu);
+            this.guna2GroupBox2.Controls.Add(this.Textbox_TenDichVu);
+            this.guna2GroupBox2.Controls.Add(this.Button_CapNhat);
             this.guna2GroupBox2.CustomBorderThickness = new System.Windows.Forms.Padding(0);
             this.guna2GroupBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.Black;
             this.guna2GroupBox2.Location = new System.Drawing.Point(923, 265);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
-            this.guna2GroupBox2.Size = new System.Drawing.Size(601, 290);
+            this.guna2GroupBox2.Size = new System.Drawing.Size(601, 411);
             this.guna2GroupBox2.TabIndex = 1;
+            // 
+            // guna2HtmlLabel2
+            // 
+            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(38, 178);
+            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(43, 22);
+            this.guna2HtmlLabel2.TabIndex = 30;
+            this.guna2HtmlLabel2.Text = "Mô tả";
+            // 
+            // Textbox_MoTa
+            // 
+            this.Textbox_MoTa.BackColor = System.Drawing.Color.Transparent;
+            this.Textbox_MoTa.BorderColor = System.Drawing.Color.White;
+            this.Textbox_MoTa.BorderRadius = 10;
+            this.Textbox_MoTa.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Textbox_MoTa.DefaultText = "";
+            this.Textbox_MoTa.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Textbox_MoTa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Textbox_MoTa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Textbox_MoTa.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Textbox_MoTa.Enabled = false;
+            this.Textbox_MoTa.FillColor = System.Drawing.SystemColors.Control;
+            this.Textbox_MoTa.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Textbox_MoTa.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Textbox_MoTa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Textbox_MoTa.Location = new System.Drawing.Point(38, 207);
+            this.Textbox_MoTa.Name = "Textbox_MoTa";
+            this.Textbox_MoTa.PasswordChar = '\0';
+            this.Textbox_MoTa.PlaceholderText = "Mô tả";
+            this.Textbox_MoTa.ReadOnly = true;
+            this.Textbox_MoTa.SelectedText = "";
+            this.Textbox_MoTa.Size = new System.Drawing.Size(528, 41);
+            this.Textbox_MoTa.TabIndex = 29;
             // 
             // guna2HtmlLabel1
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Montserrat", 12.25F);
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(38, 129);
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(38, 101);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(91, 24);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(81, 22);
             this.guna2HtmlLabel1.TabIndex = 28;
             this.guna2HtmlLabel1.Text = "Giá dịch vụ";
             // 
             // guna2HtmlLabel5
             // 
             this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Montserrat", 12.25F);
+            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.guna2HtmlLabel5.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(38, 51);
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(38, 24);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            this.guna2HtmlLabel5.Size = new System.Drawing.Size(96, 24);
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(83, 22);
             this.guna2HtmlLabel5.TabIndex = 27;
             this.guna2HtmlLabel5.Text = "Tên dịch vụ";
             // 
@@ -264,76 +307,106 @@ namespace QLKS
             this.MADV.TabIndex = 25;
             this.MADV.Visible = false;
             // 
-            // TEXT_GIADV
+            // Textbox_GiaDichVu
             // 
-            this.TEXT_GIADV.BackColor = System.Drawing.Color.Transparent;
-            this.TEXT_GIADV.BorderColor = System.Drawing.Color.White;
-            this.TEXT_GIADV.BorderRadius = 10;
-            this.TEXT_GIADV.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TEXT_GIADV.DefaultText = "";
-            this.TEXT_GIADV.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.TEXT_GIADV.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.TEXT_GIADV.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TEXT_GIADV.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TEXT_GIADV.Enabled = false;
-            this.TEXT_GIADV.FillColor = System.Drawing.SystemColors.Control;
-            this.TEXT_GIADV.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TEXT_GIADV.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.TEXT_GIADV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TEXT_GIADV.Location = new System.Drawing.Point(38, 159);
-            this.TEXT_GIADV.Name = "TEXT_GIADV";
-            this.TEXT_GIADV.PasswordChar = '\0';
-            this.TEXT_GIADV.PlaceholderText = "Giá dịch vụ";
-            this.TEXT_GIADV.SelectedText = "";
-            this.TEXT_GIADV.Size = new System.Drawing.Size(308, 41);
-            this.TEXT_GIADV.TabIndex = 24;
-            this.TEXT_GIADV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TEXT_GIADV_KeyPress);
+            this.Textbox_GiaDichVu.BackColor = System.Drawing.Color.Transparent;
+            this.Textbox_GiaDichVu.BorderColor = System.Drawing.Color.White;
+            this.Textbox_GiaDichVu.BorderRadius = 10;
+            this.Textbox_GiaDichVu.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Textbox_GiaDichVu.DefaultText = "";
+            this.Textbox_GiaDichVu.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Textbox_GiaDichVu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Textbox_GiaDichVu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Textbox_GiaDichVu.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Textbox_GiaDichVu.Enabled = false;
+            this.Textbox_GiaDichVu.FillColor = System.Drawing.SystemColors.Control;
+            this.Textbox_GiaDichVu.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Textbox_GiaDichVu.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Textbox_GiaDichVu.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Textbox_GiaDichVu.Location = new System.Drawing.Point(38, 130);
+            this.Textbox_GiaDichVu.Name = "Textbox_GiaDichVu";
+            this.Textbox_GiaDichVu.PasswordChar = '\0';
+            this.Textbox_GiaDichVu.PlaceholderText = "Giá dịch vụ";
+            this.Textbox_GiaDichVu.ReadOnly = true;
+            this.Textbox_GiaDichVu.SelectedText = "";
+            this.Textbox_GiaDichVu.Size = new System.Drawing.Size(528, 41);
+            this.Textbox_GiaDichVu.TabIndex = 24;
+            this.Textbox_GiaDichVu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TEXT_GIADV_KeyPress);
             // 
-            // TEXT_TENDV
+            // Textbox_TenDichVu
             // 
-            this.TEXT_TENDV.BackColor = System.Drawing.Color.Transparent;
-            this.TEXT_TENDV.BorderColor = System.Drawing.Color.White;
-            this.TEXT_TENDV.BorderRadius = 10;
-            this.TEXT_TENDV.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TEXT_TENDV.DefaultText = "";
-            this.TEXT_TENDV.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.TEXT_TENDV.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.TEXT_TENDV.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TEXT_TENDV.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TEXT_TENDV.Enabled = false;
-            this.TEXT_TENDV.FillColor = System.Drawing.SystemColors.Control;
-            this.TEXT_TENDV.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TEXT_TENDV.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.TEXT_TENDV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TEXT_TENDV.Location = new System.Drawing.Point(38, 82);
-            this.TEXT_TENDV.Name = "TEXT_TENDV";
-            this.TEXT_TENDV.PasswordChar = '\0';
-            this.TEXT_TENDV.PlaceholderText = "Tên dịch vụ";
-            this.TEXT_TENDV.SelectedText = "";
-            this.TEXT_TENDV.Size = new System.Drawing.Size(308, 41);
-            this.TEXT_TENDV.TabIndex = 23;
+            this.Textbox_TenDichVu.BackColor = System.Drawing.Color.Transparent;
+            this.Textbox_TenDichVu.BorderColor = System.Drawing.Color.White;
+            this.Textbox_TenDichVu.BorderRadius = 10;
+            this.Textbox_TenDichVu.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Textbox_TenDichVu.DefaultText = "";
+            this.Textbox_TenDichVu.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Textbox_TenDichVu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Textbox_TenDichVu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Textbox_TenDichVu.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Textbox_TenDichVu.Enabled = false;
+            this.Textbox_TenDichVu.FillColor = System.Drawing.SystemColors.Control;
+            this.Textbox_TenDichVu.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Textbox_TenDichVu.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Textbox_TenDichVu.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Textbox_TenDichVu.Location = new System.Drawing.Point(38, 53);
+            this.Textbox_TenDichVu.Name = "Textbox_TenDichVu";
+            this.Textbox_TenDichVu.PasswordChar = '\0';
+            this.Textbox_TenDichVu.PlaceholderText = "Tên dịch vụ";
+            this.Textbox_TenDichVu.ReadOnly = true;
+            this.Textbox_TenDichVu.SelectedText = "";
+            this.Textbox_TenDichVu.Size = new System.Drawing.Size(528, 41);
+            this.Textbox_TenDichVu.TabIndex = 23;
             // 
-            // BTN_UPDATEDV
+            // Button_CapNhat
             // 
-            this.BTN_UPDATEDV.Animated = true;
-            this.BTN_UPDATEDV.AnimatedGIF = true;
-            this.BTN_UPDATEDV.BackColor = System.Drawing.Color.Transparent;
-            this.BTN_UPDATEDV.BorderRadius = 20;
-            this.BTN_UPDATEDV.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.BTN_UPDATEDV.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.BTN_UPDATEDV.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.BTN_UPDATEDV.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.BTN_UPDATEDV.Enabled = false;
-            this.BTN_UPDATEDV.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(223)))), ((int)(((byte)(229)))));
-            this.BTN_UPDATEDV.Font = new System.Drawing.Font("Montserrat Black", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTN_UPDATEDV.ForeColor = System.Drawing.Color.White;
-            this.BTN_UPDATEDV.Image = ((System.Drawing.Image)(resources.GetObject("BTN_UPDATEDV.Image")));
-            this.BTN_UPDATEDV.Location = new System.Drawing.Point(416, 120);
-            this.BTN_UPDATEDV.Name = "BTN_UPDATEDV";
-            this.BTN_UPDATEDV.Size = new System.Drawing.Size(151, 42);
-            this.BTN_UPDATEDV.TabIndex = 22;
-            this.BTN_UPDATEDV.Text = "Cập nhật dịch vụ";
-            this.BTN_UPDATEDV.Click += new System.EventHandler(this.BTN_UPDATEDV_Click);
+            this.Button_CapNhat.Animated = true;
+            this.Button_CapNhat.AnimatedGIF = true;
+            this.Button_CapNhat.BackColor = System.Drawing.Color.Transparent;
+            this.Button_CapNhat.BorderRadius = 20;
+            this.Button_CapNhat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Button_CapNhat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Button_CapNhat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Button_CapNhat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Button_CapNhat.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(223)))), ((int)(((byte)(229)))));
+            this.Button_CapNhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button_CapNhat.ForeColor = System.Drawing.Color.White;
+            this.Button_CapNhat.Image = ((System.Drawing.Image)(resources.GetObject("Button_CapNhat.Image")));
+            this.Button_CapNhat.Location = new System.Drawing.Point(38, 356);
+            this.Button_CapNhat.Name = "Button_CapNhat";
+            this.Button_CapNhat.Size = new System.Drawing.Size(528, 42);
+            this.Button_CapNhat.TabIndex = 22;
+            this.Button_CapNhat.Text = "  Cập nhật dịch vụ";
+            this.Button_CapNhat.Click += new System.EventHandler(this.BTN_UPDATEDV_Click);
+            // 
+            // guna2HtmlLabel3
+            // 
+            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(38, 254);
+            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(74, 22);
+            this.guna2HtmlLabel3.TabIndex = 31;
+            this.guna2HtmlLabel3.Text = "Tình trạng";
+            // 
+            // Combox_TinhTrang
+            // 
+            this.Combox_TinhTrang.BackColor = System.Drawing.Color.Transparent;
+            this.Combox_TinhTrang.BorderColor = System.Drawing.Color.White;
+            this.Combox_TinhTrang.BorderRadius = 15;
+            this.Combox_TinhTrang.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.Combox_TinhTrang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Combox_TinhTrang.Enabled = false;
+            this.Combox_TinhTrang.FillColor = System.Drawing.SystemColors.Control;
+            this.Combox_TinhTrang.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Combox_TinhTrang.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Combox_TinhTrang.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.Combox_TinhTrang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.Combox_TinhTrang.ItemHeight = 35;
+            this.Combox_TinhTrang.Location = new System.Drawing.Point(38, 282);
+            this.Combox_TinhTrang.Name = "Combox_TinhTrang";
+            this.Combox_TinhTrang.Size = new System.Drawing.Size(528, 41);
+            this.Combox_TinhTrang.TabIndex = 32;
             // 
             // Dichvu
             // 
@@ -350,7 +423,7 @@ namespace QLKS
             this.Load += new System.EventHandler(this.Dichvu_Load);
             this.guna2GroupBox1.ResumeLayout(false);
             this.guna2GroupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DT_DS_DV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Data_DichVu)).EndInit();
             this.guna2GroupBox2.ResumeLayout(false);
             this.guna2GroupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -361,17 +434,21 @@ namespace QLKS
 
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
-        private Guna.UI2.WinForms.Guna2DataGridView DT_DS_DV;
+        private Guna.UI2.WinForms.Guna2DataGridView Data_DichVu;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox2;
-        private Guna.UI2.WinForms.Guna2Button BTN_THEMDV;
-        private Guna.UI2.WinForms.Guna2Button BTN_UPDATEDV;
-        private Guna.UI2.WinForms.Guna2TextBox TEXT_GIADV;
-        private Guna.UI2.WinForms.Guna2TextBox TEXT_TENDV;
-        private Guna.UI2.WinForms.Guna2Button BTN_SAVEDV;
-        private Guna.UI2.WinForms.Guna2TextBox FindDV;
+        private Guna.UI2.WinForms.Guna2Button Button_ThemDichVu;
+        private Guna.UI2.WinForms.Guna2Button Button_CapNhat;
+        private Guna.UI2.WinForms.Guna2TextBox Textbox_GiaDichVu;
+        private Guna.UI2.WinForms.Guna2TextBox Textbox_TenDichVu;
+        private Guna.UI2.WinForms.Guna2Button Button_Luu;
+        private Guna.UI2.WinForms.Guna2TextBox TextBox_Find_TenDichVu;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
         private Guna.UI2.WinForms.Guna2TextBox MADV;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+        private Guna.UI2.WinForms.Guna2TextBox Textbox_MoTa;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
+        private Guna.UI2.WinForms.Guna2ComboBox Combox_TinhTrang;
     }
 }

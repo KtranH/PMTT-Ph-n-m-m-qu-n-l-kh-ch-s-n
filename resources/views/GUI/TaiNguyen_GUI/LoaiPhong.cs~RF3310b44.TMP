@@ -38,9 +38,6 @@ namespace GUI.TaiNguyen_GUI.Phong_GUI
             combox_LoaiPhong.DisplayMember = "TENLOAIPHONG";
             combox_LoaiPhong.ValueMember = "ID";
         }
-        //-----------------------------------------------------------------------------------------------------
-        //-----------------------------------------------------------------------------------------------------
-        //Thêm ảnh từ R2
         public async void LoadImage(int ID)
         {
             List<HINHLOAIPHONG> listHinh = new List<HINHLOAIPHONG>();
@@ -62,6 +59,7 @@ namespace GUI.TaiNguyen_GUI.Phong_GUI
                 {
                     pictureBox.Image = image;
                     pictureBox.Tag = item;
+                    pictureBox.Click += PictureBox_Click;
                     Guna2Button btnClose = new Guna2Button()
                     {
                         Text = "X",
@@ -84,21 +82,14 @@ namespace GUI.TaiNguyen_GUI.Phong_GUI
                     btnClose.Padding = new Padding(0);
                     btnClose.TextFormatNoPrefix = true;
                     //Xóa ảnh
-                    btnClose.Click += async (s, e) =>
+                    btnClose.Click += (s, e) =>
                     {
                         ShowImage.Controls.Remove(pictureBox);
                         try
                         {
-                            HINHLOAIPHONG remove = pictureBox.Tag as HINHLOAIPHONG;
-                            await removeImage(remove);
-                            db.RemoveHinhLoaiPhong(remove);
-                            MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            
                         }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message);
-                        }
-                    };
+                    }
                     pictureBox.Controls.Add(btnClose);
                     ShowImage.Controls.Add(pictureBox);
                 }    
@@ -106,18 +97,17 @@ namespace GUI.TaiNguyen_GUI.Phong_GUI
         }
         //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------
-        //Xử lý tải ảnh và thêm ảnh vào R2 và database
-        public async Task removeImage(HINHLOAIPHONG x)
+        //Xử lý khi click nào một ảnh
+        private HINHLOAIPHONG PictureBox_Click(object sender, EventArgs e)
         {
-            try
+            Guna2PictureBox clickedPictureBox = sender as Guna2PictureBox;
+            if (clickedPictureBox != null)
             {
-                string prefix = "https://pub-c8adcbfebc8642f887468c77f77c44fe.r2.dev/";
-                string result = x.HINH.Substring(prefix.Length);
-                await R2.DeleteImageFromR2(result);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                HINHLOAIPHONG x = clickedPictureBox.Tag as HINHLOAIPHONG;
+                if (x != null)
+                {
+                    return x;
+                }
             }
         }
         //-----------------------------------------------------------------------------------------------------

@@ -34,5 +34,9 @@ namespace BLL
         {
             DB.SaveImageLoaiPhong(x);
         }
+        public void RemoveHinhLoaiPhong(HINHLOAIPHONG x)
+        {
+            DB.RemoveImageLoaiPhong(x);
+        }
     }
 }

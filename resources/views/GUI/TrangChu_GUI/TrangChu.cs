@@ -37,6 +37,17 @@ namespace QLKS
         }
         //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------
+        //Xử lý khi ấn vào nút trang chủ
+        private void BTN_TRANGCHU_Click(object sender, EventArgs e)
+        {
+            TrangChinh Home = new TrangChinh() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            Home.userCurrent = this.userCurrent;
+            this.ConvertForm.Controls.Clear();
+            this.ConvertForm.Controls.Add(Home);
+            Home.Show();
+        }
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
         //Xử lý khi ở trang chính
         public void Access_Home()
         {
@@ -91,32 +102,31 @@ namespace QLKS
         private void DS_LoaiPhong_Click(object sender, EventArgs e)
         {
             LoaiPhong OpenLoaiPhong = new LoaiPhong() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            //OpenPhong.UserCurrentPH = UserCurrent;
             this.ConvertForm.Controls.Clear();
             this.ConvertForm.Controls.Add(OpenLoaiPhong);
             OpenLoaiPhong.Show();
         }
         //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------
-        //Xử lý khi ấn vào nút trang chủ
-        private void BTN_TRANGCHU_Click(object sender, EventArgs e)
+        //Xử lý khi ấn vào nút phòng
+        private void DanhSachPhong_Click(object sender, EventArgs e)
         {
-            TrangChinh Home = new TrangChinh() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            Home.userCurrent = this.userCurrent;
+            Phong OpenPhong = new Phong() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             this.ConvertForm.Controls.Clear();
-            this.ConvertForm.Controls.Add(Home);
-            Home.Show();
+            this.ConvertForm.Controls.Add(OpenPhong);
+            OpenPhong.Show();
         }
         //-----------------------------------------------------------------------------------------------------
-        private void CN_DSDV_Click(object sender, EventArgs e)
+        //-----------------------------------------------------------------------------------------------------
+        //Xử lý khi ấn vào nút dịch vụ
+        private void DanhSachDichVu_Click(object sender, EventArgs e)
         {
-            Dichvu dv = new Dichvu() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            //dv.UserCurrentDV = UserCurrent;
+            Dichvu openDichVu = new Dichvu() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             this.ConvertForm.Controls.Clear();
-            this.ConvertForm.Controls.Add(dv);
-            dv.Show();
+            this.ConvertForm.Controls.Add(openDichVu);
+            openDichVu.Show();
         }
-
+        //-----------------------------------------------------------------------------------------------------
         private void BTN_DATPHONG_Click(object sender, EventArgs e)
         {
             EF_DATPHONG.Start();

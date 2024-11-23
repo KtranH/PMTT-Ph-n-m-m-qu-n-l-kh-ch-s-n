@@ -71,14 +71,7 @@ namespace QLKS
         {
             if(TextBox_Find_TenDichVu.Text.Trim() != "")
             {
-                List<DICHVU> listDV = new List<DICHVU>();
-                string find = TextBox_Find_TenDichVu.Text;
-                listDV = db.GetFindDichVu(find);
-                Data_DichVu.DataSource = listDV.Select(p => new { p.ID, p.TENDICHVU, p.GIA, p.MOTA }).ToList();
-            }
-            else
-            {
-                loadDV();
+
             }    
         }
         //-----------------------------------------------------------------------------------------------------

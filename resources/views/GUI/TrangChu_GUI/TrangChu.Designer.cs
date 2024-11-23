@@ -453,6 +453,7 @@ namespace QLKS
             this.DanhSachDichVu.TabIndex = 3;
             this.DanhSachDichVu.Text = "Danh sách dịch vụ";
             this.DanhSachDichVu.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.DanhSachDichVu.Click += new System.EventHandler(this.DanhSachDichVu_Click);
             // 
             // DanhSachPhong
             // 
@@ -476,7 +477,7 @@ namespace QLKS
             this.DanhSachPhong.TabIndex = 2;
             this.DanhSachPhong.Text = "Danh Sách Phòng";
             this.DanhSachPhong.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.DanhSachPhong.Click += new System.EventHandler(this.CN_DSDV_Click);
+            this.DanhSachPhong.Click += new System.EventHandler(this.DanhSachPhong_Click);
             // 
             // DanhSachLoaiPhong
             // 

@@ -1,9 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 using DTO;
+using System.Data.Entity;
 
 namespace DAL
 {
@@ -26,6 +28,10 @@ namespace DAL
         public int CountRoom()
         {
             return db.PHONGs.Count();
-        }    
+        }
+        public List<PHONG> FindPhong(string find)
+        {
+            return db.PHONGs.Where(p => p.TENPHONG.Contains(find) || p.LOAIPHONG.TENLOAIPHONG.Contains(find)).ToList();
+        }
     }
 }

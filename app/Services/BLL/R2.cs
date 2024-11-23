@@ -33,7 +33,7 @@ namespace BLL
         {
             string bucketUrl = "pub-c8adcbfebc8642f887468c77f77c44fe.r2.dev";
             string folder = $"LoaiPhong/{loaiPhong}";
-            string fileName = $"{loaiPhong}{counter}{Path.GetExtension(localFilePath)}"; // Lấy đúng extension của file
+            string fileName = $"{loaiPhong}{counter}{Path.GetExtension(localFilePath)}";
             string objectKey = $"{folder}/{fileName}";
 
             try

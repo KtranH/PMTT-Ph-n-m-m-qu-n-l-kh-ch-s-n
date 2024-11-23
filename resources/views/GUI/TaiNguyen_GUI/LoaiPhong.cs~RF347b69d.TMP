@@ -38,9 +38,6 @@ namespace GUI.TaiNguyen_GUI.Phong_GUI
             combox_LoaiPhong.DisplayMember = "TENLOAIPHONG";
             combox_LoaiPhong.ValueMember = "ID";
         }
-        //-----------------------------------------------------------------------------------------------------
-        //-----------------------------------------------------------------------------------------------------
-        //Thêm ảnh từ R2
         public async void LoadImage(int ID)
         {
             List<HINHLOAIPHONG> listHinh = new List<HINHLOAIPHONG>();
@@ -111,9 +108,7 @@ namespace GUI.TaiNguyen_GUI.Phong_GUI
         {
             try
             {
-                string prefix = "https://pub-c8adcbfebc8642f887468c77f77c44fe.r2.dev/";
-                string result = x.HINH.Substring(prefix.Length);
-                await R2.DeleteImageFromR2(result);
+                await R2.DeleteImageFromR2(x.HINH);
             }
             catch (Exception ex)
             {

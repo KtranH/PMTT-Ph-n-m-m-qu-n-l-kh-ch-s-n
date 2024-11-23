@@ -27,10 +27,6 @@ namespace BLL
         public int GetCountRoom()
         {
             return db.CountRoom();
-        }
-        public List<PHONG> GetFindPhong(string find)
-        {
-            return db.FindPhong(find);
-        }
+        }   
     }
 }

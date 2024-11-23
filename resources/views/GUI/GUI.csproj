@@ -103,6 +103,7 @@
       <DependentUpon>LoaiPhong.cs</DependentUpon>
     </Compile>
     <Compile Include="TaiNguyen_GUI\XuLy_LoaiPhong.cs" />
+    <Compile Include="TaiNguyen_GUI\XuLy_Phong.cs" />
     <Compile Include="TraPhong_GUI\CT_HoaDon.cs">
       <SubType>Form</SubType>
     </Compile>

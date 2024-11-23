@@ -56,9 +56,6 @@ namespace QLKS
             tinhTrangList.Add("Đã thuê");
             tinhTrangList.Add("Không khả dụng");
             Combox_TinhTrang.DataSource = tinhTrangList;
-            Combox_Find_LoaiPhong.DataSource = listLoaiPhong;
-            Combox_Find_LoaiPhong.DisplayMember = "TENLOAIPHONG";
-            Combox_Find_LoaiPhong.ValueMember = "ID";
         }    
         //-----------------------------------------------------------------------------------------------------
         //Lấy dữ liệu từ datagird view sang textbox
@@ -78,40 +75,17 @@ namespace QLKS
         //Tìm kiếm tên phòng, loại phòng
         private void Textbox_Find_Phong_TextChanged(object sender, EventArgs e)
         {
-            if(Textbox_Find_Phong.Text.Trim() != "")
-            {
-                string find = Textbox_Find_Phong.Text;
-                List<PHONG> listPhong = new List<PHONG>();
-                listPhong = db.GetFindPhong(find);
-                Data_Phong.DataSource = listPhong.Select(p => new { p.ID, p.TENPHONG, p.LOAIPHONG.TENLOAIPHONG, p.VITRI, p.TRANGTHAI }).ToList();
-            }
-        }
-        private void FindRoom_Leave(object sender, EventArgs e)
-        {
-            if (Textbox_Find_Phong.Text.Trim() == "")
-            {
-                Textbox_Find_Phong.Text = "Tìm kiếm phòng";
-            }
+            string find = Textbox_Find_Phong.Text;
+            List<PHONG> listPhong = new List<PHONG>();
+            listPhong = db.GetFindPhong(find);
+            Data_Phong.DataSource = listPhong.Select(p => new { p.ID, p.TENPHONG, p.LOAIPHONG.TENLOAIPHONG, p.VITRI, p.TRANGTHAI }).ToList();
         }
         //-----------------------------------------------------------------------------------------------------
-        //Chọn tìm kiếm loại phòng
-        private void Combox_Find_LoaiPhong_SelectedValueChanged(object sender, EventArgs e)
+        private void OP_PHONG_SelectedValueChanged(object sender, EventArgs e)
         {
-            if(Combox_Find_LoaiPhong.Text.Trim() != "Tất cả")
-            {
-                string find = Combox_Find_LoaiPhong.Text;
-                List<PHONG> listPhong = new List<PHONG>();
-                listPhong = db.GetFindPhong(find);
-                Data_Phong.DataSource = listPhong.Select(p => new { p.ID, p.TENPHONG, p.LOAIPHONG.TENLOAIPHONG, p.VITRI, p.TRANGTHAI }).ToList();
-            }
-            else
-            {
-                List<PHONG> listPhong = new List<PHONG>();
-                listPhong = db.GetAllPhong();
-                Data_Phong.DataSource = listPhong.Select(p => new { p.ID, p.TENPHONG, p.LOAIPHONG.TENLOAIPHONG, p.VITRI, p.TRANGTHAI }).ToList();
-            }    
+           
         }
-        //-----------------------------------------------------------------------------------------------------
+
         private void FindRoom_KeyDown(object sender, KeyEventArgs e)
         {
             
@@ -121,6 +95,15 @@ namespace QLKS
         {
             Textbox_Find_Phong.Clear();
         }
+
+        private void FindRoom_Leave(object sender, EventArgs e)
+        {
+            if (Textbox_Find_Phong.Text.Trim() == "")
+            {
+                Textbox_Find_Phong.Text = "Tìm kiếm phòng";
+            }
+        }
+
         private void FindKind_KeyDown(object sender, KeyEventArgs e)
         {
             
@@ -155,14 +138,14 @@ namespace QLKS
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-                e.Handled = true; 
+                e.Handled = true; // Ngăn người dùng nhập ký tự không phải số
             }
         }
         private void TEXT_SUCCHUA_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-                e.Handled = true; 
+                e.Handled = true; // Ngăn người dùng nhập ký tự không phải số
             }
         }
 
