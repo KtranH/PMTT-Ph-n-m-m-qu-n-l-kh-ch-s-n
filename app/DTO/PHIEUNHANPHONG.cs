@@ -27,6 +27,7 @@ namespace DTO
         public Nullable<int> PHONG_ID { get; set; }
         public Nullable<System.DateTime> NGAYTRAPHONG { get; set; }
         public string TINHTRANG { get; set; }
+        public Nullable<System.DateTime> NGAYNHANPHONG { get; set; }
     
         public virtual NHANVIEN NHANVIEN { get; set; }
         public virtual PHIEUDATPHONG PHIEUDATPHONG { get; set; }

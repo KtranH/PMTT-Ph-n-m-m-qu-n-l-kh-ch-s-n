@@ -1,0 +1,92 @@
+using BLL;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Globalization;
+using System.Linq;
+using System.Net.NetworkInformation;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
+
+namespace QLKS
+{
+    public partial class NhanVien : Form
+    {
+        NHANVIEN_BLL NV= new NHANVIEN_BLL();
+        public NhanVien()
+        {
+            InitializeComponent();
+        }
+        private void NhanVien_Load(object sender, EventArgs e)
+        {
+            LoadNV();
+            LoadCombox();
+        }
+        //-----------------------------------------------------------------------------------------------------
+        //Lấy dữ liệu nhân viên vào datagird view
+        public void LoadCombox()
+        {
+            List<String> tinhtrang = new List<String>();
+            tinhtrang.Add("Hoạt động");
+            tinhtrang.Add("Không hoạt động");
+            Combox_TinhTrang.DataSource = tinhtrang;
+        }
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Lấy dữ liệu nhân viên vào datagird view
+        public void LoadNV()
+        {
+            
+        }
+        //-----------------------------------------------------------------------------------------------------
+        private void DT_DS_NV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void BTN_THEMNV_Click(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void BTN_CAPNHAT_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void FindNV_Click(object sender, EventArgs e)
+        {
+            Textbox_Find_NhanVien.Clear();
+        }
+
+        private void FindNV_Leave(object sender, EventArgs e)
+        {
+            if(Textbox_Find_NhanVien.Text.Trim() == "")
+            {
+                Textbox_Find_NhanVien.Text = "Tìm kiếm nhân viên";
+            }    
+        }
+
+        private void FindNV_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+        }
+
+        private void BTN_SAVENV_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void TEXT_SDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; 
+            }
+        }
+    }
+}

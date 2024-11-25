@@ -59,7 +59,8 @@ namespace QLKS
             Combox_Find_LoaiPhong.DataSource = listLoaiPhong;
             Combox_Find_LoaiPhong.DisplayMember = "TENLOAIPHONG";
             Combox_Find_LoaiPhong.ValueMember = "ID";
-        }    
+        }
+        //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------
         //Lấy dữ liệu từ datagird view sang textbox
         private void DS_Phong_CellContentClick(object sender, DataGridViewCellEventArgs e)

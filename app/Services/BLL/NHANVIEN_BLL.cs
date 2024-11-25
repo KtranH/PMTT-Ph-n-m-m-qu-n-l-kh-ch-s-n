@@ -29,5 +29,9 @@ namespace BLL
             }
             return false;
         }
+        public List<NHANVIEN> GetFindNhanVien(String find)
+        {
+            return db.FindNhanVien(find);
+        }
     }
 }

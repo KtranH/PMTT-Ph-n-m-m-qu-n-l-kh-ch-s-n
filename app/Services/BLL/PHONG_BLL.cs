@@ -32,5 +32,13 @@ namespace BLL
         {
             return db.FindPhong(find);
         }
+        public List<PHONG> GetPhongEmpty()
+        {
+            return db.AllPhongEmpty();
+        }
+        public List<PHONG> GetFindPhongEmpty(int find, string phong)
+        {
+            return db.FindPhongEmpty(find, phong);
+        }
     }
 }

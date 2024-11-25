@@ -32,18 +32,18 @@ namespace QLKS
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrangChu));
             this.SlideBar = new Guna.UI2.WinForms.Guna2Panel();
             this.DANHMUC = new Guna.UI2.WinForms.Guna2Panel();
-            this.BTN_HOADON = new Guna.UI2.WinForms.Guna2Button();
-            this.BTN_PDP = new Guna.UI2.WinForms.Guna2Button();
-            this.BTN_KHACHHANG = new Guna.UI2.WinForms.Guna2Button();
+            this.TraCuuTraPhong = new Guna.UI2.WinForms.Guna2Button();
+            this.TraCuuNhanPhong = new Guna.UI2.WinForms.Guna2Button();
+            this.TraCuuKhachHang = new Guna.UI2.WinForms.Guna2Button();
             this.CN_DANHMUC = new Guna.UI2.WinForms.Guna2Button();
             this.THONGTIN = new Guna.UI2.WinForms.Guna2Panel();
-            this.BTN_NHANVIEN = new Guna.UI2.WinForms.Guna2Button();
+            this.NhanVien = new Guna.UI2.WinForms.Guna2Button();
             this.CN_THONGTIN = new Guna.UI2.WinForms.Guna2Button();
             this.THANHTOAN = new Guna.UI2.WinForms.Guna2Panel();
-            this.BTN_THANHTOANHD = new Guna.UI2.WinForms.Guna2Button();
+            this.ThangToanTraPhong = new Guna.UI2.WinForms.Guna2Button();
             this.CN_THANHTOAN = new Guna.UI2.WinForms.Guna2Button();
             this.DATPHONG = new Guna.UI2.WinForms.Guna2Panel();
-            this.CN_DSDP = new Guna.UI2.WinForms.Guna2Button();
+            this.DanhSachDatPhong = new Guna.UI2.WinForms.Guna2Button();
             this.CN_PDPKH = new Guna.UI2.WinForms.Guna2Button();
             this.BTN_DATPHONG = new Guna.UI2.WinForms.Guna2Button();
             this.TAINGUYEN = new Guna.UI2.WinForms.Guna2Panel();
@@ -104,9 +104,9 @@ namespace QLKS
             // DANHMUC
             // 
             this.DANHMUC.BackColor = System.Drawing.Color.White;
-            this.DANHMUC.Controls.Add(this.BTN_HOADON);
-            this.DANHMUC.Controls.Add(this.BTN_PDP);
-            this.DANHMUC.Controls.Add(this.BTN_KHACHHANG);
+            this.DANHMUC.Controls.Add(this.TraCuuTraPhong);
+            this.DANHMUC.Controls.Add(this.TraCuuNhanPhong);
+            this.DANHMUC.Controls.Add(this.TraCuuKhachHang);
             this.DANHMUC.Controls.Add(this.CN_DANHMUC);
             this.DANHMUC.Dock = System.Windows.Forms.DockStyle.Top;
             this.DANHMUC.Location = new System.Drawing.Point(0, 776);
@@ -116,77 +116,77 @@ namespace QLKS
             this.DANHMUC.Size = new System.Drawing.Size(300, 200);
             this.DANHMUC.TabIndex = 12;
             // 
-            // BTN_HOADON
+            // TraCuuTraPhong
             // 
-            this.BTN_HOADON.Animated = true;
-            this.BTN_HOADON.BorderColor = System.Drawing.Color.White;
-            this.BTN_HOADON.BorderRadius = 10;
-            this.BTN_HOADON.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.BTN_HOADON.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.BTN_HOADON.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.BTN_HOADON.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.BTN_HOADON.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BTN_HOADON.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(245)))));
-            this.BTN_HOADON.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTN_HOADON.ForeColor = System.Drawing.Color.Black;
-            this.BTN_HOADON.Image = ((System.Drawing.Image)(resources.GetObject("BTN_HOADON.Image")));
-            this.BTN_HOADON.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.BTN_HOADON.ImageSize = new System.Drawing.Size(25, 25);
-            this.BTN_HOADON.Location = new System.Drawing.Point(0, 150);
-            this.BTN_HOADON.Name = "BTN_HOADON";
-            this.BTN_HOADON.Size = new System.Drawing.Size(300, 47);
-            this.BTN_HOADON.TabIndex = 3;
-            this.BTN_HOADON.Text = "Tra cứu trả phòng";
-            this.BTN_HOADON.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.BTN_HOADON.Click += new System.EventHandler(this.BTN_HOADON_Click);
+            this.TraCuuTraPhong.Animated = true;
+            this.TraCuuTraPhong.BorderColor = System.Drawing.Color.White;
+            this.TraCuuTraPhong.BorderRadius = 10;
+            this.TraCuuTraPhong.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.TraCuuTraPhong.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.TraCuuTraPhong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.TraCuuTraPhong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.TraCuuTraPhong.Dock = System.Windows.Forms.DockStyle.Top;
+            this.TraCuuTraPhong.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(245)))));
+            this.TraCuuTraPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TraCuuTraPhong.ForeColor = System.Drawing.Color.Black;
+            this.TraCuuTraPhong.Image = ((System.Drawing.Image)(resources.GetObject("TraCuuTraPhong.Image")));
+            this.TraCuuTraPhong.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.TraCuuTraPhong.ImageSize = new System.Drawing.Size(25, 25);
+            this.TraCuuTraPhong.Location = new System.Drawing.Point(0, 150);
+            this.TraCuuTraPhong.Name = "TraCuuTraPhong";
+            this.TraCuuTraPhong.Size = new System.Drawing.Size(300, 47);
+            this.TraCuuTraPhong.TabIndex = 3;
+            this.TraCuuTraPhong.Text = "Tra cứu trả phòng";
+            this.TraCuuTraPhong.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.TraCuuTraPhong.Click += new System.EventHandler(this.BTN_HOADON_Click);
             // 
-            // BTN_PDP
+            // TraCuuNhanPhong
             // 
-            this.BTN_PDP.Animated = true;
-            this.BTN_PDP.BorderColor = System.Drawing.Color.White;
-            this.BTN_PDP.BorderRadius = 10;
-            this.BTN_PDP.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.BTN_PDP.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.BTN_PDP.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.BTN_PDP.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.BTN_PDP.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BTN_PDP.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(245)))));
-            this.BTN_PDP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTN_PDP.ForeColor = System.Drawing.Color.Black;
-            this.BTN_PDP.Image = ((System.Drawing.Image)(resources.GetObject("BTN_PDP.Image")));
-            this.BTN_PDP.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.BTN_PDP.ImageSize = new System.Drawing.Size(25, 25);
-            this.BTN_PDP.Location = new System.Drawing.Point(0, 100);
-            this.BTN_PDP.Name = "BTN_PDP";
-            this.BTN_PDP.Size = new System.Drawing.Size(300, 50);
-            this.BTN_PDP.TabIndex = 2;
-            this.BTN_PDP.Text = "Tra cứu nhận phòng";
-            this.BTN_PDP.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.BTN_PDP.Click += new System.EventHandler(this.BTN_PDP_Click);
+            this.TraCuuNhanPhong.Animated = true;
+            this.TraCuuNhanPhong.BorderColor = System.Drawing.Color.White;
+            this.TraCuuNhanPhong.BorderRadius = 10;
+            this.TraCuuNhanPhong.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.TraCuuNhanPhong.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.TraCuuNhanPhong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.TraCuuNhanPhong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.TraCuuNhanPhong.Dock = System.Windows.Forms.DockStyle.Top;
+            this.TraCuuNhanPhong.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(245)))));
+            this.TraCuuNhanPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TraCuuNhanPhong.ForeColor = System.Drawing.Color.Black;
+            this.TraCuuNhanPhong.Image = ((System.Drawing.Image)(resources.GetObject("TraCuuNhanPhong.Image")));
+            this.TraCuuNhanPhong.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.TraCuuNhanPhong.ImageSize = new System.Drawing.Size(25, 25);
+            this.TraCuuNhanPhong.Location = new System.Drawing.Point(0, 100);
+            this.TraCuuNhanPhong.Name = "TraCuuNhanPhong";
+            this.TraCuuNhanPhong.Size = new System.Drawing.Size(300, 50);
+            this.TraCuuNhanPhong.TabIndex = 2;
+            this.TraCuuNhanPhong.Text = "Tra cứu nhận phòng";
+            this.TraCuuNhanPhong.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.TraCuuNhanPhong.Click += new System.EventHandler(this.BTN_PDP_Click);
             // 
-            // BTN_KHACHHANG
+            // TraCuuKhachHang
             // 
-            this.BTN_KHACHHANG.Animated = true;
-            this.BTN_KHACHHANG.BorderColor = System.Drawing.Color.White;
-            this.BTN_KHACHHANG.BorderRadius = 10;
-            this.BTN_KHACHHANG.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.BTN_KHACHHANG.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.BTN_KHACHHANG.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.BTN_KHACHHANG.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.BTN_KHACHHANG.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BTN_KHACHHANG.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(245)))));
-            this.BTN_KHACHHANG.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTN_KHACHHANG.ForeColor = System.Drawing.Color.Black;
-            this.BTN_KHACHHANG.Image = ((System.Drawing.Image)(resources.GetObject("BTN_KHACHHANG.Image")));
-            this.BTN_KHACHHANG.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.BTN_KHACHHANG.ImageSize = new System.Drawing.Size(25, 25);
-            this.BTN_KHACHHANG.Location = new System.Drawing.Point(0, 50);
-            this.BTN_KHACHHANG.Name = "BTN_KHACHHANG";
-            this.BTN_KHACHHANG.Size = new System.Drawing.Size(300, 50);
-            this.BTN_KHACHHANG.TabIndex = 1;
-            this.BTN_KHACHHANG.Text = "Tra cứu khách hàng";
-            this.BTN_KHACHHANG.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.BTN_KHACHHANG.Click += new System.EventHandler(this.BTN_KHACHHANG_Click);
+            this.TraCuuKhachHang.Animated = true;
+            this.TraCuuKhachHang.BorderColor = System.Drawing.Color.White;
+            this.TraCuuKhachHang.BorderRadius = 10;
+            this.TraCuuKhachHang.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.TraCuuKhachHang.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.TraCuuKhachHang.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.TraCuuKhachHang.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.TraCuuKhachHang.Dock = System.Windows.Forms.DockStyle.Top;
+            this.TraCuuKhachHang.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(245)))));
+            this.TraCuuKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TraCuuKhachHang.ForeColor = System.Drawing.Color.Black;
+            this.TraCuuKhachHang.Image = ((System.Drawing.Image)(resources.GetObject("TraCuuKhachHang.Image")));
+            this.TraCuuKhachHang.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.TraCuuKhachHang.ImageSize = new System.Drawing.Size(25, 25);
+            this.TraCuuKhachHang.Location = new System.Drawing.Point(0, 50);
+            this.TraCuuKhachHang.Name = "TraCuuKhachHang";
+            this.TraCuuKhachHang.Size = new System.Drawing.Size(300, 50);
+            this.TraCuuKhachHang.TabIndex = 1;
+            this.TraCuuKhachHang.Text = "Tra cứu khách hàng";
+            this.TraCuuKhachHang.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.TraCuuKhachHang.Click += new System.EventHandler(this.BTN_KHACHHANG_Click);
             // 
             // CN_DANHMUC
             // 
@@ -214,7 +214,7 @@ namespace QLKS
             // THONGTIN
             // 
             this.THONGTIN.BackColor = System.Drawing.Color.White;
-            this.THONGTIN.Controls.Add(this.BTN_NHANVIEN);
+            this.THONGTIN.Controls.Add(this.NhanVien);
             this.THONGTIN.Controls.Add(this.CN_THONGTIN);
             this.THONGTIN.Dock = System.Windows.Forms.DockStyle.Top;
             this.THONGTIN.Location = new System.Drawing.Point(0, 671);
@@ -224,29 +224,29 @@ namespace QLKS
             this.THONGTIN.Size = new System.Drawing.Size(300, 105);
             this.THONGTIN.TabIndex = 11;
             // 
-            // BTN_NHANVIEN
+            // NhanVien
             // 
-            this.BTN_NHANVIEN.Animated = true;
-            this.BTN_NHANVIEN.BorderColor = System.Drawing.Color.White;
-            this.BTN_NHANVIEN.BorderRadius = 10;
-            this.BTN_NHANVIEN.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.BTN_NHANVIEN.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.BTN_NHANVIEN.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.BTN_NHANVIEN.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.BTN_NHANVIEN.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BTN_NHANVIEN.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(245)))));
-            this.BTN_NHANVIEN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTN_NHANVIEN.ForeColor = System.Drawing.Color.Black;
-            this.BTN_NHANVIEN.Image = ((System.Drawing.Image)(resources.GetObject("BTN_NHANVIEN.Image")));
-            this.BTN_NHANVIEN.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.BTN_NHANVIEN.ImageSize = new System.Drawing.Size(25, 25);
-            this.BTN_NHANVIEN.Location = new System.Drawing.Point(0, 50);
-            this.BTN_NHANVIEN.Name = "BTN_NHANVIEN";
-            this.BTN_NHANVIEN.Size = new System.Drawing.Size(300, 47);
-            this.BTN_NHANVIEN.TabIndex = 1;
-            this.BTN_NHANVIEN.Text = "Nhân viên";
-            this.BTN_NHANVIEN.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.BTN_NHANVIEN.Click += new System.EventHandler(this.BTN_NHANVIEN_Click);
+            this.NhanVien.Animated = true;
+            this.NhanVien.BorderColor = System.Drawing.Color.White;
+            this.NhanVien.BorderRadius = 10;
+            this.NhanVien.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.NhanVien.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.NhanVien.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.NhanVien.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.NhanVien.Dock = System.Windows.Forms.DockStyle.Top;
+            this.NhanVien.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(245)))));
+            this.NhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NhanVien.ForeColor = System.Drawing.Color.Black;
+            this.NhanVien.Image = ((System.Drawing.Image)(resources.GetObject("NhanVien.Image")));
+            this.NhanVien.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.NhanVien.ImageSize = new System.Drawing.Size(25, 25);
+            this.NhanVien.Location = new System.Drawing.Point(0, 50);
+            this.NhanVien.Name = "NhanVien";
+            this.NhanVien.Size = new System.Drawing.Size(300, 47);
+            this.NhanVien.TabIndex = 1;
+            this.NhanVien.Text = "Nhân viên";
+            this.NhanVien.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.NhanVien.Click += new System.EventHandler(this.BTN_NHANVIEN_Click);
             // 
             // CN_THONGTIN
             // 
@@ -274,7 +274,7 @@ namespace QLKS
             // THANHTOAN
             // 
             this.THANHTOAN.BackColor = System.Drawing.Color.White;
-            this.THANHTOAN.Controls.Add(this.BTN_THANHTOANHD);
+            this.THANHTOAN.Controls.Add(this.ThangToanTraPhong);
             this.THANHTOAN.Controls.Add(this.CN_THANHTOAN);
             this.THANHTOAN.Dock = System.Windows.Forms.DockStyle.Top;
             this.THANHTOAN.Location = new System.Drawing.Point(0, 563);
@@ -284,29 +284,29 @@ namespace QLKS
             this.THANHTOAN.Size = new System.Drawing.Size(298, 108);
             this.THANHTOAN.TabIndex = 9;
             // 
-            // BTN_THANHTOANHD
+            // ThangToanTraPhong
             // 
-            this.BTN_THANHTOANHD.Animated = true;
-            this.BTN_THANHTOANHD.BorderColor = System.Drawing.Color.White;
-            this.BTN_THANHTOANHD.BorderRadius = 10;
-            this.BTN_THANHTOANHD.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.BTN_THANHTOANHD.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.BTN_THANHTOANHD.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.BTN_THANHTOANHD.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.BTN_THANHTOANHD.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BTN_THANHTOANHD.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(245)))));
-            this.BTN_THANHTOANHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTN_THANHTOANHD.ForeColor = System.Drawing.Color.Black;
-            this.BTN_THANHTOANHD.Image = ((System.Drawing.Image)(resources.GetObject("BTN_THANHTOANHD.Image")));
-            this.BTN_THANHTOANHD.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.BTN_THANHTOANHD.ImageSize = new System.Drawing.Size(25, 25);
-            this.BTN_THANHTOANHD.Location = new System.Drawing.Point(0, 50);
-            this.BTN_THANHTOANHD.Name = "BTN_THANHTOANHD";
-            this.BTN_THANHTOANHD.Size = new System.Drawing.Size(298, 50);
-            this.BTN_THANHTOANHD.TabIndex = 1;
-            this.BTN_THANHTOANHD.Text = "Thanh toán trả phòng";
-            this.BTN_THANHTOANHD.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.BTN_THANHTOANHD.Click += new System.EventHandler(this.BTN_THANHTOANHD_Click);
+            this.ThangToanTraPhong.Animated = true;
+            this.ThangToanTraPhong.BorderColor = System.Drawing.Color.White;
+            this.ThangToanTraPhong.BorderRadius = 10;
+            this.ThangToanTraPhong.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ThangToanTraPhong.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ThangToanTraPhong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ThangToanTraPhong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ThangToanTraPhong.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ThangToanTraPhong.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(245)))));
+            this.ThangToanTraPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ThangToanTraPhong.ForeColor = System.Drawing.Color.Black;
+            this.ThangToanTraPhong.Image = ((System.Drawing.Image)(resources.GetObject("ThangToanTraPhong.Image")));
+            this.ThangToanTraPhong.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.ThangToanTraPhong.ImageSize = new System.Drawing.Size(25, 25);
+            this.ThangToanTraPhong.Location = new System.Drawing.Point(0, 50);
+            this.ThangToanTraPhong.Name = "ThangToanTraPhong";
+            this.ThangToanTraPhong.Size = new System.Drawing.Size(298, 50);
+            this.ThangToanTraPhong.TabIndex = 1;
+            this.ThangToanTraPhong.Text = "Thanh toán trả phòng";
+            this.ThangToanTraPhong.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.ThangToanTraPhong.Click += new System.EventHandler(this.BTN_THANHTOANHD_Click);
             // 
             // CN_THANHTOAN
             // 
@@ -335,7 +335,7 @@ namespace QLKS
             // DATPHONG
             // 
             this.DATPHONG.BackColor = System.Drawing.Color.White;
-            this.DATPHONG.Controls.Add(this.CN_DSDP);
+            this.DATPHONG.Controls.Add(this.DanhSachDatPhong);
             this.DATPHONG.Controls.Add(this.CN_PDPKH);
             this.DATPHONG.Controls.Add(this.BTN_DATPHONG);
             this.DATPHONG.Dock = System.Windows.Forms.DockStyle.Top;
@@ -346,27 +346,28 @@ namespace QLKS
             this.DATPHONG.Size = new System.Drawing.Size(298, 160);
             this.DATPHONG.TabIndex = 8;
             // 
-            // CN_DSDP
+            // DanhSachDatPhong
             // 
-            this.CN_DSDP.Animated = true;
-            this.CN_DSDP.BorderColor = System.Drawing.Color.White;
-            this.CN_DSDP.BorderRadius = 10;
-            this.CN_DSDP.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.CN_DSDP.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.CN_DSDP.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.CN_DSDP.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.CN_DSDP.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(245)))));
-            this.CN_DSDP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CN_DSDP.ForeColor = System.Drawing.Color.Black;
-            this.CN_DSDP.Image = ((System.Drawing.Image)(resources.GetObject("CN_DSDP.Image")));
-            this.CN_DSDP.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.CN_DSDP.ImageSize = new System.Drawing.Size(25, 25);
-            this.CN_DSDP.Location = new System.Drawing.Point(0, 101);
-            this.CN_DSDP.Name = "CN_DSDP";
-            this.CN_DSDP.Size = new System.Drawing.Size(300, 50);
-            this.CN_DSDP.TabIndex = 2;
-            this.CN_DSDP.Text = "Danh sách đặt phòng";
-            this.CN_DSDP.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.DanhSachDatPhong.Animated = true;
+            this.DanhSachDatPhong.BorderColor = System.Drawing.Color.White;
+            this.DanhSachDatPhong.BorderRadius = 10;
+            this.DanhSachDatPhong.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.DanhSachDatPhong.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.DanhSachDatPhong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.DanhSachDatPhong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.DanhSachDatPhong.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(245)))));
+            this.DanhSachDatPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DanhSachDatPhong.ForeColor = System.Drawing.Color.Black;
+            this.DanhSachDatPhong.Image = ((System.Drawing.Image)(resources.GetObject("DanhSachDatPhong.Image")));
+            this.DanhSachDatPhong.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.DanhSachDatPhong.ImageSize = new System.Drawing.Size(25, 25);
+            this.DanhSachDatPhong.Location = new System.Drawing.Point(0, 101);
+            this.DanhSachDatPhong.Name = "DanhSachDatPhong";
+            this.DanhSachDatPhong.Size = new System.Drawing.Size(300, 50);
+            this.DanhSachDatPhong.TabIndex = 2;
+            this.DanhSachDatPhong.Text = "Danh sách đặt phòng";
+            this.DanhSachDatPhong.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.DanhSachDatPhong.Click += new System.EventHandler(this.DanhSachDatPhong_Click);
             // 
             // CN_PDPKH
             // 
@@ -390,7 +391,7 @@ namespace QLKS
             this.CN_PDPKH.TabIndex = 1;
             this.CN_PDPKH.Text = "Danh sách nhận phòng";
             this.CN_PDPKH.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.CN_PDPKH.Click += new System.EventHandler(this.CN_PDPKH_Click);
+            this.CN_PDPKH.Click += new System.EventHandler(this.DanhSachNhanPhong_Click);
             // 
             // BTN_DATPHONG
             // 
@@ -414,7 +415,7 @@ namespace QLKS
             this.BTN_DATPHONG.TabIndex = 0;
             this.BTN_DATPHONG.Text = "Đặt - Nhận Phòng";
             this.BTN_DATPHONG.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.BTN_DATPHONG.Click += new System.EventHandler(this.BTN_DATPHONG_Click);
+            this.BTN_DATPHONG.Click += new System.EventHandler(this.DatNhanPhong_Click);
             // 
             // TAINGUYEN
             // 
@@ -767,20 +768,20 @@ namespace QLKS
         private Guna.UI2.WinForms.Guna2Button BTN_DATPHONG;
         private System.Windows.Forms.Timer EF_DATPHONG;
         private Guna.UI2.WinForms.Guna2Panel THANHTOAN;
-        private Guna.UI2.WinForms.Guna2Button BTN_THANHTOANHD;
+        private Guna.UI2.WinForms.Guna2Button ThangToanTraPhong;
         private Guna.UI2.WinForms.Guna2Button CN_THANHTOAN;
         private System.Windows.Forms.Timer EF_THANHTOAN;
         private Guna.UI2.WinForms.Guna2Panel THONGTIN;
-        private Guna.UI2.WinForms.Guna2Button BTN_NHANVIEN;
+        private Guna.UI2.WinForms.Guna2Button NhanVien;
         private Guna.UI2.WinForms.Guna2Button CN_THONGTIN;
         private Guna.UI2.WinForms.Guna2Panel DANHMUC;
-        private Guna.UI2.WinForms.Guna2Button BTN_PDP;
-        private Guna.UI2.WinForms.Guna2Button BTN_KHACHHANG;
+        private Guna.UI2.WinForms.Guna2Button TraCuuNhanPhong;
+        private Guna.UI2.WinForms.Guna2Button TraCuuKhachHang;
         private Guna.UI2.WinForms.Guna2Button CN_DANHMUC;
         private System.Windows.Forms.Timer EF_DANHMUC;
         private System.Windows.Forms.Timer EF_THONGTIN;
-        private Guna.UI2.WinForms.Guna2Button CN_DSDP;
+        private Guna.UI2.WinForms.Guna2Button DanhSachDatPhong;
         private Guna.UI2.WinForms.Guna2Button DanhSachDichVu;
-        private Guna.UI2.WinForms.Guna2Button BTN_HOADON;
+        private Guna.UI2.WinForms.Guna2Button TraCuuTraPhong;
     }
 }

@@ -214,6 +214,7 @@
     <NavigationProperty Name="PHONG" Relationship="Self.FK__PHIEUNHAN__PHONG__4E88ABD4" FromRole="PHIEUNHANPHONG" ToRole="PHONG" />
     <NavigationProperty Name="PHIEUTRAPHONGs" Relationship="Self.FK__PHIEUTRAP__PHIEU__59063A47" FromRole="PHIEUNHANPHONG" ToRole="PHIEUTRAPHONG" />
     <NavigationProperty Name="KHACHHANGs" Relationship="Self.CHITIETPHIEUNHANPHONG" FromRole="PHIEUNHANPHONG" ToRole="KHACHHANG" />
+    <Property Name="NGAYNHANPHONG" Type="DateTime" Precision="0" />
   </EntityType>
   <EntityType Name="PHIEUTRAPHONG">
     <Key>

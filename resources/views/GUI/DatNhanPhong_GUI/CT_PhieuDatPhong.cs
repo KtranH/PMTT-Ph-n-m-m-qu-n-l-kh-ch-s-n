@@ -56,8 +56,8 @@ namespace QLKS
 
         private void BTN_HUY_Click(object sender, EventArgs e)
         {
-            DatPhong DP = new DatPhong() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            DP.UserCurrentDatPhong = UserCurrentCTDATPHONG;
+            NhanPhong DP = new NhanPhong() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            DP.UserCurrentNhanPhong = UserCurrentCTDATPHONG;
             this.Controls.Clear();
             this.Controls.Add(DP);
             DP.Show();

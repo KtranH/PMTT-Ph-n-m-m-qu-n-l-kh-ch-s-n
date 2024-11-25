@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="BTN_HOADON.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="TraCuuTraPhong.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
         4wAAAOMBD+bfpwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAVDSURBVFhHrZZ7
@@ -147,7 +147,7 @@
         PyEr+IhmfkaU8rvKtP8xSfoPOsXZBgIXTJAAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="BTN_PDP.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="TraCuuNhanPhong.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
         4wAAAOMBD+bfpwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAW+SURBVFhHtVdt
@@ -178,10 +178,10 @@
         TxAgmGZ4iKDkO0pjaKzUbQ7juH8A9fRgarWB1UgAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="BTN_KHACHHANG.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="TraCuuKhachHang.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        7QAAAO0Bq2+TWQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAPgSURBVFhHxZfL
+        6QAAAOkBVJIUSwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAPgSURBVFhHxZfL
         axNRFMbrcyE+FiI+MEkRXAg+UBAXKqgoqKgI4n8gglab4BsUGUFERdSFFTWTzFhNUmcliCKCCDWZ1Co2
         AVsKCoKIi2pn0gcUmsTxfGMmvXNzVKJQF78299zvcZvcaWmD4zj/FXY4nrBDDzujhmxT3W11RJc7jjKR
         0/AoE+GBFxm85ifs8Fs2uqSQUU0yOwJ9Vjq2jdOLQAOt6EUWMjl9zaC/I7qQTANigMDQcEd0brFL21DK
@@ -227,7 +227,7 @@
         Cwb3ohjUw1EbRZ0MS9BF33P238EwUkJGOx2vdMLxng8Ekv8BtxXSgRorX0YAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="BTN_NHANVIEN.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="NhanVien.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
         3QAAAN0BcFOiBwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAPwSURBVFhHtZVd
@@ -271,7 +271,7 @@
         XxxdDVdtAeZpAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="BTN_THANHTOANHD.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ThangToanTraPhong.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
         4wAAAOMBD+bfpwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAO4SURBVFhH7Zbb
@@ -313,7 +313,7 @@
         mT/AZjApuMxbbx/USNJBnKVqd4K12gpKcLylchzUOCyAgQEAXb+TARP7jv4AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="CN_DSDP.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="DanhSachDatPhong.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
         4wAAAOMBD+bfpwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAN8SURBVFhH7VTJ

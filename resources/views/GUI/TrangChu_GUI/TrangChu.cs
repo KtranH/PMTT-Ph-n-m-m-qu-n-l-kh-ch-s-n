@@ -1,4 +1,5 @@
 using DTO;
+using GUI.DatNhanPhong_GUI;
 using GUI.TaiNguyen_GUI.Phong_GUI;
 using System;
 using System.Collections.Generic;
@@ -127,7 +128,9 @@ namespace QLKS
             openDichVu.Show();
         }
         //-----------------------------------------------------------------------------------------------------
-        private void BTN_DATPHONG_Click(object sender, EventArgs e)
+        //-----------------------------------------------------------------------------------------------------
+        //Xử lý khi ấn vào nút đặt nhận phòng
+        private void DatNhanPhong_Click(object sender, EventArgs e)
         {
             EF_DATPHONG.Start();
         }
@@ -154,16 +157,30 @@ namespace QLKS
                 }
             }
         }
-
-        private void CN_PDPKH_Click(object sender, EventArgs e)
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Xử lý khi ấn vào nút nhận phòng
+        private void DanhSachNhanPhong_Click(object sender, EventArgs e)
         {
-            DatPhong datPhong = new DatPhong() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            //datPhong.UserCurrentDatPhong = UserCurrent;
+            NhanPhong OpenNhanPhong = new NhanPhong() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            OpenNhanPhong.UserCurrentNhanPhong = this.userCurrent.ID.ToString();
             this.ConvertForm.Controls.Clear();
-            this.ConvertForm.Controls.Add(datPhong);
-            datPhong.Show();
+            this.ConvertForm.Controls.Add(OpenNhanPhong);
+            OpenNhanPhong.Show();
         }
-
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Xử lý khi ấn vào nút đặt phòng
+        private void DanhSachDatPhong_Click(object sender, EventArgs e)
+        {
+            DatPhong OpenDatPhong = new DatPhong() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            this.ConvertForm.Controls.Clear();
+            this.ConvertForm.Controls.Add(OpenDatPhong);
+            OpenDatPhong.Show();
+        }
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Xử lý khi ấn vào nút trả phòng
         private void CN_THANHTOAN_Click(object sender, EventArgs e)
         {
             EF_THANHTOAN.Start();
@@ -190,7 +207,9 @@ namespace QLKS
                 }
             }
         }
-
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Xử lý khi ấn vào nút thanh toán trả phòng
         private void BTN_THANHTOANHD_Click(object sender, EventArgs e)
         {
             HoaDon ThanhToanHD = new HoaDon() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
@@ -199,6 +218,49 @@ namespace QLKS
             this.ConvertForm.Controls.Add(ThanhToanHD);
             ThanhToanHD.Show();
         }
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Xử lý khi ấn vào nút thông tin
+        bool EF_THONGTIN_EXPAND = true;
+        private void EF_THONGTIN_Tick(object sender, EventArgs e)
+        {
+            if (EF_THONGTIN_EXPAND)
+            {
+                THONGTIN.Height -= 10;
+                if (THONGTIN.Height <= THONGTIN.MinimumSize.Height)
+                {
+                    EF_THONGTIN_EXPAND = false;
+                    EF_THONGTIN.Stop();
+                }
+            }
+            else
+            {
+                THONGTIN.Height += 10;
+                if (THONGTIN.Height >= THONGTIN.MaximumSize.Height)
+                {
+                    EF_THONGTIN_EXPAND = true;
+                    EF_THONGTIN.Stop();
+                }
+            }
+        }
+        private void CN_THONGTIN_Click(object sender, EventArgs e)
+        {
+            EF_THONGTIN.Start();
+
+        }
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Xử lý khi ấn vào nút nhân viên
+        private void BTN_NHANVIEN_Click(object sender, EventArgs e)
+        {
+            NhanVien NV = new NhanVien() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            this.ConvertForm.Controls.Clear();
+            this.ConvertForm.Controls.Add(NV);
+            NV.Show();
+        }
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Xử lý khi ấn vào nút tra cứu
         bool EF_DANHMUC_EXPAND = true;
         private void EF_DANHMUC_Tick(object sender, EventArgs e)
         {
@@ -221,49 +283,13 @@ namespace QLKS
                 }
             }
         }
-        bool EF_THONGTIN_EXPAND = true;
-
-        private void EF_THONGTIN_Tick(object sender, EventArgs e)
-        {
-            if (EF_THONGTIN_EXPAND)
-            {
-                THONGTIN.Height -= 10;
-                if (THONGTIN.Height <= THONGTIN.MinimumSize.Height)
-                {
-                    EF_THONGTIN_EXPAND = false;
-                    EF_THONGTIN.Stop();
-                }
-            }
-            else
-            {
-                THONGTIN.Height += 10;
-                if (THONGTIN.Height >= THONGTIN.MaximumSize.Height)
-                {
-                    EF_THONGTIN_EXPAND = true;
-                    EF_THONGTIN.Stop();
-                }
-            }
-        }
-
         private void CN_DANHMUC_Click(object sender, EventArgs e)
         {
             EF_DANHMUC.Start();
         }
-
-        private void CN_THONGTIN_Click(object sender, EventArgs e)
-        {
-            EF_THONGTIN.Start();
-
-        }
-
-        private void BTN_NHANVIEN_Click(object sender, EventArgs e)
-        {
-            NhanVien NV = new NhanVien() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            this.ConvertForm.Controls.Clear();
-            this.ConvertForm.Controls.Add(NV);
-            NV.Show();
-        }
-
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Xử lý khi ấn vào nút khách hàng
         private void BTN_KHACHHANG_Click(object sender, EventArgs e)
         {
             KhachHang KH = new KhachHang() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
@@ -271,7 +297,9 @@ namespace QLKS
             this.ConvertForm.Controls.Add(KH);
             KH.Show();
         }
-
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Xử lý khi ấn vào nút nhận phòng
         private void BTN_PDP_Click(object sender, EventArgs e)
         {
             TT_PDP PDP = new TT_PDP() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
@@ -279,7 +307,9 @@ namespace QLKS
             this.ConvertForm.Controls.Add(PDP);
             PDP.Show();
         }
-
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Xử lý khi ấn vào nút trả phòng
         private void BTN_HOADON_Click(object sender, EventArgs e)
         {
             TT_HD HD = new TT_HD() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
@@ -287,5 +317,6 @@ namespace QLKS
             this.ConvertForm.Controls.Add(HD);
             HD.Show();
         }
+        //-----------------------------------------------------------------------------------------------------
     }
 }

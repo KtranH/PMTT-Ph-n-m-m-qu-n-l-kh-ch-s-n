@@ -57,7 +57,6 @@ D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\resources\views\GUI\bin\Debug
 D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\resources\views\GUI\obj\Debug\QLKS.CT_HoaDon.resources
 D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\resources\views\GUI\obj\Debug\QLKS.CT_PhieuDatPhong.resources
 D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\resources\views\GUI\obj\Debug\QLKS.DangNhap.resources
-D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\resources\views\GUI\obj\Debug\QLKS.DatPhong.resources
 D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\resources\views\GUI\obj\Debug\QLKS.Dichvu.resources
 D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\resources\views\GUI\obj\Debug\QLKS.HoaDon.resources
 D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\resources\views\GUI\obj\Debug\QLKS.KhachHang.resources
@@ -110,7 +109,6 @@ C:\Users\nguye\Downloads\PMTT_QLKS-main\resources\views\GUI\bin\Debug\BLL.pdb
 C:\Users\nguye\Downloads\PMTT_QLKS-main\resources\views\GUI\bin\Debug\DAL.dll
 C:\Users\nguye\Downloads\PMTT_QLKS-main\resources\views\GUI\bin\Debug\BLL.dll.config
 C:\Users\nguye\Downloads\PMTT_QLKS-main\resources\views\GUI\bin\Debug\DAL.pdb
-D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\resources\views\GUI\bin\Debug\BLL.dll
 D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\resources\views\GUI\bin\Debug\DAL.dll
 D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\resources\views\GUI\bin\Debug\BLL.pdb
 D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\resources\views\GUI\bin\Debug\BLL.dll.config
@@ -132,3 +130,6 @@ D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\resources\views\GUI\bin\Debug
 D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\resources\views\GUI\bin\Debug\AWSSDK.Core.xml
 D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\resources\views\GUI\bin\Debug\AWSSDK.S3.pdb
 D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\resources\views\GUI\bin\Debug\AWSSDK.S3.xml
+D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\resources\views\GUI\obj\Debug\QLKS.NhanPhong.resources
+D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\resources\views\GUI\bin\Debug\BLL.dll
+D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\resources\views\GUI\obj\Debug\GUI.DatNhanPhong_GUI.DatPhong.resources

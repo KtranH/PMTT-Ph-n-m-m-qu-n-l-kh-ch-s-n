@@ -33,5 +33,13 @@ namespace DAL
         {
             return db.PHONGs.Where(p => p.TENPHONG.Contains(find) || p.LOAIPHONG.TENLOAIPHONG.Contains(find)).ToList();
         }
+        public List<PHONG> FindPhongEmpty(int find, string phong)
+        {
+            return db.PHONGs.Where(p => (p.LOAIPHONG_ID == find || p.TENPHONG.Contains(phong)) && p.TRANGTHAI == "Trống").ToList();
+        }
+        public List<PHONG> AllPhongEmpty()
+        {
+            return db.PHONGs.Where(p => p.TRANGTHAI == "Trống").ToList();
+        }    
     }
 }

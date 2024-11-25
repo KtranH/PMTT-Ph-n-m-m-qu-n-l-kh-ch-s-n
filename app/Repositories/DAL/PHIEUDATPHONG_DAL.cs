@@ -16,5 +16,13 @@ namespace DAL
         {
             return db.PHIEUDATPHONGs.ToList();
         }
+        public List<PHIEUDATPHONG> AllPDPNew()
+        {
+            return db.PHIEUDATPHONGs.Where(p => p.TINHTRANG == "Đã đặt phòng").ToList();
+        }
+        public List<PHIEUDATPHONG> FindPDP(String find, int ID)
+        {
+            return db.PHIEUDATPHONGs.Where(p => p.ID == ID || p.KHACHHANG.EMAIL.Contains(find)).ToList();
+        }
     }
 }

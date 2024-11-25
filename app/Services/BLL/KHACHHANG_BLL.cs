@@ -16,5 +16,9 @@ namespace BLL
         {
             return db.GetAllKhachhang();
         }
+        public List<KHACHHANG> GetFindKhachHang(String find)
+        {
+            return db.FindKhachHang(find);
+        }
     }
 }

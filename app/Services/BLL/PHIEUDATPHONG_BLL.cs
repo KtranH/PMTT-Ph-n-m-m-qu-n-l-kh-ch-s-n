@@ -17,5 +17,29 @@ namespace BLL
         {
             return db.GetAllPDP();
         }
+        public List<PHIEUDATPHONG> GetAllPDPNew()
+        {
+            return db.AllPDPNew();
+        }
+        public List<PHIEUDATPHONG> GetFindPDP(string find)
+        {
+            if(ConvertToInt(find))
+            {
+                int ID = Int32.Parse(find);
+                return db.FindPDP(find, ID);
+            }
+            else
+            {
+                return db.FindPDP(find, 0);
+            }    
+        }
+        public bool ConvertToInt(string value)
+        {
+            if(int.TryParse(value, out int result))
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

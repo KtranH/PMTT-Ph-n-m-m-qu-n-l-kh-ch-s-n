@@ -96,6 +96,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DatNhanPhong_GUI\DatPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DatNhanPhong_GUI\DatPhong.Designer.cs">
+      <DependentUpon>DatPhong.cs</DependentUpon>
+    </Compile>
     <Compile Include="TaiNguyen_GUI\LoaiPhong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,11 +128,11 @@
     <Compile Include="DangNhap_GUI\DangNhap.Designer.cs">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="DatNhanPhong_GUI\DatPhong.cs">
+    <Compile Include="DatNhanPhong_GUI\NhanPhong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DatNhanPhong_GUI\DatPhong.Designer.cs">
-      <DependentUpon>DatPhong.cs</DependentUpon>
+    <Compile Include="DatNhanPhong_GUI\NhanPhong.Designer.cs">
+      <DependentUpon>NhanPhong.cs</DependentUpon>
     </Compile>
     <Compile Include="TaiNguyen_GUI\Dichvu.cs">
       <SubType>Form</SubType>
@@ -196,6 +202,9 @@
     <Compile Include="TraCuu_GUI\TT_PDP.Designer.cs">
       <DependentUpon>TT_PDP.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DatNhanPhong_GUI\DatPhong.resx">
+      <DependentUpon>DatPhong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TaiNguyen_GUI\LoaiPhong.resx">
       <DependentUpon>LoaiPhong.cs</DependentUpon>
     </EmbeddedResource>
@@ -208,8 +217,8 @@
     <EmbeddedResource Include="DangNhap_GUI\DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DatNhanPhong_GUI\DatPhong.resx">
-      <DependentUpon>DatPhong.cs</DependentUpon>
+    <EmbeddedResource Include="DatNhanPhong_GUI\NhanPhong.resx">
+      <DependentUpon>NhanPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TaiNguyen_GUI\Dichvu.resx">
       <DependentUpon>Dichvu.cs</DependentUpon>

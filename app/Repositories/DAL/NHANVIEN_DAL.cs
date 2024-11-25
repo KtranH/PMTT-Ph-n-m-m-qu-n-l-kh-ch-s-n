@@ -19,5 +19,9 @@ namespace DAL
         {
             return DB.NHANVIENs.Where(p => p.EMAIL == Email).FirstOrDefault();
         }
+        public List<NHANVIEN> FindNhanVien(string find)
+        {
+            return DB.NHANVIENs.Where(p => p.HOTEN.Contains(find) || p.EMAIL.Contains(find) || p.SDT.Contains(find)).ToList();
+        }
     }
 }

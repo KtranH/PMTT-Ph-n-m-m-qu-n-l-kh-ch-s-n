@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="WEB_APP_QLKSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="WEB_APP_QLKSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="cache">
           <Key>
             <PropertyRef Name="key" />
@@ -201,6 +201,7 @@
           <Property Name="PHONG_ID" Type="int" />
           <Property Name="NGAYTRAPHONG" Type="date" />
           <Property Name="TINHTRANG" Type="nvarchar" MaxLength="50" />
+          <Property Name="NGAYNHANPHONG" Type="date" />
         </EntityType>
         <EntityType Name="PHIEUTRAPHONG">
           <Key>
@@ -555,8 +556,7 @@
             <End Role="PHIEUDATPHONG" EntitySet="PHIEUDATPHONG" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="WEB_APP_QLKSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -774,6 +774,7 @@
           <NavigationProperty Name="PHONG" Relationship="Self.FK__PHIEUNHAN__PHONG__4E88ABD4" FromRole="PHIEUNHANPHONG" ToRole="PHONG" />
           <NavigationProperty Name="PHIEUTRAPHONGs" Relationship="Self.FK__PHIEUTRAP__PHIEU__59063A47" FromRole="PHIEUNHANPHONG" ToRole="PHIEUTRAPHONG" />
           <NavigationProperty Name="KHACHHANGs" Relationship="Self.CHITIETPHIEUNHANPHONG" FromRole="PHIEUNHANPHONG" ToRole="KHACHHANG" />
+          <Property Name="NGAYNHANPHONG" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="PHIEUTRAPHONG">
           <Key>
@@ -1309,6 +1310,7 @@
           <EntitySetMapping Name="PHIEUNHANPHONGs">
             <EntityTypeMapping TypeName="WEB_APP_QLKSModel.PHIEUNHANPHONG">
               <MappingFragment StoreEntitySet="PHIEUNHANPHONG">
+                <ScalarProperty Name="NGAYNHANPHONG" ColumnName="NGAYNHANPHONG" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="NHANVIEN_ID" ColumnName="NHANVIEN_ID" />
                 <ScalarProperty Name="PHIEUDATPHONG_ID" ColumnName="PHIEUDATPHONG_ID" />

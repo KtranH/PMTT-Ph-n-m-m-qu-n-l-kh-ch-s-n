@@ -196,6 +196,7 @@
     <Property Name="PHONG_ID" Type="int" />
     <Property Name="NGAYTRAPHONG" Type="date" />
     <Property Name="TINHTRANG" Type="nvarchar" MaxLength="50" />
+    <Property Name="NGAYNHANPHONG" Type="date" />
   </EntityType>
   <EntityType Name="PHIEUTRAPHONG">
     <Key>

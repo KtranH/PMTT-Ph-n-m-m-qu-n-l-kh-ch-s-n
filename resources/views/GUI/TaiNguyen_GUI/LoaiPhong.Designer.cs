@@ -52,6 +52,7 @@
             this.Button_CapNhat = new Guna.UI2.WinForms.Guna2Button();
             this.combox_LoaiPhong = new Guna.UI2.WinForms.Guna2ComboBox();
             this.Button_ThemAnh = new Guna.UI2.WinForms.Guna2Button();
+            this.Button_AI = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,7 +62,7 @@
             this.ShowImage.BackColor = System.Drawing.Color.White;
             this.ShowImage.Location = new System.Drawing.Point(12, 86);
             this.ShowImage.Name = "ShowImage";
-            this.ShowImage.Size = new System.Drawing.Size(745, 701);
+            this.ShowImage.Size = new System.Drawing.Size(745, 628);
             this.ShowImage.TabIndex = 1;
             // 
             // guna2HtmlLabel1
@@ -463,12 +464,32 @@
             this.Button_ThemAnh.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Button_ThemAnh.ForeColor = System.Drawing.Color.White;
             this.Button_ThemAnh.Image = ((System.Drawing.Image)(resources.GetObject("Button_ThemAnh.Image")));
-            this.Button_ThemAnh.Location = new System.Drawing.Point(12, 793);
+            this.Button_ThemAnh.Location = new System.Drawing.Point(12, 720);
             this.Button_ThemAnh.Name = "Button_ThemAnh";
             this.Button_ThemAnh.Size = new System.Drawing.Size(748, 42);
             this.Button_ThemAnh.TabIndex = 39;
             this.Button_ThemAnh.Text = "  Thêm ảnh loại phòng";
             this.Button_ThemAnh.Click += new System.EventHandler(this.Button_ThemAnh_Click);
+            // 
+            // Button_AI
+            // 
+            this.Button_AI.Animated = true;
+            this.Button_AI.AnimatedGIF = true;
+            this.Button_AI.BackColor = System.Drawing.Color.Transparent;
+            this.Button_AI.BorderRadius = 20;
+            this.Button_AI.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Button_AI.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Button_AI.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Button_AI.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Button_AI.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(223)))), ((int)(((byte)(229)))));
+            this.Button_AI.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button_AI.ForeColor = System.Drawing.Color.White;
+            this.Button_AI.Image = ((System.Drawing.Image)(resources.GetObject("Button_AI.Image")));
+            this.Button_AI.Location = new System.Drawing.Point(15, 768);
+            this.Button_AI.Name = "Button_AI";
+            this.Button_AI.Size = new System.Drawing.Size(748, 42);
+            this.Button_AI.TabIndex = 41;
+            this.Button_AI.Text = "   Thêm ảnh loại phòng bằng AI";
             // 
             // LoaiPhong
             // 
@@ -477,6 +498,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ClientSize = new System.Drawing.Size(1561, 841);
+            this.Controls.Add(this.Button_AI);
             this.Controls.Add(this.guna2HtmlLabel1);
             this.Controls.Add(this.Button_ThemAnh);
             this.Controls.Add(this.combox_LoaiPhong);
@@ -519,5 +541,6 @@
         private Guna.UI2.WinForms.Guna2Button Button_Luu;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
         private Guna.UI2.WinForms.Guna2TextBox Textbox_MoTa;
+        private Guna.UI2.WinForms.Guna2Button Button_AI;
     }
 }

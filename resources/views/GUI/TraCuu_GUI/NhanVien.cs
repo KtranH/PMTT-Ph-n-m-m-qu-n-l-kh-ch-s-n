@@ -1,4 +1,6 @@
 using BLL;
+using DTO;
+using GUI.DatNhanPhong_GUI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,34 +18,83 @@ namespace QLKS
 {
     public partial class NhanVien : Form
     {
-        NHANVIEN_BLL NV= new NHANVIEN_BLL();
+        public NHANVIEN_BLL db = new NHANVIEN_BLL();
         public NhanVien()
         {
             InitializeComponent();
         }
-      
-        public void LoadNV()
-        {
-            
-            //var listNV = DB.NHANVIENs.ToList();
-            //foreach (var item in listNV)
-            //{
-            //    NV.Rows.Add(item.MANV,item.TENNV,item.TENTK,item.PASSNV,item.NGAYSINH.Value.ToString("dd/MM/yyyy"),item.QUEQUAN,item.SDT,item.EMAIL,item.DIACHI);
-            //}
-            DT_DS_NV.DataSource = NV.GetAllNhanVien();
-            DT_DS_NV.AllowUserToAddRows = false;
-            DT_DS_NV.ReadOnly = true;
-        }    
         private void NhanVien_Load(object sender, EventArgs e)
         {
             LoadNV();
+            LoadCombox();
         }
-
+        //-----------------------------------------------------------------------------------------------------
+        //Lấy dữ liệu nhân viên vào datagird view
+        public void LoadCombox()
+        {
+            List<String> tinhtrang = new List<String>();
+            tinhtrang.Add("Hoạt động");
+            tinhtrang.Add("Không hoạt động");
+            Combox_TinhTrang.DataSource = tinhtrang;
+        }
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Lấy dữ liệu nhân viên vào datagird view
+        public void LoadNV()
+        {
+            List<NHANVIEN> listNV = new List<NHANVIEN>();
+            listNV = db.GetAllNhanVien();
+            Data_NhanVien.DataSource = listNV.Select(p => new {p.ID, p.HOTEN, p.GIOITINH, p.NGAYSINH, p.SDT, p.EMAIL, p.CHUCVU, p.ISDELETED}).ToList();
+            Data_NhanVien.Columns[0].HeaderText = "Mã nhân viên";
+            Data_NhanVien.Columns[1].HeaderText = "Tên nhân viên";
+            Data_NhanVien.Columns[2].HeaderText = "Giới tính";
+            Data_NhanVien.Columns[3].HeaderText = "Ngày sinh";
+            Data_NhanVien.Columns[4].HeaderText = "Số điện thoại";
+            Data_NhanVien.Columns[5].HeaderText = "Email";
+            Data_NhanVien.Columns[6].HeaderText = "Chức vụ";
+            Data_NhanVien.Columns[7].HeaderText = "Không hoạt động";
+        }
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Hiển thị thông tin từ datagrid view vào text
         private void DT_DS_NV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            if(e.RowIndex >= 0)
+            {
+                DataGridViewRow row = Data_NhanVien.Rows[e.RowIndex];
+                Textbox_TenNhanVien.Text = row.Cells[1].Value.ToString();
+                Textbox_GioiTinh.Text = row.Cells[2].Value.ToString();
+                Textbox_NgSinh.Text = DateTime.Parse(row.Cells[3].Value.ToString()).ToString("dd/MM/yyyy");
+                Textbox_SDT.Text = row.Cells[4].Value.ToString();
+                Textbox_Email.Text = row.Cells[5].Value.ToString();
+                Textbox_ChucVu.Text = row.Cells[6].Value.ToString();
+                if (row.Cells[7].Value.ToString() == "False")
+                {
+                    Combox_TinhTrang.SelectedIndex = 0;
+                }
+                else
+                {
+                    Combox_TinhTrang.SelectedIndex = 1;
+                }    
+            }
         }
-
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Tìm kiếm nhân viên từ text
+        private void Textbox_Find_NhanVien_TextChanged(object sender, EventArgs e)
+        {
+            if(Textbox_Find_NhanVien.Text.Trim() != "")
+            {
+                List<NHANVIEN> listNV = new List<NHANVIEN>();
+                listNV = db.GetFindNhanVien(Textbox_Find_NhanVien.Text);
+                Data_NhanVien.DataSource = listNV.Select(p => new { p.ID, p.HOTEN, p.GIOITINH, p.NGAYSINH, p.SDT, p.EMAIL, p.CHUCVU, p.ISDELETED }).ToList();
+            }
+            else
+            {
+                LoadNV();
+            }    
+        }
+        //-----------------------------------------------------------------------------------------------------
         private void BTN_THEMNV_Click(object sender, EventArgs e)
         {
           
@@ -51,26 +102,19 @@ namespace QLKS
 
         private void BTN_CAPNHAT_Click(object sender, EventArgs e)
         {
-            TEXT_DC.Enabled = true;
-            TEXT_EMAIL.Enabled = true;
-            TEXT_MK.Enabled = true;
-            TEXT_NGSINH.Enabled = true;
-            TEXT_QUE.Enabled = true;
-            TEXT_SDT.Enabled = true;
-            TEXT_TENNV.Enabled = true;
-            TEXT_TENTKNV.Enabled = true;
+           
         }
 
         private void FindNV_Click(object sender, EventArgs e)
         {
-            FindNV.Clear();
+            Textbox_Find_NhanVien.Clear();
         }
 
         private void FindNV_Leave(object sender, EventArgs e)
         {
-            if(FindNV.Text.Trim() == "")
+            if(Textbox_Find_NhanVien.Text.Trim() == "")
             {
-                FindNV.Text = "Tìm kiếm nhân viên";
+                Textbox_Find_NhanVien.Text = "Tìm kiếm nhân viên";
             }    
         }
 
@@ -81,30 +125,14 @@ namespace QLKS
 
         private void BTN_SAVENV_Click(object sender, EventArgs e)
         {
-            TEXT_DC.Enabled = false;
-            TEXT_EMAIL.Enabled = false;
-            TEXT_MK.Enabled = false;
-            TEXT_NGSINH.Enabled = false;
-            TEXT_QUE.Enabled = false;
-            TEXT_SDT.Enabled = false;
-            TEXT_TENNV.Enabled = false;
-            TEXT_TENTKNV.Enabled = false;
-            DT_DS_NV.AllowUserToAddRows = false;
-            DT_DS_NV.ReadOnly = true;
-            int check = 0;
-           
-            if(check == 0)
-            {
-                LoadNV();
-                MessageBox.Show("Lưu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            
         }
 
         private void TEXT_SDT_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-                e.Handled = true; // Ngăn người dùng nhập ký tự không phải số
+                e.Handled = true; 
             }
         }
     }
