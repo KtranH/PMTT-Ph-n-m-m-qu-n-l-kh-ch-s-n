@@ -40,5 +40,11 @@ namespace BLL
         {
             return db.FindPhongEmpty(find, phong);
         }
+
+        public void UpdatePhong(PHONG phong)
+        {
+            db.UpdatePhong(phong);
+        }
+
     }
 }

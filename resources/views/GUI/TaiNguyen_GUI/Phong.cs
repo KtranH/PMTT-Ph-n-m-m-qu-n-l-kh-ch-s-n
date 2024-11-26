@@ -32,8 +32,7 @@ namespace QLKS
         //Lấy dữ liệu phòng vào datagrid view
         public void loadPhong()
         {
-            List<PHONG> listPhong = new List<PHONG>();
-            listPhong = db.GetAllPhong();
+            List<PHONG> listPhong = db.GetAllPhong();
             Data_Phong.DataSource = listPhong.Select(p => new { p.ID, p.TENPHONG, p.LOAIPHONG.TENLOAIPHONG, p.VITRI, p.TRANGTHAI }).ToList();
             Data_Phong.Columns[0].HeaderText = "Mã phòng";
             Data_Phong.Columns[1].HeaderText = "Tên phòng";
@@ -144,12 +143,70 @@ namespace QLKS
 
         private void BTN_SAVEROOM_Click(object sender, EventArgs e)
         {
-            
-            
+            // Kiểm tra dữ liệu có hợp lệ không
+            if (Textbox_TenPhong.Text.Trim() != "" && Textbox_ViTri.Text.Trim() != "" && Combox_TinhTrang.Text.Trim() != "" && Combox_LoaiPhong.SelectedValue != null)
+            {
+                // Kiểm tra xem có phòng nào được chọn trong DataGridView hay không
+                if (Data_Phong.SelectedRows.Count > 0)
+                {
+                    // Hiển thị hộp thoại xác nhận
+                    DialogResult result = MessageBox.Show("Bạn có muốn cập nhật phòng này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    // Nếu người dùng chọn Yes, thực hiện cập nhật
+                    if (result == DialogResult.Yes)
+                    {
+                        // Lấy ID phòng từ dòng đã chọn trong DataGridView
+                        int phongID = Convert.ToInt32(Data_Phong.SelectedRows[0].Cells[0].Value);
+
+                        // Tạo đối tượng phòng và gán thông tin
+                        PHONG phong = new PHONG
+                        {
+                            ID = phongID, // Lấy ID phòng từ DataGridView
+                            TENPHONG = Textbox_TenPhong.Text,
+                            VITRI = Textbox_ViTri.Text,
+                            // Cập nhật LOAIPHONG_ID với giá trị mới từ ComboBox
+                            LOAIPHONG_ID = Convert.ToInt32(Combox_LoaiPhong.SelectedValue),
+                            TRANGTHAI = Combox_TinhTrang.Text
+                        };
+
+                        // Gọi phương thức cập nhật trong BLL
+                        db.UpdatePhong(phong);
+
+                        // Cập nhật lại danh sách phòng
+                        loadPhong();
+
+                        // Hiển thị thông báo thành công
+                        MessageBox.Show("Cập nhật phòng thành công.");
+
+                        // Disable các TextBox và ComboBox sau khi lưu
+                        Textbox_TenPhong.Enabled = false;
+                        Textbox_ViTri.Enabled = false;
+                        Combox_LoaiPhong.Enabled = false;
+                        Combox_TinhTrang.Enabled = false;
+                    }
+                    else
+                    {
+                        // Nếu người dùng chọn No, không làm gì cả
+                        MessageBox.Show("Cập nhật phòng đã bị hủy.");
+                    }
+                }
+                else
+                {
+                    // Nếu không có phòng nào được chọn, hiển thị thông báo
+                    MessageBox.Show("Vui lòng chọn phòng cần cập nhật.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin.");
+            }
         }
         private void BTN_UPDATEROOM_Click(object sender, EventArgs e)
         {
-
+            Textbox_TenPhong.Enabled = true;
+            Textbox_ViTri.Enabled = true;
+            Combox_LoaiPhong.Enabled = true;
+            Combox_TinhTrang.Enabled = true;
         }
 
         private void TEXT_GIA_KeyPress(object sender, KeyPressEventArgs e)
@@ -182,6 +239,11 @@ namespace QLKS
         private void BTN_UPDATEKIND_Click(object sender, EventArgs e)
         {
            
+        }
+
+        private void Combox_LoaiPhong_SelectedValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -27,13 +27,13 @@ namespace QLKS
         {
             loadDV();
             loadCombox();
+            LockControl();
         }
         //-----------------------------------------------------------------------------------------------------
         //Lấy dữ liệu dịch vụ vào datagrid view
         public void loadDV()
         {
-            List<DICHVU> listDV = new List<DICHVU>();
-            listDV = db.GetAllDichVu();
+            List<DICHVU> listDV = db.GetAllDichVu().Where(p => p.ISDELETED == false).ToList();
             Data_DichVu.DataSource = listDV.Select(p => new { p.ID, p.TENDICHVU, p.GIA, p.MOTA}).ToList();
 
             Data_DichVu.Columns[0].HeaderText = "Mã dịch vụ";
@@ -52,6 +52,7 @@ namespace QLKS
                 Textbox_TenDichVu.Text = row.Cells[1].Value.ToString();
                 Textbox_GiaDichVu.Text = row.Cells[2].Value.ToString();
                 Textbox_MoTa.Text = row.Cells[3].Value.ToString();
+                MADV.Text = row.Cells[0].Value.ToString();
             }    
         }
         //-----------------------------------------------------------------------------------------------------
@@ -86,8 +87,24 @@ namespace QLKS
         {
             Textbox_GiaDichVu.Enabled = false;
             Textbox_TenDichVu.Enabled = false;
+            Textbox_MoTa.Enabled = false;
+            Combox_TinhTrang.Enabled = false;
+            Button_Luu.Enabled = false;
         }
-       
+
+        public void UnlockControl()
+        {
+            Textbox_GiaDichVu.Enabled = true;
+            Textbox_TenDichVu.Enabled = true;
+            Textbox_MoTa.Enabled = true;
+            Combox_TinhTrang.Enabled = true;
+            Button_Luu.Enabled = true;
+
+            Textbox_GiaDichVu.ReadOnly = false;
+            Textbox_TenDichVu.ReadOnly = false;
+            Textbox_MoTa.ReadOnly = false;
+        }
+
         public void ConnectionControl(DataTable dt)
         {
             Textbox_TenDichVu.DataBindings.Clear();
@@ -125,17 +142,72 @@ namespace QLKS
 
         private void BTN_UPDATEDV_Click(object sender, EventArgs e)
         {
-          
+            UnlockControl();
         }
         private void BTN_SAVEDV_Click(object sender, EventArgs e)
         {
-          
+            if (!string.IsNullOrEmpty(Textbox_TenDichVu.Text.Trim()) &&
+                !string.IsNullOrEmpty(Textbox_GiaDichVu.Text.Trim()) &&
+                !string.IsNullOrEmpty(Textbox_MoTa.Text.Trim()))
+            {
+                int id = Convert.ToInt32(MADV.Text);
+                string tenDichVu = Textbox_TenDichVu.Text;
+                decimal giaDichVu = Convert.ToDecimal(Textbox_GiaDichVu.Text);
+                string moTa = Textbox_MoTa.Text;
+
+                DICHVU dichVu = new DICHVU
+                {
+                    ID = id,
+                    TENDICHVU = tenDichVu,
+                    GIA = giaDichVu,
+                    MOTA = moTa
+                };
+
+                db.UpdateDichVu(dichVu);
+
+                MessageBox.Show("Cập nhật dịch vụ thành công!");
+
+                loadDV();
+
+                LockControl();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!");
+            }
         }
         private void TEXT_GIADV_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true; 
+            }
+        }
+
+        private void Button_XoaDichVu_Click(object sender, EventArgs e)
+        {
+            if (Data_DichVu.SelectedRows.Count > 0)
+            {
+                int id = Convert.ToInt32(Data_DichVu.SelectedRows[0].Cells[0].Value);
+
+                DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa dịch vụ này không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    db.DeleteDichVu(id);
+
+                    MessageBox.Show("Dịch vụ đã được xóa!");
+
+                    loadDV();
+                }
+                else
+                {
+                    MessageBox.Show("Dịch vụ không được xóa!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn dịch vụ cần xóa!");
             }
         }
     }

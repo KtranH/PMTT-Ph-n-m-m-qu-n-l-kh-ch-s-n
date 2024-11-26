@@ -13,7 +13,8 @@ namespace DAL
         public LOAIPHONG_DAL() { }
         public List<LOAIPHONG> GetAllLoaiPhong()
         {
-            return db.LOAIPHONGs.ToList();
+            //return db.LOAIPHONGs.ToList();
+            return db.LOAIPHONGs.Where(lp => lp.ISDELETED == false).ToList();
         }
         public List<HINHLOAIPHONG> HinhLoaiPhong(int ID)
         {
@@ -37,5 +38,38 @@ namespace DAL
             db.HINHLOAIPHONGs.Remove(x);
             db.SaveChanges();
         }
+
+        public bool UpdateLoaiPhong(LOAIPHONG loaiPhong)
+        {
+            var existingLoaiPhong = db.LOAIPHONGs.FirstOrDefault(lp => lp.ID == loaiPhong.ID);
+
+            if (existingLoaiPhong != null)
+            {
+                existingLoaiPhong.TENLOAIPHONG = loaiPhong.TENLOAIPHONG;
+                existingLoaiPhong.MOTA = loaiPhong.MOTA;
+                existingLoaiPhong.SUCCHUA = loaiPhong.SUCCHUA;
+                existingLoaiPhong.GIATHUE = loaiPhong.GIATHUE;
+                existingLoaiPhong.QUYDINH = loaiPhong.QUYDINH;
+                existingLoaiPhong.NOITHAT = loaiPhong.NOITHAT;
+                existingLoaiPhong.TIENICH = loaiPhong.TIENICH;
+                existingLoaiPhong.ISDELETED = loaiPhong.ISDELETED;
+
+                db.SaveChanges();
+                return true;
+            }
+            return false;
+        }
+
+        public void DeleteLoaiPhong(int id)
+        {
+            var loaiPhong = db.LOAIPHONGs.FirstOrDefault(lp => lp.ID == id);
+
+            if (loaiPhong != null)
+            {
+                loaiPhong.ISDELETED = true;
+                db.SaveChanges();
+            }
+        }
+
     }
 }

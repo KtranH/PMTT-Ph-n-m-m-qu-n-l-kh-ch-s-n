@@ -19,5 +19,32 @@ namespace DAL
         {
             return db.DICHVUs.Where(p => p.TENDICHVU.Contains(find)).ToList();
         }
+
+        public void UpdateDichVu(DICHVU dichVu)
+        {
+            var serviceToUpdate = db.DICHVUs.FirstOrDefault(dv => dv.ID == dichVu.ID);
+            if (serviceToUpdate != null)
+            {
+                serviceToUpdate.TENDICHVU = dichVu.TENDICHVU;
+                serviceToUpdate.GIA = dichVu.GIA;
+                serviceToUpdate.MOTA = dichVu.MOTA;
+
+                db.SaveChanges();
+            }
+        }
+
+        public void DeleteDichVu(int id)
+        {
+            var serviceToDelete = db.DICHVUs.FirstOrDefault(dv => dv.ID == id);
+            if (serviceToDelete != null)
+            {
+                // Chuyển ISDELETE thành true thay vì xóa
+                serviceToDelete.ISDELETED = true;
+
+                // Lưu thay đổi vào cơ sở dữ liệu
+                db.SaveChanges();
+            }
+        }
+
     }
 }

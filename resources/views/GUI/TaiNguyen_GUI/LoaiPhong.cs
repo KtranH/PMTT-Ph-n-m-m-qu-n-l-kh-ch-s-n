@@ -38,6 +38,38 @@ namespace GUI.TaiNguyen_GUI.Phong_GUI
             combox_LoaiPhong.DisplayMember = "TENLOAIPHONG";
             combox_LoaiPhong.ValueMember = "ID";
         }
+
+        public void LockControl()
+        {
+            Textbox_TenLoaiPhong.Enabled = false;
+            Textbox_MoTa.Enabled = false;
+            Textbox_SucChua.Enabled = false;
+            Textbox_GiaThue.Enabled = false;
+            Textbox_QuyDinh.Enabled = false;
+            Textbox_NoiThat.Enabled = false;
+            Textbox_TienIch.Enabled = false;
+            Button_Luu.Enabled = false;
+        }
+
+        public void UnlockControl()
+        {
+            Textbox_TenLoaiPhong.ReadOnly = false;
+            Textbox_MoTa.ReadOnly = false;
+            Textbox_SucChua.ReadOnly = false;
+            Textbox_GiaThue.ReadOnly = false;
+            Textbox_QuyDinh.ReadOnly = false;
+            Textbox_NoiThat.ReadOnly = false;
+            Textbox_TienIch.ReadOnly = false;
+
+            Textbox_TenLoaiPhong.Enabled = true;
+            Textbox_MoTa.Enabled = true;
+            Textbox_SucChua.Enabled = true;
+            Textbox_GiaThue.Enabled = true;
+            Textbox_QuyDinh.Enabled = true;
+            Textbox_NoiThat.Enabled = true;
+            Textbox_TienIch.Enabled = true;
+            Button_Luu.Enabled = true;
+        }
         //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------
         //Thêm ảnh từ R2
@@ -162,6 +194,85 @@ namespace GUI.TaiNguyen_GUI.Phong_GUI
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Xử lý nút lưu
+        private void Button_Luu_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Bạn có muốn cập nhật loại phòng?", "Xác nhận", MessageBoxButtons.OKCancel);
+
+            if (dialogResult == DialogResult.OK)
+            {
+                int loaiPhongId = Convert.ToInt32(combox_LoaiPhong.SelectedValue);
+                string tenLoaiPhong = Textbox_TenLoaiPhong.Text;
+                string moTa = Textbox_MoTa.Text;
+                int sucChua = Convert.ToInt32(Textbox_SucChua.Text);
+                string giaThueText = Textbox_GiaThue.Text;
+                giaThueText = giaThueText.Replace(" VNĐ", "");
+                decimal giaThue = Convert.ToDecimal(giaThueText);
+                string quyDinh = Textbox_QuyDinh.Text;
+                string noiThat = Textbox_NoiThat.Text;
+                string tienIch = Textbox_TienIch.Text;
+
+                LOAIPHONG loaiPhongToUpdate = new LOAIPHONG
+                {
+                    ID = loaiPhongId,
+                    TENLOAIPHONG = tenLoaiPhong,
+                    MOTA = moTa,
+                    SUCCHUA = sucChua,
+                    GIATHUE = giaThue,
+                    QUYDINH = quyDinh,
+                    NOITHAT = noiThat,
+                    TIENICH = tienIch,
+                    ISDELETED = false
+                };
+
+                bool updateResult = db.UpdateLoaiPhong(loaiPhongToUpdate);
+
+                if (updateResult)
+                {
+                    MessageBox.Show("Cập nhật loại phòng thành công!");
+                }
+                else
+                {
+                    MessageBox.Show("Cập nhật loại phòng không thành công. Vui lòng kiểm tra lại.");
+                }
+
+                LockControl();
+            }
+        }
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Xử lý nút cập nhật
+        private void Button_CapNhat_Click(object sender, EventArgs e)
+        {
+            UnlockControl();
+        }
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Xử lý nút xóa
+        private void Button_Xoa_Click(object sender, EventArgs e)
+        {
+            if (combox_LoaiPhong.SelectedValue != null)
+            {
+                DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn xóa loại phòng này?", "Xác nhận xóa", MessageBoxButtons.YesNo);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    int loaiPhongId = Convert.ToInt32(combox_LoaiPhong.SelectedValue);
+
+                    db.DeleteLoaiPhong(loaiPhongId);
+
+                    LoadData();
+
+                    MessageBox.Show("Loại phòng đã được xóa.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn loại phòng cần xóa.");
             }
         }
         //-----------------------------------------------------------------------------------------------------

@@ -38,5 +38,16 @@ namespace BLL
         {
             DB.RemoveImageLoaiPhong(x);
         }
+
+        public bool UpdateLoaiPhong(LOAIPHONG loaiPhong)
+        {
+            return DB.UpdateLoaiPhong(loaiPhong);
+        }
+
+        public void DeleteLoaiPhong(int ID)
+        {
+            DB.DeleteLoaiPhong(ID);
+        }
+
     }
 }

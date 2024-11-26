@@ -40,6 +40,26 @@ namespace DAL
         public List<PHONG> AllPhongEmpty()
         {
             return db.PHONGs.Where(p => p.TRANGTHAI == "Trống").ToList();
-        }    
+        }
+
+        public void UpdatePhong(PHONG phong)
+        {
+            using (var dbContext = new WEB_APP_QLKSEntities())
+            {
+                // Tìm phòng theo ID
+                var existingPhong = dbContext.PHONGs.FirstOrDefault(p => p.ID == phong.ID);
+                if (existingPhong != null)
+                {
+                    // Cập nhật thông tin phòng, bao gồm loại phòng mới
+                    existingPhong.TENPHONG = phong.TENPHONG;
+                    existingPhong.VITRI = phong.VITRI;
+                    existingPhong.LOAIPHONG_ID = phong.LOAIPHONG_ID; // Cập nhật loại phòng mới
+                    existingPhong.TRANGTHAI = phong.TRANGTHAI;
+
+                    // Lưu thay đổi vào cơ sở dữ liệu
+                    dbContext.SaveChanges();
+                }
+            }
+        }
     }
 }

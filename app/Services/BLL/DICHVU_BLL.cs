@@ -20,5 +20,16 @@ namespace BLL
         {
             return db.FindDichVu(find);
         }
+
+        public void UpdateDichVu(DICHVU dichVu)
+        {
+            db.UpdateDichVu(dichVu);
+        }
+
+        public void DeleteDichVu(int id)
+        {
+            db.DeleteDichVu(id);
+        }
+
     }
 }
