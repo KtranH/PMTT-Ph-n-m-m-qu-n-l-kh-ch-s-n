@@ -40,5 +40,15 @@ namespace BLL
         {
             return db.FindPhongEmpty(find, phong);
         }
+        public bool Themphong(PHONG p)
+        {
+            return db.Themphong(p);
+        }
+
+        public bool CapNhatPhong(int pCN, string t, string vt, string tt, int lp)
+        {
+
+           return db.CapNhatPhong(pCN, t, vt, tt, lp);
+        }
     }
 }

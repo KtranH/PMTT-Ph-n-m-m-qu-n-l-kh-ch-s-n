@@ -40,6 +40,39 @@ namespace DAL
         public List<PHONG> AllPhongEmpty()
         {
             return db.PHONGs.Where(p => p.TRANGTHAI == "Trống").ToList();
-        }    
+        }
+
+        public bool Themphong(PHONG P)
+        {
+            try
+            {
+                db.PHONGs.Add(P);
+                db.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool CapNhatPhong(int pCN, string t, string vt, string tt, int lp )
+        {
+
+            PHONG _CapNhat = db.PHONGs.Where(mh => mh.ID == pCN).FirstOrDefault();
+            if (_CapNhat != null)
+            {
+                _CapNhat.TENPHONG = t;
+                _CapNhat.VITRI = vt;
+                _CapNhat.TRANGTHAI = tt;
+                _CapNhat.LOAIPHONG_ID = lp;
+                db.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

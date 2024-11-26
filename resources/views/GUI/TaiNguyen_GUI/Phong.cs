@@ -18,6 +18,7 @@ namespace QLKS
     {
         PHONG_BLL db = new PHONG_BLL();
         LOAIPHONG_BLL loaiPhong = new LOAIPHONG_BLL();
+        private bool isAddingNewItem = true;
         public string UserCurrentPH { get; set; }
         public Phong()
         {
@@ -34,7 +35,7 @@ namespace QLKS
         {
             List<PHONG> listPhong = new List<PHONG>();
             listPhong = db.GetAllPhong();
-            Data_Phong.DataSource = listPhong.Select(p => new { p.ID, p.TENPHONG, p.LOAIPHONG.TENLOAIPHONG, p.VITRI, p.TRANGTHAI }).ToList();
+            Data_Phong.DataSource = listPhong.Select(p => new { p.ID, p.TENPHONG, p.LOAIPHONG_ID, p.VITRI, p.TRANGTHAI }).ToList();
             Data_Phong.Columns[0].HeaderText = "Mã phòng";
             Data_Phong.Columns[1].HeaderText = "Tên phòng";
             Data_Phong.Columns[2].HeaderText = "Loại phòng";
@@ -136,21 +137,103 @@ namespace QLKS
         {
            
         }
-
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Xử lý nút thêm phòng
         private void BTN_THEMPHONG_Click(object sender, EventArgs e)
         {
+            isAddingNewItem = true;
+            load();
+            ResetTextBoxes();
            
         }
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Them phong
+        void them()
+        {
+            if (string.IsNullOrEmpty(Textbox_TenPhong.Text) || string.IsNullOrEmpty(Textbox_ViTri.Text) )
+            {
+                MessageBox.Show("Điền đầy đủ thông tin dịch vụ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            PHONG p = new PHONG();
+            p.TENPHONG = Textbox_TenPhong.Text;
+            p.VITRI = Textbox_ViTri.Text;
+            p.TRANGTHAI = Combox_TinhTrang.SelectedItem.ToString();
+            p.LOAIPHONG_ID = (int)Combox_LoaiPhong.SelectedValue;
+            if (db.Themphong(p))
+            {
+                MessageBox.Show("Thêm phòng thành công");
+                loadPhong();
+            }
+            else
+            {
+                MessageBox.Show("Thêm không thành công");
+            }
+        }
 
+        void load()
+        {
+            Textbox_TenPhong.Enabled = true;
+            Textbox_ViTri.Enabled = true;
+            Combox_TinhTrang.Enabled = true;
+            Combox_LoaiPhong.Enabled = true;
+
+
+
+            Textbox_TenPhong.ReadOnly = false;
+            Textbox_ViTri.ReadOnly = false;
+            Combox_TinhTrang.DropDownStyle = ComboBoxStyle.DropDown;
+            Combox_LoaiPhong.DropDownStyle = ComboBoxStyle.DropDown;
+
+
+        }
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Xử lý Enable TextBox
+        private void ResetTextBoxes()
+        {
+            Textbox_TenPhong.Clear();
+            Textbox_ViTri.Clear();
+          
+        }
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Xử lý nút lưu
         private void BTN_SAVEROOM_Click(object sender, EventArgs e)
         {
-            
-            
-        }
-        private void BTN_UPDATEROOM_Click(object sender, EventArgs e)
-        {
+            if (isAddingNewItem)
+            {
+
+                them();
+
+            }
+            else
+            {
+                capnhat();
+
+            }
 
         }
+        //private void BTN_UPDATEROOM_Click(object sender, EventArgs e)
+        //{
+        //    int id = Combox_LoaiPhong.SelectedIndex;
+        //    string t;
+        //    t = Textbox_TenPhong.Text;
+        //   string vt = Textbox_ViTri.Text;
+        //    string tt = Combox_TinhTrang.Text;
+        //    load();
+        //    if(db.CapNhat(id, t, vt, tt))
+        //    {
+        //        MessageBox.Show("Sua thanh cong");
+        //        loadPhong();
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Sua khong thanh cong");
+        //    }
+        //}
 
         private void TEXT_GIA_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -182,6 +265,39 @@ namespace QLKS
         private void BTN_UPDATEKIND_Click(object sender, EventArgs e)
         {
            
+        }
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Cập nhật phòng
+        void capnhat()
+        {
+            string text = Textbox_TenPhong.Text;
+            string mt = Textbox_ViTri.Text;
+            string tt = Combox_TinhTrang.SelectedValue.ToString();
+            int lp = int.Parse(Combox_LoaiPhong.SelectedValue.ToString());
+            int pma = int.Parse(Data_Phong.CurrentRow.Cells[0].Value.ToString());
+            if (string.IsNullOrEmpty(Textbox_TenPhong.Text) || string.IsNullOrEmpty(Textbox_ViTri.Text))
+            {
+                MessageBox.Show("Điền đầy đủ thông tin dịch vụ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (db.CapNhatPhong(pma, text, mt, tt, lp))
+            {
+                MessageBox.Show("Cập nhật thành công");
+                loadPhong();
+            }
+            else
+            {
+                MessageBox.Show("Cập nhật không thành công");
+            }
+        }
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Xử lý nút cập nhật
+        private void Button_CapNhat_Click(object sender, EventArgs e)
+        {
+            isAddingNewItem = false;
+            load();
         }
     }
 }

@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "D:\\Laravel\\New\\PMTT_QLKS-main\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B2A5CD71-B5CF-4EA3-9CE5-DD7D0603E960}|resources\\views\\GUI\\GUI.csproj|d:\\laravel\\new\\pmtt_qlks-main\\resources\\views\\gui\\dichvu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2A5CD71-B5CF-4EA3-9CE5-DD7D0603E960}|resources\\views\\GUI\\GUI.csproj|solutionrelative:resources\\views\\gui\\dichvu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B2A5CD71-B5CF-4EA3-9CE5-DD7D0603E960}|resources\\views\\GUI\\GUI.csproj|d:\\laravel\\new\\pmtt_qlks-main\\resources\\views\\gui\\tainguyen_gui\\loaiphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2A5CD71-B5CF-4EA3-9CE5-DD7D0603E960}|resources\\views\\GUI\\GUI.csproj|solutionrelative:resources\\views\\gui\\tainguyen_gui\\loaiphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2A5CD71-B5CF-4EA3-9CE5-DD7D0603E960}|resources\\views\\GUI\\GUI.csproj|D:\\Laravel\\New\\PMTT_QLKS-main\\resources\\views\\gui\\dichvu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B2A5CD71-B5CF-4EA3-9CE5-DD7D0603E960}|resources\\views\\GUI\\GUI.csproj|solutionrelative:resources\\views\\gui\\dichvu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{B2A5CD71-B5CF-4EA3-9CE5-DD7D0603E960}|resources\\views\\GUI\\GUI.csproj|d:\\laravel\\new\\pmtt_qlks-main\\resources\\views\\gui\\tainguyen_gui\\loaiphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B2A5CD71-B5CF-4EA3-9CE5-DD7D0603E960}|resources\\views\\GUI\\GUI.csproj|solutionrelative:resources\\views\\gui\\tainguyen_gui\\loaiphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2A5CD71-B5CF-4EA3-9CE5-DD7D0603E960}|resources\\views\\GUI\\GUI.csproj|D:\\Laravel\\New\\PMTT_QLKS-main\\resources\\views\\gui\\trangchu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B2A5CD71-B5CF-4EA3-9CE5-DD7D0603E960}|resources\\views\\GUI\\GUI.csproj|solutionrelative:resources\\views\\gui\\trangchu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{B2A5CD71-B5CF-4EA3-9CE5-DD7D0603E960}|resources\\views\\GUI\\GUI.csproj|d:\\laravel\\new\\pmtt_qlks-main\\resources\\views\\gui\\tainguyen_gui\\phong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2A5CD71-B5CF-4EA3-9CE5-DD7D0603E960}|resources\\views\\GUI\\GUI.csproj|solutionrelative:resources\\views\\gui\\tainguyen_gui\\phong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2A5CD71-B5CF-4EA3-9CE5-DD7D0603E960}|resources\\views\\GUI\\GUI.csproj|D:\\Laravel\\New\\PMTT_QLKS-main\\resources\\views\\gui\\datphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B2A5CD71-B5CF-4EA3-9CE5-DD7D0603E960}|resources\\views\\GUI\\GUI.csproj|solutionrelative:resources\\views\\gui\\datphong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{B2A5CD71-B5CF-4EA3-9CE5-DD7D0603E960}|resources\\views\\GUI\\GUI.csproj|d:\\laravel\\new\\pmtt_qlks-main\\resources\\views\\gui\\tainguyen_gui\\phong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B2A5CD71-B5CF-4EA3-9CE5-DD7D0603E960}|resources\\views\\GUI\\GUI.csproj|solutionrelative:resources\\views\\gui\\tainguyen_gui\\phong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2A5CD71-B5CF-4EA3-9CE5-DD7D0603E960}|resources\\views\\GUI\\GUI.csproj|D:\\Laravel\\New\\PMTT_QLKS-main\\resources\\views\\gui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2A5CD71-B5CF-4EA3-9CE5-DD7D0603E960}|resources\\views\\GUI\\GUI.csproj|solutionrelative:resources\\views\\gui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ABE64F14-37F5-4B35-A619-791C80D1F003}|app\\Repositories\\DAL\\DAL.csproj|d:\\laravel\\new\\pmtt_qlks-main\\app\\repositories\\dal\\phong_dal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABE64F14-37F5-4B35-A619-791C80D1F003}|app\\Repositories\\DAL\\DAL.csproj|solutionrelative:app\\repositories\\dal\\phong_dal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -47,60 +47,65 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Dichvu.cs",
-              "DocumentMoniker": "D:\\Laravel\\New\\PMTT_QLKS-main\\resources\\views\\GUI\\Dichvu.cs",
-              "RelativeDocumentMoniker": "resources\\views\\GUI\\Dichvu.cs",
-              "ToolTip": "D:\\Laravel\\New\\PMTT_QLKS-main\\resources\\views\\GUI\\Dichvu.cs",
-              "RelativeToolTip": "resources\\views\\GUI\\Dichvu.cs",
-              "ViewState": "AQIAACAAAAAAAAAAAAAgwAwAAAAAAAAA",
+              "Title": "LoaiPhong.cs",
+              "DocumentMoniker": "D:\\Laravel\\New\\PMTT_QLKS-main\\resources\\views\\GUI\\TaiNguyen_GUI\\LoaiPhong.cs",
+              "RelativeDocumentMoniker": "resources\\views\\GUI\\TaiNguyen_GUI\\LoaiPhong.cs",
+              "ToolTip": "D:\\Laravel\\New\\PMTT_QLKS-main\\resources\\views\\GUI\\TaiNguyen_GUI\\LoaiPhong.cs",
+              "RelativeToolTip": "resources\\views\\GUI\\TaiNguyen_GUI\\LoaiPhong.cs",
+              "ViewState": "AQIAAPkAAAAAAAAAAADwv+0AAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T06:02:57.175Z",
+              "WhenOpened": "2024-11-26T14:55:07.801Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Dichvu.cs [Design]",
-              "DocumentMoniker": "D:\\Laravel\\New\\PMTT_QLKS-main\\resources\\views\\GUI\\Dichvu.cs",
-              "RelativeDocumentMoniker": "resources\\views\\GUI\\Dichvu.cs",
-              "ToolTip": "D:\\Laravel\\New\\PMTT_QLKS-main\\resources\\views\\GUI\\Dichvu.cs [Design]",
-              "RelativeToolTip": "resources\\views\\GUI\\Dichvu.cs [Design]",
+              "Title": "LoaiPhong.cs [Design]",
+              "DocumentMoniker": "D:\\Laravel\\New\\PMTT_QLKS-main\\resources\\views\\GUI\\TaiNguyen_GUI\\LoaiPhong.cs",
+              "RelativeDocumentMoniker": "resources\\views\\GUI\\TaiNguyen_GUI\\LoaiPhong.cs",
+              "ToolTip": "D:\\Laravel\\New\\PMTT_QLKS-main\\resources\\views\\GUI\\TaiNguyen_GUI\\LoaiPhong.cs [Design]",
+              "RelativeToolTip": "resources\\views\\GUI\\TaiNguyen_GUI\\LoaiPhong.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T06:02:52.438Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DatPhong.cs [Design]",
-              "DocumentMoniker": "D:\\Laravel\\New\\PMTT_QLKS-main\\resources\\views\\GUI\\DatPhong.cs",
-              "RelativeDocumentMoniker": "resources\\views\\GUI\\DatPhong.cs",
-              "ToolTip": "D:\\Laravel\\New\\resources\\views\\GUI\\DatPhong.cs [Design]",
-              "RelativeToolTip": "..\\resources\\views\\GUI\\DatPhong.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-02T13:12:08.62Z"
+              "WhenOpened": "2024-11-26T14:55:06.023Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "TrangChu.cs [Design]",
-              "DocumentMoniker": "D:\\Laravel\\New\\PMTT_QLKS-main\\resources\\views\\GUI\\TrangChu.cs",
-              "RelativeDocumentMoniker": "resources\\views\\GUI\\TrangChu.cs",
-              "ToolTip": "D:\\Laravel\\New\\PMTT_QLKS-main\\resources\\views\\GUI\\TrangChu.cs [Design]*",
-              "RelativeToolTip": "resources\\views\\GUI\\TrangChu.cs [Design]*",
+              "Title": "Phong.cs",
+              "DocumentMoniker": "D:\\Laravel\\New\\PMTT_QLKS-main\\resources\\views\\GUI\\TaiNguyen_GUI\\Phong.cs",
+              "RelativeDocumentMoniker": "resources\\views\\GUI\\TaiNguyen_GUI\\Phong.cs",
+              "ToolTip": "D:\\Laravel\\New\\PMTT_QLKS-main\\resources\\views\\GUI\\TaiNguyen_GUI\\Phong.cs",
+              "RelativeToolTip": "resources\\views\\GUI\\TaiNguyen_GUI\\Phong.cs",
+              "ViewState": "AQIAAAwBAAAAAAAAAAAiwCcBAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-02T13:11:45.243Z"
+              "WhenOpened": "2024-11-26T14:29:51.13Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Phong.cs [Design]",
+              "DocumentMoniker": "D:\\Laravel\\New\\PMTT_QLKS-main\\resources\\views\\GUI\\TaiNguyen_GUI\\Phong.cs",
+              "RelativeDocumentMoniker": "resources\\views\\GUI\\TaiNguyen_GUI\\Phong.cs",
+              "ToolTip": "D:\\Laravel\\New\\PMTT_QLKS-main\\resources\\views\\GUI\\TaiNguyen_GUI\\Phong.cs [Design]",
+              "RelativeToolTip": "resources\\views\\GUI\\TaiNguyen_GUI\\Phong.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T14:26:02.152Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Laravel\\New\\PMTT_QLKS-main\\resources\\views\\GUI\\Program.cs",
-              "RelativeDocumentMoniker": "resources\\views\\GUI\\Program.cs",
-              "ToolTip": "D:\\Laravel\\New\\PMTT_QLKS-main\\resources\\views\\GUI\\Program.cs",
-              "RelativeToolTip": "resources\\views\\GUI\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAoAAAA",
+              "Title": "PHONG_DAL.cs",
+              "DocumentMoniker": "D:\\Laravel\\New\\PMTT_QLKS-main\\app\\Repositories\\DAL\\PHONG_DAL.cs",
+              "RelativeDocumentMoniker": "app\\Repositories\\DAL\\PHONG_DAL.cs",
+              "ToolTip": "D:\\Laravel\\New\\PMTT_QLKS-main\\app\\Repositories\\DAL\\PHONG_DAL.cs",
+              "RelativeToolTip": "app\\Repositories\\DAL\\PHONG_DAL.cs",
+              "ViewState": "AQIAADEAAAAAAAAAAAAYwEsAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T03:36:44.533Z"
+              "WhenOpened": "2024-11-26T14:24:33.469Z",
+              "EditorCaption": ""
             }
           ]
         }

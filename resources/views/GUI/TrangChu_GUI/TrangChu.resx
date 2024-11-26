@@ -181,7 +181,7 @@
   <data name="TraCuuKhachHang.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        6QAAAOkBVJIUSwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAPgSURBVFhHxZfL
+        6AAAAOgBhtX2rwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAPgSURBVFhHxZfL
         axNRFMbrcyE+FiI+MEkRXAg+UBAXKqgoqKgI4n8gglab4BsUGUFERdSFFTWTzFhNUmcliCKCCDWZ1Co2
         AVsKCoKIi2pn0gcUmsTxfGMmvXNzVKJQF78299zvcZvcaWmD4zj/FXY4nrBDDzujhmxT3W11RJc7jjKR
         0/AoE+GBFxm85ifs8Fs2uqSQUU0yOwJ9Vjq2jdOLQAOt6EUWMjl9zaC/I7qQTANigMDQcEd0brFL21DK
@@ -19209,7 +19209,7 @@
     <value>538, 17</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>45</value>
+    <value>25</value>
   </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
