@@ -50,4 +50,11 @@ trait Query
         }
         return true;
     }
+    public function CheckInformationUser()
+    {
+        if(Auth::user()->SDT == "Chưa rõ" || Auth::user()->CCCD == "Chưa rõ") {
+            return false;
+        }
+        return true;
+    }
 }

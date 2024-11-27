@@ -62,7 +62,7 @@
                                         Ohh. Bạn chưa có ghi chú nào! :(
                                     </p>
                                 </div>
-                                <h5 class="card-title" data-aos="fade-up" data-aos-delay="600">Chi tiết tài khoản <i class="fa-solid fa-pen-to-square" style="color: #74C0FC;margin-left:20px"></i> <a href="" style="font-size: 15px">Chỉnh sửa trang cá nhân</a></h5>
+                                <h5 class="card-title" data-aos="fade-up" data-aos-delay="600">Chi tiết tài khoản <i class="fa-solid fa-pen-to-square" style="color: #74C0FC;margin-left:20px"></i> <a href="{{ route("pageUpdateAccount") }}" style="font-size: 15px">Chỉnh sửa trang cá nhân</a></h5>
                                 <div class="row" data-aos="fade-up" data-aos-delay="700">
                                     <div class="col-lg-3 col-md-4 label">Họ và tên:</div>
                                     <div class="col-lg-9 col-md-8">{{$user->HOTEN}}</div>

@@ -348,6 +348,11 @@
                                                     return;
                                                 }
 
+                                                if(checkOutDate < checkInDate) {
+                                                    alert('Vui lòng chọn ngày hợp lệ.');
+                                                    return;
+                                                }
+
                                                 const timeDiff = Math.abs(checkOutDate - checkInDate);
                                                 const daysRented = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
                                                 const totalPrice = daysRented * roomPrice;

@@ -23,8 +23,12 @@ class Cart extends Controller
         if(!$this->CheckQuantityRoomInCart()) {
             return response()->json(['success' => false, 'message' => 'Bạn chỉ được phép đặt trước 5 phòng!']);
         }
-        if(!$this->CheckQuantityRoomInCate($request->roomID)) {
+        else if(!$this->CheckQuantityRoomInCate($request->roomID)) {
             return response()->json(['success' => false, 'message' => 'Loại phòng này không hoạt động']);
+        }
+        else if(!$this->CheckInformationUser())
+        {
+            return response()->json(['success' => false, 'message' => 'Vui lòng cập nhật thông tin tài khoản']);
         }
         $user = KhachHang::find(Auth::user()->ID);
         if($user->gioHang()->wherePivot('LOAIPHONG_ID', $request->roomID)->exists()) {

@@ -17,7 +17,7 @@
         <div class="row">
             <div class="col-xl-4">
 
-                <div class="card" style="border-radius:20px;">
+                <div class="card" style="border-radius:20px;" data-aos="fade-right">
                     <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
                         <img src="{{ $user->AVATAR }}" alt="Profile" class="rounded-circle">
                         <h2>{{ $user->HOTEN }}</h2>
@@ -30,7 +30,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card_edit_khoi">
+                <div class="card_edit_khoi" data-aos="fade-right" data-aos-delay="200">
                   <div class="card-image_edit_khoi"></div>
                   <div class="category_edit_khoi"> Thông báo quan trọng </div>
                   <div class="heading_edit_khoi"> Vui lòng bảo mật tài khoản của bạn, không để lộ thông tin quan trọng như cookie, email, số điện thoại!
@@ -38,7 +38,7 @@
                   </div>
               </div>
             </div>
-            <div class="col-xl-8" style="border-radius:20px;">
+            <div class="col-xl-8" style="border-radius:20px;" data-aos="fade-up">
 
                 <div class="card" style="border-radius:20px;">
                     <div class="card-body pt-3">
@@ -59,10 +59,10 @@
                                 <form class="needs-validation" novalidate method="POST" enctype="multipart/form-data" action="{{ route('updateAccount') }}">
                                   @csrf
                                   @method('PUT')
-                                  <div class="row mb-3">
+                                  <div class="row mb-3" data-aos="fade-up" data-aos-delay="200">
                                       <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Ảnh đại diện</label>
                                       <div class="col-md-8 col-lg-9">
-                                        <img id="avatarPreview" src="{{ $user->AVATAR}}" alt="Profile" style="max-width:120px;">
+                                        <img id="avatarPreview" src="{{ $user->AVATAR}}" alt="Profile" style="max-width:120px;border-radius:50%">
                                         <div class="mb-3">
                                           <label for="formFile" class="form-label">Tải lên ảnh đại diện</label>
                                           <input class="form-control" type="file" id="formFile" name = "avatar" accept="image/*">
@@ -85,7 +85,7 @@
                                       });
                                     </script>
 
-                                    <div class="row mb-3">
+                                    <div class="row mb-3" data-aos="fade-up" data-aos-delay="400">
                                       <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Họ và tên</label>
                                       <div class="col-md-8 col-lg-9">
                                         <input name="fullName" type="text" class="form-control" id="fullName" value="{{ $user->HOTEN }}" required>
@@ -93,14 +93,14 @@
                                       </div>
                                     </div>
                 
-                                    <div class="row mb-3">
+                                    <div class="row mb-3" data-aos="fade-up" data-aos-delay="600">
                                       <label for="about" class="col-md-4 col-lg-3 col-form-label">Ghi chú</label>
                                       <div class="col-md-8 col-lg-9">
                                         <textarea name="about" class="form-control" id="about" style="height: 100px"> Ohh. Bạn chưa có ghi chú nào! :( </textarea>
                                       </div>
                                     </div>
                 
-                                    <div class="row mb-3">
+                                    <div class="row mb-3" data-aos="fade-up" data-aos-delay="800">
                                       <label for="Job" class="col-md-4 col-lg-3 col-form-label">Số điện thoại</label>
                                       <div class="col-md-8 col-lg-9">
                                         <input name="phone" type="number" min = 1 minlength= 10 class="form-control" id="Job" value="{{ $user->SDT }}" required>
@@ -108,7 +108,7 @@
                                       </div>
                                     </div>
                 
-                                    <div class="row mb-3">
+                                    <div class="row mb-3" data-aos="fade-up" data-aos-delay="1000">
                                       <label for="Country" class="col-md-4 col-lg-3 col-form-label">Căn cước công dân</label>
                                       <div class="col-md-8 col-lg-9">
                                         <input name="cccd" type="number" min = 1 minlength = 10 class ="form-control" id="Country" value="{{ $user->CCCD }}" required>
@@ -116,7 +116,7 @@
                                       </div>
                                     </div>
                 
-                                    <div class="row mb-3">
+                                    <div class="row mb-3" data-aos="fade-up" data-aos-delay="1200">
                                       <label for="Address" class="col-md-4 col-lg-3 col-form-label">Email</label>
                                       <div class="col-md-8 col-lg-9">
                                         <input name="email" type="email" class="form-control" id="Address" value="{{ $user->EMAIL }}"  disabled>
@@ -124,7 +124,7 @@
                                       </div>
                                     </div>
                 
-                                    <div class="row mb-3">
+                                    <div class="row mb-3" data-aos="fade-up" data-aos-delay="1400">
                                       <label for="Phone" class="col-md-4 col-lg-3 col-form-label">Ngày Sinh</label>
                                       <div class="col-md-8 col-lg-9">
                                         <input name="birthday" type="date" class="form-control" id="Phone" value="{{ $user->NGAYSINH }}" required>
@@ -132,7 +132,7 @@
                                       </div>
                                     </div>
                 
-                                    <div class="row mb-3">
+                                    <div class="row mb-3" data-aos="fade-up" data-aos-delay="1600">
                                       <label for="Email" class="col-md-4 col-lg-3 col-form-label">Giới tính</label>
                                       <div class="col-md-8 col-lg-9">
                                         <select class="form-select" aria-label="Default select example" name="gender">
@@ -153,7 +153,7 @@
                                         <div class="invalid-feedback">Giới tính không hợp lệ</div>
                                       </div>
                                     </div>            
-                                    <div class="text-center">
+                                    <div class="text-center" data-aos="fade-up" data-aos-delay="1800">
                                       <button type="submit" name = "check" class="btn btn-primary" style="border-radius:20px">Lưu và thay đổi</button>
                                     </div>
                                   </form>

@@ -27,14 +27,24 @@ class Booking extends Controller
     public function SetupBooking($id)
     {
         $cateRoom = LoaiPhong::find($id);
-        if($this->CheckQuantityRoomInCate($id)) {
+        if(!$this->CheckInformationUser())
+        {
+            Alert::error('Vui lòng cập nhật số điện thoại và căn cước!')->autoClose(3000);
+            return redirect()->back();
+        }
+        else if($this->CheckQuantityRoomInCate($id)) {
             return view('BookingController.SetupBooking', compact('cateRoom'));
         }
-        Alert::toast('Loại phòng này hiện không hoạt động!', 'error')->position('top-end')->autoClose(3000);
+        Alert::error('Loại phòng này hiện không hoạt động!')->autoClose(3000);
         return redirect()->back();
     }
     public function SetupBookingManyRooms($id = null)
     {
+        if(!$this->CheckInformationUser())
+        {
+            Alert::error('Vui lòng cập nhật số điện thoại và căn cước!')->autoClose(3000);
+            return redirect()->back();
+        }
         $user = KhachHang::find(Auth::user()->ID);  
         if($id == null) {
             $listRoom = $user->gioHang()->get();
