@@ -50,7 +50,7 @@ namespace DAL
             {
                 return false;
             }
-            
+
         }
 
         public bool CapNhatLoaiPhong(int pCN, string t, int sc, decimal gia, string qd, string nt, string mt)
