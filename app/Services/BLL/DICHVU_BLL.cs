@@ -30,5 +30,7 @@ namespace BLL
 
             return db.CapNhat(pCN, t, mt, gia);
         }
+
+
     }
 }

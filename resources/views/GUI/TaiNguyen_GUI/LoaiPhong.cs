@@ -314,16 +314,16 @@ namespace GUI.TaiNguyen_GUI.Phong_GUI
                     ISDELETED = false
                 };
 
-                bool updateResult = db.UpdateLoaiPhong(loaiPhongToUpdate);
+                //bool updateResult = db.UpdateLoaiPhong(loaiPhongToUpdate);
 
-                if (updateResult)
-                {
-                    MessageBox.Show("Cập nhật loại phòng thành công!");
-                }
-                else
-                {
-                    MessageBox.Show("Cập nhật loại phòng không thành công. Vui lòng kiểm tra lại.");
-                }
+                ////if (updateResult)
+                //{
+                //    MessageBox.Show("Cập nhật loại phòng thành công!");
+                //}
+                //else
+                //{
+                //    MessageBox.Show("Cập nhật loại phòng không thành công. Vui lòng kiểm tra lại.");
+                //}
 
                 LockControl();
             }
@@ -348,7 +348,7 @@ namespace GUI.TaiNguyen_GUI.Phong_GUI
                 {
                     int loaiPhongId = Convert.ToInt32(combox_LoaiPhong.SelectedValue);
 
-                    db.DeleteLoaiPhong(loaiPhongId);
+                    //db.DeleteLoaiPhong(loaiPhongId);
 
                     LoadData();
 
