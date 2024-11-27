@@ -37,7 +37,6 @@ namespace DAL
             db.HINHLOAIPHONGs.Remove(x);
             db.SaveChanges();
         }
-
         public bool AddLoaiphong(LOAIPHONG ploai)
         {
             try
@@ -52,7 +51,6 @@ namespace DAL
             }
 
         }
-
         public bool CapNhatLoaiPhong(int pCN, string t, int sc, decimal gia, string qd, string nt, string mt)
         {
 
@@ -65,7 +63,6 @@ namespace DAL
                 _CapNhat.GIATHUE = gia;
                 _CapNhat.QUYDINH = qd;
                 _CapNhat.NOITHAT = nt;
-
                 db.SaveChanges();
                 return true;
             }
@@ -74,6 +71,5 @@ namespace DAL
                 return false;
             }
         }
-
     }
 }

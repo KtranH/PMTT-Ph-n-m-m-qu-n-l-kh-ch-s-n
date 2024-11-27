@@ -19,7 +19,6 @@ namespace DAL
         {
             return db.DICHVUs.Where(p => p.TENDICHVU.Contains(find)).ToList();
         }
-
         public bool ThemDichVu(DICHVU P)
         {
             try
@@ -33,11 +32,9 @@ namespace DAL
                 return false;
             }
         }
-
         public bool CapNhat(int pCN, string t, string mt, decimal gia)
         { 
-
-               DICHVU _CapNhat = db.DICHVUs.Where(mh => mh.ID == pCN).FirstOrDefault();
+            DICHVU _CapNhat = db.DICHVUs.Where(mh => mh.ID == pCN).FirstOrDefault();
             if (_CapNhat != null)
             {
                 _CapNhat.TENDICHVU = t;

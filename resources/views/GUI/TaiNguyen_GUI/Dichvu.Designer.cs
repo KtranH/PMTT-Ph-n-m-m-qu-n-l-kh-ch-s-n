@@ -200,7 +200,7 @@ namespace QLKS
             this.Button_ThemDichVu.Name = "Button_ThemDichVu";
             this.Button_ThemDichVu.Size = new System.Drawing.Size(151, 42);
             this.Button_ThemDichVu.TabIndex = 21;
-            this.Button_ThemDichVu.Text = "Thêm dịch vụ";
+            this.Button_ThemDichVu.Text = "  Thêm dịch vụ";
             this.Button_ThemDichVu.Click += new System.EventHandler(this.BTN_THEMDV_Click);
             // 
             // guna2GroupBox2

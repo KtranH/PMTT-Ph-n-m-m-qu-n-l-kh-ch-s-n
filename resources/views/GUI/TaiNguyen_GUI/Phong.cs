@@ -35,7 +35,7 @@ namespace QLKS
         {
             List<PHONG> listPhong = new List<PHONG>();
             listPhong = db.GetAllPhong();
-            Data_Phong.DataSource = listPhong.Select(p => new { p.ID, p.TENPHONG, p.LOAIPHONG_ID, p.VITRI, p.TRANGTHAI }).ToList();
+            Data_Phong.DataSource = listPhong.Select(p => new { p.ID, p.TENPHONG, p.LOAIPHONG.TENLOAIPHONG, p.VITRI, p.TRANGTHAI }).ToList();
             Data_Phong.Columns[0].HeaderText = "Mã phòng";
             Data_Phong.Columns[1].HeaderText = "Tên phòng";
             Data_Phong.Columns[2].HeaderText = "Loại phòng";
@@ -164,15 +164,10 @@ namespace QLKS
             Textbox_ViTri.Enabled = true;
             Combox_TinhTrang.Enabled = true;
             Combox_LoaiPhong.Enabled = true;
-
-
-
             Textbox_TenPhong.ReadOnly = false;
             Textbox_ViTri.ReadOnly = false;
             Combox_TinhTrang.DropDownStyle = ComboBoxStyle.DropDown;
             Combox_LoaiPhong.DropDownStyle = ComboBoxStyle.DropDown;
-
-
         }
         //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------
@@ -234,5 +229,6 @@ namespace QLKS
             isAddingNewItem = false;
             load();
         }
+        //-----------------------------------------------------------------------------------------------------
     }
 }
