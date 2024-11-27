@@ -250,25 +250,83 @@ namespace GUI.TaiNguyen_GUI.Phong_GUI
         }
         //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------
-        //Xử lý Lưu
+        //Xử lý nút lưu
         private void Button_Luu_Click(object sender, EventArgs e)
         {
+            DialogResult dialogResult = MessageBox.Show("Bạn có muốn cập nhật loại phòng?", "Xác nhận", MessageBoxButtons.OKCancel);
 
-            Them();
-            
-          
+            if (dialogResult == DialogResult.OK)
+            {
+                int loaiPhongId = Convert.ToInt32(combox_LoaiPhong.SelectedValue);
+                string tenLoaiPhong = Textbox_TenLoaiPhong.Text;
+                string moTa = Textbox_MoTa.Text;
+                int sucChua = Convert.ToInt32(Textbox_SucChua.Text);
+                string giaThueText = Textbox_GiaThue.Text;
+                giaThueText = giaThueText.Replace(" VNĐ", "");
+                decimal giaThue = Convert.ToDecimal(giaThueText);
+                string quyDinh = Textbox_QuyDinh.Text;
+                string noiThat = Textbox_NoiThat.Text;
+                string tienIch = Textbox_TienIch.Text;
+
+                LOAIPHONG loaiPhongToUpdate = new LOAIPHONG
+                {
+                    ID = loaiPhongId,
+                    TENLOAIPHONG = tenLoaiPhong,
+                    MOTA = moTa,
+                    SUCCHUA = sucChua,
+                    GIATHUE = giaThue,
+                    QUYDINH = quyDinh,
+                    NOITHAT = noiThat,
+                    TIENICH = tienIch,
+                    ISDELETED = false
+                };
+
+                bool updateResult = db.UpdateLoaiPhong(loaiPhongToUpdate);
+
+                if (updateResult)
+                {
+                    MessageBox.Show("Cập nhật loại phòng thành công!");
+                }
+                else
+                {
+                    MessageBox.Show("Cập nhật loại phòng không thành công. Vui lòng kiểm tra lại.");
+                }
+
+                LockControl();
+            }
         }
         //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------
-        //Xử lý Xóa
-        private void Button_Xoa_Click(object sender, EventArgs e)
-        {
-
-        }
-        
+        //Xử lý nút cập nhật
         private void Button_CapNhat_Click(object sender, EventArgs e)
         {
-
+            UnlockControl();
         }
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Xử lý nút xóa
+        private void Button_Xoa_Click(object sender, EventArgs e)
+        {
+            if (combox_LoaiPhong.SelectedValue != null)
+            {
+                DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn xóa loại phòng này?", "Xác nhận xóa", MessageBoxButtons.YesNo);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    int loaiPhongId = Convert.ToInt32(combox_LoaiPhong.SelectedValue);
+
+                    db.DeleteLoaiPhong(loaiPhongId);
+
+                    LoadData();
+
+                    MessageBox.Show("Loại phòng đã được xóa.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn loại phòng cần xóa.");
+            }
+        }
+        //-----------------------------------------------------------------------------------------------------
     }
 }
