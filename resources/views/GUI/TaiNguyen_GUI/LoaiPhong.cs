@@ -315,7 +315,7 @@ namespace GUI.TaiNguyen_GUI.Phong_GUI
                 {
                     int loaiPhongId = Convert.ToInt32(combox_LoaiPhong.SelectedValue);
 
-                    //db.DeleteLoaiPhong(loaiPhongId);
+                    db.DeleteLoaiPhong(loaiPhongId);
 
                     LoadData();
 
