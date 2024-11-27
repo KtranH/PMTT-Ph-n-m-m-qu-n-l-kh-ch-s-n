@@ -138,6 +138,11 @@ namespace QLKS
         //Xử lý thêm thêm phòng
         void them()
         {
+            if (db.KTTrung(Textbox_TenPhong.Text))
+            {
+                MessageBox.Show("Tên phòng bị trùng", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }else
             if (string.IsNullOrEmpty(Textbox_TenPhong.Text) || string.IsNullOrEmpty(Textbox_ViTri.Text) )
             {
                 MessageBox.Show("Điền đầy đủ thông tin dịch vụ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -228,6 +233,33 @@ namespace QLKS
         {
             isAddingNewItem = false;
             load();
+        }
+
+        private void btn_Xoa_Click(object sender, EventArgs e)
+        {
+            if (Data_Phong.SelectedRows.Count > 0)
+            {
+                int id = Convert.ToInt32(Data_Phong.SelectedRows[0].Cells[0].Value);
+
+                DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa phòng này không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    db.XoaPhong(id);
+
+                    MessageBox.Show("Dịch vụ đã được xóa!");
+
+                    loadPhong();
+                }
+                else
+                {
+                    MessageBox.Show("Phòng không được xóa!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn phòng cần xóa!");
+            }
         }
         //-----------------------------------------------------------------------------------------------------
     }

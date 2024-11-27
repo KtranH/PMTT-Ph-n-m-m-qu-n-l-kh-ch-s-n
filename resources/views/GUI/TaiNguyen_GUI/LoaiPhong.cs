@@ -211,6 +211,7 @@ namespace GUI.TaiNguyen_GUI.Phong_GUI
         //Xử lý Enable TextBox
         void load()
         {
+            Textbox_TenLoaiPhong.Enabled = true;
             Textbox_SucChua.Enabled = true;
             Textbox_GiaThue.Enabled = true;
             Textbox_QuyDinh.Enabled = true;
@@ -218,7 +219,7 @@ namespace GUI.TaiNguyen_GUI.Phong_GUI
             Textbox_TienIch.Enabled = true;
             Textbox_MoTa.Enabled = true;
 
-
+            Textbox_TenLoaiPhong.ReadOnly = false;
             Textbox_SucChua.ReadOnly = false;
             Textbox_GiaThue.ReadOnly = false;
             Textbox_QuyDinh.ReadOnly = false;
@@ -232,6 +233,7 @@ namespace GUI.TaiNguyen_GUI.Phong_GUI
         //Xử lý Enable TextBox
         private void ResetTextBoxes()
         {
+            Textbox_TenLoaiPhong.Clear();
             Textbox_SucChua.Clear();
             Textbox_GiaThue.Clear();
             Textbox_QuyDinh.Clear();
@@ -245,10 +247,15 @@ namespace GUI.TaiNguyen_GUI.Phong_GUI
         //Xử lý Thêm Loại phòng
         public void Them()
         {
+
             int sucChua;
 
             bool isSucChuaValid = int.TryParse(Textbox_SucChua.Text, out sucChua);
-
+            if(db.KTTrung(Textbox_TenLoaiPhong.Text))
+            {
+                MessageBox.Show("Tên loại phòng bị trùng", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }    
             if (string.IsNullOrEmpty(Textbox_TenLoaiPhong.Text) ||
                 string.IsNullOrEmpty(Textbox_MoTa.Text) ||
                 !isSucChuaValid || sucChua <= 0 || 
@@ -286,47 +293,7 @@ namespace GUI.TaiNguyen_GUI.Phong_GUI
         //Xử lý nút lưu
         private void Button_Luu_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Bạn có muốn cập nhật loại phòng?", "Xác nhận", MessageBoxButtons.OKCancel);
-
-            if (dialogResult == DialogResult.OK)
-            {
-                int loaiPhongId = Convert.ToInt32(combox_LoaiPhong.SelectedValue);
-                string tenLoaiPhong = Textbox_TenLoaiPhong.Text;
-                string moTa = Textbox_MoTa.Text;
-                int sucChua = Convert.ToInt32(Textbox_SucChua.Text);
-                string giaThueText = Textbox_GiaThue.Text;
-                giaThueText = giaThueText.Replace(" VNĐ", "");
-                decimal giaThue = Convert.ToDecimal(giaThueText);
-                string quyDinh = Textbox_QuyDinh.Text;
-                string noiThat = Textbox_NoiThat.Text;
-                string tienIch = Textbox_TienIch.Text;
-
-                LOAIPHONG loaiPhongToUpdate = new LOAIPHONG
-                {
-                    ID = loaiPhongId,
-                    TENLOAIPHONG = tenLoaiPhong,
-                    MOTA = moTa,
-                    SUCCHUA = sucChua,
-                    GIATHUE = giaThue,
-                    QUYDINH = quyDinh,
-                    NOITHAT = noiThat,
-                    TIENICH = tienIch,
-                    ISDELETED = false
-                };
-
-                bool updateResult = db.UpdateLoaiPhong(loaiPhongToUpdate);
-
-                if (updateResult)
-                {
-                    MessageBox.Show("Cập nhật loại phòng thành công!");
-                }
-                else
-                {
-                    MessageBox.Show("Cập nhật loại phòng không thành công. Vui lòng kiểm tra lại.");
-                }
-
-                LockControl();
-            }
+            Them();
         }
         //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------

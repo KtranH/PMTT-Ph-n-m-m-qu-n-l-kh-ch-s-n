@@ -74,5 +74,29 @@ namespace DAL
                 return false;
             }
         }
+
+        public bool KTTrung(string pTenPhong)
+        {
+            var ktkc = from k in db.PHONGs where k.TENPHONG == pTenPhong select k;
+            if (ktkc.Count() > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public void XoaPhong(int id)
+        {
+            var serviceToDelete = db.PHONGs.FirstOrDefault(dv => dv.ID == id);
+            if (serviceToDelete != null)
+            {
+                serviceToDelete.TRANGTHAI = "Không khả dụng";
+
+                db.SaveChanges();
+            }
+        }
     }
 }

@@ -33,5 +33,10 @@ namespace BLL
         {
             db.DeleteDichVu(id);
         }
+        public bool KTTrung(string pDichvu)
+        {
+            return db.KTTrung(pDichvu);
+        }
+
     }
 }
