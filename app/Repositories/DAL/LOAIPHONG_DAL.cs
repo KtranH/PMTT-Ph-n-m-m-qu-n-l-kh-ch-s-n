@@ -13,7 +13,7 @@ namespace DAL
         public LOAIPHONG_DAL() { }
         public List<LOAIPHONG> GetAllLoaiPhong()
         {
-            return db.LOAIPHONGs.ToList();
+            return db.LOAIPHONGs.Where(lp => lp.ISDELETED == false).ToList();
         }
         public List<HINHLOAIPHONG> HinhLoaiPhong(int ID)
         {
@@ -81,5 +81,18 @@ namespace DAL
                 db.SaveChanges();
             }
         }
+        public bool KTTrung(string pLoaiphong)
+        {
+            var ktkc = from k in db.LOAIPHONGs where k.TENLOAIPHONG == pLoaiphong select k;
+            if (ktkc.Count() > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
     }
 }

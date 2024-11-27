@@ -43,5 +43,18 @@ namespace BLL
         {
             return DB.AddLoaiphong(ploai);
         }
+        public bool KTTrung(string pLoaiphong)
+        {
+            return DB.KTTrung(pLoaiphong);
+        }
+        public bool UpdateLoaiPhong(LOAIPHONG loaiPhong)
+        {
+            return DB.UpdateLoaiPhong(loaiPhong);
+        }
+
+        public void DeleteLoaiPhong(int ID)
+        {
+            DB.DeleteLoaiPhong(ID);
+        }
     }
 }

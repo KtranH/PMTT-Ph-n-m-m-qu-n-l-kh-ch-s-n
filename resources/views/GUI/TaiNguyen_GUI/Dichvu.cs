@@ -29,13 +29,33 @@ namespace QLKS
             loadDV();
             loadCombox();
         }
+        public void LockControl()
+        {
+            Textbox_GiaDichVu.Enabled = false;
+            Textbox_TenDichVu.Enabled = false;
+            Textbox_MoTa.Enabled = false;
+            Combox_TinhTrang.Enabled = false;
+            Button_Luu.Enabled = false;
+        }
+
+        public void UnlockControl()
+        {
+            Textbox_GiaDichVu.Enabled = true;
+            Textbox_TenDichVu.Enabled = true;
+            Textbox_MoTa.Enabled = true;
+            Combox_TinhTrang.Enabled = true;
+            Button_Luu.Enabled = true;
+
+            Textbox_GiaDichVu.ReadOnly = false;
+            Textbox_TenDichVu.ReadOnly = false;
+            Textbox_MoTa.ReadOnly = false;
+        }
         //-----------------------------------------------------------------------------------------------------
         //Lấy dữ liệu dịch vụ vào datagrid view
         public void loadDV()
         {
-            List<DICHVU> listDV = new List<DICHVU>();
-            listDV = db.GetAllDichVu();
-            Data_DichVu.DataSource = listDV.Select(p => new { p.ID, p.TENDICHVU, p.GIA, p.MOTA}).ToList();
+            List<DICHVU> listDV = db.GetAllDichVu().Where(p => p.ISDELETED == false).ToList();
+            Data_DichVu.DataSource = listDV.Select(p => new { p.ID, p.TENDICHVU, p.GIA, p.MOTA }).ToList();
 
             Data_DichVu.Columns[0].HeaderText = "Mã dịch vụ";
             Data_DichVu.Columns[1].HeaderText = "Tên dịch vụ";
@@ -99,6 +119,11 @@ namespace QLKS
         //THêm dịch vụ
         void Them()
         {
+            if(db.KTTrung(Textbox_TenDichVu.Text))
+            {
+                MessageBox.Show("Tên dịch vụ bị trùng", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }    
 
             if (string.IsNullOrEmpty(Textbox_TenDichVu.Text) || string.IsNullOrEmpty(Textbox_MoTa.Text) || !decimal.TryParse(Textbox_GiaDichVu.Text, out decimal giaThue) || giaThue <= 0)
             {
@@ -151,23 +176,34 @@ namespace QLKS
         //Cập nhật dịch vụ
         void capnhat()
         {
-            string text = Textbox_TenDichVu.Text;
-            string mt = Textbox_MoTa.Text;
-            decimal gia = decimal.Parse(Textbox_GiaDichVu.Text);
-            int pma = int.Parse(Data_DichVu.CurrentRow.Cells[0].Value.ToString());
-            if (string.IsNullOrEmpty(Textbox_TenDichVu.Text) || string.IsNullOrEmpty(Textbox_MoTa.Text) || !decimal.TryParse(Textbox_GiaDichVu.Text, out decimal giaThue) || giaThue <= 0)
+            if (!string.IsNullOrEmpty(Textbox_TenDichVu.Text.Trim()) &&
+                !string.IsNullOrEmpty(Textbox_GiaDichVu.Text.Trim()) &&
+                !string.IsNullOrEmpty(Textbox_MoTa.Text.Trim()))
             {
-                MessageBox.Show("Điền đầy đủ thông tin dịch vụ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            if (db.CapNhat(pma, text, mt, gia))
-            {
-                MessageBox.Show("Cập nhật thành công");
+                int id = Convert.ToInt32(MADV.Text);
+                string tenDichVu = Textbox_TenDichVu.Text;
+                decimal giaDichVu = Convert.ToDecimal(Textbox_GiaDichVu.Text);
+                string moTa = Textbox_MoTa.Text;
+
+                DICHVU dichVu = new DICHVU
+                {
+                    ID = id,
+                    TENDICHVU = tenDichVu,
+                    GIA = giaDichVu,
+                    MOTA = moTa
+                };
+
+                db.UpdateDichVu(dichVu);
+
+                MessageBox.Show("Cập nhật dịch vụ thành công!");
+
                 loadDV();
+
+                LockControl();
             }
             else
             {
-                MessageBox.Show("Cập nhật không thành công");
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!");
             }
         }
         //-----------------------------------------------------------------------------------------------------
@@ -175,9 +211,8 @@ namespace QLKS
         //Xử lí nút cập nhật
         private void BTN_UPDATEDV_Click(object sender, EventArgs e)
         {
-            isAddingNewItem = false;
-            LoadEnable();
-            
+            UnlockControl();
+
         }
         //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------
@@ -201,6 +236,33 @@ namespace QLKS
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true; 
+            }
+        }
+
+        private void Button_XoaDichVu_Click(object sender, EventArgs e)
+        {
+            if (Data_DichVu.SelectedRows.Count > 0)
+            {
+                int id = Convert.ToInt32(Data_DichVu.SelectedRows[0].Cells[0].Value);
+
+                DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa dịch vụ này không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    db.DeleteDichVu(id);
+
+                    MessageBox.Show("Dịch vụ đã được xóa!");
+
+                    loadDV();
+                }
+                else
+                {
+                    MessageBox.Show("Dịch vụ không được xóa!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn dịch vụ cần xóa!");
             }
         }
         //-----------------------------------------------------------------------------------------------------

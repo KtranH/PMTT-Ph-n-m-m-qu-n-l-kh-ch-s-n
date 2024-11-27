@@ -52,5 +52,13 @@ namespace BLL
         {
            return db.CapNhatPhong(pCN, t, vt, tt, lp);
         }
+        public bool KTTrung(string pTenPhong)
+        {
+            return db.KTTrung(pTenPhong);
+        }
+        public void XoaPhong(int id)
+        {
+            db.XoaPhong(id);
+        }
     }
 }

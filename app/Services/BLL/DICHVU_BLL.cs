@@ -24,9 +24,19 @@ namespace BLL
         {
             return db.ThemDichVu(P);
         }
-        public bool CapNhat(int pCN, string t, string mt, decimal gia)
+        public void UpdateDichVu(DICHVU dichVu)
         {
-            return db.CapNhat(pCN, t, mt, gia);
+            db.UpdateDichVu(dichVu);
         }
+
+        public void DeleteDichVu(int id)
+        {
+            db.DeleteDichVu(id);
+        }
+        public bool KTTrung(string pDichvu)
+        {
+            return db.KTTrung(pDichvu);
+        }
+
     }
 }
