@@ -140,7 +140,7 @@ namespace GUI.TaiNguyen_GUI.Phong_GUI
         }
         //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------
-        //Xử lý tải ảnh và thêm ảnh vào R2 và database
+        //Xử lý tải ảnh và xóa ảnh từ R2 và database
         public async Task removeImage(HINHLOAIPHONG x)
         {
             try
@@ -179,6 +179,13 @@ namespace GUI.TaiNguyen_GUI.Phong_GUI
             Textbox_SucChua.Text = loaiPhong.SUCCHUA.ToString();
             Textbox_QuyDinh.Text = loaiPhong.QUYDINH.ToString();
             Textbox_TienIch.Text = loaiPhong.TIENICH.ToString();
+
+            if(loaiPhong.ISDELETED == true)
+            {
+                Button_Xoa.FillColor = Color.FromArgb(12, 186, 166);
+                Button_Xoa.Text = "Khôi phục";
+                Button_Xoa.Image = null;
+            }    
         }
         //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------
@@ -267,8 +274,6 @@ namespace GUI.TaiNguyen_GUI.Phong_GUI
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return; 
             }
-
-          
             LOAIPHONG lp = new LOAIPHONG();
             lp.TENLOAIPHONG = Textbox_TenLoaiPhong.Text;
             lp.MOTA = Textbox_MoTa.Text;
@@ -277,10 +282,12 @@ namespace GUI.TaiNguyen_GUI.Phong_GUI
             lp.QUYDINH = Textbox_QuyDinh.Text;
             lp.NOITHAT = Textbox_NoiThat.Text;
             lp.TIENICH = Textbox_TienIch.Text;
+            lp.ISDELETED = false;
 
             if (db.AddloaiPhong(lp))
             {
                 MessageBox.Show("Thêm loại phòng thành công");
+                LoadData();
             }
             else
             {
@@ -314,11 +321,7 @@ namespace GUI.TaiNguyen_GUI.Phong_GUI
                 if (dialogResult == DialogResult.Yes)
                 {
                     int loaiPhongId = Convert.ToInt32(combox_LoaiPhong.SelectedValue);
-
                     db.DeleteLoaiPhong(loaiPhongId);
-
-                    LoadData();
-
                     MessageBox.Show("Loại phòng đã được xóa.");
                 }
             }
@@ -326,6 +329,23 @@ namespace GUI.TaiNguyen_GUI.Phong_GUI
             {
                 MessageBox.Show("Vui lòng chọn loại phòng cần xóa.");
             }
+        }
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Xử lý logic dữ liệu
+        private void Textbox_SucChua_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }    
+        }
+        private void Textbox_GiaThue_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }    
         }
         //-----------------------------------------------------------------------------------------------------
     }

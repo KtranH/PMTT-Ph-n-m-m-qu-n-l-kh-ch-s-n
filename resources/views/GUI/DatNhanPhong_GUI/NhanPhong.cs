@@ -17,6 +17,8 @@ namespace QLKS
     {
         PHONG_BLL db = new PHONG_BLL();
         LOAIPHONG_BLL dbLoaiPhong = new LOAIPHONG_BLL();
+        public string idPhong = "";
+        
         public string UserCurrentNhanPhong { get; set; }
         public NhanPhong()
         {
@@ -53,6 +55,8 @@ namespace QLKS
             {
                 DataGridViewRow row = this.DataPhong.Rows[e.RowIndex];
                 Textbox_MaPhong.Text = row.Cells[1].Value.ToString();
+
+                this.idPhong = row.Cells[0].Value.ToString();
             }    
         }
         //-----------------------------------------------------------------------------------------------------
@@ -122,7 +126,6 @@ namespace QLKS
         private void FindRoom_Click(object sender, EventArgs e)
         {
             Textbox_Find_Phong.Clear();
-
         }
         private void Textbox_Find_Phong_TextChanged(object sender, EventArgs e)
         {
@@ -145,14 +148,22 @@ namespace QLKS
                 }
                 else
                 {
-                    CT_PhieuNhanPhong openCT_PhieuNhanPhong = new CT_PhieuNhanPhong() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-                    openCT_PhieuNhanPhong.UserCurrentCTDATPHONG = this.UserCurrentNhanPhong;
-                    openCT_PhieuNhanPhong.tenPhong = Textbox_MaPhong.Text;
-                    openCT_PhieuNhanPhong.dateNhan = Date_NgayNhan.Value.ToString();
-                    openCT_PhieuNhanPhong.dateTra = Date_NgayTra.Value.ToString();
-                    this.Controls.Clear();
-                    this.Controls.Add(openCT_PhieuNhanPhong);
-                    openCT_PhieuNhanPhong.Show();
+                    if(db.CheckQuantily(Int32.Parse(this.idPhong)))
+                    {
+                        Accept2Move();
+                    }
+                    else
+                    {
+                        DialogResult result = MessageBox.Show(
+                           "Cảnh báo số lượng phòng của loại phòng này hiện tại không đủ cho các đặt phòng trước! Bạn có chắc muốn tiếp tục không?",
+                           "Xác nhận",
+                           MessageBoxButtons.YesNo,
+                           MessageBoxIcon.Question);
+                        if (result == DialogResult.Yes)
+                        {
+                            Accept2Move();
+                        }    
+                    }    
                 }
             }    
            else
@@ -160,6 +171,17 @@ namespace QLKS
                 MessageBox.Show("Vui lòng chọn phòng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+        public void Accept2Move()
+        {
+            CT_PhieuNhanPhong openCT_PhieuNhanPhong = new CT_PhieuNhanPhong() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            openCT_PhieuNhanPhong.UserCurrentCTDATPHONG = this.UserCurrentNhanPhong;
+            openCT_PhieuNhanPhong.tenPhong = Textbox_MaPhong.Text;
+            openCT_PhieuNhanPhong.dateNhan = Date_NgayNhan.Value.ToString();
+            openCT_PhieuNhanPhong.dateTra = Date_NgayTra.Value.ToString();
+            this.Controls.Clear();
+            this.Controls.Add(openCT_PhieuNhanPhong);
+            openCT_PhieuNhanPhong.Show();
+        }    
         //-----------------------------------------------------------------------------------------------------
     }
 }

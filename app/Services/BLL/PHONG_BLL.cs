@@ -12,6 +12,8 @@ namespace BLL
     {
         public PHONG_BLL() { }
         PHONG_DAL db = new PHONG_DAL();
+        LOAIPHONG_DAL dbloaiphong = new LOAIPHONG_DAL();
+        PHIEUDATPHONG_DAL dbphieudatphong = new PHIEUDATPHONG_DAL();
         public List<PHONG> GetAllPhong()
         {
             return db.GetAllPhong();
@@ -59,6 +61,14 @@ namespace BLL
         public void XoaPhong(int id)
         {
             db.XoaPhong(id);
+        }
+        public bool CheckQuantily(int id)
+        {
+            if(Math.Abs(dbphieudatphong.CountCateByIDInBooking(id) - dbloaiphong.CountCateByID(id)) >= 2)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

@@ -24,5 +24,9 @@ namespace DAL
         {
             return db.PHIEUDATPHONGs.Where(p => p.ID == ID || p.KHACHHANG.EMAIL.Contains(find)).ToList();
         }
+        public int CountCateByIDInBooking(int ID)
+        {
+            return db.PHIEUDATPHONGs.Where(p => p.LOAIPHONG.ID == ID).Count();
+        }
     }
 }

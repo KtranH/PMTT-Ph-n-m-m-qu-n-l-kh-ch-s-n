@@ -116,11 +116,11 @@
     <Compile Include="TraPhong_GUI\CT_HoaDon.Designer.cs">
       <DependentUpon>CT_HoaDon.cs</DependentUpon>
     </Compile>
-    <Compile Include="DatNhanPhong_GUI\CT_PhieuDatPhong.cs">
+    <Compile Include="DatNhanPhong_GUI\CT_PhieuNhanPhong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DatNhanPhong_GUI\CT_PhieuDatPhong.Designer.cs">
-      <DependentUpon>CT_PhieuDatPhong.cs</DependentUpon>
+    <Compile Include="DatNhanPhong_GUI\CT_PhieuNhanPhong.Designer.cs">
+      <DependentUpon>CT_PhieuNhanPhong.cs</DependentUpon>
     </Compile>
     <Compile Include="DangNhap_GUI\DangNhap.cs">
       <SubType>Form</SubType>
@@ -211,8 +211,8 @@
     <EmbeddedResource Include="TraPhong_GUI\CT_HoaDon.resx">
       <DependentUpon>CT_HoaDon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DatNhanPhong_GUI\CT_PhieuDatPhong.resx">
-      <DependentUpon>CT_PhieuDatPhong.cs</DependentUpon>
+    <EmbeddedResource Include="DatNhanPhong_GUI\CT_PhieuNhanPhong.resx">
+      <DependentUpon>CT_PhieuNhanPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DangNhap_GUI\DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>

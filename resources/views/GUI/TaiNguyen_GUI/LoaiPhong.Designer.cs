@@ -342,6 +342,7 @@
             this.Textbox_GiaThue.SelectedText = "";
             this.Textbox_GiaThue.Size = new System.Drawing.Size(716, 41);
             this.Textbox_GiaThue.TabIndex = 29;
+            this.Textbox_GiaThue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Textbox_GiaThue_KeyPress);
             // 
             // guna2HtmlLabel2
             // 
@@ -388,6 +389,7 @@
             this.Textbox_SucChua.SelectedText = "";
             this.Textbox_SucChua.Size = new System.Drawing.Size(716, 41);
             this.Textbox_SucChua.TabIndex = 24;
+            this.Textbox_SucChua.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Textbox_SucChua_KeyPress);
             // 
             // Textbox_TenLoaiPhong
             // 

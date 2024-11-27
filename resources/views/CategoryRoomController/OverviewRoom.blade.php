@@ -344,15 +344,23 @@
                 <!-- Image gallery -->
                 <div class="room-gallery" data-aos="fade-up" data-aos-delay="200">
                     <div class="slider-for">
-                        @foreach ($Overview_CateRoom->hinhLoaiPhong as $img)
-                            <div><img src="{{ $img->HINH }}" alt="Room view"></div>
-                        @endforeach
+                        @if (count($Overview_CateRoom->hinhLoaiPhong) > 0)
+                            @foreach ($Overview_CateRoom->hinhLoaiPhong as $img)
+                                <div><img src="{{ $img->HINH }}" alt="Room view"></div>
+                            @endforeach
+                        @else
+                            <div><img src="{{ url('https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif') }}" alt="Room view"></div>
+                        @endif
                     </div>
                     
                     <div class="slider-nav">
-                        @foreach ($Overview_CateRoom->hinhLoaiPhong as $img)
-                            <div><img src="{{ $img->HINH }}" alt="Room thumbnail"></div>
-                        @endforeach
+                        @if (count($Overview_CateRoom->hinhLoaiPhong) > 0)
+                            @foreach ($Overview_CateRoom->hinhLoaiPhong as $img)
+                                <div><img src="{{ $img->HINH }}" alt="Room view"></div>
+                            @endforeach
+                        @else
+                            <div><img src="{{ url('https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif') }}" alt="Room view"></div>
+                        @endif
                     </div>
                 </div>
 
@@ -484,7 +492,7 @@
                                     Swal.fire({
                                     icon: 'error',
                                     title: 'Cảnh báo',
-                                    text: 'Bạn chỉ có thể đặt trước tối đa 5 phòng',
+                                    text: response.message,
                                     showConfirmButton: false,
                                     showCancelButton: true,
                                     cancelButtonText: 'Đồng ý',

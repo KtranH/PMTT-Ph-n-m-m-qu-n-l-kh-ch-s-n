@@ -21,7 +21,10 @@ class Cart extends Controller
     public function AddCart(Request $request)
     {
         if(!$this->CheckQuantityRoomInCart()) {
-            return response()->json(['success' => false]);
+            return response()->json(['success' => false, 'message' => 'Bạn chỉ được phép đặt trước 5 phòng!']);
+        }
+        if(!$this->CheckQuantityRoomInCate($request->roomID)) {
+            return response()->json(['success' => false, 'message' => 'Loại phòng này không hoạt động']);
         }
         $user = KhachHang::find(Auth::user()->ID);
         if($user->gioHang()->wherePivot('LOAIPHONG_ID', $request->roomID)->exists()) {
