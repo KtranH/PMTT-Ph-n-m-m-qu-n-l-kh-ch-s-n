@@ -52,7 +52,6 @@ namespace DAL
                 existingNhanVien.EMAIL = updatedNhanVien.EMAIL;
                 existingNhanVien.CHUCVU = updatedNhanVien.CHUCVU;
                 existingNhanVien.ISDELETED = updatedNhanVien.ISDELETED;
-
                 DB.SaveChanges();
             }
         }

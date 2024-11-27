@@ -11,8 +11,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
-
 namespace QLKS
 {
     public partial class TrangChu : Form

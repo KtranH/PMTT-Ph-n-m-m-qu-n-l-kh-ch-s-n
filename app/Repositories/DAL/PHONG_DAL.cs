@@ -41,7 +41,10 @@ namespace DAL
         {
             return db.PHONGs.Where(p => p.TRANGTHAI == "Trống").ToList();
         }
-
+        public PHONG FindPhongByName(string name)
+        {
+            return db.PHONGs.Where(p => p.TENPHONG == name).FirstOrDefault();
+        }
         public bool Themphong(PHONG P)
         {
             try
@@ -55,7 +58,6 @@ namespace DAL
                 return false;
             }
         }
-
         public bool CapNhatPhong(int pCN, string t, string vt, string tt, int lp )
         {
 

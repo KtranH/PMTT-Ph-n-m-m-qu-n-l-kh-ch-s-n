@@ -132,6 +132,8 @@ namespace QLKS
             DataPhong.DataSource = findPhong.Select(p => new { p.ID, p.TENPHONG, p.VITRI, p.LOAIPHONG.GIATHUE, p.TRANGTHAI, p.LOAIPHONG.TENLOAIPHONG }).ToList();
         }
         //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Xử lý ấn nút tiếp tục nhận phòng
         private void BTN_CONTINUE_Click(object sender, EventArgs e)
         {
            if(Textbox_MaPhong.Text != "")
@@ -143,25 +145,14 @@ namespace QLKS
                 }
                 else
                 {
-                    //DialogResult result = MessageBox.Show("Đơn đặt phòng này sẽ có tình trạng là: " + OP_STATE.Text.ToString() + "\n Bạn có chắc chắn không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                    //if(result == DialogResult.Yes)
-                    //{
-                    //    CT_PhieuDatPhong CTDP = new CT_PhieuDatPhong() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-                    //    string namePhong = TEXT_PHONGKHADUNG.Text;
-                    //    //var IDPHONG = DB.PHONGs.FirstOrDefault(x => x.TENPHONG.Equals(namePhong));
-                    //    //string checkPhong = IDPHONG.MAPH.ToString();
-                    //    CTDP.Tenphong = TEXT_PHONGKHADUNG.Text;
-                    //    CTDP.UserCurrentCTDATPHONG = UserCurrentDatPhong;
-                    //    CTDP.phieuDatPhong = new DataTable();
-                    //    CTDP.phieuDatPhong.Columns.Add("MaNV");
-                    //    CTDP.phieuDatPhong.Columns.Add("MaPhong");
-                    //    CTDP.phieuDatPhong.Columns.Add("NgayDat");
-                    //    CTDP.phieuDatPhong.Columns.Add("TinhTrang");
-                    //    //CTDP.phieuDatPhong.Rows.Add(UserCurrentDatPhong, checkPhong, DATE_DATPHONG.Text, OP_STATE.Text);
-                    //    this.Controls.Clear();
-                    //    this.Controls.Add(CTDP);
-                    //    CTDP.Show();
-                    //}  
+                    CT_PhieuNhanPhong openCT_PhieuNhanPhong = new CT_PhieuNhanPhong() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                    openCT_PhieuNhanPhong.UserCurrentCTDATPHONG = this.UserCurrentNhanPhong;
+                    openCT_PhieuNhanPhong.tenPhong = Textbox_MaPhong.Text;
+                    openCT_PhieuNhanPhong.dateNhan = Date_NgayNhan.Value.ToString();
+                    openCT_PhieuNhanPhong.dateTra = Date_NgayTra.Value.ToString();
+                    this.Controls.Clear();
+                    this.Controls.Add(openCT_PhieuNhanPhong);
+                    openCT_PhieuNhanPhong.Show();
                 }
             }    
            else
@@ -169,17 +160,6 @@ namespace QLKS
                 MessageBox.Show("Vui lòng chọn phòng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-        //private void OP_STATE_SelectedValueChanged(object sender, EventArgs e)
-        //{
-        //    if(OP_STATE.Text == "Đã xác nhận")
-        //    {
-        //        DATE_DATPHONG.Value = DateTime.Now;
-        //        DATE_DATPHONG.Enabled = false;
-        //    }    
-        //    else
-        //    {
-        //        DATE_DATPHONG.Enabled = true;
-        //    }    
-        //}
+        //-----------------------------------------------------------------------------------------------------
     }
 }

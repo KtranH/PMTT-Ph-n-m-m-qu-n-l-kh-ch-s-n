@@ -40,6 +40,10 @@ namespace BLL
         {
             return db.FindPhongEmpty(find, phong);
         }
+        public PHONG GetFindPhongByName(string name)
+        {
+            return db.FindPhongByName(name);
+        }
         public bool Themphong(PHONG p)
         {
             return db.Themphong(p);
