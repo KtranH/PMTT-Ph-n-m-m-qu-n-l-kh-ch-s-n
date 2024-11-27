@@ -13,7 +13,7 @@ namespace DAL
         public LOAIPHONG_DAL() { }
         public List<LOAIPHONG> GetAllLoaiPhong()
         {
-            return db.LOAIPHONGs.ToList();
+            return db.LOAIPHONGs.Where(lp => lp.ISDELETED == false).ToList();
         }
         public List<HINHLOAIPHONG> HinhLoaiPhong(int ID)
         {

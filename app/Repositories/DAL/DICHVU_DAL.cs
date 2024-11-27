@@ -32,21 +32,27 @@ namespace DAL
                 return false;
             }
         }
-        public bool CapNhat(int pCN, string t, string mt, decimal gia)
-        { 
-            DICHVU _CapNhat = db.DICHVUs.Where(mh => mh.ID == pCN).FirstOrDefault();
-            if (_CapNhat != null)
+        public void UpdateDichVu(DICHVU dichVu)
+        {
+            var serviceToUpdate = db.DICHVUs.FirstOrDefault(dv => dv.ID == dichVu.ID);
+            if (serviceToUpdate != null)
             {
-                _CapNhat.TENDICHVU = t;
-                _CapNhat.MOTA = mt;
-                _CapNhat.GIA = gia;
+                serviceToUpdate.TENDICHVU = dichVu.TENDICHVU;
+                serviceToUpdate.GIA = dichVu.GIA;
+                serviceToUpdate.MOTA = dichVu.MOTA;
 
                 db.SaveChanges();
-                return true;
             }
-            else
+        }
+
+        public void DeleteDichVu(int id)
+        {
+            var serviceToDelete = db.DICHVUs.FirstOrDefault(dv => dv.ID == id);
+            if (serviceToDelete != null)
             {
-                return false;
+                serviceToDelete.ISDELETED = true;
+
+                db.SaveChanges();
             }
         }
     }
