@@ -40,6 +40,39 @@ namespace GUI.TaiNguyen_GUI.Phong_GUI
             combox_LoaiPhong.ValueMember = "ID";
         }
         //-----------------------------------------------------------------------------------------------------
+        //Xử lý logic
+        public void LockControl()
+        {
+            Textbox_TenLoaiPhong.Enabled = false;
+            Textbox_MoTa.Enabled = false;
+            Textbox_SucChua.Enabled = false;
+            Textbox_GiaThue.Enabled = false;
+            Textbox_QuyDinh.Enabled = false;
+            Textbox_NoiThat.Enabled = false;
+            Textbox_TienIch.Enabled = false;
+            Button_Luu.Enabled = false;
+        }
+
+        public void UnlockControl()
+        {
+            Textbox_TenLoaiPhong.ReadOnly = false;
+            Textbox_MoTa.ReadOnly = false;
+            Textbox_SucChua.ReadOnly = false;
+            Textbox_GiaThue.ReadOnly = false;
+            Textbox_QuyDinh.ReadOnly = false;
+            Textbox_NoiThat.ReadOnly = false;
+            Textbox_TienIch.ReadOnly = false;
+
+            Textbox_TenLoaiPhong.Enabled = true;
+            Textbox_MoTa.Enabled = true;
+            Textbox_SucChua.Enabled = true;
+            Textbox_GiaThue.Enabled = true;
+            Textbox_QuyDinh.Enabled = true;
+            Textbox_NoiThat.Enabled = true;
+            Textbox_TienIch.Enabled = true;
+            Button_Luu.Enabled = true;
+        }
+        //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------
         //Thêm ảnh từ R2
         public async void LoadImage(int ID)
