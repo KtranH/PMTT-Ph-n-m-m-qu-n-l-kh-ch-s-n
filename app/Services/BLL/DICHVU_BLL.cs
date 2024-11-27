@@ -20,5 +20,15 @@ namespace BLL
         {
             return db.FindDichVu(find);
         }
+        public bool ThemDichVu(DICHVU P)
+        {
+            return db.ThemDichVu(P);
+        }
+
+        public bool CapNhat(int pCN, string t, string mt, decimal gia)
+        {
+
+            return db.CapNhat(pCN, t, mt, gia);
+        }
     }
 }

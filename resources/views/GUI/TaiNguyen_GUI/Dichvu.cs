@@ -17,7 +17,8 @@ namespace QLKS
     public partial class Dichvu : Form
     {
         public DICHVU_BLL db = new DICHVU_BLL();
-        
+        private bool isAddingNewItem = true;
+
         public string UserCurrentDV { get; set; }
         public Dichvu()
         {
@@ -117,19 +118,110 @@ namespace QLKS
                 TextBox_Find_TenDichVu.Text = "Tìm kiếm dịch vụ";
             }    
         }
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //THêm dịch vụ
+        void Them()
+        {
 
+            if (string.IsNullOrEmpty(Textbox_TenDichVu.Text) || string.IsNullOrEmpty(Textbox_MoTa.Text) || !decimal.TryParse(Textbox_GiaDichVu.Text, out decimal giaThue) || giaThue <= 0)
+            {
+                MessageBox.Show("Điền đầy đủ thông tin dịch vụ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            DICHVU dv = new DICHVU();
+            dv.TENDICHVU = Textbox_TenDichVu.Text;
+            dv.GIA = giaThue;
+            dv.MOTA = Textbox_MoTa.Text;
+            if (db.ThemDichVu(dv))
+            {
+                MessageBox.Show("Thêm dịch vụ thành công");
+                loadDV();
+            }
+            else
+            {
+                MessageBox.Show("Thêm không thành công");
+            }
+        }
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Xử lí nút thêm
         private void BTN_THEMDV_Click(object sender, EventArgs e)
         {
-            
+            isAddingNewItem = true;
+            LoadEnable();
+            resetBox();
         }
 
+        void LoadEnable()
+        {
+            Textbox_TenDichVu.Enabled = true;
+            Textbox_GiaDichVu.Enabled=true;
+            Textbox_MoTa.Enabled=true;
+            Combox_TinhTrang.Enabled=true;
+
+            Textbox_TenDichVu.ReadOnly= false;
+            Textbox_GiaDichVu.ReadOnly = false;
+            Textbox_MoTa.ReadOnly=false;
+        }
+        void resetBox()
+        {
+            Textbox_TenDichVu.Clear();
+            Textbox_GiaDichVu.Clear();
+            Textbox_MoTa.Clear();
+        }
+
+
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Cập nhật dịch vụ
+        void capnhat()
+        {
+            string text = Textbox_TenDichVu.Text;
+            string mt = Textbox_MoTa.Text;
+            decimal gia = decimal.Parse(Textbox_GiaDichVu.Text);
+            int pma = int.Parse(Data_DichVu.CurrentRow.Cells[0].Value.ToString());
+            if (string.IsNullOrEmpty(Textbox_TenDichVu.Text) || string.IsNullOrEmpty(Textbox_MoTa.Text) || !decimal.TryParse(Textbox_GiaDichVu.Text, out decimal giaThue) || giaThue <= 0)
+            {
+                MessageBox.Show("Điền đầy đủ thông tin dịch vụ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (db.CapNhat(pma, text, mt, gia))
+            {
+                MessageBox.Show("Cập nhật thành công");
+                loadDV();
+            }
+            else
+            {
+                MessageBox.Show("Cập nhật không thành công");
+            }
+        }
+
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Xử lí nút cập nhật
         private void BTN_UPDATEDV_Click(object sender, EventArgs e)
         {
-          
+            isAddingNewItem = false;
+            LoadEnable();
+            
         }
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Xử lí nút lưu
         private void BTN_SAVEDV_Click(object sender, EventArgs e)
         {
-          
+            if (isAddingNewItem)
+            {
+               
+                Them();
+                
+            }
+            else
+            {            
+                capnhat();
+              
+            }
         }
         private void TEXT_GIADV_KeyPress(object sender, KeyPressEventArgs e)
         {

@@ -259,7 +259,7 @@
           <Property Name="created_at" Type="datetime" />
           <Property Name="updated_at" Type="datetime" />
         </EntityType>
-        <Association Name="FK__CHITIETPH__KHACH__17F790F9">
+        <Association Name="FK__CHITIETPH__KHACH__6754599E">
           <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
           <End Role="CHITIETPHIEUNHANPHONG" Type="Self.CHITIETPHIEUNHANPHONG" Multiplicity="*" />
           <ReferentialConstraint>
@@ -271,7 +271,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CHITIETPH__PHIEU__17036CC0">
+        <Association Name="FK__CHITIETPH__PHIEU__68487DD7">
           <End Role="PHIEUNHANPHONG" Type="Self.PHIEUNHANPHONG" Multiplicity="1" />
           <End Role="CHITIETPHIEUNHANPHONG" Type="Self.CHITIETPHIEUNHANPHONG" Multiplicity="*" />
           <ReferentialConstraint>
@@ -283,7 +283,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CHITIETTR__DICHV__5CD6CB2B">
+        <Association Name="FK__CHITIETTR__DICHV__693CA210">
           <End Role="DICHVU" Type="Self.DICHVU" Multiplicity="1" />
           <End Role="CHITIETTRAPHONG" Type="Self.CHITIETTRAPHONG" Multiplicity="*" />
           <ReferentialConstraint>
@@ -295,7 +295,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CHITIETTR__PHIEU__5BE2A6F2">
+        <Association Name="FK__CHITIETTR__PHIEU__6A30C649">
           <End Role="PHIEUTRAPHONG" Type="Self.PHIEUTRAPHONG" Multiplicity="1" />
           <End Role="CHITIETTRAPHONG" Type="Self.CHITIETTRAPHONG" Multiplicity="*" />
           <ReferentialConstraint>
@@ -307,7 +307,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DANHGIA__KHACHHA__6FE99F9F">
+        <Association Name="FK__DANHGIA__KHACHHA__6B24EA82">
           <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="0..1" />
           <End Role="DANHGIA" Type="Self.DANHGIA" Multiplicity="*" />
           <ReferentialConstraint>
@@ -319,7 +319,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DANHGIA__PHIEUTR__6EF57B66">
+        <Association Name="FK__DANHGIA__PHIEUTR__6C190EBB">
           <End Role="PHIEUTRAPHONG" Type="Self.PHIEUTRAPHONG" Multiplicity="0..1" />
           <End Role="DANHGIA" Type="Self.DANHGIA" Multiplicity="*" />
           <ReferentialConstraint>
@@ -331,7 +331,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__GIOHANG__KHACHHA__45F365D3">
+        <Association Name="FK__GIOHANG__KHACHHA__6D0D32F4">
           <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
           <End Role="GIOHANG" Type="Self.GIOHANG" Multiplicity="*" />
           <ReferentialConstraint>
@@ -343,7 +343,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__GIOHANG__LOAIPHO__46E78A0C">
+        <Association Name="FK__GIOHANG__LOAIPHO__6E01572D">
           <End Role="LOAIPHONG" Type="Self.LOAIPHONG" Multiplicity="1" />
           <End Role="GIOHANG" Type="Self.GIOHANG" Multiplicity="*" />
           <ReferentialConstraint>
@@ -355,7 +355,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__HINHLOAIP__LOAIP__403A8C7D">
+        <Association Name="FK__HINHLOAIP__LOAIP__6EF57B66">
           <End Role="LOAIPHONG" Type="Self.LOAIPHONG" Multiplicity="1" />
           <End Role="HINHLOAIPHONG" Type="Self.HINHLOAIPHONG" Multiplicity="*" />
           <ReferentialConstraint>
@@ -367,7 +367,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PHIEUDATP__LOAIP__49C3F6B7">
+        <Association Name="FK__PHIEUDATP__LOAIP__6FE99F9F">
           <End Role="LOAIPHONG" Type="Self.LOAIPHONG" Multiplicity="0..1" />
           <End Role="PHIEUDATPHONG" Type="Self.PHIEUDATPHONG" Multiplicity="*" />
           <ReferentialConstraint>
@@ -379,7 +379,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PHIEUNHAN__NHANV__4CA06362">
+        <Association Name="FK__PHIEUNHAN__NHANV__71D1E811">
           <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="0..1" />
           <End Role="PHIEUNHANPHONG" Type="Self.PHIEUNHANPHONG" Multiplicity="*" />
           <ReferentialConstraint>
@@ -391,7 +391,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PHIEUNHAN__PHIEU__4D94879B">
+        <Association Name="FK__PHIEUNHAN__PHIEU__72C60C4A">
           <End Role="PHIEUDATPHONG" Type="Self.PHIEUDATPHONG" Multiplicity="0..1" />
           <End Role="PHIEUNHANPHONG" Type="Self.PHIEUNHANPHONG" Multiplicity="*" />
           <ReferentialConstraint>
@@ -403,7 +403,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PHIEUNHAN__PHONG__4E88ABD4">
+        <Association Name="FK__PHIEUNHAN__PHONG__73BA3083">
           <End Role="PHONG" Type="Self.PHONG" Multiplicity="0..1" />
           <End Role="PHIEUNHANPHONG" Type="Self.PHIEUNHANPHONG" Multiplicity="*" />
           <ReferentialConstraint>
@@ -415,7 +415,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PHIEUTRAP__NHANV__5812160E">
+        <Association Name="FK__PHIEUTRAP__NHANV__74AE54BC">
           <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="0..1" />
           <End Role="PHIEUTRAPHONG" Type="Self.PHIEUTRAPHONG" Multiplicity="*" />
           <ReferentialConstraint>
@@ -427,7 +427,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PHIEUTRAP__PHIEU__59063A47">
+        <Association Name="FK__PHIEUTRAP__PHIEU__75A278F5">
           <End Role="PHIEUNHANPHONG" Type="Self.PHIEUNHANPHONG" Multiplicity="0..1" />
           <End Role="PHIEUTRAPHONG" Type="Self.PHIEUTRAPHONG" Multiplicity="*" />
           <ReferentialConstraint>
@@ -439,7 +439,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PHONG__LOAIPHONG__4316F928">
+        <Association Name="FK__PHONG__LOAIPHONG__76969D2E">
           <End Role="LOAIPHONG" Type="Self.LOAIPHONG" Multiplicity="0..1" />
           <End Role="PHONG" Type="Self.PHONG" Multiplicity="*" />
           <ReferentialConstraint>
@@ -487,67 +487,67 @@
           <EntitySet Name="sessions" EntityType="Self.sessions" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__CHITIETPH__KHACH__17F790F9" Association="Self.FK__CHITIETPH__KHACH__17F790F9">
+          <AssociationSet Name="FK__CHITIETPH__KHACH__6754599E" Association="Self.FK__CHITIETPH__KHACH__6754599E">
             <End Role="KHACHHANG" EntitySet="KHACHHANG" />
             <End Role="CHITIETPHIEUNHANPHONG" EntitySet="CHITIETPHIEUNHANPHONG" />
           </AssociationSet>
-          <AssociationSet Name="FK__CHITIETPH__PHIEU__17036CC0" Association="Self.FK__CHITIETPH__PHIEU__17036CC0">
+          <AssociationSet Name="FK__CHITIETPH__PHIEU__68487DD7" Association="Self.FK__CHITIETPH__PHIEU__68487DD7">
             <End Role="PHIEUNHANPHONG" EntitySet="PHIEUNHANPHONG" />
             <End Role="CHITIETPHIEUNHANPHONG" EntitySet="CHITIETPHIEUNHANPHONG" />
           </AssociationSet>
-          <AssociationSet Name="FK__CHITIETTR__DICHV__5CD6CB2B" Association="Self.FK__CHITIETTR__DICHV__5CD6CB2B">
+          <AssociationSet Name="FK__CHITIETTR__DICHV__693CA210" Association="Self.FK__CHITIETTR__DICHV__693CA210">
             <End Role="DICHVU" EntitySet="DICHVU" />
             <End Role="CHITIETTRAPHONG" EntitySet="CHITIETTRAPHONG" />
           </AssociationSet>
-          <AssociationSet Name="FK__CHITIETTR__PHIEU__5BE2A6F2" Association="Self.FK__CHITIETTR__PHIEU__5BE2A6F2">
+          <AssociationSet Name="FK__CHITIETTR__PHIEU__6A30C649" Association="Self.FK__CHITIETTR__PHIEU__6A30C649">
             <End Role="PHIEUTRAPHONG" EntitySet="PHIEUTRAPHONG" />
             <End Role="CHITIETTRAPHONG" EntitySet="CHITIETTRAPHONG" />
           </AssociationSet>
-          <AssociationSet Name="FK__DANHGIA__KHACHHA__6FE99F9F" Association="Self.FK__DANHGIA__KHACHHA__6FE99F9F">
+          <AssociationSet Name="FK__DANHGIA__KHACHHA__6B24EA82" Association="Self.FK__DANHGIA__KHACHHA__6B24EA82">
             <End Role="KHACHHANG" EntitySet="KHACHHANG" />
             <End Role="DANHGIA" EntitySet="DANHGIA" />
           </AssociationSet>
-          <AssociationSet Name="FK__DANHGIA__PHIEUTR__6EF57B66" Association="Self.FK__DANHGIA__PHIEUTR__6EF57B66">
+          <AssociationSet Name="FK__DANHGIA__PHIEUTR__6C190EBB" Association="Self.FK__DANHGIA__PHIEUTR__6C190EBB">
             <End Role="PHIEUTRAPHONG" EntitySet="PHIEUTRAPHONG" />
             <End Role="DANHGIA" EntitySet="DANHGIA" />
           </AssociationSet>
-          <AssociationSet Name="FK__GIOHANG__KHACHHA__45F365D3" Association="Self.FK__GIOHANG__KHACHHA__45F365D3">
+          <AssociationSet Name="FK__GIOHANG__KHACHHA__6D0D32F4" Association="Self.FK__GIOHANG__KHACHHA__6D0D32F4">
             <End Role="KHACHHANG" EntitySet="KHACHHANG" />
             <End Role="GIOHANG" EntitySet="GIOHANG" />
           </AssociationSet>
-          <AssociationSet Name="FK__GIOHANG__LOAIPHO__46E78A0C" Association="Self.FK__GIOHANG__LOAIPHO__46E78A0C">
+          <AssociationSet Name="FK__GIOHANG__LOAIPHO__6E01572D" Association="Self.FK__GIOHANG__LOAIPHO__6E01572D">
             <End Role="LOAIPHONG" EntitySet="LOAIPHONG" />
             <End Role="GIOHANG" EntitySet="GIOHANG" />
           </AssociationSet>
-          <AssociationSet Name="FK__HINHLOAIP__LOAIP__403A8C7D" Association="Self.FK__HINHLOAIP__LOAIP__403A8C7D">
+          <AssociationSet Name="FK__HINHLOAIP__LOAIP__6EF57B66" Association="Self.FK__HINHLOAIP__LOAIP__6EF57B66">
             <End Role="LOAIPHONG" EntitySet="LOAIPHONG" />
             <End Role="HINHLOAIPHONG" EntitySet="HINHLOAIPHONG" />
           </AssociationSet>
-          <AssociationSet Name="FK__PHIEUDATP__LOAIP__49C3F6B7" Association="Self.FK__PHIEUDATP__LOAIP__49C3F6B7">
+          <AssociationSet Name="FK__PHIEUDATP__LOAIP__6FE99F9F" Association="Self.FK__PHIEUDATP__LOAIP__6FE99F9F">
             <End Role="LOAIPHONG" EntitySet="LOAIPHONG" />
             <End Role="PHIEUDATPHONG" EntitySet="PHIEUDATPHONG" />
           </AssociationSet>
-          <AssociationSet Name="FK__PHIEUNHAN__NHANV__4CA06362" Association="Self.FK__PHIEUNHAN__NHANV__4CA06362">
+          <AssociationSet Name="FK__PHIEUNHAN__NHANV__71D1E811" Association="Self.FK__PHIEUNHAN__NHANV__71D1E811">
             <End Role="NHANVIEN" EntitySet="NHANVIEN" />
             <End Role="PHIEUNHANPHONG" EntitySet="PHIEUNHANPHONG" />
           </AssociationSet>
-          <AssociationSet Name="FK__PHIEUNHAN__PHIEU__4D94879B" Association="Self.FK__PHIEUNHAN__PHIEU__4D94879B">
+          <AssociationSet Name="FK__PHIEUNHAN__PHIEU__72C60C4A" Association="Self.FK__PHIEUNHAN__PHIEU__72C60C4A">
             <End Role="PHIEUDATPHONG" EntitySet="PHIEUDATPHONG" />
             <End Role="PHIEUNHANPHONG" EntitySet="PHIEUNHANPHONG" />
           </AssociationSet>
-          <AssociationSet Name="FK__PHIEUNHAN__PHONG__4E88ABD4" Association="Self.FK__PHIEUNHAN__PHONG__4E88ABD4">
+          <AssociationSet Name="FK__PHIEUNHAN__PHONG__73BA3083" Association="Self.FK__PHIEUNHAN__PHONG__73BA3083">
             <End Role="PHONG" EntitySet="PHONG" />
             <End Role="PHIEUNHANPHONG" EntitySet="PHIEUNHANPHONG" />
           </AssociationSet>
-          <AssociationSet Name="FK__PHIEUTRAP__NHANV__5812160E" Association="Self.FK__PHIEUTRAP__NHANV__5812160E">
+          <AssociationSet Name="FK__PHIEUTRAP__NHANV__74AE54BC" Association="Self.FK__PHIEUTRAP__NHANV__74AE54BC">
             <End Role="NHANVIEN" EntitySet="NHANVIEN" />
             <End Role="PHIEUTRAPHONG" EntitySet="PHIEUTRAPHONG" />
           </AssociationSet>
-          <AssociationSet Name="FK__PHIEUTRAP__PHIEU__59063A47" Association="Self.FK__PHIEUTRAP__PHIEU__59063A47">
+          <AssociationSet Name="FK__PHIEUTRAP__PHIEU__75A278F5" Association="Self.FK__PHIEUTRAP__PHIEU__75A278F5">
             <End Role="PHIEUNHANPHONG" EntitySet="PHIEUNHANPHONG" />
             <End Role="PHIEUTRAPHONG" EntitySet="PHIEUTRAPHONG" />
           </AssociationSet>
-          <AssociationSet Name="FK__PHONG__LOAIPHONG__4316F928" Association="Self.FK__PHONG__LOAIPHONG__4316F928">
+          <AssociationSet Name="FK__PHONG__LOAIPHONG__76969D2E" Association="Self.FK__PHONG__LOAIPHONG__76969D2E">
             <End Role="LOAIPHONG" EntitySet="LOAIPHONG" />
             <End Role="PHONG" EntitySet="PHONG" />
           </AssociationSet>
