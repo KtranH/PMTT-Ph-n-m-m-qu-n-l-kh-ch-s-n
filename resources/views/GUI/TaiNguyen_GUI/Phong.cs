@@ -123,20 +123,6 @@ namespace QLKS
         {
             Textbox_Find_Phong.Clear();
         }
-        private void FindKind_KeyDown(object sender, KeyEventArgs e)
-        {
-            
-        }
-
-        private void FindKind_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void FindKind_Leave(object sender, EventArgs e)
-        {
-           
-        }
         //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------
         //Xử lý nút thêm phòng
@@ -149,7 +135,7 @@ namespace QLKS
         }
         //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------
-        //Them phong
+        //Xử lý thêm thêm phòng
         void them()
         {
             if (string.IsNullOrEmpty(Textbox_TenPhong.Text) || string.IsNullOrEmpty(Textbox_ViTri.Text) )
@@ -172,7 +158,6 @@ namespace QLKS
                 MessageBox.Show("Thêm không thành công");
             }
         }
-
         void load()
         {
             Textbox_TenPhong.Enabled = true;
@@ -215,56 +200,6 @@ namespace QLKS
 
             }
 
-        }
-        //private void BTN_UPDATEROOM_Click(object sender, EventArgs e)
-        //{
-        //    int id = Combox_LoaiPhong.SelectedIndex;
-        //    string t;
-        //    t = Textbox_TenPhong.Text;
-        //   string vt = Textbox_ViTri.Text;
-        //    string tt = Combox_TinhTrang.Text;
-        //    load();
-        //    if(db.CapNhat(id, t, vt, tt))
-        //    {
-        //        MessageBox.Show("Sua thanh cong");
-        //        loadPhong();
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Sua khong thanh cong");
-        //    }
-        //}
-
-        private void TEXT_GIA_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true; 
-            }
-        }
-        private void TEXT_SUCCHUA_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true; 
-            }
-        }
-
-        private void BTN_THEMLOAI_Click(object sender, EventArgs e)
-        {
-           
-        }
-        private void DT_DS_LOAI_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-           
-        }
-        private void BTN_SAVEKIND_Click(object sender, EventArgs e)
-        {
-           
-        }
-        private void BTN_UPDATEKIND_Click(object sender, EventArgs e)
-        {
-           
         }
         //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------

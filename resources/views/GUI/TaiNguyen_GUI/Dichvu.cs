@@ -82,30 +82,6 @@ namespace QLKS
                 loadDV();
             }    
         }
-        //-----------------------------------------------------------------------------------------------------
-        public void LockControl()
-        {
-            Textbox_GiaDichVu.Enabled = false;
-            Textbox_TenDichVu.Enabled = false;
-        }
-       
-        public void ConnectionControl(DataTable dt)
-        {
-            Textbox_TenDichVu.DataBindings.Clear();
-            Textbox_GiaDichVu.DataBindings.Clear();
-
-            MADV.DataBindings.Clear();
-
-            Textbox_TenDichVu.DataBindings.Add("Text",dt,"Tên dịch vụ");
-            Textbox_GiaDichVu.DataBindings.Add("Text",dt,"Giá dịch vụ");
-
-            MADV.DataBindings.Add("Text", dt, "Mã dịch vụ");
-        }
-        private void FindDV_KeyDown(object sender, KeyEventArgs e)
-        {
-            
-        }
-
         private void FindDV_Click(object sender, EventArgs e)
         {
             TextBox_Find_TenDichVu.Clear();
@@ -113,10 +89,10 @@ namespace QLKS
 
         private void FindDV_Leave(object sender, EventArgs e)
         {
-            if(TextBox_Find_TenDichVu.Text.Trim() == "")
+            if (TextBox_Find_TenDichVu.Text.Trim() == "")
             {
                 TextBox_Find_TenDichVu.Text = "Tìm kiếm dịch vụ";
-            }    
+            }
         }
         //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------
@@ -170,8 +146,6 @@ namespace QLKS
             Textbox_GiaDichVu.Clear();
             Textbox_MoTa.Clear();
         }
-
-
         //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------
         //Cập nhật dịch vụ
@@ -196,7 +170,6 @@ namespace QLKS
                 MessageBox.Show("Cập nhật không thành công");
             }
         }
-
         //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------
         //Xử lí nút cập nhật
@@ -230,5 +203,6 @@ namespace QLKS
                 e.Handled = true; 
             }
         }
+        //-----------------------------------------------------------------------------------------------------
     }
 }

@@ -24,9 +24,6 @@ namespace GUI.TaiNguyen_GUI.Phong_GUI
         {
             InitializeComponent();
         }
-
-        
-
         private void LoaiPhong_Load(object sender, EventArgs e)
         {
             ShowImage.Padding = new Padding(10);
@@ -266,13 +263,12 @@ namespace GUI.TaiNguyen_GUI.Phong_GUI
         //Xử lý Xóa
         private void Button_Xoa_Click(object sender, EventArgs e)
         {
+
         }
         
         private void Button_CapNhat_Click(object sender, EventArgs e)
         {
-        }
 
-  
-        
+        }
     }
 }

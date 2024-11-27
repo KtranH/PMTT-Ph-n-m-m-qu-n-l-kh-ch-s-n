@@ -41,6 +41,8 @@ namespace QLKS
             this.Data_DichVu = new Guna.UI2.WinForms.Guna2DataGridView();
             this.Button_ThemDichVu = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.Combox_TinhTrang = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.Textbox_MoTa = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -49,8 +51,6 @@ namespace QLKS
             this.Textbox_GiaDichVu = new Guna.UI2.WinForms.Guna2TextBox();
             this.Textbox_TenDichVu = new Guna.UI2.WinForms.Guna2TextBox();
             this.Button_CapNhat = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.Combox_TinhTrang = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Data_DichVu)).BeginInit();
             this.guna2GroupBox2.SuspendLayout();
@@ -128,7 +128,6 @@ namespace QLKS
             this.TextBox_Find_TenDichVu.TabIndex = 22;
             this.TextBox_Find_TenDichVu.TextChanged += new System.EventHandler(this.TextBox_Find_TenDichVu_TextChanged);
             this.TextBox_Find_TenDichVu.Click += new System.EventHandler(this.FindDV_Click);
-            this.TextBox_Find_TenDichVu.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FindDV_KeyDown);
             this.TextBox_Find_TenDichVu.Leave += new System.EventHandler(this.FindDV_Leave);
             // 
             // Data_DichVu
@@ -225,6 +224,35 @@ namespace QLKS
             this.guna2GroupBox2.Name = "guna2GroupBox2";
             this.guna2GroupBox2.Size = new System.Drawing.Size(601, 411);
             this.guna2GroupBox2.TabIndex = 1;
+            // 
+            // Combox_TinhTrang
+            // 
+            this.Combox_TinhTrang.BackColor = System.Drawing.Color.Transparent;
+            this.Combox_TinhTrang.BorderColor = System.Drawing.Color.White;
+            this.Combox_TinhTrang.BorderRadius = 15;
+            this.Combox_TinhTrang.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.Combox_TinhTrang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Combox_TinhTrang.Enabled = false;
+            this.Combox_TinhTrang.FillColor = System.Drawing.SystemColors.Control;
+            this.Combox_TinhTrang.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Combox_TinhTrang.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Combox_TinhTrang.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.Combox_TinhTrang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.Combox_TinhTrang.ItemHeight = 35;
+            this.Combox_TinhTrang.Location = new System.Drawing.Point(38, 282);
+            this.Combox_TinhTrang.Name = "Combox_TinhTrang";
+            this.Combox_TinhTrang.Size = new System.Drawing.Size(528, 41);
+            this.Combox_TinhTrang.TabIndex = 32;
+            // 
+            // guna2HtmlLabel3
+            // 
+            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(38, 254);
+            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(74, 22);
+            this.guna2HtmlLabel3.TabIndex = 31;
+            this.guna2HtmlLabel3.Text = "Tình trạng";
             // 
             // guna2HtmlLabel2
             // 
@@ -378,35 +406,6 @@ namespace QLKS
             this.Button_CapNhat.TabIndex = 22;
             this.Button_CapNhat.Text = "  Cập nhật dịch vụ";
             this.Button_CapNhat.Click += new System.EventHandler(this.BTN_UPDATEDV_Click);
-            // 
-            // guna2HtmlLabel3
-            // 
-            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(38, 254);
-            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(74, 22);
-            this.guna2HtmlLabel3.TabIndex = 31;
-            this.guna2HtmlLabel3.Text = "Tình trạng";
-            // 
-            // Combox_TinhTrang
-            // 
-            this.Combox_TinhTrang.BackColor = System.Drawing.Color.Transparent;
-            this.Combox_TinhTrang.BorderColor = System.Drawing.Color.White;
-            this.Combox_TinhTrang.BorderRadius = 15;
-            this.Combox_TinhTrang.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.Combox_TinhTrang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Combox_TinhTrang.Enabled = false;
-            this.Combox_TinhTrang.FillColor = System.Drawing.SystemColors.Control;
-            this.Combox_TinhTrang.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Combox_TinhTrang.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Combox_TinhTrang.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.Combox_TinhTrang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.Combox_TinhTrang.ItemHeight = 35;
-            this.Combox_TinhTrang.Location = new System.Drawing.Point(38, 282);
-            this.Combox_TinhTrang.Name = "Combox_TinhTrang";
-            this.Combox_TinhTrang.Size = new System.Drawing.Size(528, 41);
-            this.Combox_TinhTrang.TabIndex = 32;
             // 
             // Dichvu
             // 
