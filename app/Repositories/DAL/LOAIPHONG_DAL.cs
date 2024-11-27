@@ -51,24 +51,34 @@ namespace DAL
             }
 
         }
-        public bool CapNhatLoaiPhong(int pCN, string t, int sc, decimal gia, string qd, string nt, string mt)
+        public bool UpdateLoaiPhong(LOAIPHONG loaiPhong)
         {
+            var existingLoaiPhong = db.LOAIPHONGs.FirstOrDefault(lp => lp.ID == loaiPhong.ID);
 
-            LOAIPHONG _CapNhat = db.LOAIPHONGs.Where(mh => mh.ID == pCN).FirstOrDefault();
-            if (_CapNhat != null)
+            if (existingLoaiPhong != null)
             {
-                _CapNhat.TENLOAIPHONG = t;
-                _CapNhat.SUCCHUA = sc;
-                _CapNhat.MOTA = mt;
-                _CapNhat.GIATHUE = gia;
-                _CapNhat.QUYDINH = qd;
-                _CapNhat.NOITHAT = nt;
+                existingLoaiPhong.TENLOAIPHONG = loaiPhong.TENLOAIPHONG;
+                existingLoaiPhong.MOTA = loaiPhong.MOTA;
+                existingLoaiPhong.SUCCHUA = loaiPhong.SUCCHUA;
+                existingLoaiPhong.GIATHUE = loaiPhong.GIATHUE;
+                existingLoaiPhong.QUYDINH = loaiPhong.QUYDINH;
+                existingLoaiPhong.NOITHAT = loaiPhong.NOITHAT;
+                existingLoaiPhong.TIENICH = loaiPhong.TIENICH;
+                existingLoaiPhong.ISDELETED = loaiPhong.ISDELETED;
+
                 db.SaveChanges();
                 return true;
             }
-            else
+            return false;
+        }
+        public void DeleteLoaiPhong(int id)
+        {
+            var loaiPhong = db.LOAIPHONGs.FirstOrDefault(lp => lp.ID == id);
+
+            if (loaiPhong != null)
             {
-                return false;
+                loaiPhong.ISDELETED = true;
+                db.SaveChanges();
             }
         }
     }
