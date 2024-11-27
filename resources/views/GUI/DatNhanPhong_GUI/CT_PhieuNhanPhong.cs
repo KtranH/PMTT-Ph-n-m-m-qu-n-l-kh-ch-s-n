@@ -21,6 +21,10 @@ namespace QLKS
         public string tenPhong { get; set; }
         public string dateNhan { get; set; }
         public string dateTra { get; set; }
+        public string idKH { get; set; }
+
+        KHACHHANG kh = new KHACHHANG();
+        List<KHACHHANG> listKhIn = new List<KHACHHANG>();
         public CT_PhieuNhanPhong()
         {
             InitializeComponent();
@@ -29,7 +33,19 @@ namespace QLKS
         {
             LoadDataPhong();
             LoadDataKH();
+
+            DateTime CheckinDate = DateTime.Parse(this.dateNhan);
+            DateTime CheckoutDate = DateTime.Parse(this.dateTra);
+            Label_ThoiGian.Text = $"Thời gian nhận phòng từ {CheckinDate.ToString("dd/MM/yyyy")} đến {CheckoutDate.ToString("dd/MM/yyyy")}. Tổng cộng: {CalcSoNgayThue(CheckinDate, CheckoutDate)} ngày";
         }
+        //-----------------------------------------------------------------------------------------------------
+        //Tính toán số ngày thuê
+        public int CalcSoNgayThue(DateTime ngayNhan, DateTime ngayTra)
+        {
+            int soNgayThue = (ngayTra - ngayNhan).Days;
+            return soNgayThue;
+        }    
+        //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------
         //Lấy dữ liệu phòng vào text
         public void LoadDataPhong()
@@ -77,6 +93,8 @@ namespace QLKS
                 TEXT_TENKH.Text = row.Cells[1].Value.ToString();
                 TEXT_SDT.Text = row.Cells[2].Value.ToString();
                 TEXT_CCCD.Text = row.Cells[3].Value.ToString();
+
+                this.idKH = row.Cells[0].Value.ToString();
             }
         }
         //-----------------------------------------------------------------------------------------------------
@@ -123,6 +141,49 @@ namespace QLKS
             }
         }
         //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Xử lý khi thêm khách hàng vào phiếu nhận phòng
+        private void BTN_THEM_Click(object sender, EventArgs e)
+        {
+            if(TEXT_CCCD.Text.Trim() == "" || TEXT_SDT.Text.Trim() == "" || TEXT_TENKH.Text.Trim() == "")
+            {
+                MessageBox.Show("Không có khách hàng nào để thêm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if(TEXT_CCCD.Text.Trim().Contains("Chưa rõ") || TEXT_SDT.Text.Trim().Contains("Chưa rõ"))
+            {
+                MessageBox.Show("Vui lòng nhập dữ liệu cho khách hàng", " thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                kh = dbKH.GetFindKhachHangByID(Int32.Parse(this.idKH));
+                if(kh.CCCD != TEXT_CCCD.Text.Trim() || kh.SDT != TEXT_SDT.Text.Trim())
+                {
+                    DialogResult result = new DialogResult();
+                    result = MessageBox.Show("Phát hiện sự thay đổi thông tin khách hàng. Bạn có muốn thay đổi không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if(result == DialogResult.Yes)
+                    {
+                        kh.CCCD = TEXT_CCCD.Text.Trim();
+                        kh.SDT = TEXT_SDT.Text.Trim();
+
+                        InsertKH2DT_DS_KH(kh);
+                    }    
+                }
+                else
+                {
+                    InsertKH2DT_DS_KH(kh);
+                }    
+            }    
+        }
+        public void InsertKH2DT_DS_KH(KHACHHANG kh)
+        {
+            listKhIn.Add(kh);
+            DT_DS_KH.DataSource = listKhIn.Select(p => new { p.ID, p.HOTEN, p.SDT, p.CCCD }).ToList();
+            DT_DS_KH.Columns[0].HeaderText = "Mã khách hàng";
+            DT_DS_KH.Columns[1].HeaderText = "Họ tên";
+            DT_DS_KH.Columns[2].HeaderText = "Số điện thoại";
+            DT_DS_KH.Columns[3].HeaderText = "Căn cước công dân";
+        }    
+        //-----------------------------------------------------------------------------------------------------
         private void BTN_XACNHAN_Click(object sender, EventArgs e)
         {
 
@@ -144,10 +205,6 @@ namespace QLKS
         private void BTN_HOANTAT_Click(object sender, EventArgs e)
         {
           
-        }
-        private void BTN_THEM_Click(object sender, EventArgs e)
-        {
-            
         }
         private void BTN_CHINHSUA_Click(object sender, EventArgs e)
         {

@@ -39,11 +39,14 @@ namespace QLKS
         //Xử lý khi ấn vào nút trang chủ
         private void BTN_TRANGCHU_Click(object sender, EventArgs e)
         {
-            TrangChinh Home = new TrangChinh() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            Home.userCurrent = this.userCurrent;
-            this.ConvertForm.Controls.Clear();
-            this.ConvertForm.Controls.Add(Home);
-            Home.Show();
+            if(ConfirmToMove())
+            {
+                TrangChinh Home = new TrangChinh() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                Home.userCurrent = this.userCurrent;
+                this.ConvertForm.Controls.Clear();
+                this.ConvertForm.Controls.Add(Home);
+                Home.Show();
+            }
         }
         //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------
@@ -62,9 +65,12 @@ namespace QLKS
         //Xử lý khi ấn nút thoát
         private void BtnExit_Click(object sender, EventArgs e)
         {
-            DangNhap LoginForm = new DangNhap();
-            this.Hide();
-            LoginForm.ShowDialog();
+           if(ConfirmToMove())
+            {
+                DangNhap LoginForm = new DangNhap();
+                this.Hide();
+                LoginForm.ShowDialog();
+            }    
         }
         //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------
@@ -100,30 +106,39 @@ namespace QLKS
         //Xử lý khi ấn vào danh sách loại phòng
         private void DS_LoaiPhong_Click(object sender, EventArgs e)
         {
-            LoaiPhong OpenLoaiPhong = new LoaiPhong() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            this.ConvertForm.Controls.Clear();
-            this.ConvertForm.Controls.Add(OpenLoaiPhong);
-            OpenLoaiPhong.Show();
+           if(ConfirmToMove())
+            {
+                LoaiPhong OpenLoaiPhong = new LoaiPhong() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                this.ConvertForm.Controls.Clear();
+                this.ConvertForm.Controls.Add(OpenLoaiPhong);
+                OpenLoaiPhong.Show();
+            }    
         }
         //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------
         //Xử lý khi ấn vào nút phòng
         private void DanhSachPhong_Click(object sender, EventArgs e)
         {
-            Phong OpenPhong = new Phong() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            this.ConvertForm.Controls.Clear();
-            this.ConvertForm.Controls.Add(OpenPhong);
-            OpenPhong.Show();
+            if(ConfirmToMove())
+            {
+                Phong OpenPhong = new Phong() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                this.ConvertForm.Controls.Clear();
+                this.ConvertForm.Controls.Add(OpenPhong);
+                OpenPhong.Show();
+            }    
         }
         //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------
         //Xử lý khi ấn vào nút dịch vụ
         private void DanhSachDichVu_Click(object sender, EventArgs e)
         {
-            Dichvu openDichVu = new Dichvu() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            this.ConvertForm.Controls.Clear();
-            this.ConvertForm.Controls.Add(openDichVu);
-            openDichVu.Show();
+           if(ConfirmToMove())
+           {
+                Dichvu openDichVu = new Dichvu() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                this.ConvertForm.Controls.Clear();
+                this.ConvertForm.Controls.Add(openDichVu);
+                openDichVu.Show();
+           }    
         }
         //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------
@@ -160,21 +175,27 @@ namespace QLKS
         //Xử lý khi ấn vào nút nhận phòng
         private void DanhSachNhanPhong_Click(object sender, EventArgs e)
         {
-            NhanPhong OpenNhanPhong = new NhanPhong() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            OpenNhanPhong.UserCurrentNhanPhong = this.userCurrent.ID.ToString();
-            this.ConvertForm.Controls.Clear();
-            this.ConvertForm.Controls.Add(OpenNhanPhong);
-            OpenNhanPhong.Show();
+            if(ConfirmToMove())
+            {
+                NhanPhong OpenNhanPhong = new NhanPhong() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                OpenNhanPhong.UserCurrentNhanPhong = this.userCurrent.ID.ToString();
+                this.ConvertForm.Controls.Clear();
+                this.ConvertForm.Controls.Add(OpenNhanPhong);
+                OpenNhanPhong.Show();
+            }    
         }
         //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------
         //Xử lý khi ấn vào nút đặt phòng
         private void DanhSachDatPhong_Click(object sender, EventArgs e)
         {
-            DatPhong OpenDatPhong = new DatPhong() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            this.ConvertForm.Controls.Clear();
-            this.ConvertForm.Controls.Add(OpenDatPhong);
-            OpenDatPhong.Show();
+            if(ConfirmToMove())
+            {
+                DatPhong OpenDatPhong = new DatPhong() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                this.ConvertForm.Controls.Clear();
+                this.ConvertForm.Controls.Add(OpenDatPhong);
+                OpenDatPhong.Show();
+            }    
         }
         //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------
@@ -210,11 +231,14 @@ namespace QLKS
         //Xử lý khi ấn vào nút thanh toán trả phòng
         private void BTN_THANHTOANHD_Click(object sender, EventArgs e)
         {
-            HoaDon ThanhToanHD = new HoaDon() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            //ThanhToanHD.UserCurrentBill = UserCurrent;
-            this.ConvertForm.Controls.Clear();
-            this.ConvertForm.Controls.Add(ThanhToanHD);
-            ThanhToanHD.Show();
+            if(ConfirmToMove())
+            {
+                HoaDon ThanhToanHD = new HoaDon() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                //ThanhToanHD.UserCurrentBill = UserCurrent;
+                this.ConvertForm.Controls.Clear();
+                this.ConvertForm.Controls.Add(ThanhToanHD);
+                ThanhToanHD.Show();
+            }    
         }
         //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------
@@ -251,10 +275,13 @@ namespace QLKS
         //Xử lý khi ấn vào nút nhân viên
         private void BTN_NHANVIEN_Click(object sender, EventArgs e)
         {
-            NhanVien NV = new NhanVien() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            this.ConvertForm.Controls.Clear();
-            this.ConvertForm.Controls.Add(NV);
-            NV.Show();
+           if(ConfirmToMove())
+           {
+                NhanVien NV = new NhanVien() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                this.ConvertForm.Controls.Clear();
+                this.ConvertForm.Controls.Add(NV);
+                NV.Show();
+           }    
         }
         //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------
@@ -290,30 +317,58 @@ namespace QLKS
         //Xử lý khi ấn vào nút khách hàng
         private void BTN_KHACHHANG_Click(object sender, EventArgs e)
         {
-            KhachHang KH = new KhachHang() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            this.ConvertForm.Controls.Clear();
-            this.ConvertForm.Controls.Add(KH);
-            KH.Show();
+            if(ConfirmToMove())
+            {
+                KhachHang KH = new KhachHang() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                this.ConvertForm.Controls.Clear();
+                this.ConvertForm.Controls.Add(KH);
+                KH.Show();
+            }    
         }
         //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------
         //Xử lý khi ấn vào nút nhận phòng
         private void BTN_PDP_Click(object sender, EventArgs e)
         {
-            TT_PDP PDP = new TT_PDP() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            this.ConvertForm.Controls.Clear();
-            this.ConvertForm.Controls.Add(PDP);
-            PDP.Show();
+           if(ConfirmToMove())
+           {
+                TT_PDP PDP = new TT_PDP() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                this.ConvertForm.Controls.Clear();
+                this.ConvertForm.Controls.Add(PDP);
+                PDP.Show();
+           }    
         }
         //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------
         //Xử lý khi ấn vào nút trả phòng
         private void BTN_HOADON_Click(object sender, EventArgs e)
         {
-            TT_HD HD = new TT_HD() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            this.ConvertForm.Controls.Clear();
-            this.ConvertForm.Controls.Add(HD);
-            HD.Show();
+            if(ConfirmToMove() )
+            {
+                TT_HD HD = new TT_HD() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                this.ConvertForm.Controls.Clear();
+                this.ConvertForm.Controls.Add(HD);
+                HD.Show();
+            }
+        }
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Xử lý xác nhận khi chuyển form
+        public bool ConfirmToMove()
+        {
+            DialogResult result = MessageBox.Show(
+               "Bạn có chắc chắn muốn chuyển sang mục khác?. Dữ liệu hiện tại có thể mất đi",
+               "Xác nhận",
+               MessageBoxButtons.YesNo,
+               MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }    
         }
         //-----------------------------------------------------------------------------------------------------
     }

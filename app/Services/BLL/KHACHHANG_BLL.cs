@@ -20,5 +20,9 @@ namespace BLL
         {
             return db.FindKhachHang(find);
         }
+        public KHACHHANG GetFindKhachHangByID(int id)
+        {
+            return db.FindKhachHangByID(id);
+        }
     }
 }

@@ -19,5 +19,9 @@ namespace DAL
         {
             return db.KHACHHANGs.Where(p => p.HOTEN.Contains(find) || p.EMAIL.Contains(find) || p.SDT.Contains(find)).ToList();
         }
+        public KHACHHANG FindKhachHangByID(int ID)
+        {
+            return db.KHACHHANGs.Where(p => p.ID == ID).FirstOrDefault();
+        }    
     }
 }
