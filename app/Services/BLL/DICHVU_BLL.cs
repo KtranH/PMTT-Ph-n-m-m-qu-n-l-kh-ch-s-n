@@ -28,5 +28,10 @@ namespace BLL
         {
             return db.CapNhat(pCN, t, mt, gia);
         }
+        public bool KTTrung(string pDichvu)
+        {
+            return db.KTTrung(pDichvu);
+        }
+
     }
 }

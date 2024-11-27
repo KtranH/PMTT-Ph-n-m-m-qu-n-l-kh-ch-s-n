@@ -99,6 +99,11 @@ namespace QLKS
         //THêm dịch vụ
         void Them()
         {
+            if(db.KTTrung(Textbox_TenDichVu.Text))
+            {
+                MessageBox.Show("Tên dịch vụ bị trùng", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }    
 
             if (string.IsNullOrEmpty(Textbox_TenDichVu.Text) || string.IsNullOrEmpty(Textbox_MoTa.Text) || !decimal.TryParse(Textbox_GiaDichVu.Text, out decimal giaThue) || giaThue <= 0)
             {

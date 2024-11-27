@@ -81,5 +81,18 @@ namespace DAL
                 db.SaveChanges();
             }
         }
+        public bool KTTrung(string pLoaiphong)
+        {
+            var ktkc = from k in db.LOAIPHONGs where k.TENLOAIPHONG == pLoaiphong select k;
+            if (ktkc.Count() > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
     }
 }

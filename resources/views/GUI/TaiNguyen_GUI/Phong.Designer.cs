@@ -53,6 +53,7 @@ namespace QLKS
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2AnimateWindow3 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
+            this.btn_Xoa = new Guna.UI2.WinForms.Guna2Button();
             this.GR_DSPHONG.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Data_Phong)).BeginInit();
             this.guna2GroupBox1.SuspendLayout();
@@ -221,6 +222,7 @@ namespace QLKS
             // 
             this.guna2GroupBox1.BorderColor = System.Drawing.Color.White;
             this.guna2GroupBox1.BorderRadius = 10;
+            this.guna2GroupBox1.Controls.Add(this.btn_Xoa);
             this.guna2GroupBox1.Controls.Add(this.guna2HtmlLabel5);
             this.guna2GroupBox1.Controls.Add(this.guna2HtmlLabel4);
             this.guna2GroupBox1.Controls.Add(this.guna2HtmlLabel2);
@@ -395,6 +397,27 @@ namespace QLKS
             this.guna2HtmlLabel8.TabIndex = 8;
             this.guna2HtmlLabel8.Text = "Lưu ý: Mọi thứ chỉ được lưu lại khi bạn ấn vào nút lưu và thay đổi!";
             // 
+            // btn_Xoa
+            // 
+            this.btn_Xoa.Animated = true;
+            this.btn_Xoa.AnimatedGIF = true;
+            this.btn_Xoa.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Xoa.BorderRadius = 20;
+            this.btn_Xoa.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Xoa.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Xoa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Xoa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Xoa.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(223)))), ((int)(((byte)(229)))));
+            this.btn_Xoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Xoa.ForeColor = System.Drawing.Color.White;
+            this.btn_Xoa.Image = ((System.Drawing.Image)(resources.GetObject("btn_Xoa.Image")));
+            this.btn_Xoa.Location = new System.Drawing.Point(463, 379);
+            this.btn_Xoa.Name = "btn_Xoa";
+            this.btn_Xoa.Size = new System.Drawing.Size(151, 42);
+            this.btn_Xoa.TabIndex = 12;
+            this.btn_Xoa.Text = "Xóa Phòng";
+            this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
+            // 
             // Phong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -439,5 +462,6 @@ namespace QLKS
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
         private Guna.UI2.WinForms.Guna2DataGridView Data_Phong;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow3;
+        private Guna.UI2.WinForms.Guna2Button btn_Xoa;
     }
 }

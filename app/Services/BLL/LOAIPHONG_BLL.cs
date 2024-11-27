@@ -43,10 +43,9 @@ namespace BLL
         {
             return DB.AddLoaiphong(ploai);
         }
-
-        public bool CapNhatLoaiPhong(int pCN, string t, int sc, decimal gia, string qd, string nt, string mt)
+        public bool KTTrung(string pLoaiphong)
         {
-           return DB.CapNhatLoaiPhong(pCN, t, sc, gia, qd, nt, mt);
+            return DB.KTTrung(pLoaiphong);
         }
     }
 }

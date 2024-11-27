@@ -49,5 +49,18 @@ namespace DAL
                 return false;
             }
         }
+
+        public bool KTTrung(string pDichVu)
+        {
+            var ktkc = from k in db.DICHVUs where k.TENDICHVU == pDichVu select k;
+            if (ktkc.Count() > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
