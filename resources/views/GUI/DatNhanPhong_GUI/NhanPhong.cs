@@ -17,8 +17,9 @@ namespace QLKS
     {
         PHONG_BLL db = new PHONG_BLL();
         LOAIPHONG_BLL dbLoaiPhong = new LOAIPHONG_BLL();
-        public string idPhong = "";
-        
+        PHONG currentPhong = new PHONG();
+        List<PHONG> listPhongEmpty = new List<PHONG>();
+
         public string UserCurrentNhanPhong { get; set; }
         public NhanPhong()
         {
@@ -36,7 +37,6 @@ namespace QLKS
         //Thêm dữ liệu vào datagird view
         public void LoadPhong()
         {
-            List<PHONG> listPhongEmpty = new List<PHONG>();
             listPhongEmpty = db.GetPhongEmpty();
             DataPhong.DataSource = listPhongEmpty.Select(p => new { p.ID, p.TENPHONG, p.VITRI, p.LOAIPHONG.GIATHUE, p.TRANGTHAI, p.LOAIPHONG.TENLOAIPHONG }).ToList();
             DataPhong.Columns[0].HeaderText = "Mã phòng";
@@ -56,7 +56,7 @@ namespace QLKS
                 DataGridViewRow row = this.DataPhong.Rows[e.RowIndex];
                 Textbox_MaPhong.Text = row.Cells[1].Value.ToString();
 
-                this.idPhong = row.Cells[0].Value.ToString();
+                this.currentPhong = listPhongEmpty[e.RowIndex];
             }    
         }
         //-----------------------------------------------------------------------------------------------------
@@ -148,7 +148,8 @@ namespace QLKS
                 }
                 else
                 {
-                    if(db.CheckQuantily(Int32.Parse(this.idPhong)))
+                    int id = Int32.Parse(this.currentPhong.LOAIPHONG_ID.ToString());
+                    if (db.CheckQuantily(id))
                     {
                         Accept2Move();
                     }

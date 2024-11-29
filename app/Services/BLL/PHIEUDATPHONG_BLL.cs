@@ -41,5 +41,21 @@ namespace BLL
             }
             return false;
         }
+        public void GetUpdatePDP(PHIEUDATPHONG pdp)
+        {
+            db.UpdatePDP(pdp);
+        }
+        public void GetUpdatePDP2Cancel(PHIEUDATPHONG pdp)
+        {
+            db.UpdatePDP2Cancel(pdp);
+        }
+        public PHIEUDATPHONG GetFindPDPByID(int id)
+        {
+            return db.FindPDPByID(id);
+        }
+        public void GetMinusPointsUser(PHIEUDATPHONG pdp)
+        {
+            db.MinusPointsUser(pdp);
+        }    
     }
 }

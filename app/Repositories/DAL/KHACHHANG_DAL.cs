@@ -1,6 +1,7 @@
 using DTO;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,11 @@ namespace DAL
         public KHACHHANG FindKhachHangByID(int ID)
         {
             return db.KHACHHANGs.Where(p => p.ID == ID).FirstOrDefault();
-        }    
+        }
+        public void InsertKhachHang(KHACHHANG kh)
+        {
+            db.KHACHHANGs.AddOrUpdate(kh);
+            db.SaveChanges();
+        }
     }
 }

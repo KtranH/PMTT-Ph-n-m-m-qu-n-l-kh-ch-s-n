@@ -91,6 +91,8 @@
     <Compile Include="LOAIPHONG_DAL.cs" />
     <Compile Include="NHANVIEN_DAL.cs" />
     <Compile Include="PHIEUDATPHONG_DAL.cs" />
+    <Compile Include="PHIEUNHANPHONG_DAL.cs" />
+    <Compile Include="PHIEUTRAPHONG_DAL.cs" />
     <Compile Include="PHONG_DAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -102,6 +102,7 @@
     <Compile Include="DatNhanPhong_GUI\DatPhong.Designer.cs">
       <DependentUpon>DatPhong.cs</DependentUpon>
     </Compile>
+    <Compile Include="DatNhanPhong_GUI\XuLy_CT_PhieuNhanPhong.cs" />
     <Compile Include="TaiNguyen_GUI\LoaiPhong.cs">
       <SubType>Form</SubType>
     </Compile>

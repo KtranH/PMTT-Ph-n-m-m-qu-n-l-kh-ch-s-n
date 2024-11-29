@@ -112,9 +112,9 @@ namespace DAL
                 return false;
             }
         }
-        public int CountCateByID(int id)
+        public int CountRoomCateByID(int id)
         {
-            return db.LOAIPHONGs.Where(p => p.ID == id).Count();
+            return db.PHONGs.Where(p => p.LOAIPHONG_ID == id && p.TRANGTHAI == "Trống").Count();
         }    
     }
 }

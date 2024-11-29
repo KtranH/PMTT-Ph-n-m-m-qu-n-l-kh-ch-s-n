@@ -36,8 +36,6 @@ namespace QLKS
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GR_DSPHONG = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.BTN_CHINHSUA = new Guna.UI2.WinForms.Guna2Button();
-            this.BTN_CAPNHAT = new Guna.UI2.WinForms.Guna2Button();
             this.BTN_XOAKH = new Guna.UI2.WinForms.Guna2Button();
             this.DT_DS_KH = new Guna.UI2.WinForms.Guna2DataGridView();
             this.BTN_HUY = new Guna.UI2.WinForms.Guna2Button();
@@ -81,8 +79,6 @@ namespace QLKS
             // 
             this.GR_DSPHONG.BorderColor = System.Drawing.Color.White;
             this.GR_DSPHONG.BorderRadius = 10;
-            this.GR_DSPHONG.Controls.Add(this.BTN_CHINHSUA);
-            this.GR_DSPHONG.Controls.Add(this.BTN_CAPNHAT);
             this.GR_DSPHONG.Controls.Add(this.BTN_XOAKH);
             this.GR_DSPHONG.Controls.Add(this.DT_DS_KH);
             this.GR_DSPHONG.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(223)))), ((int)(((byte)(229)))));
@@ -95,48 +91,6 @@ namespace QLKS
             this.GR_DSPHONG.TabIndex = 5;
             this.GR_DSPHONG.Text = "Danh sách khách tại phòng";
             this.GR_DSPHONG.TextOffset = new System.Drawing.Point(0, 10);
-            // 
-            // BTN_CHINHSUA
-            // 
-            this.BTN_CHINHSUA.Animated = true;
-            this.BTN_CHINHSUA.AnimatedGIF = true;
-            this.BTN_CHINHSUA.BackColor = System.Drawing.Color.Transparent;
-            this.BTN_CHINHSUA.BorderRadius = 20;
-            this.BTN_CHINHSUA.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.BTN_CHINHSUA.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.BTN_CHINHSUA.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.BTN_CHINHSUA.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.BTN_CHINHSUA.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(223)))), ((int)(((byte)(229)))));
-            this.BTN_CHINHSUA.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTN_CHINHSUA.ForeColor = System.Drawing.Color.White;
-            this.BTN_CHINHSUA.Image = ((System.Drawing.Image)(resources.GetObject("BTN_CHINHSUA.Image")));
-            this.BTN_CHINHSUA.Location = new System.Drawing.Point(248, 6);
-            this.BTN_CHINHSUA.Name = "BTN_CHINHSUA";
-            this.BTN_CHINHSUA.Size = new System.Drawing.Size(128, 42);
-            this.BTN_CHINHSUA.TabIndex = 38;
-            this.BTN_CHINHSUA.Text = " Chỉnh sửa";
-            this.BTN_CHINHSUA.Click += new System.EventHandler(this.BTN_CHINHSUA_Click);
-            // 
-            // BTN_CAPNHAT
-            // 
-            this.BTN_CAPNHAT.Animated = true;
-            this.BTN_CAPNHAT.AnimatedGIF = true;
-            this.BTN_CAPNHAT.BackColor = System.Drawing.Color.Transparent;
-            this.BTN_CAPNHAT.BorderRadius = 20;
-            this.BTN_CAPNHAT.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.BTN_CAPNHAT.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.BTN_CAPNHAT.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.BTN_CAPNHAT.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.BTN_CAPNHAT.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(223)))), ((int)(((byte)(229)))));
-            this.BTN_CAPNHAT.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTN_CAPNHAT.ForeColor = System.Drawing.Color.White;
-            this.BTN_CAPNHAT.Image = ((System.Drawing.Image)(resources.GetObject("BTN_CAPNHAT.Image")));
-            this.BTN_CAPNHAT.Location = new System.Drawing.Point(382, 6);
-            this.BTN_CAPNHAT.Name = "BTN_CAPNHAT";
-            this.BTN_CAPNHAT.Size = new System.Drawing.Size(128, 42);
-            this.BTN_CAPNHAT.TabIndex = 37;
-            this.BTN_CAPNHAT.Text = " Cập nhật";
-            this.BTN_CAPNHAT.Click += new System.EventHandler(this.BTN_CAPNHAT_Click);
             // 
             // BTN_XOAKH
             // 
@@ -152,7 +106,7 @@ namespace QLKS
             this.BTN_XOAKH.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTN_XOAKH.ForeColor = System.Drawing.Color.White;
             this.BTN_XOAKH.Image = ((System.Drawing.Image)(resources.GetObject("BTN_XOAKH.Image")));
-            this.BTN_XOAKH.Location = new System.Drawing.Point(551, 6);
+            this.BTN_XOAKH.Location = new System.Drawing.Point(581, 6);
             this.BTN_XOAKH.Name = "BTN_XOAKH";
             this.BTN_XOAKH.Size = new System.Drawing.Size(151, 42);
             this.BTN_XOAKH.TabIndex = 12;
@@ -208,7 +162,6 @@ namespace QLKS
             this.DT_DS_KH.ThemeStyle.RowsStyle.Height = 22;
             this.DT_DS_KH.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.DT_DS_KH.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.DT_DS_KH.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DT_DS_KH_CellContentClick);
             // 
             // BTN_HUY
             // 
@@ -809,7 +762,6 @@ namespace QLKS
         private Guna.UI2.WinForms.Guna2Button BTN_HUY;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
         private Guna.UI2.WinForms.Guna2Button BTN_XOAKH;
-        private Guna.UI2.WinForms.Guna2Button BTN_CAPNHAT;
         private Guna.UI2.WinForms.Guna2TextBox TEXT_CCCD;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
@@ -834,7 +786,6 @@ namespace QLKS
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel12;
         private Guna.UI2.WinForms.Guna2TextBox TEXT_SUCCHUA;
         private Guna.UI2.WinForms.Guna2Button BTN_THEM;
-        private Guna.UI2.WinForms.Guna2Button BTN_CHINHSUA;
         private Guna.UI2.WinForms.Guna2TextBox Textbox_Find_Khach;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel11;
         private Guna.UI2.WinForms.Guna2DataGridView Data_Khach;

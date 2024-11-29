@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
 using DTO;
+using GUI.DatNhanPhong_GUI;
 
 namespace QLKS
 {
@@ -17,14 +18,19 @@ namespace QLKS
     {
         public PHONG_BLL dbPhong = new PHONG_BLL();
         public KHACHHANG_BLL dbKH = new KHACHHANG_BLL();
+        public PHIEUNHANPHONG_BLL dbPNP = new PHIEUNHANPHONG_BLL();
+        public PHIEUDATPHONG_BLL dbPDP = new PHIEUDATPHONG_BLL();
         public string UserCurrentCTDATPHONG { get; set; }
         public string tenPhong { get; set; }
         public string dateNhan { get; set; }
         public string dateTra { get; set; }
         public string idKH { get; set; }
+        public int idPNP { get; set; } = 0;
 
-        KHACHHANG kh = new KHACHHANG();
         List<KHACHHANG> listKhIn = new List<KHACHHANG>();
+        PHONG phong = new PHONG();
+        public PHIEUDATPHONG pdp { get; set; } = null;
+
         public CT_PhieuNhanPhong()
         {
             InitializeComponent();
@@ -50,7 +56,6 @@ namespace QLKS
         //Lấy dữ liệu phòng vào text
         public void LoadDataPhong()
         {
-            PHONG phong = new PHONG();
             phong = dbPhong.GetFindPhongByName(this.tenPhong);
             TEXT_MAPHONG.Text = phong.ID.ToString();
             TEXT_TENPHONG.Text = phong.TENPHONG;
@@ -81,6 +86,19 @@ namespace QLKS
             Data_Khach.Columns[1].HeaderText = "Họ tên";
             Data_Khach.Columns[2].HeaderText = "Số điện thoại";
             Data_Khach.Columns[3].HeaderText = "Căn cước công dân";
+
+            PHIEUNHANPHONG checkPNP = dbPNP.GetFindKHInPNP(this.idPNP);
+
+            if(checkPNP != null)
+            {
+                listKhIn = checkPNP.KHACHHANGs.ToList();
+                DT_DS_KH.DataSource = listKhIn.Select(p => new { p.ID, p.HOTEN, p.SDT, p.CCCD }).ToList();
+                DT_DS_KH.Columns[0].HeaderText = "Mã khách hàng";
+                DT_DS_KH.Columns[1].HeaderText = "Họ tên";
+                DT_DS_KH.Columns[2].HeaderText = "Số điện thoại";
+                DT_DS_KH.Columns[3].HeaderText = "Căn cước công dân";
+            }    
+
         }
         //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------
@@ -153,8 +171,17 @@ namespace QLKS
             {
                 MessageBox.Show("Vui lòng nhập dữ liệu cho khách hàng", " thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            else if(Int32.Parse(TEXT_SUCCHUA.Text.ToString()) <= listKhIn.Count)
+            {
+                MessageBox.Show("Đã vượt mức sức chứa của phòng", " thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if(!CheckExistKH(Int32.Parse(this.idKH)))
+            {
+                MessageBox.Show("Khách đã tồn tại trong danh sách", " thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }    
             else
             {
+                KHACHHANG kh = new KHACHHANG();
                 kh = dbKH.GetFindKhachHangByID(Int32.Parse(this.idKH));
                 if(kh.CCCD != TEXT_CCCD.Text.Trim() || kh.SDT != TEXT_SDT.Text.Trim())
                 {
@@ -174,6 +201,17 @@ namespace QLKS
                 }    
             }    
         }
+        public bool CheckExistKH(int idKH)
+        {
+            foreach(KHACHHANG kh in listKhIn)
+            {
+                if(kh.ID == idKH)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
         public void InsertKH2DT_DS_KH(KHACHHANG kh)
         {
             listKhIn.Add(kh);
@@ -182,33 +220,74 @@ namespace QLKS
             DT_DS_KH.Columns[1].HeaderText = "Họ tên";
             DT_DS_KH.Columns[2].HeaderText = "Số điện thoại";
             DT_DS_KH.Columns[3].HeaderText = "Căn cước công dân";
-        }    
+        }
         //-----------------------------------------------------------------------------------------------------
-        private void BTN_XACNHAN_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void BTN_XOAKH_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void DT_DS_KH_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-        private void BTN_CAPNHAT_Click(object sender, EventArgs e)
-        {
-            
-        }
-
+        //-----------------------------------------------------------------------------------------------------
+        //Xử lý khi bấm vào nút hoàn tất
         private void BTN_HOANTAT_Click(object sender, EventArgs e)
         {
-          
+            if(listKhIn.Count <= 0)
+            {
+                MessageBox.Show("Không thể hoàn tất vì không có khách hàng nào!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                try
+                {
+                    phong = dbPhong.GetFindPhongByID(Int32.Parse(TEXT_MAPHONG.Text));
+                    XuLy_CT_PhieuNhanPhong xuLy = new XuLy_CT_PhieuNhanPhong();
+                    xuLy.ID_NV = int.Parse(this.UserCurrentCTDATPHONG);
+                    if (this.pdp == null)
+                    {
+                        xuLy.ID_PDP = null;
+                        xuLy.Date_Checkin = this.dateNhan;
+                        xuLy.Date_Checkout = this.dateTra;
+                    }
+                    else
+                    {
+                        xuLy.ID_PDP = this.pdp.ID;
+                        xuLy.Date_Checkin = this.pdp.NGAYNHANPHONG.ToString();
+                        xuLy.Date_Checkout = this.pdp.NGAYTRAPHONGDUKIEN.ToString();
+                        xuLy.Gia = this.pdp.THANHTOAN.Value;
+                        this.pdp.TINHTRANG = "Đã nhận phòng";
+                        dbPDP.GetUpdatePDP(this.pdp);
+                    }
+                    xuLy.ID_PHONG = phong.ID;
+                    xuLy.ProcessingCheckin(listKhIn, phong);
+                    MessageBox.Show("Hoàn tất nhận phòng!", " thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    NhanPhong openNhanPhong = new NhanPhong() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                    openNhanPhong.UserCurrentNhanPhong = this.UserCurrentCTDATPHONG;
+                    this.Controls.Clear();
+                    this.Controls.Add(openNhanPhong);
+                    openNhanPhong.Show();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    MessageBox.Show(ex.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
-        private void BTN_CHINHSUA_Click(object sender, EventArgs e)
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Xử lý khi bấm vào nút xóa khách hàng
+        private void BTN_XOAKH_Click(object sender, EventArgs e)
         {
-            DT_DS_KH.ReadOnly = true;
+            if(listKhIn.Count <= 0)
+            {
+                MessageBox.Show("Không có khách nào để xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                listKhIn.RemoveAt(DT_DS_KH.CurrentRow.Index);
+                DT_DS_KH.DataSource = listKhIn.Select(p => new { p.ID, p.HOTEN, p.SDT, p.CCCD }).ToList();
+                DT_DS_KH.Columns[0].HeaderText = "Mã khách hàng";
+                DT_DS_KH.Columns[1].HeaderText = "Họ tên";
+                DT_DS_KH.Columns[2].HeaderText = "Số điện thoại";
+                DT_DS_KH.Columns[3].HeaderText = "Căn cước công dân";
+            }    
         }
+        //-----------------------------------------------------------------------------------------------------
     }
 }

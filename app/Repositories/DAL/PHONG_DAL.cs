@@ -45,6 +45,10 @@ namespace DAL
         {
             return db.PHONGs.Where(p => p.TENPHONG == name).FirstOrDefault();
         }
+        public PHONG FindPhongByID(int id)
+        {
+            return db.PHONGs.Where(p => p.ID == id).FirstOrDefault();
+        }
         public bool Themphong(PHONG P)
         {
             try
@@ -96,9 +100,14 @@ namespace DAL
             if (serviceToDelete != null)
             {
                 serviceToDelete.TRANGTHAI = "Không khả dụng";
-
                 db.SaveChanges();
             }
         }
+        public void UpdateStateRoom(PHONG x)
+        {
+            PHONG updatePhong = db.PHONGs.FirstOrDefault(p => p.ID == x.ID);
+            updatePhong.TRANGTHAI = "Đã thuê";
+            db.SaveChanges();
+        }    
     }
 }

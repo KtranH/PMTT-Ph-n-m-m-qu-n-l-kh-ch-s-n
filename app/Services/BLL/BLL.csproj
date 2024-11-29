@@ -93,6 +93,8 @@
     <Compile Include="LOAIPHONG_BLL.cs" />
     <Compile Include="NHANVIEN_BLL.cs" />
     <Compile Include="PHIEUDATPHONG_BLL.cs" />
+    <Compile Include="PHIEUNHANPHONG_BLL.cs" />
+    <Compile Include="PHIEUTRAPHONG_BLL.cs" />
     <Compile Include="PHONG_BLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="R2.cs" />
