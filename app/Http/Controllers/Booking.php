@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\KhachHang;
 use App\Models\LoaiPhong;
 use App\Models\PhieuDatPhong;
+use App\Query;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
@@ -13,6 +14,7 @@ use RealRashid\SweetAlert\Facades\Alert;
 class Booking extends Controller
 {
     //
+    use Query;
     public function Booking()
     {
         $user = KhachHang::find(Auth::user()->ID);
@@ -25,10 +27,24 @@ class Booking extends Controller
     public function SetupBooking($id)
     {
         $cateRoom = LoaiPhong::find($id);
-        return view('BookingController.SetupBooking', compact('cateRoom'));
+        if(!$this->CheckInformationUser())
+        {
+            Alert::error('Vui lòng cập nhật số điện thoại và căn cước!')->autoClose(3000);
+            return redirect()->back();
+        }
+        else if($this->CheckQuantityRoomInCate($id)) {
+            return view('BookingController.SetupBooking', compact('cateRoom'));
+        }
+        Alert::error('Loại phòng này hiện không hoạt động!')->autoClose(3000);
+        return redirect()->back();
     }
     public function SetupBookingManyRooms($id = null)
     {
+        if(!$this->CheckInformationUser())
+        {
+            Alert::error('Vui lòng cập nhật số điện thoại và căn cước!')->autoClose(3000);
+            return redirect()->back();
+        }
         $user = KhachHang::find(Auth::user()->ID);  
         if($id == null) {
             $listRoom = $user->gioHang()->get();

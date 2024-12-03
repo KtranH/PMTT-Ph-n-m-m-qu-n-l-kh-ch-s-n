@@ -37,6 +37,8 @@ namespace QLKS
             this.Textbox_Find_Phong = new Guna.UI2.WinForms.Guna2TextBox();
             this.Combox_Find_Phong = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.Date_NgayTra = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.b = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.Textbox_MaPhong = new Guna.UI2.WinForms.Guna2TextBox();
             this.BTN_CONTINUE = new Guna.UI2.WinForms.Guna2Button();
             this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -44,8 +46,6 @@ namespace QLKS
             this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.Textbox_NhanVien = new Guna.UI2.WinForms.Guna2TextBox();
-            this.Date_NgayTra = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.b = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.GR_DSPHONG.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataPhong)).BeginInit();
             this.guna2GroupBox2.SuspendLayout();
@@ -60,7 +60,7 @@ namespace QLKS
             this.GR_DSPHONG.Controls.Add(this.Combox_Find_Phong);
             this.GR_DSPHONG.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(223)))), ((int)(((byte)(229)))));
             this.GR_DSPHONG.CustomBorderThickness = new System.Windows.Forms.Padding(0);
-            this.GR_DSPHONG.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GR_DSPHONG.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GR_DSPHONG.ForeColor = System.Drawing.SystemColors.WindowText;
             this.GR_DSPHONG.Location = new System.Drawing.Point(12, 12);
             this.GR_DSPHONG.Name = "GR_DSPHONG";
@@ -75,7 +75,7 @@ namespace QLKS
             this.DataPhong.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -85,7 +85,7 @@ namespace QLKS
             this.DataPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowFrame;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
@@ -184,7 +184,7 @@ namespace QLKS
             this.guna2GroupBox2.Controls.Add(this.Textbox_NhanVien);
             this.guna2GroupBox2.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(223)))), ((int)(((byte)(229)))));
             this.guna2GroupBox2.CustomBorderThickness = new System.Windows.Forms.Padding(0);
-            this.guna2GroupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2GroupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox2.ForeColor = System.Drawing.SystemColors.WindowText;
             this.guna2GroupBox2.Location = new System.Drawing.Point(834, 12);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
@@ -192,6 +192,34 @@ namespace QLKS
             this.guna2GroupBox2.TabIndex = 7;
             this.guna2GroupBox2.Text = "Thông tin nhận phòng";
             this.guna2GroupBox2.TextOffset = new System.Drawing.Point(0, 10);
+            // 
+            // Date_NgayTra
+            // 
+            this.Date_NgayTra.BackColor = System.Drawing.Color.Transparent;
+            this.Date_NgayTra.BorderRadius = 10;
+            this.Date_NgayTra.Checked = true;
+            this.Date_NgayTra.FillColor = System.Drawing.SystemColors.Control;
+            this.Date_NgayTra.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Date_NgayTra.ForeColor = System.Drawing.Color.White;
+            this.Date_NgayTra.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.Date_NgayTra.Location = new System.Drawing.Point(392, 204);
+            this.Date_NgayTra.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.Date_NgayTra.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.Date_NgayTra.Name = "Date_NgayTra";
+            this.Date_NgayTra.Size = new System.Drawing.Size(261, 41);
+            this.Date_NgayTra.TabIndex = 41;
+            this.Date_NgayTra.Value = new System.DateTime(2023, 12, 6, 4, 56, 5, 0);
+            this.Date_NgayTra.ValueChanged += new System.EventHandler(this.Date_NgayTra_ValueChanged);
+            // 
+            // b
+            // 
+            this.b.BackColor = System.Drawing.Color.Transparent;
+            this.b.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.b.Location = new System.Drawing.Point(392, 174);
+            this.b.Name = "b";
+            this.b.Size = new System.Drawing.Size(63, 23);
+            this.b.TabIndex = 40;
+            this.b.Text = "Ngày trả";
             // 
             // Textbox_MaPhong
             // 
@@ -204,6 +232,7 @@ namespace QLKS
             this.Textbox_MaPhong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.Textbox_MaPhong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.Textbox_MaPhong.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Textbox_MaPhong.Enabled = false;
             this.Textbox_MaPhong.FillColor = System.Drawing.SystemColors.Control;
             this.Textbox_MaPhong.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Textbox_MaPhong.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -229,7 +258,7 @@ namespace QLKS
             this.BTN_CONTINUE.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.BTN_CONTINUE.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.BTN_CONTINUE.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(223)))), ((int)(((byte)(229)))));
-            this.BTN_CONTINUE.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTN_CONTINUE.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTN_CONTINUE.ForeColor = System.Drawing.Color.White;
             this.BTN_CONTINUE.Image = ((System.Drawing.Image)(resources.GetObject("BTN_CONTINUE.Image")));
             this.BTN_CONTINUE.Location = new System.Drawing.Point(288, 325);
@@ -242,10 +271,10 @@ namespace QLKS
             // guna2HtmlLabel6
             // 
             this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.guna2HtmlLabel6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel6.Location = new System.Drawing.Point(51, 179);
             this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
-            this.guna2HtmlLabel6.Size = new System.Drawing.Size(149, 22);
+            this.guna2HtmlLabel6.Size = new System.Drawing.Size(146, 23);
             this.guna2HtmlLabel6.TabIndex = 34;
             this.guna2HtmlLabel6.Text = "Tên phòng khả dụng";
             // 
@@ -255,7 +284,7 @@ namespace QLKS
             this.Date_NgayNhan.BorderRadius = 10;
             this.Date_NgayNhan.Checked = true;
             this.Date_NgayNhan.FillColor = System.Drawing.SystemColors.Control;
-            this.Date_NgayNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Date_NgayNhan.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Date_NgayNhan.ForeColor = System.Drawing.Color.White;
             this.Date_NgayNhan.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.Date_NgayNhan.Location = new System.Drawing.Point(392, 107);
@@ -270,20 +299,20 @@ namespace QLKS
             // guna2HtmlLabel5
             // 
             this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel5.Location = new System.Drawing.Point(392, 77);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            this.guna2HtmlLabel5.Size = new System.Drawing.Size(79, 22);
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(79, 23);
             this.guna2HtmlLabel5.TabIndex = 31;
             this.guna2HtmlLabel5.Text = "Ngày nhận";
             // 
             // guna2HtmlLabel3
             // 
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel3.Location = new System.Drawing.Point(51, 77);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(142, 22);
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(142, 23);
             this.guna2HtmlLabel3.TabIndex = 29;
             this.guna2HtmlLabel3.Text = "Nhân viên thực hiện";
             // 
@@ -298,6 +327,7 @@ namespace QLKS
             this.Textbox_NhanVien.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.Textbox_NhanVien.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.Textbox_NhanVien.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Textbox_NhanVien.Enabled = false;
             this.Textbox_NhanVien.FillColor = System.Drawing.SystemColors.Control;
             this.Textbox_NhanVien.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Textbox_NhanVien.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -311,34 +341,6 @@ namespace QLKS
             this.Textbox_NhanVien.SelectedText = "";
             this.Textbox_NhanVien.Size = new System.Drawing.Size(261, 41);
             this.Textbox_NhanVien.TabIndex = 28;
-            // 
-            // Date_NgayTra
-            // 
-            this.Date_NgayTra.BackColor = System.Drawing.Color.Transparent;
-            this.Date_NgayTra.BorderRadius = 10;
-            this.Date_NgayTra.Checked = true;
-            this.Date_NgayTra.FillColor = System.Drawing.SystemColors.Control;
-            this.Date_NgayTra.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Date_NgayTra.ForeColor = System.Drawing.Color.White;
-            this.Date_NgayTra.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.Date_NgayTra.Location = new System.Drawing.Point(392, 204);
-            this.Date_NgayTra.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.Date_NgayTra.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.Date_NgayTra.Name = "Date_NgayTra";
-            this.Date_NgayTra.Size = new System.Drawing.Size(261, 41);
-            this.Date_NgayTra.TabIndex = 41;
-            this.Date_NgayTra.Value = new System.DateTime(2023, 12, 6, 4, 56, 5, 0);
-            this.Date_NgayTra.ValueChanged += new System.EventHandler(this.Date_NgayTra_ValueChanged);
-            // 
-            // b
-            // 
-            this.b.BackColor = System.Drawing.Color.Transparent;
-            this.b.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.b.Location = new System.Drawing.Point(392, 174);
-            this.b.Name = "b";
-            this.b.Size = new System.Drawing.Size(62, 22);
-            this.b.TabIndex = 40;
-            this.b.Text = "Ngày trả";
             // 
             // NhanPhong
             // 

@@ -109,7 +109,7 @@ namespace QLKS
             this.DANHMUC.Controls.Add(this.TraCuuKhachHang);
             this.DANHMUC.Controls.Add(this.CN_DANHMUC);
             this.DANHMUC.Dock = System.Windows.Forms.DockStyle.Top;
-            this.DANHMUC.Location = new System.Drawing.Point(0, 776);
+            this.DANHMUC.Location = new System.Drawing.Point(0, 744);
             this.DANHMUC.MaximumSize = new System.Drawing.Size(300, 202);
             this.DANHMUC.MinimumSize = new System.Drawing.Size(300, 51);
             this.DANHMUC.Name = "DANHMUC";
@@ -127,7 +127,7 @@ namespace QLKS
             this.TraCuuTraPhong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.TraCuuTraPhong.Dock = System.Windows.Forms.DockStyle.Top;
             this.TraCuuTraPhong.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(245)))));
-            this.TraCuuTraPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TraCuuTraPhong.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TraCuuTraPhong.ForeColor = System.Drawing.Color.Black;
             this.TraCuuTraPhong.Image = ((System.Drawing.Image)(resources.GetObject("TraCuuTraPhong.Image")));
             this.TraCuuTraPhong.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -151,7 +151,7 @@ namespace QLKS
             this.TraCuuNhanPhong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.TraCuuNhanPhong.Dock = System.Windows.Forms.DockStyle.Top;
             this.TraCuuNhanPhong.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(245)))));
-            this.TraCuuNhanPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TraCuuNhanPhong.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TraCuuNhanPhong.ForeColor = System.Drawing.Color.Black;
             this.TraCuuNhanPhong.Image = ((System.Drawing.Image)(resources.GetObject("TraCuuNhanPhong.Image")));
             this.TraCuuNhanPhong.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -175,7 +175,7 @@ namespace QLKS
             this.TraCuuKhachHang.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.TraCuuKhachHang.Dock = System.Windows.Forms.DockStyle.Top;
             this.TraCuuKhachHang.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(245)))));
-            this.TraCuuKhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TraCuuKhachHang.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TraCuuKhachHang.ForeColor = System.Drawing.Color.Black;
             this.TraCuuKhachHang.Image = ((System.Drawing.Image)(resources.GetObject("TraCuuKhachHang.Image")));
             this.TraCuuKhachHang.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -198,7 +198,7 @@ namespace QLKS
             this.CN_DANHMUC.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.CN_DANHMUC.Dock = System.Windows.Forms.DockStyle.Top;
             this.CN_DANHMUC.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(223)))), ((int)(((byte)(229)))));
-            this.CN_DANHMUC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.CN_DANHMUC.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CN_DANHMUC.ForeColor = System.Drawing.Color.White;
             this.CN_DANHMUC.Image = ((System.Drawing.Image)(resources.GetObject("CN_DANHMUC.Image")));
             this.CN_DANHMUC.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -217,7 +217,7 @@ namespace QLKS
             this.THONGTIN.Controls.Add(this.NhanVien);
             this.THONGTIN.Controls.Add(this.CN_THONGTIN);
             this.THONGTIN.Dock = System.Windows.Forms.DockStyle.Top;
-            this.THONGTIN.Location = new System.Drawing.Point(0, 671);
+            this.THONGTIN.Location = new System.Drawing.Point(0, 639);
             this.THONGTIN.MaximumSize = new System.Drawing.Size(300, 105);
             this.THONGTIN.MinimumSize = new System.Drawing.Size(300, 51);
             this.THONGTIN.Name = "THONGTIN";
@@ -235,7 +235,7 @@ namespace QLKS
             this.NhanVien.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.NhanVien.Dock = System.Windows.Forms.DockStyle.Top;
             this.NhanVien.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(245)))));
-            this.NhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NhanVien.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NhanVien.ForeColor = System.Drawing.Color.Black;
             this.NhanVien.Image = ((System.Drawing.Image)(resources.GetObject("NhanVien.Image")));
             this.NhanVien.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -258,7 +258,7 @@ namespace QLKS
             this.CN_THONGTIN.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.CN_THONGTIN.Dock = System.Windows.Forms.DockStyle.Top;
             this.CN_THONGTIN.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(223)))), ((int)(((byte)(229)))));
-            this.CN_THONGTIN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.CN_THONGTIN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CN_THONGTIN.ForeColor = System.Drawing.Color.White;
             this.CN_THONGTIN.Image = ((System.Drawing.Image)(resources.GetObject("CN_THONGTIN.Image")));
             this.CN_THONGTIN.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -277,7 +277,7 @@ namespace QLKS
             this.THANHTOAN.Controls.Add(this.ThangToanTraPhong);
             this.THANHTOAN.Controls.Add(this.CN_THANHTOAN);
             this.THANHTOAN.Dock = System.Windows.Forms.DockStyle.Top;
-            this.THANHTOAN.Location = new System.Drawing.Point(0, 563);
+            this.THANHTOAN.Location = new System.Drawing.Point(0, 531);
             this.THANHTOAN.MaximumSize = new System.Drawing.Size(300, 108);
             this.THANHTOAN.MinimumSize = new System.Drawing.Size(298, 51);
             this.THANHTOAN.Name = "THANHTOAN";
@@ -295,7 +295,7 @@ namespace QLKS
             this.ThangToanTraPhong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.ThangToanTraPhong.Dock = System.Windows.Forms.DockStyle.Top;
             this.ThangToanTraPhong.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(245)))));
-            this.ThangToanTraPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ThangToanTraPhong.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ThangToanTraPhong.ForeColor = System.Drawing.Color.Black;
             this.ThangToanTraPhong.Image = ((System.Drawing.Image)(resources.GetObject("ThangToanTraPhong.Image")));
             this.ThangToanTraPhong.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -319,7 +319,7 @@ namespace QLKS
             this.CN_THANHTOAN.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.CN_THANHTOAN.Dock = System.Windows.Forms.DockStyle.Top;
             this.CN_THANHTOAN.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(223)))), ((int)(((byte)(229)))));
-            this.CN_THANHTOAN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.CN_THANHTOAN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CN_THANHTOAN.ForeColor = System.Drawing.Color.White;
             this.CN_THANHTOAN.Image = ((System.Drawing.Image)(resources.GetObject("CN_THANHTOAN.Image")));
             this.CN_THANHTOAN.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -339,7 +339,7 @@ namespace QLKS
             this.DATPHONG.Controls.Add(this.CN_PDPKH);
             this.DATPHONG.Controls.Add(this.BTN_DATPHONG);
             this.DATPHONG.Dock = System.Windows.Forms.DockStyle.Top;
-            this.DATPHONG.Location = new System.Drawing.Point(0, 403);
+            this.DATPHONG.Location = new System.Drawing.Point(0, 371);
             this.DATPHONG.MaximumSize = new System.Drawing.Size(300, 160);
             this.DATPHONG.MinimumSize = new System.Drawing.Size(298, 51);
             this.DATPHONG.Name = "DATPHONG";
@@ -356,7 +356,7 @@ namespace QLKS
             this.DanhSachDatPhong.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.DanhSachDatPhong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.DanhSachDatPhong.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(245)))));
-            this.DanhSachDatPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DanhSachDatPhong.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DanhSachDatPhong.ForeColor = System.Drawing.Color.Black;
             this.DanhSachDatPhong.Image = ((System.Drawing.Image)(resources.GetObject("DanhSachDatPhong.Image")));
             this.DanhSachDatPhong.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -380,7 +380,7 @@ namespace QLKS
             this.CN_PDPKH.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.CN_PDPKH.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.CN_PDPKH.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(245)))));
-            this.CN_PDPKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CN_PDPKH.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CN_PDPKH.ForeColor = System.Drawing.Color.Black;
             this.CN_PDPKH.Image = ((System.Drawing.Image)(resources.GetObject("CN_PDPKH.Image")));
             this.CN_PDPKH.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -404,7 +404,7 @@ namespace QLKS
             this.BTN_DATPHONG.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.BTN_DATPHONG.Dock = System.Windows.Forms.DockStyle.Top;
             this.BTN_DATPHONG.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(223)))), ((int)(((byte)(229)))));
-            this.BTN_DATPHONG.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.BTN_DATPHONG.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTN_DATPHONG.ForeColor = System.Drawing.Color.White;
             this.BTN_DATPHONG.Image = ((System.Drawing.Image)(resources.GetObject("BTN_DATPHONG.Image")));
             this.BTN_DATPHONG.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -425,7 +425,7 @@ namespace QLKS
             this.TAINGUYEN.Controls.Add(this.DanhSachLoaiPhong);
             this.TAINGUYEN.Controls.Add(this.DanhMucTaiNguyen);
             this.TAINGUYEN.Dock = System.Windows.Forms.DockStyle.Top;
-            this.TAINGUYEN.Location = new System.Drawing.Point(0, 203);
+            this.TAINGUYEN.Location = new System.Drawing.Point(0, 171);
             this.TAINGUYEN.MaximumSize = new System.Drawing.Size(300, 200);
             this.TAINGUYEN.MinimumSize = new System.Drawing.Size(298, 51);
             this.TAINGUYEN.Name = "TAINGUYEN";
@@ -443,7 +443,7 @@ namespace QLKS
             this.DanhSachDichVu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.DanhSachDichVu.Dock = System.Windows.Forms.DockStyle.Top;
             this.DanhSachDichVu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(245)))));
-            this.DanhSachDichVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DanhSachDichVu.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DanhSachDichVu.ForeColor = System.Drawing.Color.Black;
             this.DanhSachDichVu.Image = ((System.Drawing.Image)(resources.GetObject("DanhSachDichVu.Image")));
             this.DanhSachDichVu.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -467,7 +467,7 @@ namespace QLKS
             this.DanhSachPhong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.DanhSachPhong.Dock = System.Windows.Forms.DockStyle.Top;
             this.DanhSachPhong.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(245)))));
-            this.DanhSachPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DanhSachPhong.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DanhSachPhong.ForeColor = System.Drawing.Color.Black;
             this.DanhSachPhong.Image = ((System.Drawing.Image)(resources.GetObject("DanhSachPhong.Image")));
             this.DanhSachPhong.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -492,7 +492,7 @@ namespace QLKS
             this.DanhSachLoaiPhong.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.DanhSachLoaiPhong.Dock = System.Windows.Forms.DockStyle.Top;
             this.DanhSachLoaiPhong.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(245)))));
-            this.DanhSachLoaiPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DanhSachLoaiPhong.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DanhSachLoaiPhong.ForeColor = System.Drawing.Color.Black;
             this.DanhSachLoaiPhong.Image = ((System.Drawing.Image)(resources.GetObject("DanhSachLoaiPhong.Image")));
             this.DanhSachLoaiPhong.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -516,7 +516,7 @@ namespace QLKS
             this.DanhMucTaiNguyen.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.DanhMucTaiNguyen.Dock = System.Windows.Forms.DockStyle.Top;
             this.DanhMucTaiNguyen.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(223)))), ((int)(((byte)(229)))));
-            this.DanhMucTaiNguyen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.DanhMucTaiNguyen.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DanhMucTaiNguyen.ForeColor = System.Drawing.Color.White;
             this.DanhMucTaiNguyen.Image = ((System.Drawing.Image)(resources.GetObject("DanhMucTaiNguyen.Image")));
             this.DanhMucTaiNguyen.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -538,12 +538,12 @@ namespace QLKS
             this.BtnExit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.BtnExit.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.BtnExit.FillColor = System.Drawing.Color.White;
-            this.BtnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.BtnExit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnExit.ForeColor = System.Drawing.Color.Black;
             this.BtnExit.Image = ((System.Drawing.Image)(resources.GetObject("BtnExit.Image")));
             this.BtnExit.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.BtnExit.ImageSize = new System.Drawing.Size(25, 25);
-            this.BtnExit.Location = new System.Drawing.Point(0, 976);
+            this.BtnExit.Location = new System.Drawing.Point(0, 944);
             this.BtnExit.Name = "BtnExit";
             this.BtnExit.Size = new System.Drawing.Size(283, 46);
             this.BtnExit.TabIndex = 6;
@@ -555,7 +555,7 @@ namespace QLKS
             // 
             this.guna2Panel2.Controls.Add(this.BTN_TRANGCHU);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel2.Location = new System.Drawing.Point(0, 153);
+            this.guna2Panel2.Location = new System.Drawing.Point(0, 121);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(283, 50);
             this.guna2Panel2.TabIndex = 5;
@@ -571,7 +571,7 @@ namespace QLKS
             this.BTN_TRANGCHU.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.BTN_TRANGCHU.Dock = System.Windows.Forms.DockStyle.Top;
             this.BTN_TRANGCHU.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(183)))), ((int)(((byte)(201)))));
-            this.BTN_TRANGCHU.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.BTN_TRANGCHU.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTN_TRANGCHU.ForeColor = System.Drawing.Color.White;
             this.BTN_TRANGCHU.Image = ((System.Drawing.Image)(resources.GetObject("BTN_TRANGCHU.Image")));
             this.BTN_TRANGCHU.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -592,17 +592,17 @@ namespace QLKS
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(283, 153);
+            this.guna2Panel1.Size = new System.Drawing.Size(283, 121);
             this.guna2Panel1.TabIndex = 0;
             // 
             // guna2HtmlLabel3
             // 
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(78, 90);
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(80, 83);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(129, 27);
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(121, 32);
             this.guna2HtmlLabel3.TabIndex = 1;
             this.guna2HtmlLabel3.Text = "GTX - Menu";
             // 
@@ -610,7 +610,7 @@ namespace QLKS
             // 
             this.guna2CirclePictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox1.Image")));
             this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(105, 12);
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(103, 10);
             this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
             this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CirclePictureBox1.Size = new System.Drawing.Size(75, 72);
@@ -653,20 +653,20 @@ namespace QLKS
             // guna2HtmlLabel2
             // 
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(166, 72);
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(166, 59);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(220, 27);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(157, 23);
             this.guna2HtmlLabel2.TabIndex = 22;
             this.guna2HtmlLabel2.Text = "Hôm nay bạn thế nào?";
             // 
             // Title
             // 
             this.Title.BackColor = System.Drawing.Color.Transparent;
-            this.Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
+            this.Title.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Title.Location = new System.Drawing.Point(166, 20);
             this.Title.Name = "Title";
-            this.Title.Size = new System.Drawing.Size(125, 33);
+            this.Title.Size = new System.Drawing.Size(85, 27);
             this.Title.TabIndex = 21;
             this.Title.Text = "Xin chào! ";
             // 

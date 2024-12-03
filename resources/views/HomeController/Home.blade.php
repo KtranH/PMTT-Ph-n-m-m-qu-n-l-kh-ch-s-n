@@ -106,7 +106,12 @@
                     <div class="row bg-white" style="padding:20px;border-radius:20px;width:102%;display:flex;justify-content: space-around;">
                       @foreach($roomFeature as $r)
                       @php
-                        $firstImage = $r->hinhLoaiPhong[0]->HINH;
+                        if(count($r->hinhLoaiPhong) == 0){
+                            $firstImage = 'https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif';
+                          }
+                        else {
+                            $firstImage = $r->hinhLoaiPhong[0]->HINH;
+                          }
                         $format_cost = number_format($r->GIATHUE, 0, ',', '.');
                       @endphp
                       <div class="col-md-6 mb-4" style="max-width:800px">

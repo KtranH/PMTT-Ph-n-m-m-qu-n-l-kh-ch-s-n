@@ -55,7 +55,6 @@ D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\resources\views\GUI\bin\Debug
 D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\resources\views\GUI\bin\Debug\Guna.UI2.dll
 D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\resources\views\GUI\bin\Debug\Guna.Charts.WinForms.xml
 D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\resources\views\GUI\obj\Debug\QLKS.CT_HoaDon.resources
-D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\resources\views\GUI\obj\Debug\QLKS.CT_PhieuDatPhong.resources
 D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\resources\views\GUI\obj\Debug\QLKS.DangNhap.resources
 D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\resources\views\GUI\obj\Debug\QLKS.Dichvu.resources
 D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\resources\views\GUI\obj\Debug\QLKS.HoaDon.resources
@@ -191,3 +190,4 @@ D:\Laravel\New\PMTT_QLKS-main\resources\views\GUI\obj\Debug\GUI.csproj.CoreCompi
 D:\Laravel\New\PMTT_QLKS-main\resources\views\GUI\obj\Debug\GUI.csproj.Up2Date
 D:\Laravel\New\PMTT_QLKS-main\resources\views\GUI\obj\Debug\GUI.exe
 D:\Laravel\New\PMTT_QLKS-main\resources\views\GUI\obj\Debug\GUI.pdb
+D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\resources\views\GUI\obj\Debug\QLKS.CT_PhieuNhanPhong.resources

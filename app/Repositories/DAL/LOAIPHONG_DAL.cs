@@ -13,7 +13,7 @@ namespace DAL
         public LOAIPHONG_DAL() { }
         public List<LOAIPHONG> GetAllLoaiPhong()
         {
-            return db.LOAIPHONGs.Where(lp => lp.ISDELETED == false).ToList();
+            return db.LOAIPHONGs.ToList();
         }
         public List<HINHLOAIPHONG> HinhLoaiPhong(int ID)
         {
@@ -77,8 +77,27 @@ namespace DAL
 
             if (loaiPhong != null)
             {
-                loaiPhong.ISDELETED = true;
-                db.SaveChanges();
+                if(loaiPhong.ISDELETED == false)
+                {
+                    loaiPhong.ISDELETED = true;
+                    foreach (PHONG item in db.PHONGs.Where(p => p.LOAIPHONG_ID == id))
+                    {
+                        item.TRANGTHAI = "Không khả dụng";
+                    }
+                    db.SaveChanges();
+                }
+                else
+                {
+                    loaiPhong.ISDELETED = true;
+                    foreach (PHONG item in db.PHONGs.Where(p => p.LOAIPHONG_ID == id))
+                    {
+                        if (item.TRANGTHAI != "Đã thuê")
+                        {
+                            item.TRANGTHAI = "Không khả dụng";
+                        }
+                    }
+                    db.SaveChanges();
+                }    
             }
         }
         public bool KTTrung(string pLoaiphong)
@@ -93,6 +112,9 @@ namespace DAL
                 return false;
             }
         }
-
+        public int CountRoomCateByID(int id)
+        {
+            return db.PHONGs.Where(p => p.LOAIPHONG_ID == id && p.TRANGTHAI == "Trống").Count();
+        }    
     }
 }

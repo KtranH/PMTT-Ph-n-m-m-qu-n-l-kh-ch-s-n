@@ -44,7 +44,7 @@
                     </li>
 
                     <li>
-                        <a class="dropdown-item d-flex align-items-center" href="{{ route("homeAccount") }}">
+                        <a class="dropdown-item d-flex align-items-center" href="{{ route("pageUpdateAccount") }}">
                             <i class="bi bi-gear"></i>
                             <span>Tùy chỉnh</span>
                         </a>

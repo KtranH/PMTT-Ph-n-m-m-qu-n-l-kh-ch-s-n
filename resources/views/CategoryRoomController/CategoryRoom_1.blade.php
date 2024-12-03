@@ -25,10 +25,15 @@
                                 <h5 class="card-title">Loại phòng <span>/Loại 1 người</span></h5>
                                 <div class="row bg-white" style="padding:20px;border-radius:20px;width:100%;display:flex;justify-content: space-between;">
                                 @foreach($categoryroom_1 as $r)
-                                @php
-                                    $firstImage = $r->hinhLoaiPhong[0]->HINH;
-                                    $format_cost = number_format($r->GIATHUE, 0, ',', '.');
-                                @endphp
+                                    @php
+                                        if(count($r->hinhLoaiPhong) == 0){
+                                            $firstImage = 'https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif';
+                                        }
+                                        else {
+                                            $firstImage = $r->hinhLoaiPhong[0]->HINH;
+                                        }
+                                        $format_cost = number_format($r->GIATHUE, 0, ',', '.');
+                                    @endphp
                                 <div class="col-md-6 mb-4" style="max-width:800px" data-aos="fade-up">
                                     <div class="Ha card my-specific-card {{$r->ISDELETE==1 ? 'disabled':''}}">
                                         <div class="card-img">

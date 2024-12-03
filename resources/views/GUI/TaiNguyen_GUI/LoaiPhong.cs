@@ -140,7 +140,7 @@ namespace GUI.TaiNguyen_GUI.Phong_GUI
         }
         //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------
-        //Xử lý tải ảnh và thêm ảnh vào R2 và database
+        //Xử lý tải ảnh và xóa ảnh từ R2 và database
         public async Task removeImage(HINHLOAIPHONG x)
         {
             try
@@ -179,6 +179,13 @@ namespace GUI.TaiNguyen_GUI.Phong_GUI
             Textbox_SucChua.Text = loaiPhong.SUCCHUA.ToString();
             Textbox_QuyDinh.Text = loaiPhong.QUYDINH.ToString();
             Textbox_TienIch.Text = loaiPhong.TIENICH.ToString();
+
+            if(loaiPhong.ISDELETED == true)
+            {
+                Button_Xoa.FillColor = Color.FromArgb(12, 186, 166);
+                Button_Xoa.Text = "Khôi phục";
+                Button_Xoa.Image = null;
+            }    
         }
         //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------
@@ -247,7 +254,6 @@ namespace GUI.TaiNguyen_GUI.Phong_GUI
         //Xử lý Thêm Loại phòng
         public void Them()
         {
-
             int sucChua;
 
             bool isSucChuaValid = int.TryParse(Textbox_SucChua.Text, out sucChua);
@@ -267,8 +273,6 @@ namespace GUI.TaiNguyen_GUI.Phong_GUI
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return; 
             }
-
-          
             LOAIPHONG lp = new LOAIPHONG();
             lp.TENLOAIPHONG = Textbox_TenLoaiPhong.Text;
             lp.MOTA = Textbox_MoTa.Text;
@@ -277,10 +281,12 @@ namespace GUI.TaiNguyen_GUI.Phong_GUI
             lp.QUYDINH = Textbox_QuyDinh.Text;
             lp.NOITHAT = Textbox_NoiThat.Text;
             lp.TIENICH = Textbox_TienIch.Text;
+            lp.ISDELETED = false;
 
             if (db.AddloaiPhong(lp))
             {
                 MessageBox.Show("Thêm loại phòng thành công");
+                LoadData();
             }
             else
             {
@@ -294,13 +300,53 @@ namespace GUI.TaiNguyen_GUI.Phong_GUI
         private void Button_Luu_Click(object sender, EventArgs e)
         {
             Them();
+            LockControl();
         }
         //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------
         //Xử lý nút cập nhật
         private void Button_CapNhat_Click(object sender, EventArgs e)
         {
-            UnlockControl();
+            DialogResult dialogResult = MessageBox.Show("Bạn có muốn cập nhật loại phòng?", "Xác nhận", MessageBoxButtons.OKCancel);
+
+            if (dialogResult == DialogResult.OK)
+            {
+                int loaiPhongId = Convert.ToInt32(combox_LoaiPhong.SelectedValue);
+                string tenLoaiPhong = Textbox_TenLoaiPhong.Text;
+                string moTa = Textbox_MoTa.Text;
+                int sucChua = Convert.ToInt32(Textbox_SucChua.Text);
+                string giaThueText = Textbox_GiaThue.Text;
+                giaThueText = giaThueText.Replace(" VNĐ", "");
+                decimal giaThue = Convert.ToDecimal(giaThueText);
+                string quyDinh = Textbox_QuyDinh.Text;
+                string noiThat = Textbox_NoiThat.Text;
+                string tienIch = Textbox_TienIch.Text;
+
+                LOAIPHONG loaiPhongToUpdate = new LOAIPHONG
+                {
+                    ID = loaiPhongId,
+                    TENLOAIPHONG = tenLoaiPhong,
+                    MOTA = moTa,
+                    SUCCHUA = sucChua,
+                    GIATHUE = giaThue,
+                    QUYDINH = quyDinh,
+                    NOITHAT = noiThat,
+                    TIENICH = tienIch,
+                    ISDELETED = false
+                };
+
+                bool updateResult = db.UpdateLoaiPhong(loaiPhongToUpdate);
+
+                if (updateResult)
+                {
+                    MessageBox.Show("Cập nhật loại phòng thành công!");
+                }
+                else
+                {
+                    MessageBox.Show("Cập nhật loại phòng không thành công. Vui lòng kiểm tra lại.");
+                }
+            }
+                UnlockControl();
         }
         //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------
@@ -314,11 +360,7 @@ namespace GUI.TaiNguyen_GUI.Phong_GUI
                 if (dialogResult == DialogResult.Yes)
                 {
                     int loaiPhongId = Convert.ToInt32(combox_LoaiPhong.SelectedValue);
-
                     db.DeleteLoaiPhong(loaiPhongId);
-
-                    LoadData();
-
                     MessageBox.Show("Loại phòng đã được xóa.");
                 }
             }
@@ -326,6 +368,23 @@ namespace GUI.TaiNguyen_GUI.Phong_GUI
             {
                 MessageBox.Show("Vui lòng chọn loại phòng cần xóa.");
             }
+        }
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Xử lý logic dữ liệu
+        private void Textbox_SucChua_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }    
+        }
+        private void Textbox_GiaThue_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }    
         }
         //-----------------------------------------------------------------------------------------------------
     }

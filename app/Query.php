@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Models\KhachHang;
+use App\Models\Phong;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
@@ -39,5 +40,21 @@ trait Query
         {
             return true;
         }
+    }
+    public function CheckQuantityRoomInCate($id)
+    {
+        $cateRoom = Phong::where('LOAIPHONG_ID', $id)->count();
+        if($cateRoom == 0)
+        {
+            return false;
+        }
+        return true;
+    }
+    public function CheckInformationUser()
+    {
+        if(Auth::user()->SDT == "Chưa rõ" || Auth::user()->CCCD == "Chưa rõ") {
+            return false;
+        }
+        return true;
     }
 }

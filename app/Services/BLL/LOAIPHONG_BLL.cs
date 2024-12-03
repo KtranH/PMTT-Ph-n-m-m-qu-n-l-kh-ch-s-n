@@ -51,7 +51,6 @@ namespace BLL
         {
             return DB.UpdateLoaiPhong(loaiPhong);
         }
-
         public void DeleteLoaiPhong(int ID)
         {
             DB.DeleteLoaiPhong(ID);

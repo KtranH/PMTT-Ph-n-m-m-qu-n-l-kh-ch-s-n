@@ -12,6 +12,8 @@ namespace BLL
     {
         public PHONG_BLL() { }
         PHONG_DAL db = new PHONG_DAL();
+        LOAIPHONG_DAL dbloaiphong = new LOAIPHONG_DAL();
+        PHIEUDATPHONG_DAL dbphieudatphong = new PHIEUDATPHONG_DAL();
         public List<PHONG> GetAllPhong()
         {
             return db.GetAllPhong();
@@ -40,6 +42,14 @@ namespace BLL
         {
             return db.FindPhongEmpty(find, phong);
         }
+        public PHONG GetFindPhongByName(string name)
+        {
+            return db.FindPhongByName(name);
+        }
+        public PHONG GetFindPhongByID(int id)
+        {
+            return db.FindPhongByID(id);
+        }
         public bool Themphong(PHONG p)
         {
             return db.Themphong(p);
@@ -56,5 +66,17 @@ namespace BLL
         {
             db.XoaPhong(id);
         }
+        public bool CheckQuantily(int id)
+        {
+            if(Math.Abs(dbphieudatphong.CountCateByIDInBooking(id) - dbloaiphong.CountRoomCateByID(id)) >= 2)
+            {
+                return true;
+            }
+            return false;
+        }
+        public void GetUpdateRoom(PHONG p)
+        {
+            db.UpdateStateRoom(p);
+        }   
     }
 }
