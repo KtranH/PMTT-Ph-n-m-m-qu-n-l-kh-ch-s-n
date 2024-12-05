@@ -68,6 +68,8 @@ namespace QLKS
             this.EF_THANHTOAN = new System.Windows.Forms.Timer(this.components);
             this.EF_DANHMUC = new System.Windows.Forms.Timer(this.components);
             this.EF_THONGTIN = new System.Windows.Forms.Timer(this.components);
+            this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.SlideBar.SuspendLayout();
             this.DANHMUC.SuspendLayout();
             this.THONGTIN.SuspendLayout();
@@ -79,6 +81,7 @@ namespace QLKS
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.SlideMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            this.guna2CustomGradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // SlideBar
@@ -98,7 +101,7 @@ namespace QLKS
             this.SlideBar.Location = new System.Drawing.Point(0, 0);
             this.SlideBar.MaximumSize = new System.Drawing.Size(300, 1040);
             this.SlideBar.Name = "SlideBar";
-            this.SlideBar.Size = new System.Drawing.Size(300, 894);
+            this.SlideBar.Size = new System.Drawing.Size(300, 877);
             this.SlideBar.TabIndex = 0;
             // 
             // DANHMUC
@@ -620,20 +623,21 @@ namespace QLKS
             // 
             // SlideMain
             // 
+            this.SlideMain.AutoScroll = true;
+            this.SlideMain.AutoSize = true;
             this.SlideMain.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.SlideMain.Controls.Add(this.guna2CustomGradientPanel1);
             this.SlideMain.Controls.Add(this.ConvertForm);
-            this.SlideMain.Controls.Add(this.guna2PictureBox1);
-            this.SlideMain.Controls.Add(this.guna2HtmlLabel2);
-            this.SlideMain.Controls.Add(this.Title);
-            this.SlideMain.Controls.Add(this.guna2DateTimePicker1);
             this.SlideMain.Dock = System.Windows.Forms.DockStyle.Left;
             this.SlideMain.Location = new System.Drawing.Point(300, 0);
             this.SlideMain.Name = "SlideMain";
-            this.SlideMain.Size = new System.Drawing.Size(1622, 894);
+            this.SlideMain.Size = new System.Drawing.Size(1585, 877);
             this.SlideMain.TabIndex = 1;
             // 
             // ConvertForm
             // 
+            this.ConvertForm.AutoScroll = true;
+            this.ConvertForm.AutoSize = true;
             this.ConvertForm.Location = new System.Drawing.Point(42, 148);
             this.ConvertForm.Name = "ConvertForm";
             this.ConvertForm.Size = new System.Drawing.Size(1568, 880);
@@ -641,9 +645,10 @@ namespace QLKS
             // 
             // guna2PictureBox1
             // 
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(68, 20);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(12, 10);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.Size = new System.Drawing.Size(77, 76);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -654,7 +659,7 @@ namespace QLKS
             // 
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(166, 59);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(110, 49);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             this.guna2HtmlLabel2.Size = new System.Drawing.Size(157, 23);
             this.guna2HtmlLabel2.TabIndex = 22;
@@ -664,7 +669,7 @@ namespace QLKS
             // 
             this.Title.BackColor = System.Drawing.Color.Transparent;
             this.Title.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Title.Location = new System.Drawing.Point(166, 20);
+            this.Title.Location = new System.Drawing.Point(110, 10);
             this.Title.Name = "Title";
             this.Title.Size = new System.Drawing.Size(85, 27);
             this.Title.TabIndex = 21;
@@ -679,7 +684,7 @@ namespace QLKS
             this.guna2DateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2DateTimePicker1.ForeColor = System.Drawing.Color.White;
             this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.guna2DateTimePicker1.Location = new System.Drawing.Point(1248, 20);
+            this.guna2DateTimePicker1.Location = new System.Drawing.Point(1183, 21);
             this.guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.guna2DateTimePicker1.Name = "guna2DateTimePicker1";
@@ -712,10 +717,44 @@ namespace QLKS
             this.EF_THONGTIN.Interval = 10;
             this.EF_THONGTIN.Tick += new System.EventHandler(this.EF_THONGTIN_Tick);
             // 
+            // guna2CustomGradientPanel1
+            // 
+            this.guna2CustomGradientPanel1.BorderRadius = 20;
+            this.guna2CustomGradientPanel1.Controls.Add(this.guna2GradientButton1);
+            this.guna2CustomGradientPanel1.Controls.Add(this.guna2PictureBox1);
+            this.guna2CustomGradientPanel1.Controls.Add(this.Title);
+            this.guna2CustomGradientPanel1.Controls.Add(this.guna2DateTimePicker1);
+            this.guna2CustomGradientPanel1.Controls.Add(this.guna2HtmlLabel2);
+            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(42, 26);
+            this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1548, 95);
+            this.guna2CustomGradientPanel1.TabIndex = 28;
+            // 
+            // guna2GradientButton1
+            // 
+            this.guna2GradientButton1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GradientButton1.BorderRadius = 20;
+            this.guna2GradientButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton1.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2GradientButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(223)))), ((int)(((byte)(229)))));
+            this.guna2GradientButton1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(183)))), ((int)(((byte)(201)))));
+            this.guna2GradientButton1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2GradientButton1.ForeColor = System.Drawing.Color.White;
+            this.guna2GradientButton1.Location = new System.Drawing.Point(310, 27);
+            this.guna2GradientButton1.Name = "guna2GradientButton1";
+            this.guna2GradientButton1.Size = new System.Drawing.Size(180, 45);
+            this.guna2GradientButton1.TabIndex = 26;
+            this.guna2GradientButton1.Text = "Gợi ý thông minh từ AI";
+            // 
             // TrangChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1456, 894);
             this.Controls.Add(this.SlideMain);
@@ -739,7 +778,10 @@ namespace QLKS
             this.SlideMain.ResumeLayout(false);
             this.SlideMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            this.guna2CustomGradientPanel1.ResumeLayout(false);
+            this.guna2CustomGradientPanel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -783,5 +825,7 @@ namespace QLKS
         private Guna.UI2.WinForms.Guna2Button DanhSachDatPhong;
         private Guna.UI2.WinForms.Guna2Button DanhSachDichVu;
         private Guna.UI2.WinForms.Guna2Button TraCuuTraPhong;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
+        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
     }
 }

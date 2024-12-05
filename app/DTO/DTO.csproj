@@ -141,6 +141,7 @@
     <Compile Include="NHANVIEN.cs">
       <DependentUpon>DB_QLKS.tt</DependentUpon>
     </Compile>
+    <Compile Include="OverduteInfoDTO.cs" />
     <Compile Include="password_reset_tokens.cs">
       <DependentUpon>DB_QLKS.tt</DependentUpon>
     </Compile>

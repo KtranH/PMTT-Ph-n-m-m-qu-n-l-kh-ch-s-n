@@ -26,7 +26,7 @@ namespace DAL
         }
         public int CountCateByIDInBooking(int ID)
         {
-            return db.PHIEUDATPHONGs.Where(p => p.LOAIPHONG.ID == ID && p.TINHTRANG == "Đã đặt phòng").Count();
+            return db.PHIEUDATPHONGs.Where(p => p.LOAIPHONG.ID == ID && p.TINHTRANG == "Đã đặt phòng" && p.NGAYNHANPHONG >= DateTime.Now).Count();
         }
         public void UpdatePDP(PHIEUDATPHONG pDP)
         {

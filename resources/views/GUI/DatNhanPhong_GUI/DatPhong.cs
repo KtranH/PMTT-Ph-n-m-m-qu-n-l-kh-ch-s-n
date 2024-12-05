@@ -15,6 +15,7 @@ namespace GUI.DatNhanPhong_GUI
     public partial class DatPhong : Form
     {
         PHIEUDATPHONG_BLL db = new PHIEUDATPHONG_BLL();
+        PHONG_BLL dbPhong = new PHONG_BLL();
         List<PHIEUDATPHONG> listPDP = new List<PHIEUDATPHONG>();
         public DatPhong()
         {
@@ -25,7 +26,7 @@ namespace GUI.DatNhanPhong_GUI
             loadData();
         }
         //-----------------------------------------------------------------------------------------------------
-        //Lấy dữ liệu phòng vào datagrid view
+        //Lấy dữ liệu đặt phòng vào datagrid view
         public void loadData()
         {
             listPDP = db.GetAllPDPNew();
@@ -38,6 +39,19 @@ namespace GUI.DatNhanPhong_GUI
             Data_DatPhong.Columns[5].HeaderText = "Email";
             Data_DatPhong.Columns[6].HeaderText = "Tình trạng";
         }
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Lấy dữ liệu phòng vào datagrid view
+        public void loadDataPhong(string loaiphong)
+        {
+            List<PHONG> listPhongEmpty = dbPhong.GetFindPhongEmptyByCate(loaiphong);
+            DataPhong.DataSource = listPhongEmpty.Select(p => new { p.ID, p.TENPHONG, p.VITRI, p.LOAIPHONG.GIATHUE, p.LOAIPHONG.TENLOAIPHONG }).ToList();
+            DataPhong.Columns[0].HeaderText = "Mã phòng";
+            DataPhong.Columns[1].HeaderText = "Tên phòng";
+            DataPhong.Columns[2].HeaderText = "Vị trí";
+            DataPhong.Columns[3].HeaderText = "Giá thuê";
+            DataPhong.Columns[4].HeaderText = "Loại phòng";
+        }    
         //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------
         //Tìm kiếm phiếu đặt phòng
@@ -66,7 +80,8 @@ namespace GUI.DatNhanPhong_GUI
                 {
                     Button_TiepTuc.Enabled = true;
                     Button_Huy.Enabled = true;
-                }    
+                    loadDataPhong(row.Cells[3].Value.ToString());
+                }
             }
         }
         //-----------------------------------------------------------------------------------------------------
@@ -87,10 +102,22 @@ namespace GUI.DatNhanPhong_GUI
                     {
                         MessageBox.Show("Không thể tiếp tục vì yêu cầu đặt phòng này đã quá hạn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         db.GetUpdatePDP2Cancel(find);
+                        if(DataPhong.RowCount > 2)
+                        {
+                            db.GetMinusPointsUser(find);
+                        }    
+                        loadData();
                     }
                     else
                     {
-                        //Xử lý tiếp
+                        if(DataPhong.CurrentCell.Value != null)
+                        {
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Vui lòng chọn phòng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }    
                     }
                 }
             }
@@ -109,6 +136,7 @@ namespace GUI.DatNhanPhong_GUI
                 if(item.NGAYNHANPHONG < DateTime.Now)
                 {
                     db.GetUpdatePDP2Cancel(item);
+                    db.GetMinusPointsUser(item);
                 }    
             }
             loadData();
@@ -133,7 +161,10 @@ namespace GUI.DatNhanPhong_GUI
                     try
                     {
                         db.GetUpdatePDP2Cancel(find);
-                        db.GetMinusPointsUser(find);
+                        if(DataPhong.RowCount > 2)
+                        {
+                            db.GetMinusPointsUser(find);
+                        }    
                         MessageBox.Show("Hủy yêu cầu đặt phòng thành công!", "Thoại bao", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         loadData();
                     }

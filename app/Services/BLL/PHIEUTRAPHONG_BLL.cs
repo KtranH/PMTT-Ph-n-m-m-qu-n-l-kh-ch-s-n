@@ -14,5 +14,9 @@ namespace BLL
         {
             db.InsertNewPTP(ID_PNP, Date_Checkout, Gia);
         }
+        public List<OverdueInfoDTO> GetAllOverduePTP()
+        {
+            return db.GetAllOverdue();
+        }
     }
 }

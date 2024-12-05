@@ -41,7 +41,7 @@ namespace QLKS
             DataPhong.DataSource = listPhongEmpty.Select(p => new { p.ID, p.TENPHONG, p.VITRI, p.LOAIPHONG.GIATHUE, p.TRANGTHAI, p.LOAIPHONG.TENLOAIPHONG }).ToList();
             DataPhong.Columns[0].HeaderText = "Mã phòng";
             DataPhong.Columns[1].HeaderText = "Tên phòng";
-            DataPhong.Columns[2].HeaderText = "Vị trị";
+            DataPhong.Columns[2].HeaderText = "Vị trí";
             DataPhong.Columns[3].HeaderText = "Giá thuê";
             DataPhong.Columns[4].HeaderText = "Trạng thái";
             DataPhong.Columns[5].HeaderText = "Loại phòng";

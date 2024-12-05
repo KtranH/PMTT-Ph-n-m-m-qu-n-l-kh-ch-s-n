@@ -41,6 +41,10 @@ namespace DAL
         {
             return db.PHONGs.Where(p => p.TRANGTHAI == "Trống").ToList();
         }
+        public List<PHONG> FindPhongEmptyByCate(string loaiphong)
+        {
+            return db.PHONGs.Where(p => p.LOAIPHONG.TENLOAIPHONG.Contains(loaiphong) && p.TRANGTHAI == "Trống").ToList();
+        }
         public PHONG FindPhongByName(string name)
         {
             return db.PHONGs.Where(p => p.TENPHONG == name).FirstOrDefault();

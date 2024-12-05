@@ -42,6 +42,10 @@ namespace BLL
         {
             return db.FindPhongEmpty(find, phong);
         }
+        public List<PHONG> GetFindPhongEmptyByCate(string loaiphong)
+        {
+            return db.FindPhongEmptyByCate(loaiphong);
+        }
         public PHONG GetFindPhongByName(string name)
         {
             return db.FindPhongByName(name);
