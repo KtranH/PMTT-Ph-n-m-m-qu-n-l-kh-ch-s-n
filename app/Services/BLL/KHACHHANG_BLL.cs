@@ -28,5 +28,13 @@ namespace BLL
         {
             db.InsertKhachHang(khachHang);
         }
+        public void UpdateDeletedKH(KHACHHANG kh)
+        {
+            db.UpdateDeletedKH(kh);
+        }
+        public int CountKH()
+        {
+            return db.CountKH();
+        }    
     }
 }

@@ -50,6 +50,15 @@ trait Query
         }
         return true;
     }
+    public function CheckQuantityRoomInCateEnough($id)
+    {
+        $cateRoom = Phong::where('LOAIPHONG_ID', $id)->count();
+        if($cateRoom < 2)
+        {
+            return false;
+        }
+        return true;
+    }
     public function CheckInformationUser()
     {
         if(Auth::user()->SDT == "Chưa rõ" || Auth::user()->CCCD == "Chưa rõ") {

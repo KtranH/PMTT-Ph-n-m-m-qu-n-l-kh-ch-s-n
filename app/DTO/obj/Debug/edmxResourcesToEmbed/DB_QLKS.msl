@@ -25,7 +25,6 @@
           <ScalarProperty Name="PHIEUTRAPHONG_ID" ColumnName="PHIEUTRAPHONG_ID" />
           <ScalarProperty Name="DICHVU_ID" ColumnName="DICHVU_ID" />
           <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
-          <ScalarProperty Name="DONGIA" ColumnName="DONGIA" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -195,13 +194,13 @@
     <EntitySetMapping Name="PHIEUNHANPHONGs">
       <EntityTypeMapping TypeName="WEB_APP_QLKSModel.PHIEUNHANPHONG">
         <MappingFragment StoreEntitySet="PHIEUNHANPHONG">
-          <ScalarProperty Name="NGAYNHANPHONG" ColumnName="NGAYNHANPHONG" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="NHANVIEN_ID" ColumnName="NHANVIEN_ID" />
           <ScalarProperty Name="PHIEUDATPHONG_ID" ColumnName="PHIEUDATPHONG_ID" />
           <ScalarProperty Name="PHONG_ID" ColumnName="PHONG_ID" />
           <ScalarProperty Name="NGAYTRAPHONG" ColumnName="NGAYTRAPHONG" />
           <ScalarProperty Name="TINHTRANG" ColumnName="TINHTRANG" />
+          <ScalarProperty Name="NGAYNHANPHONG" ColumnName="NGAYNHANPHONG" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

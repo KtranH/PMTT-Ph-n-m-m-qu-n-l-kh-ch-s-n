@@ -16,7 +16,7 @@ class CheckLogin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(!Auth::check()) {
+        if(!Auth::check() || Auth::user()->ISDELETED == true) {
             return redirect()->route('Login');
         }
         return $next($request);

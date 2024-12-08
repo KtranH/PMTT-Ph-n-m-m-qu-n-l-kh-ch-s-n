@@ -53,6 +53,10 @@ namespace DAL
         {
             return db.PHONGs.Where(p => p.ID == id).FirstOrDefault();
         }
+        public PHONG FindPhongEmptyByID(int id)
+        {
+            return db.PHONGs.Where(p => p.ID == id && p.TRANGTHAI == "Trống").FirstOrDefault();
+        }
         public bool Themphong(PHONG P)
         {
             try

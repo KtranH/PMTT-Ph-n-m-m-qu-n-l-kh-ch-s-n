@@ -14,7 +14,7 @@
             <li style="width:110px;margin-right:30px">
                 <a class="button_cart_khoi" href="{{ route('cart') }}" style="width:100px;height:5px;margin-right:20px; cursor: pointer" id="cart-icon">
                     <span id="cart-count" style="color: #ffffff">{{ $countCart }}</span>
-                    <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i>
+                    <i class="fa-solid fa-clipboard-list" style="color: #ffffff"></i>
                 </a>
             </li>
             @if (Auth::check())

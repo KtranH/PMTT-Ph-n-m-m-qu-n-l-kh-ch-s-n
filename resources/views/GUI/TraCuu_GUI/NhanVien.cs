@@ -10,6 +10,7 @@ using System.Globalization;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
@@ -123,55 +124,68 @@ namespace QLKS
             Button_LamMoi.Enabled = true;
         }
         //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Xử lý nút thêm nhân viên
         private void BTN_THEMNV_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(Textbox_TenNhanVien.Text) ||
+            try
+            {
+                if (string.IsNullOrEmpty(Textbox_TenNhanVien.Text) ||
                 string.IsNullOrEmpty(Combox_GioiTinh.Text) ||
                 string.IsNullOrEmpty(Textbox_SDT.Text) ||
                 string.IsNullOrEmpty(Textbox_Email.Text) ||
                 string.IsNullOrEmpty(Textbox_ChucVu.Text))
-            {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin.");
-                return;
-            }
-
-            DialogResult result = MessageBox.Show(
-                "Bạn có muốn thêm nhân viên này không?",
-                "Xác nhận thêm nhân viên",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question
-            );
-
-            if (result == DialogResult.Yes)
-            {
-                NHANVIEN newNhanVien = new NHANVIEN
                 {
-                    HOTEN = Textbox_TenNhanVien.Text,
-                    GIOITINH = Combox_GioiTinh.Text,
-                    NGAYSINH = Textbox_NgSinh.Value,
-                    SDT = Textbox_SDT.Text,
-                    EMAIL = Textbox_Email.Text,
-                    CHUCVU = Textbox_ChucVu.Text,
-                    ISDELETED = false
-                };
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    return;
+                }
 
-                db.AddNhanVien(newNhanVien);
+                DialogResult result = MessageBox.Show(
+                    "Bạn có muốn thêm nhân viên này không?",
+                    "Xác nhận thêm nhân viên",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                );
 
-                MessageBox.Show("Nhân viên đã được thêm!");
-                LockControls();
-                LoadNV();
+                if (result == DialogResult.Yes)
+                {
+                    NHANVIEN newNhanVien = new NHANVIEN
+                    {
+                        HOTEN = Textbox_TenNhanVien.Text,
+                        GIOITINH = Combox_GioiTinh.Text,
+                        NGAYSINH = Textbox_NgSinh.Value,
+                        SDT = Textbox_SDT.Text,
+                        EMAIL = Textbox_Email.Text,
+                        CHUCVU = Textbox_ChucVu.Text,
+                        ISDELETED = false
+                    };
+
+                    db.AddNhanVien(newNhanVien);
+
+                    MessageBox.Show("Nhân viên đã được thêm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LockControls();
+                    LoadNV();
+                }
+                else
+                {
+                    MessageBox.Show("Thêm nhân viên bị hủy bỏ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Thêm nhân viên bị hủy bỏ.");
-            }
+                MessageBox.Show("Có lỗi xảy ra: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }   
         }
-
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Xử lý nút cập nhật
         private void BTN_CAPNHAT_Click(object sender, EventArgs e)
         {
             UnlockControls();
         }
-
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Xử lý tìm kiếm nhân viên
         private void FindNV_Click(object sender, EventArgs e)
         {
             Textbox_Find_NhanVien.Clear();
@@ -187,104 +201,133 @@ namespace QLKS
 
         private void FindNV_KeyDown(object sender, KeyEventArgs e)
         {
-
         }
-
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Xử lý nút lưu
         private void BTN_SAVENV_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(Textbox_TenNhanVien.Text) ||
-                string.IsNullOrEmpty(Combox_GioiTinh.Text) ||
-                string.IsNullOrEmpty(Textbox_NgSinh.Text) ||
-                string.IsNullOrEmpty(Textbox_SDT.Text) ||
-                string.IsNullOrEmpty(Textbox_Email.Text) ||
-                string.IsNullOrEmpty(Textbox_ChucVu.Text))
+           try
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin.");
-                return;
-            }
-
-            DialogResult result = MessageBox.Show(
-                "Bạn có muốn cập nhật thông tin nhân viên này?",
-                "Xác nhận cập nhật",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question);
-
-            if (result == DialogResult.Yes)
-            {
-                NHANVIEN updatedNhanVien = new NHANVIEN
+                if (string.IsNullOrEmpty(Textbox_TenNhanVien.Text) ||
+               string.IsNullOrEmpty(Combox_GioiTinh.Text) ||
+               string.IsNullOrEmpty(Textbox_NgSinh.Text) ||
+               string.IsNullOrEmpty(Textbox_SDT.Text) ||
+               string.IsNullOrEmpty(Textbox_Email.Text) ||
+               string.IsNullOrEmpty(Textbox_ChucVu.Text))
                 {
-                    ID = int.Parse(Data_NhanVien.SelectedRows[0].Cells[0].Value.ToString()),
-                    HOTEN = Textbox_TenNhanVien.Text,
-                    GIOITINH = Combox_GioiTinh.Text,
-                    NGAYSINH = DateTime.Parse(Textbox_NgSinh.Text),
-                    SDT = Textbox_SDT.Text,
-                    EMAIL = Textbox_Email.Text,
-                    CHUCVU = Textbox_ChucVu.Text,
-                    ISDELETED = Combox_TinhTrang.SelectedIndex == 1
-                };
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    return;
+                }
 
-                bool updateResult = db.UpdateNhanVien(updatedNhanVien);
+                DialogResult result = MessageBox.Show(
+                    "Bạn có muốn cập nhật thông tin nhân viên này?",
+                    "Xác nhận cập nhật",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
 
-                if (updateResult)
+                if (result == DialogResult.Yes)
                 {
-                    MessageBox.Show("Cập nhật thông tin nhân viên thành công!");
-                    LoadNV();
-                    LockControls();
+                    if(!Regex.IsMatch(Textbox_SDT.Text, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+                    {
+                        MessageBox.Show("Email không đúng định dạng!");
+                        return;
+                    }    
+                    NHANVIEN updatedNhanVien = new NHANVIEN
+                    {
+                        ID = int.Parse(Data_NhanVien.SelectedRows[0].Cells[0].Value.ToString()),
+                        HOTEN = Textbox_TenNhanVien.Text,
+                        GIOITINH = Combox_GioiTinh.Text,
+                        NGAYSINH = DateTime.Parse(Textbox_NgSinh.Text),
+                        SDT = Textbox_SDT.Text,
+                        EMAIL = Textbox_Email.Text,
+                        CHUCVU = Textbox_ChucVu.Text,
+                        ISDELETED = Combox_TinhTrang.SelectedIndex == 1
+                    };
+
+                    bool updateResult = db.UpdateNhanVien(updatedNhanVien);
+
+                    if (updateResult)
+                    {
+                        MessageBox.Show("Cập nhật thông tin nhân viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadNV();
+                        LockControls();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cập nhật thông tin nhân viên thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Cập nhật thông tin nhân viên thất bại!");
+                    MessageBox.Show("Cập nhật bị hủy bỏ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 }
             }
-            else
+            catch
             {
-                MessageBox.Show("Cập nhật bị hủy bỏ.");
+                MessageBox.Show("Có lỗi xảy ra khi lưu.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
-
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Xử lý logic
         private void TEXT_SDT_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }
+            if(Textbox_SDT.Text.Length > 10)
+            {
+                e.Handled = true;
+            }    
         }
-
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Xử lý nút làm mới
         private void Button_LamMoi_Click(object sender, EventArgs e)
         {
-            if (Data_NhanVien.SelectedRows.Count > 0)
+            try
             {
-                int nhanVienId = int.Parse(Data_NhanVien.SelectedRows[0].Cells[0].Value.ToString());
-
-                NHANVIEN selectedNhanVien = db.GetNhanVienById(nhanVienId);
-
-                if (selectedNhanVien != null)
+                if (Data_NhanVien.SelectedRows.Count > 0)
                 {
-                    string newPassword = BCrypt.Net.BCrypt.HashPassword("123456789");
+                    int nhanVienId = int.Parse(Data_NhanVien.SelectedRows[0].Cells[0].Value.ToString());
 
-                    selectedNhanVien.PASSWORD = newPassword;
+                    NHANVIEN selectedNhanVien = db.GetNhanVienById(nhanVienId);
 
-                    bool result = db.UpdateNhanVien(selectedNhanVien);
-
-                    if (result)
+                    if (selectedNhanVien != null)
                     {
-                        MessageBox.Show("Mật khẩu của nhân viên đã được làm mới về mặc định!");
-                        LoadNV();
+                        string newPassword = BCrypt.Net.BCrypt.HashPassword("123456789");
+
+                        selectedNhanVien.PASSWORD = newPassword;
+
+                        bool result = db.UpdateNhanVien(selectedNhanVien);
+
+                        if (result)
+                        {
+                            MessageBox.Show("Mật khẩu của nhân viên đã được làm mới về mặc định!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            LoadNV();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Cập nhật mật khẩu thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Cập nhật mật khẩu thất bại!");
+                        MessageBox.Show("Không tìm thấy nhân viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Không tìm thấy nhân viên!");
+                    MessageBox.Show("Vui lòng chọn một nhân viên để làm mới mật khẩu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Vui lòng chọn một nhân viên để làm mới mật khẩu!");
+                MessageBox.Show("Có lỗi xảy ra", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
+        //-----------------------------------------------------------------------------------------------------
     }
 }

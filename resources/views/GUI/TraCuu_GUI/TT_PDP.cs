@@ -1,4 +1,5 @@
 using BLL;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,92 +13,64 @@ namespace QLKS
 {
     public partial class TT_PDP : Form
     {
-
-        PHIEUDATPHONG_BLL PDP = new PHIEUDATPHONG_BLL();    
+        DANHGIA_BLL db = new DANHGIA_BLL();
+        public string currentUser {  get; set; }
         public TT_PDP()
         {
             InitializeComponent();
         }
-        public void OP_PHIEUDATPHONG()
+        public void LoadDG()
         {
-            OP_PDP.Items.Add("Tất cả");
-            OP_PDP.Items.Add("Đặt trước");
-            OP_PDP.Items.Add("Đã hủy");
-            OP_PDP.Items.Add("Đã xác nhận");
-            OP_PDP.Items.Add("Đã thanh toán");
-            OP_PDP.SelectedIndex = 0;
-        }
-        public void LoadPDP()
-        {
-          
-            
-            DT_DS_PDP.DataSource = PDP.GetAllPDT();
-            DT_DS_PDP.AllowUserToAddRows = false;
-            DT_DS_PDP.ReadOnly = true;
+            List<DANHGIA> listDG = db.GetAllDanhGia();
+            DT_DS_DG.DataSource = listDG.Select(dg => new { dg.ID, dg.NOIDUNG, dg.SOSAO, dg.PHIEUTRAPHONG.PHIEUNHANPHONG.PHONG.TENPHONG, dg.KHACHHANG.HOTEN }).ToList();
+            DT_DS_DG.Columns[0].HeaderText = "Mã đánh giá";
+            DT_DS_DG.Columns[1].HeaderText = "Nội dung";
+            DT_DS_DG.Columns[2].HeaderText = "Số sao";
+            DT_DS_DG.Columns[3].HeaderText = "Phòng";
+            DT_DS_DG.Columns[4].HeaderText = "Khách hàng";
         }
         private void TT_PDP_Load(object sender, EventArgs e)
         {
-            OP_PHIEUDATPHONG();
-            LoadPDP();
+            LoadDG();
         }
-
-        private void OP_PDP_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void CHECKBOX_KH_Click(object sender, EventArgs e)
-        {
-            CHECKBOX_NGAY.Checked = false;
-            CHECKBOX_NV.Checked = false;
-            CHECKBOX_PHONG.Checked = false; 
-        }
-
-        private void CHECKBOX_NGAY_Click(object sender, EventArgs e)
-        {
-            CHECKBOX_KH.Checked = false;
-            CHECKBOX_NV.Checked = false;
-            CHECKBOX_PHONG.Checked = false;
-        }
-
-        private void CHECKBOX_PHONG_Click(object sender, EventArgs e)
-        {
-            CHECKBOX_KH.Checked = false;
-            CHECKBOX_NV.Checked = false;
-            CHECKBOX_NGAY.Checked = false;
-        }
-
-        private void CHECKBOX_NV_Click(object sender, EventArgs e)
-        {
-            CHECKBOX_KH.Checked = false;
-            CHECKBOX_PHONG.Checked = false;
-            CHECKBOX_NGAY.Checked = false;
-        }
-
-        private void BTN_TIMKIEM_Click(object sender, EventArgs e)
-        {
-               
-        }
-
-        private void FindPDP_KeyDown(object sender, KeyEventArgs e)
-        {
-          
-        }
-
         private void BTN_RESET_Click(object sender, EventArgs e)
         {
-            LoadPDP();
+            LoadDG();
         }
-
-        private void BTN_XEMCHITIET_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void DT_DS_PDP_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            TEXT_MAPDP.DataBindings.Clear();
-            TEXT_MAPDP.DataBindings.Add("Text", PDP,"Mã đặt phòng");
+            if(e.RowIndex >= 0)
+            {
+                DataGridViewRow row = DT_DS_DG.Rows[e.RowIndex];
+                TEXT_KH.Text = row.Cells[4].Value.ToString();
+                TEXT_ND.Text = row.Cells[1].Value.ToString();
+            }    
+        }
+        private void BTN_DUYET_Click(object sender, EventArgs e)
+        {
+            if(TEXT_KH.Text.Trim() != "")
+            {
+                db.ApprovedDanhGia(Convert.ToInt32(DT_DS_DG.CurrentRow.Cells[0].Value.ToString()));
+                MessageBox.Show("Duyệt đánh giá khách hàng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadDG();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn đánh giá khách hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }    
+        }
+        private void BTN_KHONGDUYET_Click(object sender, EventArgs e)
+        {
+            if (TEXT_KH.Text.Trim() != "")
+            {
+                db.RejectedDanhGia(Convert.ToInt32(DT_DS_DG.CurrentRow.Cells[0].Value.ToString()));
+                MessageBox.Show("Không duyệt đánh giá khách hàng", " thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadDG();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn đánh giá khách hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

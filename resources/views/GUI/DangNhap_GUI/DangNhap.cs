@@ -54,7 +54,11 @@ namespace QLKS
                 if (db.GetNhanVien(USERNAME) != null)
                 {
                     NHANVIEN check = db.GetNhanVien(USERNAME);
-                    if(db.CheckNhanVien(check, PASS))
+                    if(check.ISDELETED == true)
+                    {
+                        MessageBox.Show("Tài khoản đã bị khóa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    if (db.CheckNhanVien(check, PASS))
                     {
                         TrangChu trangChu = new TrangChu();
                         trangChu.userCurrent = check;

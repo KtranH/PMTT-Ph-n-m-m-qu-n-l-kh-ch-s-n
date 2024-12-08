@@ -202,6 +202,17 @@
                                                                         var quantity = {{ $total_quantity }};
 
                                                                         console.log(listRoom);
+
+                                                                        Swal.fire({
+                                                                            title: 'Đang xử lý...',
+                                                                            html: '<div class="relative flex justify-center items-center"> <div class="absolute animate-ping w-8 h-8 rounded-full bg-blue-500 opacity-75"></div> <div class="relative w-8 h-8 rounded-full bg-blue-600 animate-pulse flex items-center justify-center"> <svg class="w-5 h-5 text-white animate-spin" fill="none" viewBox="0 0 24 24"> <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle> <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path> </svg> </div> </div>',
+                                                                            showConfirmButton: false,
+                                                                            allowOutsideClick: false,
+                                                                            didOpen: () => {
+                                                                                Swal.showLoading();
+                                                                            }
+                                                                        });
+                                                                        
                                                                         $.ajax({
                                                                             url: "{{ route('confirmBookingManyRooms') }}",
                                                                             type: "POST",
@@ -264,13 +275,12 @@
                                                     phải đăng ký tại quầy.</li>
                                                 </p>
                                                 <p><i class="fa-solid fa-door-open" style="color: #74C0FC;"></i> <span
-                                                        style="font-weight:bold">Đổi phòng</span>: Bạn không thể đổi phòng
-                                                    khi đã đặt. Nếu bạn muốn đổi phòng khác hãy hủy phòng hiện tại.</li>
+                                                        style="font-weight:bold">Nhận và trả phòng</span>: Vui lòng tới nhận phòng sau 14 giờ và trả phòng trước 12 giờ.</li>
                                                 </p>
                                                 <p style="color:red"><i class="fa-solid fa-ban" style="color: #74C0FC;"></i>
                                                     <span style="font-weight:bold">Hủy phòng: <br><br></span>Bạn chỉ có thể
                                                     hủy phòng bằng việc tới <span style="font-weight:bold">xác nhận</span>
-                                                    tại nhân viên khách sạn của chúng tôi <br><br>Ngoài ra khi hủy phòng bạn
+                                                    tại nhân viên khách sạn của chúng tôi. <br><br>Ngoài ra khi hủy phòng bạn
                                                     sẽ<span style="font-weight:bold"> bị trừ 20 điểm tín nhiệm</span>.
                                                     Điểm tín nhiệm dưới 20 bạn không thể đặt phòng và cũng như bị khóa
                                                     tài khoản.
@@ -319,9 +329,9 @@
                                     <script>
                                         $(document).ready(function () {
                                             const today = new Date();
+                                            today.setDate(today.getDate() + 1);
                                             const tomorrow = new Date(today);
                                             tomorrow.setDate(today.getDate() + 1);
-
                                             const formatDate = (date) => date.toISOString().split('T')[0];
 
                                             const roomPrice = {{ $total_price }}; 

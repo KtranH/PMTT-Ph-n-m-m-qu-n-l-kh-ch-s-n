@@ -29,5 +29,15 @@ namespace DAL
             db.KHACHHANGs.AddOrUpdate(kh);
             db.SaveChanges();
         }
+        public void UpdateDeletedKH(KHACHHANG kh)
+        {
+            KHACHHANG updateKH = db.KHACHHANGs.FirstOrDefault(p => p.ID == kh.ID);
+            updateKH.ISDELETED = kh.ISDELETED;
+            db.SaveChanges();
+        }
+        public int CountKH()
+        {
+            return db.KHACHHANGs.Count();
+        }    
     }
 }

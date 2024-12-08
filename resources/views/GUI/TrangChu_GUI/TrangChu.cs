@@ -193,6 +193,7 @@ namespace QLKS
             {
                 DatPhong OpenDatPhong = new DatPhong() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
                 this.ConvertForm.Controls.Clear();
+                OpenDatPhong.userCurrent = userCurrent.ID.ToString();
                 this.ConvertForm.Controls.Add(OpenDatPhong);
                 OpenDatPhong.Show();
             }    
@@ -234,7 +235,7 @@ namespace QLKS
             if(ConfirmToMove())
             {
                 HoaDon ThanhToanHD = new HoaDon() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-                //ThanhToanHD.UserCurrentBill = UserCurrent;
+                ThanhToanHD.UserCurrentBill = userCurrent.ID.ToString();
                 this.ConvertForm.Controls.Clear();
                 this.ConvertForm.Controls.Add(ThanhToanHD);
                 ThanhToanHD.Show();
@@ -275,12 +276,19 @@ namespace QLKS
         //Xử lý khi ấn vào nút nhân viên
         private void BTN_NHANVIEN_Click(object sender, EventArgs e)
         {
-           if(ConfirmToMove())
+           if(this.userCurrent.CHUCVU == "Lễ tân")
            {
-                NhanVien NV = new NhanVien() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-                this.ConvertForm.Controls.Clear();
-                this.ConvertForm.Controls.Add(NV);
-                NV.Show();
+                MessageBox.Show("Bạn không có quyền truy cập vào đây", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+           }
+           else
+           {
+                if (ConfirmToMove())
+                {
+                    NhanVien NV = new NhanVien() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                    this.ConvertForm.Controls.Clear();
+                    this.ConvertForm.Controls.Add(NV);
+                    NV.Show();
+                }
            }    
         }
         //-----------------------------------------------------------------------------------------------------
@@ -333,6 +341,7 @@ namespace QLKS
            if(ConfirmToMove())
            {
                 TT_PDP PDP = new TT_PDP() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                PDP.currentUser = this.userCurrent.ID.ToString();
                 this.ConvertForm.Controls.Clear();
                 this.ConvertForm.Controls.Add(PDP);
                 PDP.Show();

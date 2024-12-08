@@ -30,6 +30,10 @@ class Cart extends Controller
         {
             return response()->json(['success' => false, 'message' => 'Vui lòng cập nhật thông tin tài khoản']);
         }
+        else if(!$this->CheckQuantityRoomInCateEnough($request->roomID))
+        {
+            return response()->json(['success' => false, 'message' => 'Số lượng phòng của loại phòng này không đủ để thêm!']);
+        }
         $user = KhachHang::find(Auth::user()->ID);
         if($user->gioHang()->wherePivot('LOAIPHONG_ID', $request->roomID)->exists()) {
             $currentItem = $user->gioHang()

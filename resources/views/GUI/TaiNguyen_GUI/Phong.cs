@@ -138,27 +138,35 @@ namespace QLKS
         //Xử lý thêm thêm phòng
         void them()
         {
-            if (db.KTTrung(Textbox_TenPhong.Text))
+            try
             {
-                MessageBox.Show("Tên phòng bị trùng", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }else
-            if (string.IsNullOrEmpty(Textbox_TenPhong.Text) || string.IsNullOrEmpty(Textbox_ViTri.Text) )
-            {
-                MessageBox.Show("Điền đầy đủ thông tin dịch vụ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                if (db.KTTrung(Textbox_TenPhong.Text))
+                {
+                    MessageBox.Show("Tên phòng bị trùng", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                else
+            if (string.IsNullOrEmpty(Textbox_TenPhong.Text) || string.IsNullOrEmpty(Textbox_ViTri.Text))
+                {
+                    MessageBox.Show("Điền đầy đủ thông tin dịch vụ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                PHONG p = new PHONG();
+                p.TENPHONG = Textbox_TenPhong.Text;
+                p.VITRI = Textbox_ViTri.Text;
+                p.TRANGTHAI = Combox_TinhTrang.SelectedItem.ToString();
+                p.LOAIPHONG_ID = (int)Combox_LoaiPhong.SelectedValue;
+                if (db.Themphong(p))
+                {
+                    MessageBox.Show("Thêm phòng thành công");
+                    loadPhong();
+                }
+                else
+                {
+                    MessageBox.Show("Thêm không thành công");
+                }
             }
-            PHONG p = new PHONG();
-            p.TENPHONG = Textbox_TenPhong.Text;
-            p.VITRI = Textbox_ViTri.Text;
-            p.TRANGTHAI = Combox_TinhTrang.SelectedItem.ToString();
-            p.LOAIPHONG_ID = (int)Combox_LoaiPhong.SelectedValue;
-            if (db.Themphong(p))
-            {
-                MessageBox.Show("Thêm phòng thành công");
-                loadPhong();
-            }
-            else
+            catch (Exception ex)
             {
                 MessageBox.Show("Thêm không thành công");
             }
@@ -190,38 +198,47 @@ namespace QLKS
         {
             if (isAddingNewItem)
             {
-
                 them();
-
             }
             else
             {
                 capnhat();
-
             }
-
         }
         //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------
         //Cập nhật phòng
         void capnhat()
         {
-            string text = Textbox_TenPhong.Text;
-            string mt = Textbox_ViTri.Text;
-            string tt = Combox_TinhTrang.SelectedValue.ToString();
-            int lp = int.Parse(Combox_LoaiPhong.SelectedValue.ToString());
-            int pma = int.Parse(Data_Phong.CurrentRow.Cells[0].Value.ToString());
-            if (string.IsNullOrEmpty(Textbox_TenPhong.Text) || string.IsNullOrEmpty(Textbox_ViTri.Text))
+            Textbox_TenPhong.Enabled = false;
+            Textbox_ViTri.Enabled = false;
+            Combox_TinhTrang.Enabled = false;
+            Combox_LoaiPhong.Enabled = false;
+            Textbox_TenPhong.ReadOnly = true;
+            Textbox_ViTri.ReadOnly = true;
+            try
             {
-                MessageBox.Show("Điền đầy đủ thông tin dịch vụ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                string text = Textbox_TenPhong.Text;
+                string mt = Textbox_ViTri.Text;
+                string tt = Combox_TinhTrang.SelectedValue.ToString();
+                int lp = int.Parse(Combox_LoaiPhong.SelectedValue.ToString());
+                int pma = int.Parse(Data_Phong.CurrentRow.Cells[0].Value.ToString());
+                if (string.IsNullOrEmpty(Textbox_TenPhong.Text) || string.IsNullOrEmpty(Textbox_ViTri.Text))
+                {
+                    MessageBox.Show("Điền đầy đủ thông tin dịch vụ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (db.CapNhatPhong(pma, text, mt, tt, lp))
+                {
+                    MessageBox.Show("Cập nhật thành công");
+                    loadPhong();
+                }
+                else
+                {
+                    MessageBox.Show("Cập nhật không thành công");
+                }
             }
-            if (db.CapNhatPhong(pma, text, mt, tt, lp))
-            {
-                MessageBox.Show("Cập nhật thành công");
-                loadPhong();
-            }
-            else
+            catch (Exception ex)
             {
                 MessageBox.Show("Cập nhật không thành công");
             }
@@ -234,31 +251,50 @@ namespace QLKS
             isAddingNewItem = false;
             load();
         }
-
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Xử lý nút xóa
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
-            if (Data_Phong.SelectedRows.Count > 0)
+            try
             {
-                int id = Convert.ToInt32(Data_Phong.SelectedRows[0].Cells[0].Value);
-
-                DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa phòng này không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (dialogResult == DialogResult.Yes)
+                if (Data_Phong.SelectedRows.Count > 0)
                 {
-                    db.XoaPhong(id);
+                    int id = Convert.ToInt32(Data_Phong.SelectedRows[0].Cells[0].Value);
 
-                    MessageBox.Show("Dịch vụ đã được xóa!");
+                    DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa phòng này không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                    loadPhong();
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        db.XoaPhong(id);
+
+                        MessageBox.Show("Dịch vụ đã được xóa!");
+
+                        loadPhong();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Phòng không được xóa!");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Phòng không được xóa!");
+                    MessageBox.Show("Vui lòng chọn phòng cần xóa!");
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Vui lòng chọn phòng cần xóa!");
+                MessageBox.Show("Xóa không thành công");
+            }
+        }
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Xử lý logic
+        private void Textbox_ViTri_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
         //-----------------------------------------------------------------------------------------------------

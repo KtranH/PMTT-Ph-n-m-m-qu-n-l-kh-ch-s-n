@@ -139,38 +139,45 @@ namespace QLKS
         //Xử lý ấn nút tiếp tục nhận phòng
         private void BTN_CONTINUE_Click(object sender, EventArgs e)
         {
-           if(Textbox_MaPhong.Text != "")
-            {
-                DateTime ngayHomQua = DateTime.Now.AddDays(-1);
-                if (Date_NgayNhan.Value <= ngayHomQua)
+           if(DateTime.Now.Hour > 14 || DateTime.Now.Hour < 22)
+           {
+                if (Textbox_MaPhong.Text != "")
                 {
-                    MessageBox.Show("Ngày đặt phòng không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error); ;
-                }
-                else
-                {
-                    int id = Int32.Parse(this.currentPhong.LOAIPHONG_ID.ToString());
-                    if (db.CheckQuantily(id))
+                    DateTime ngayHomQua = DateTime.Now.AddDays(-1);
+                    if (Date_NgayNhan.Value <= ngayHomQua)
                     {
-                        Accept2Move();
+                        MessageBox.Show("Ngày đặt phòng không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error); ;
                     }
                     else
                     {
-                        DialogResult result = MessageBox.Show(
-                           "Cảnh báo số lượng phòng của loại phòng này hiện tại không đủ cho các đặt phòng trước! Bạn có chắc muốn tiếp tục không?",
-                           "Xác nhận",
-                           MessageBoxButtons.YesNo,
-                           MessageBoxIcon.Question);
-                        if (result == DialogResult.Yes)
+                        int id = Int32.Parse(this.currentPhong.LOAIPHONG_ID.ToString());
+                        if (db.CheckQuantily(id))
                         {
                             Accept2Move();
-                        }    
-                    }    
+                        }
+                        else
+                        {
+                            DialogResult result = MessageBox.Show(
+                               "Cảnh báo số lượng phòng của loại phòng này hiện tại không đủ cho các đặt phòng trước! Bạn có chắc muốn tiếp tục không?",
+                               "Xác nhận",
+                               MessageBoxButtons.YesNo,
+                               MessageBoxIcon.Question);
+                            if (result == DialogResult.Yes)
+                            {
+                                Accept2Move();
+                            }
+                        }
+                    }
                 }
-            }    
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn phòng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+           }
            else
-            {
-                MessageBox.Show("Vui lòng chọn phòng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+           {
+                MessageBox.Show("Lưu ý chỉ có thể nhận phòng sau 14 giờ và kết thúc lúc 22 giờ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+           }    
         }
         public void Accept2Move()
         {

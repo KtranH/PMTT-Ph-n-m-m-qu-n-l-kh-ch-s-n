@@ -53,9 +53,21 @@ namespace BLL
         {
             return db.FindPDPByID(id);
         }
+        public PHIEUDATPHONG GetFindPDPNotCompleteByID(int id)
+        {
+            return db.FindPDPNotCompleteByID(id);
+        }    
         public void GetMinusPointsUser(PHIEUDATPHONG pdp)
         {
             db.MinusPointsUser(pdp);
+        }
+        public List<LOAIPHONG> ChangeLoaiPhong(decimal gia)
+        {
+            return db.ChangeLoaiPhong(gia);
+        }
+        public int CountHuyPhong()
+        {
+            return db.CountHuyPhong();
         }    
     }
 }

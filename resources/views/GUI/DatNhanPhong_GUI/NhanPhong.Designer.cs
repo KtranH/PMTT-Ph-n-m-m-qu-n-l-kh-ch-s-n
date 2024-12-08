@@ -92,11 +92,12 @@ namespace QLKS
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DataPhong.DefaultCellStyle = dataGridViewCellStyle3;
             this.DataPhong.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.DataPhong.Location = new System.Drawing.Point(3, 54);
+            this.DataPhong.Location = new System.Drawing.Point(21, 54);
             this.DataPhong.Name = "DataPhong";
+            this.DataPhong.ReadOnly = true;
             this.DataPhong.RowHeadersVisible = false;
             this.DataPhong.RowHeadersWidth = 51;
-            this.DataPhong.Size = new System.Drawing.Size(778, 721);
+            this.DataPhong.Size = new System.Drawing.Size(743, 721);
             this.DataPhong.TabIndex = 11;
             this.DataPhong.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.DataPhong.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -111,7 +112,7 @@ namespace QLKS
             this.DataPhong.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.DataPhong.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.DataPhong.ThemeStyle.HeaderStyle.Height = 30;
-            this.DataPhong.ThemeStyle.ReadOnly = false;
+            this.DataPhong.ThemeStyle.ReadOnly = true;
             this.DataPhong.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.DataPhong.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.DataPhong.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

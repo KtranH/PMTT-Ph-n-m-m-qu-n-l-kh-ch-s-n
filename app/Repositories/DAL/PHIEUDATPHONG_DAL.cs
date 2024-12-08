@@ -44,11 +44,23 @@ namespace DAL
         {
             return db.PHIEUDATPHONGs.Find(ID);
         }
+        public PHIEUDATPHONG FindPDPNotCompleteByID(int ID)
+        {
+            return db.PHIEUDATPHONGs.Where(p => p.ID == ID && p.TINHTRANG != "Đã đặt phòng").FirstOrDefault();
+        }
         public void MinusPointsUser(PHIEUDATPHONG pDP)
         {
             KHACHHANG kh = db.KHACHHANGs.FirstOrDefault(k => k.ID == pDP.KHACHHANG_ID);
             kh.DIEMTINNHIEM = kh.DIEMTINNHIEM - 10;
             db.SaveChanges();
         }
+        public List<LOAIPHONG> ChangeLoaiPhong(decimal gia)
+        {
+            return db.LOAIPHONGs.Where(p => p.GIATHUE >= gia).ToList();
+        }
+        public int CountHuyPhong()
+        {
+            return db.PHIEUDATPHONGs.Where(p => p.TINHTRANG == "Đã hủy").Count();
+        }    
     }
 }

@@ -175,11 +175,11 @@ namespace QLKS
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.Data_DichVu.DefaultCellStyle = dataGridViewCellStyle3;
             this.Data_DichVu.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.Data_DichVu.Location = new System.Drawing.Point(3, 82);
+            this.Data_DichVu.Location = new System.Drawing.Point(15, 82);
             this.Data_DichVu.Name = "Data_DichVu";
             this.Data_DichVu.ReadOnly = true;
             this.Data_DichVu.RowHeadersVisible = false;
-            this.Data_DichVu.Size = new System.Drawing.Size(864, 671);
+            this.Data_DichVu.Size = new System.Drawing.Size(836, 671);
             this.Data_DichVu.TabIndex = 0;
             this.Data_DichVu.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.Data_DichVu.ThemeStyle.AlternatingRowsStyle.Font = null;

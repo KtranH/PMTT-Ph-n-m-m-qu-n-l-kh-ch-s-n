@@ -1,5 +1,6 @@
 using BLL;
 using DTO;
+using QLKS;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,8 +16,13 @@ namespace GUI.DatNhanPhong_GUI
     public partial class DatPhong : Form
     {
         PHIEUDATPHONG_BLL db = new PHIEUDATPHONG_BLL();
+        LOAIPHONG_BLL dbLoaiPhong = new LOAIPHONG_BLL();
         PHONG_BLL dbPhong = new PHONG_BLL();
         List<PHIEUDATPHONG> listPDP = new List<PHIEUDATPHONG>();
+        string loaiphong;
+        public string userCurrent { get; set; }
+        PHONG currentPhong = null;
+        PHIEUDATPHONG currentPDP = new PHIEUDATPHONG();
         public DatPhong()
         {
             InitializeComponent();
@@ -45,12 +51,12 @@ namespace GUI.DatNhanPhong_GUI
         public void loadDataPhong(string loaiphong)
         {
             List<PHONG> listPhongEmpty = dbPhong.GetFindPhongEmptyByCate(loaiphong);
-            DataPhong.DataSource = listPhongEmpty.Select(p => new { p.ID, p.TENPHONG, p.VITRI, p.LOAIPHONG.GIATHUE, p.LOAIPHONG.TENLOAIPHONG }).ToList();
-            DataPhong.Columns[0].HeaderText = "Mã phòng";
-            DataPhong.Columns[1].HeaderText = "Tên phòng";
-            DataPhong.Columns[2].HeaderText = "Vị trí";
-            DataPhong.Columns[3].HeaderText = "Giá thuê";
-            DataPhong.Columns[4].HeaderText = "Loại phòng";
+            Data_Phong.DataSource = listPhongEmpty.Select(p => new { p.ID, p.TENPHONG, p.VITRI, p.LOAIPHONG.GIATHUE, p.LOAIPHONG.TENLOAIPHONG }).ToList();
+            Data_Phong.Columns[0].HeaderText = "Mã phòng";
+            Data_Phong.Columns[1].HeaderText = "Tên phòng";
+            Data_Phong.Columns[2].HeaderText = "Vị trí";
+            Data_Phong.Columns[3].HeaderText = "Giá thuê";
+            Data_Phong.Columns[4].HeaderText = "Loại phòng";
         }    
         //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------
@@ -81,6 +87,9 @@ namespace GUI.DatNhanPhong_GUI
                     Button_TiepTuc.Enabled = true;
                     Button_Huy.Enabled = true;
                     loadDataPhong(row.Cells[3].Value.ToString());
+                    loaiphong = row.Cells[3].Value.ToString();
+                    Button_DoiPhong.Enabled = true;
+                    currentPDP = db.GetFindPDPByID(Int32.Parse(row.Cells[0].Value.ToString()));
                 }
             }
         }
@@ -98,26 +107,40 @@ namespace GUI.DatNhanPhong_GUI
                     {
                         MessageBox.Show("Không thể tiếp tục vì yêu cầu đặt phòng này đã quá hạn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    else if (find.NGAYNHANPHONG < DateTime.Now)
+                    else if (find.NGAYNHANPHONG < DateTime.Now.AddDays(-1))
                     {
                         MessageBox.Show("Không thể tiếp tục vì yêu cầu đặt phòng này đã quá hạn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         db.GetUpdatePDP2Cancel(find);
-                        if(DataPhong.RowCount > 2)
-                        {
-                            db.GetMinusPointsUser(find);
-                        }    
+                        db.GetMinusPointsUser(find);
                         loadData();
                     }
                     else
                     {
-                        if(DataPhong.CurrentCell.Value != null)
+                        if(DateTime.Now.Hour > 14 || DateTime.Now.Hour < 22)
                         {
-
+                            if (Data_Phong.CurrentCell.Value != null)
+                            {
+                                CT_PhieuNhanPhong openCT_PhieuNhanPhong = new CT_PhieuNhanPhong() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                                if (currentPDP.LOAIPHONG.TENLOAIPHONG != currentPhong.LOAIPHONG.TENLOAIPHONG)
+                                {
+                                    openCT_PhieuNhanPhong.moreMoney = currentPhong.LOAIPHONG.GIATHUE.Value - currentPDP.LOAIPHONG.GIATHUE.Value;
+                                }
+                                openCT_PhieuNhanPhong.pdp = currentPDP;
+                                openCT_PhieuNhanPhong.UserCurrentCTDATPHONG = this.userCurrent;
+                                openCT_PhieuNhanPhong.tenPhong = currentPhong.TENPHONG;
+                                this.Controls.Clear();
+                                this.Controls.Add(openCT_PhieuNhanPhong);
+                                openCT_PhieuNhanPhong.Show();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Vui lòng chọn phòng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
                         else
                         {
-                            MessageBox.Show("Vui lòng chọn phòng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }    
+                            MessageBox.Show("Lưu ý chỉ có thể nhận phòng sau 14 giờ và kết thúc lúc 22 giờ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
                     }
                 }
             }
@@ -133,11 +156,14 @@ namespace GUI.DatNhanPhong_GUI
         {
             foreach(PHIEUDATPHONG item in listPDP)
             {
-                if(item.NGAYNHANPHONG < DateTime.Now)
-                {
-                    db.GetUpdatePDP2Cancel(item);
-                    db.GetMinusPointsUser(item);
-                }    
+               if(item.TINHTRANG == "Đã đặt phòng")
+               {
+                    if (item.NGAYNHANPHONG < DateTime.Now.AddDays(-1))
+                    {
+                        db.GetUpdatePDP2Cancel(item);
+                        db.GetMinusPointsUser(item);
+                    }
+               }    
             }
             loadData();
             Button_TiepTuc.Enabled = true;
@@ -161,7 +187,7 @@ namespace GUI.DatNhanPhong_GUI
                     try
                     {
                         db.GetUpdatePDP2Cancel(find);
-                        if(DataPhong.RowCount > 2)
+                        if(Data_Phong.RowCount > 2)
                         {
                             db.GetMinusPointsUser(find);
                         }    
@@ -179,6 +205,42 @@ namespace GUI.DatNhanPhong_GUI
             {
                 MessageBox.Show("Vui lòng chọn yêu cầu đặt phòng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Xử lý khi ấn nút đổi phòng
+        private void Button_DoiPhong_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+               "Bạn có chắc chắn muốn đổi phòng không?",
+               "Xác nhận",
+               MessageBoxButtons.YesNo,
+               MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+               if(currentPhong == null)
+               {
+                  currentPhong = dbPhong.GetFindPhongEmptyByID(Convert.ToInt32(Data_Phong.CurrentRow.Cells[0].Value));
+               }
+               List<LOAIPHONG> listLoaiPhong = db.ChangeLoaiPhong(currentPhong.LOAIPHONG.GIATHUE.Value);
+               Combox_LoaiPhong.DataSource = listLoaiPhong.Select(p => new { p.ID, p.TENLOAIPHONG }).ToList();
+               Combox_LoaiPhong.DisplayMember = "TENLOAIPHONG";
+               Combox_LoaiPhong.ValueMember = "TENLOAIPHONG";
+            }
+        }
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Xử lý khi đổi combobox loại phòng
+        private void Combox_LoaiPhong_SelectedValueChanged(object sender, EventArgs e)
+        {
+            loadDataPhong(Combox_LoaiPhong.SelectedValue.ToString());
+        }
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Xử lý khi chọn phòng
+        private void Data_Phong_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            currentPhong = dbPhong.GetFindPhongEmptyByID(Convert.ToInt32(Data_Phong.CurrentRow.Cells[0].Value));
         }
         //-----------------------------------------------------------------------------------------------------
     }

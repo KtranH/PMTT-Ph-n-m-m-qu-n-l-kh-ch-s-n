@@ -58,6 +58,13 @@ class Account extends Controller
                     "ISDELETED" => 0
                 ]);
             }
+            else
+            {
+                if($existingUser->ISDELETED == true)
+                {
+                    return redirect()->route("Login")->with('error', 'Tài khoản đã bị khóa');
+                }
+            }
             $cookie = Cookie::make("token_account", $email, 3600 * 24 * 30);
             Auth::attempt(["EMAIL" => $email, "password" => "20012158840792030230440707349054"], true);
             return redirect()->route("Home")->withCookie($cookie);
@@ -128,6 +135,10 @@ class Account extends Controller
         $password = $request->input("password");
 
         $user = KhachHang::where("EMAIL", $email)->first();
+        if($user->ISDELETED == true)
+        {
+            return redirect()->back()->with('error', 'Tài khoản đã bị khóa');
+        }
         if ($user && Hash::check($password, $user->PASSWORD)) {
             if($request->has("remember")) {
                 $cookie = Cookie::make("token_account", $email, 43200);

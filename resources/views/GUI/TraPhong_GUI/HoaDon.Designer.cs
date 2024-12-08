@@ -69,7 +69,7 @@ namespace QLKS
             this.GR_DSPHONG.Controls.Add(this.FindBill);
             this.GR_DSPHONG.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(223)))), ((int)(((byte)(229)))));
             this.GR_DSPHONG.CustomBorderThickness = new System.Windows.Forms.Padding(0);
-            this.GR_DSPHONG.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GR_DSPHONG.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GR_DSPHONG.ForeColor = System.Drawing.SystemColors.WindowText;
             this.GR_DSPHONG.Location = new System.Drawing.Point(12, 12);
             this.GR_DSPHONG.Name = "GR_DSPHONG";
@@ -84,7 +84,7 @@ namespace QLKS
             this.DT_DS_HD.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -94,17 +94,18 @@ namespace QLKS
             this.DT_DS_HD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DT_DS_HD.DefaultCellStyle = dataGridViewCellStyle3;
             this.DT_DS_HD.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.DT_DS_HD.Location = new System.Drawing.Point(3, 57);
+            this.DT_DS_HD.Location = new System.Drawing.Point(15, 57);
             this.DT_DS_HD.Name = "DT_DS_HD";
+            this.DT_DS_HD.ReadOnly = true;
             this.DT_DS_HD.RowHeadersVisible = false;
-            this.DT_DS_HD.Size = new System.Drawing.Size(1506, 333);
+            this.DT_DS_HD.Size = new System.Drawing.Size(1479, 333);
             this.DT_DS_HD.TabIndex = 11;
             this.DT_DS_HD.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.DT_DS_HD.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -115,14 +116,14 @@ namespace QLKS
             this.DT_DS_HD.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.DT_DS_HD.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.DT_DS_HD.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.DT_DS_HD.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DT_DS_HD.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DT_DS_HD.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.DT_DS_HD.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.DT_DS_HD.ThemeStyle.HeaderStyle.Height = 30;
-            this.DT_DS_HD.ThemeStyle.ReadOnly = false;
+            this.DT_DS_HD.ThemeStyle.ReadOnly = true;
             this.DT_DS_HD.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.DT_DS_HD.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.DT_DS_HD.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DT_DS_HD.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DT_DS_HD.ThemeStyle.RowsStyle.ForeColor = System.Drawing.SystemColors.WindowText;
             this.DT_DS_HD.ThemeStyle.RowsStyle.Height = 22;
             this.DT_DS_HD.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
@@ -135,7 +136,7 @@ namespace QLKS
             this.FindBill.BorderColor = System.Drawing.Color.White;
             this.FindBill.BorderRadius = 15;
             this.FindBill.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.FindBill.DefaultText = "Nhập tên phòng để tìm kiếm hóa đơn";
+            this.FindBill.DefaultText = "Nhập CCCD của khách hoặc tên phòng để tìm kiếm hóa đơn";
             this.FindBill.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.FindBill.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.FindBill.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -152,8 +153,8 @@ namespace QLKS
             this.FindBill.SelectedText = "";
             this.FindBill.Size = new System.Drawing.Size(501, 36);
             this.FindBill.TabIndex = 6;
+            this.FindBill.TextChanged += new System.EventHandler(this.FindBill_TextChanged);
             this.FindBill.Click += new System.EventHandler(this.FindBill_Click);
-            this.FindBill.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FindBill_KeyDown);
             this.FindBill.Leave += new System.EventHandler(this.FindBill_Leave);
             // 
             // guna2GroupBox1
@@ -164,13 +165,13 @@ namespace QLKS
             this.guna2GroupBox1.Controls.Add(this.guna2TextBox1);
             this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(223)))), ((int)(((byte)(229)))));
             this.guna2GroupBox1.CustomBorderThickness = new System.Windows.Forms.Padding(0);
-            this.guna2GroupBox1.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox1.ForeColor = System.Drawing.SystemColors.WindowText;
             this.guna2GroupBox1.Location = new System.Drawing.Point(15, 447);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.Size = new System.Drawing.Size(722, 382);
             this.guna2GroupBox1.TabIndex = 7;
-            this.guna2GroupBox1.Text = "Chi tiết đặt phòng";
+            this.guna2GroupBox1.Text = "Chi tiết phòng";
             this.guna2GroupBox1.TextOffset = new System.Drawing.Point(0, 10);
             // 
             // DT_DS_KH
@@ -179,7 +180,7 @@ namespace QLKS
             this.DT_DS_KH.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -189,17 +190,18 @@ namespace QLKS
             this.DT_DS_KH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DT_DS_KH.DefaultCellStyle = dataGridViewCellStyle6;
             this.DT_DS_KH.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.DT_DS_KH.Location = new System.Drawing.Point(3, 48);
+            this.DT_DS_KH.Location = new System.Drawing.Point(12, 48);
             this.DT_DS_KH.Name = "DT_DS_KH";
+            this.DT_DS_KH.ReadOnly = true;
             this.DT_DS_KH.RowHeadersVisible = false;
-            this.DT_DS_KH.Size = new System.Drawing.Size(716, 321);
+            this.DT_DS_KH.Size = new System.Drawing.Size(698, 321);
             this.DT_DS_KH.TabIndex = 11;
             this.DT_DS_KH.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.DT_DS_KH.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -210,14 +212,14 @@ namespace QLKS
             this.DT_DS_KH.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.DT_DS_KH.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.DT_DS_KH.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.DT_DS_KH.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DT_DS_KH.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DT_DS_KH.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.DT_DS_KH.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.DT_DS_KH.ThemeStyle.HeaderStyle.Height = 30;
-            this.DT_DS_KH.ThemeStyle.ReadOnly = false;
+            this.DT_DS_KH.ThemeStyle.ReadOnly = true;
             this.DT_DS_KH.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.DT_DS_KH.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.DT_DS_KH.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DT_DS_KH.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DT_DS_KH.ThemeStyle.RowsStyle.ForeColor = System.Drawing.SystemColors.WindowText;
             this.DT_DS_KH.ThemeStyle.RowsStyle.Height = 22;
             this.DT_DS_KH.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
@@ -264,7 +266,7 @@ namespace QLKS
             this.guna2GroupBox2.Controls.Add(this.guna2TextBox2);
             this.guna2GroupBox2.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(223)))), ((int)(((byte)(229)))));
             this.guna2GroupBox2.CustomBorderThickness = new System.Windows.Forms.Padding(0);
-            this.guna2GroupBox2.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2GroupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox2.ForeColor = System.Drawing.SystemColors.WindowText;
             this.guna2GroupBox2.Location = new System.Drawing.Point(773, 447);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
@@ -323,10 +325,10 @@ namespace QLKS
             // guna2HtmlLabel3
             // 
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Montserrat", 12.25F);
+            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel3.Location = new System.Drawing.Point(385, 185);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(91, 24);
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(60, 17);
             this.guna2HtmlLabel3.TabIndex = 47;
             this.guna2HtmlLabel3.Text = "Tên phòng";
             // 
@@ -357,12 +359,12 @@ namespace QLKS
             // guna2HtmlLabel2
             // 
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Montserrat", 12.25F);
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel2.Location = new System.Drawing.Point(14, 185);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(166, 24);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(121, 17);
             this.guna2HtmlLabel2.TabIndex = 45;
-            this.guna2HtmlLabel2.Text = "Mã phiếu đặt phòng";
+            this.guna2HtmlLabel2.Text = "Mã phiếu nhận phòng";
             // 
             // TEXT_NV
             // 
@@ -391,10 +393,10 @@ namespace QLKS
             // guna2HtmlLabel1
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Montserrat", 12.25F);
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(385, 73);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(166, 24);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(110, 17);
             this.guna2HtmlLabel1.TabIndex = 43;
             this.guna2HtmlLabel1.Text = "Nhân viên thực hiện";
             // 
@@ -425,10 +427,10 @@ namespace QLKS
             // guna2HtmlLabel6
             // 
             this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel6.Font = new System.Drawing.Font("Montserrat", 12.25F);
+            this.guna2HtmlLabel6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel6.Location = new System.Drawing.Point(14, 73);
             this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
-            this.guna2HtmlLabel6.Size = new System.Drawing.Size(97, 24);
+            this.guna2HtmlLabel6.Size = new System.Drawing.Size(67, 17);
             this.guna2HtmlLabel6.TabIndex = 41;
             this.guna2HtmlLabel6.Text = "Mã hóa đơn";
             // 
@@ -443,14 +445,14 @@ namespace QLKS
             this.BTN_THANHTOAN.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.BTN_THANHTOAN.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.BTN_THANHTOAN.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(223)))), ((int)(((byte)(229)))));
-            this.BTN_THANHTOAN.Font = new System.Drawing.Font("Montserrat Black", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTN_THANHTOAN.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTN_THANHTOAN.ForeColor = System.Drawing.Color.White;
             this.BTN_THANHTOAN.Image = ((System.Drawing.Image)(resources.GetObject("BTN_THANHTOAN.Image")));
             this.BTN_THANHTOAN.Location = new System.Drawing.Point(416, 327);
             this.BTN_THANHTOAN.Name = "BTN_THANHTOAN";
             this.BTN_THANHTOAN.Size = new System.Drawing.Size(151, 42);
             this.BTN_THANHTOAN.TabIndex = 40;
-            this.BTN_THANHTOAN.Text = "Thanh toán";
+            this.BTN_THANHTOAN.Text = "Tiếp tục";
             this.BTN_THANHTOAN.Click += new System.EventHandler(this.BTN_THANHTOAN_Click);
             // 
             // BTN_HUY
@@ -464,14 +466,14 @@ namespace QLKS
             this.BTN_HUY.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.BTN_HUY.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.BTN_HUY.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(223)))), ((int)(((byte)(229)))));
-            this.BTN_HUY.Font = new System.Drawing.Font("Montserrat Black", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTN_HUY.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTN_HUY.ForeColor = System.Drawing.Color.White;
             this.BTN_HUY.Image = ((System.Drawing.Image)(resources.GetObject("BTN_HUY.Image")));
             this.BTN_HUY.Location = new System.Drawing.Point(182, 327);
             this.BTN_HUY.Name = "BTN_HUY";
             this.BTN_HUY.Size = new System.Drawing.Size(151, 42);
             this.BTN_HUY.TabIndex = 39;
-            this.BTN_HUY.Text = "Hủy";
+            this.BTN_HUY.Text = "Quay lại";
             this.BTN_HUY.Click += new System.EventHandler(this.BTN_HUY_Click);
             // 
             // guna2TextBox2

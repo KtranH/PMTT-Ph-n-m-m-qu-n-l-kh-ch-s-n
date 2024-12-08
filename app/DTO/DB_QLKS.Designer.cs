@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\Laravel\New\PMTT_QLKS-main\app\DTO\DB_QLKS.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\app\DTO\DB_QLKS.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

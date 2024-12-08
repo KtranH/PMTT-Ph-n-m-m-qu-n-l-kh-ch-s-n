@@ -27,13 +27,14 @@
                                 @foreach($categoryroom_2 as $r)
                                 @php
                                     if(count($r->hinhLoaiPhong) == 0){
-                                        $firstImage = 'https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif';
+                                        $firstImage = null;
                                     }
                                     else {
                                         $firstImage = $r->hinhLoaiPhong[0]->HINH;
                                     }
                                     $format_cost = number_format($r->GIATHUE, 0, ',', '.');
                                 @endphp
+                                @if ($firstImage != null)
                                 <div class="col-md-6 mb-4" style="max-width:800px" data-aos="fade-up">
                                     <div class="Ha card my-specific-card {{$r->ISDELETE==1 ? 'disabled':''}}">
                                         <div class="card-img">
@@ -103,6 +104,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                @endif
                                 @endforeach
                                 {{ $categoryroom_2->links("vendor.pagination.bootstrap-5") }}
                               </div>

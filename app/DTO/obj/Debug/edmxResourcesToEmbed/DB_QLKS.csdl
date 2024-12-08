@@ -24,7 +24,6 @@
     <Property Name="PHIEUTRAPHONG_ID" Type="Int32" Nullable="false" />
     <Property Name="DICHVU_ID" Type="Int32" Nullable="false" />
     <Property Name="SOLUONG" Type="Int32" />
-    <Property Name="DONGIA" Type="Decimal" Precision="18" Scale="2" />
     <NavigationProperty Name="DICHVU" Relationship="Self.FK__CHITIETTR__DICHV__5CD6CB2B" FromRole="CHITIETTRAPHONG" ToRole="DICHVU" />
     <NavigationProperty Name="PHIEUTRAPHONG" Relationship="Self.FK__CHITIETTR__PHIEU__5BE2A6F2" FromRole="CHITIETTRAPHONG" ToRole="PHIEUTRAPHONG" />
   </EntityType>
@@ -209,12 +208,12 @@
     <Property Name="PHONG_ID" Type="Int32" />
     <Property Name="NGAYTRAPHONG" Type="DateTime" Precision="0" />
     <Property Name="TINHTRANG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NGAYNHANPHONG" Type="DateTime" Precision="0" />
     <NavigationProperty Name="NHANVIEN" Relationship="Self.FK__PHIEUNHAN__NHANV__4CA06362" FromRole="PHIEUNHANPHONG" ToRole="NHANVIEN" />
     <NavigationProperty Name="PHIEUDATPHONG" Relationship="Self.FK__PHIEUNHAN__PHIEU__4D94879B" FromRole="PHIEUNHANPHONG" ToRole="PHIEUDATPHONG" />
     <NavigationProperty Name="PHONG" Relationship="Self.FK__PHIEUNHAN__PHONG__4E88ABD4" FromRole="PHIEUNHANPHONG" ToRole="PHONG" />
     <NavigationProperty Name="PHIEUTRAPHONGs" Relationship="Self.FK__PHIEUTRAP__PHIEU__59063A47" FromRole="PHIEUNHANPHONG" ToRole="PHIEUTRAPHONG" />
     <NavigationProperty Name="KHACHHANGs" Relationship="Self.CHITIETPHIEUNHANPHONG" FromRole="PHIEUNHANPHONG" ToRole="KHACHHANG" />
-    <Property Name="NGAYNHANPHONG" Type="DateTime" Precision="0" />
   </EntityType>
   <EntityType Name="PHIEUTRAPHONG">
     <Key>

@@ -54,6 +54,10 @@ namespace BLL
         {
             return db.FindPhongByID(id);
         }
+        public PHONG GetFindPhongEmptyByID(int id)
+        {
+            return db.FindPhongEmptyByID(id);
+        }    
         public bool Themphong(PHONG p)
         {
             return db.Themphong(p);

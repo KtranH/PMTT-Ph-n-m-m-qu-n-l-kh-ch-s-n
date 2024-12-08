@@ -33,10 +33,6 @@ namespace GUI.DatNhanPhong_GUI
             dbPhong.GetUpdateRoom(phong);
             dbPNP.GetInsertNewPNP(newPDP);
             dbPNP.GetInsertDetailPNP(newPDP, listKH);
-            if(this.Gia == 0)
-            {
-                this.Gia = phong.LOAIPHONG.GIATHUE.Value;
-            }    
             dbPTP.GetInsertNewPTP(newPDP.ID, newPDP.NGAYTRAPHONG.Value, this.Gia);
         }
     }

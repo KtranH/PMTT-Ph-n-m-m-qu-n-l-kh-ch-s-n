@@ -37,6 +37,5 @@ namespace BLL
         {
             return db.KTTrung(pDichvu);
         }
-
     }
 }

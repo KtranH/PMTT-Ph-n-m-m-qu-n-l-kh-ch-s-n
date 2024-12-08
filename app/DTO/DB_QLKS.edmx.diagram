@@ -4,29 +4,29 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="a40cdf9c7df1416ebbe0d5a00dd5fa6c" Name="Diagram1">
-        <EntityTypeShape EntityType="WEB_APP_QLKSModel.cache" Width="1.5" PointX="8.75" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="WEB_APP_QLKSModel.cache_locks" Width="1.5" PointX="9.75" PointY="8" IsExpanded="true" />
-        <EntityTypeShape EntityType="WEB_APP_QLKSModel.CHITIETTRAPHONG" Width="1.5" PointX="9.75" PointY="1.375" IsExpanded="true" />
+      <Diagram DiagramId="3f08f92303f54554bb14465a3be7589c" Name="Diagram1">
+        <EntityTypeShape EntityType="WEB_APP_QLKSModel.cache" Width="1.5" PointX="8.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WEB_APP_QLKSModel.cache_locks" Width="1.5" PointX="9.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WEB_APP_QLKSModel.CHITIETTRAPHONG" Width="1.5" PointX="9.75" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="WEB_APP_QLKSModel.DANHGIA" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
         <EntityTypeShape EntityType="WEB_APP_QLKSModel.DICHVU" Width="1.5" PointX="7.5" PointY="8.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="WEB_APP_QLKSModel.failed_jobs" Width="1.5" PointX="9.75" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="WEB_APP_QLKSModel.failed_jobs" Width="1.5" PointX="9.75" PointY="10.875" IsExpanded="true" />
         <EntityTypeShape EntityType="WEB_APP_QLKSModel.GIOHANG" Width="1.5" PointX="6" PointY="5.125" IsExpanded="true" />
         <EntityTypeShape EntityType="WEB_APP_QLKSModel.HINHLOAIPHONG" Width="1.5" PointX="3" PointY="15.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="WEB_APP_QLKSModel.job_batches" Width="1.5" PointX="11.75" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="WEB_APP_QLKSModel.job" Width="1.5" PointX="11.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WEB_APP_QLKSModel.job_batches" Width="1.5" PointX="11.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WEB_APP_QLKSModel.job" Width="1.5" PointX="11.75" PointY="4.875" IsExpanded="true" />
         <EntityTypeShape EntityType="WEB_APP_QLKSModel.KHACHHANG" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
         <EntityTypeShape EntityType="WEB_APP_QLKSModel.LOAIPHONG" Width="1.5" PointX="0.75" PointY="9.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="WEB_APP_QLKSModel.migration" Width="1.5" PointX="5.75" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="WEB_APP_QLKSModel.migration" Width="1.5" PointX="5.75" PointY="11.875" IsExpanded="true" />
         <EntityTypeShape EntityType="WEB_APP_QLKSModel.NHANVIEN" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="WEB_APP_QLKSModel.password_reset_tokens" Width="1.5" PointX="11.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="WEB_APP_QLKSModel.password_reset_tokens" Width="1.5" PointX="11.75" PointY="8.875" IsExpanded="true" />
         <EntityTypeShape EntityType="WEB_APP_QLKSModel.PHIEUDATPHONG" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WEB_APP_QLKSModel.PHIEUNHANPHONG" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="WEB_APP_QLKSModel.PHIEUNHANPHONG" Width="1.5" PointX="5.25" PointY="0.875" IsExpanded="true" />
         <EntityTypeShape EntityType="WEB_APP_QLKSModel.PHIEUTRAPHONG" Width="1.5" PointX="7.5" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="WEB_APP_QLKSModel.PHONG" Width="1.5" PointX="3" PointY="12.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="WEB_APP_QLKSModel.session" Width="1.5" PointX="11.75" PointY="12" IsExpanded="true" />
-        <EntityTypeShape EntityType="WEB_APP_QLKSModel.sysdiagram" Width="1.5" PointX="13.75" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="WEB_APP_QLKSModel.user" Width="1.5" PointX="13.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="WEB_APP_QLKSModel.session" Width="1.5" PointX="11.75" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WEB_APP_QLKSModel.sysdiagram" Width="1.5" PointX="13.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WEB_APP_QLKSModel.user" Width="1.5" PointX="13.75" PointY="3.875" IsExpanded="true" />
         <AssociationConnector Association="WEB_APP_QLKSModel.FK__CHITIETTR__DICHV__5CD6CB2B" ManuallyRouted="false" />
         <AssociationConnector Association="WEB_APP_QLKSModel.FK__CHITIETTR__PHIEU__5BE2A6F2" ManuallyRouted="false" />
         <AssociationConnector Association="WEB_APP_QLKSModel.FK__DANHGIA__KHACHHA__6FE99F9F" ManuallyRouted="false" />

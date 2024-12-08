@@ -26,10 +26,11 @@ namespace QLKS
         public string dateTra { get; set; }
         public string idKH { get; set; }
         public int idPNP { get; set; } = 0;
+        public decimal moreMoney { get; set; } = 0;
+        public PHIEUDATPHONG pdp { get; set; } = null;
 
         List<KHACHHANG> listKhIn = new List<KHACHHANG>();
         PHONG phong = new PHONG();
-        public PHIEUDATPHONG pdp { get; set; } = null;
 
         public CT_PhieuNhanPhong()
         {
@@ -40,9 +41,18 @@ namespace QLKS
             LoadDataPhong();
             LoadDataKH();
 
-            DateTime CheckinDate = DateTime.Parse(this.dateNhan);
-            DateTime CheckoutDate = DateTime.Parse(this.dateTra);
-            Label_ThoiGian.Text = $"Thời gian nhận phòng từ {CheckinDate.ToString("dd/MM/yyyy")} đến {CheckoutDate.ToString("dd/MM/yyyy")}. Tổng cộng: {CalcSoNgayThue(CheckinDate, CheckoutDate)} ngày";
+            if(this.pdp != null)
+            {
+                DateTime CheckinDate = pdp.NGAYNHANPHONG.Value;
+                DateTime CheckoutDate = pdp.NGAYTRAPHONGDUKIEN.Value;
+                Label_ThoiGian.Text = $"Thời gian nhận phòng từ {CheckinDate.ToString("dd/MM/yyyy")} đến {CheckoutDate.ToString("dd/MM/yyyy")}. Tổng cộng: {CalcSoNgayThue(CheckinDate, CheckoutDate)} ngày";
+            }
+            else
+            {
+                DateTime CheckinDate = DateTime.Parse(this.dateNhan);
+                DateTime CheckoutDate = DateTime.Parse(this.dateTra);
+                Label_ThoiGian.Text = $"Thời gian nhận phòng từ {CheckinDate.ToString("dd/MM/yyyy")} đến {CheckoutDate.ToString("dd/MM/yyyy")}. Tổng cộng: {CalcSoNgayThue(CheckinDate, CheckoutDate)} ngày";
+            }
         }
         //-----------------------------------------------------------------------------------------------------
         //Tính toán số ngày thuê
@@ -150,6 +160,10 @@ namespace QLKS
             {
                 e.Handled = true; // Ngăn người dùng nhập ký tự không phải số
             }
+            if(TEXT_SDT.Text.Length >= 10)
+            {
+                e.Handled = true;
+            }    
         }
         private void TEXT_CCCD_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -157,6 +171,10 @@ namespace QLKS
             {
                 e.Handled = true;
             }
+            if(TEXT_CCCD.Text.Length >= 12)
+            {
+                e.Handled = true;
+            }    
         }
         //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------
@@ -240,6 +258,7 @@ namespace QLKS
                     if (this.pdp == null)
                     {
                         xuLy.ID_PDP = null;
+                        xuLy.Gia = phong.LOAIPHONG.GIATHUE.Value;
                         xuLy.Date_Checkin = this.dateNhan;
                         xuLy.Date_Checkout = this.dateTra;
                     }
@@ -248,7 +267,7 @@ namespace QLKS
                         xuLy.ID_PDP = this.pdp.ID;
                         xuLy.Date_Checkin = this.pdp.NGAYNHANPHONG.ToString();
                         xuLy.Date_Checkout = this.pdp.NGAYTRAPHONGDUKIEN.ToString();
-                        xuLy.Gia = this.pdp.THANHTOAN.Value;
+                        xuLy.Gia = this.moreMoney;
                         this.pdp.TINHTRANG = "Đã nhận phòng";
                         dbPDP.GetUpdatePDP(this.pdp);
                     }

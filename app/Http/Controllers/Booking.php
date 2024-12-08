@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ETicketMail;
+use App\Mail\ETicketManyRoomMail;
 use App\Models\KhachHang;
 use App\Models\LoaiPhong;
 use App\Models\PhieuDatPhong;
@@ -9,6 +11,7 @@ use App\Query;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class Booking extends Controller
@@ -69,6 +72,12 @@ class Booking extends Controller
             'THANHTOAN' => $request->payment,
             'TINHTRANG' => 'Đã đặt phòng',
             ]);
+
+            $roomType = LoaiPhong::find($request->roomID)->TENLOAIPHONG;
+            $status = "Đã xác nhận";
+
+            Mail::to($user->EMAIL)->send(new ETicketMail($user, $roomType, $request->checkIn, $request->checkOut, $request->payment, $status));
+
             return response()->json(['success' => true]);
         }
         catch(\Exception $e)
@@ -87,6 +96,7 @@ class Booking extends Controller
             $checkIn = Carbon::parse($request->checkIn);
             $checkOut = Carbon::parse($request->checkOut);
             $duration = $checkIn->diffInDays($checkOut);
+            $bookingDetails = [];
             foreach ($request->listRoom as $item) {
                 for ($i = 0; $i < $item['pivot']['SOLUONG']; $i++) {
                     $user->phieuDatPhong()->create([
@@ -97,8 +107,17 @@ class Booking extends Controller
                     'TINHTRANG' => 'Đã đặt phòng',
                     ]);
                 }
+                $bookingDetails[] = [
+                    'roomType' => $item['TENLOAIPHONG'],
+                    'checkIn' => $request->checkIn,
+                    'checkOut' => $request->checkOut,
+                    'payment' => ($item['pivot']['DONGIA'] / $item['pivot']['SOLUONG']) * $duration,
+                    'quantity' => $item['pivot']['SOLUONG'],
+                    'status' => 'Đã đặt phòng',
+                ];
                 $user->gioHang()->detach($item['ID']);
             }
+            Mail::to($user->EMAIL)->send(new ETicketManyRoomMail($user, $bookingDetails));
             return response()->json(['success' => true]);
         }
         catch(\Exception $e)

@@ -31,6 +31,7 @@ namespace QLKS
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NhanVien));
             this.guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.Data_NhanVien = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -83,7 +84,7 @@ namespace QLKS
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.Data_NhanVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.Data_NhanVien.ColumnHeadersHeight = 50;
+            this.Data_NhanVien.ColumnHeadersHeight = 30;
             this.Data_NhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
@@ -94,10 +95,13 @@ namespace QLKS
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.Data_NhanVien.DefaultCellStyle = dataGridViewCellStyle3;
             this.Data_NhanVien.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.Data_NhanVien.Location = new System.Drawing.Point(3, 70);
+            this.Data_NhanVien.Location = new System.Drawing.Point(18, 70);
             this.Data_NhanVien.Name = "Data_NhanVien";
+            this.Data_NhanVien.ReadOnly = true;
             this.Data_NhanVien.RowHeadersVisible = false;
-            this.Data_NhanVien.Size = new System.Drawing.Size(797, 635);
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Data_NhanVien.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.Data_NhanVien.Size = new System.Drawing.Size(767, 635);
             this.Data_NhanVien.TabIndex = 11;
             this.Data_NhanVien.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.Data_NhanVien.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -111,8 +115,8 @@ namespace QLKS
             this.Data_NhanVien.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Data_NhanVien.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.Data_NhanVien.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.Data_NhanVien.ThemeStyle.HeaderStyle.Height = 50;
-            this.Data_NhanVien.ThemeStyle.ReadOnly = false;
+            this.Data_NhanVien.ThemeStyle.HeaderStyle.Height = 30;
+            this.Data_NhanVien.ThemeStyle.ReadOnly = true;
             this.Data_NhanVien.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.Data_NhanVien.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.Data_NhanVien.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -195,10 +199,10 @@ namespace QLKS
             // 
             this.GR_DSPHONG.BorderColor = System.Drawing.Color.White;
             this.GR_DSPHONG.BorderRadius = 10;
+            this.GR_DSPHONG.Controls.Add(this.Data_NhanVien);
             this.GR_DSPHONG.Controls.Add(this.Button_ThemNhanVien);
             this.GR_DSPHONG.Controls.Add(this.Button_Luu);
             this.GR_DSPHONG.Controls.Add(this.Textbox_Find_NhanVien);
-            this.GR_DSPHONG.Controls.Add(this.Data_NhanVien);
             this.GR_DSPHONG.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(223)))), ((int)(((byte)(229)))));
             this.GR_DSPHONG.CustomBorderThickness = new System.Windows.Forms.Padding(0);
             this.GR_DSPHONG.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -414,7 +418,7 @@ namespace QLKS
             this.Textbox_NgSinh.ForeColor = System.Drawing.SystemColors.MenuBar;
             this.Textbox_NgSinh.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.Textbox_NgSinh.Location = new System.Drawing.Point(31, 283);
-            this.Textbox_NgSinh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Textbox_NgSinh.Margin = new System.Windows.Forms.Padding(2);
             this.Textbox_NgSinh.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.Textbox_NgSinh.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.Textbox_NgSinh.Name = "Textbox_NgSinh";

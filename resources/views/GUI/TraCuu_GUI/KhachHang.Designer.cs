@@ -29,15 +29,16 @@ namespace QLKS
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KhachHang));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GR_DSPHONG = new Guna.UI2.WinForms.Guna2GroupBox();
             this.Textbox_Find_KhachHang = new Guna.UI2.WinForms.Guna2TextBox();
             this.Data_KhachHang = new Guna.UI2.WinForms.Guna2DataGridView();
             this.Textbox_Email = new Guna.UI2.WinForms.Guna2TextBox();
             this.Combox_TinhTrang = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.BTN_CAPNHAT = new Guna.UI2.WinForms.Guna2Button();
             this.GR_DSPHONG.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Data_KhachHang)).BeginInit();
             this.SuspendLayout();
@@ -86,31 +87,32 @@ namespace QLKS
             // 
             // Data_KhachHang
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.Data_KhachHang.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Data_KhachHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.Data_KhachHang.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Data_KhachHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.Data_KhachHang.ColumnHeadersHeight = 30;
             this.Data_KhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Data_KhachHang.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Data_KhachHang.DefaultCellStyle = dataGridViewCellStyle6;
             this.Data_KhachHang.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.Data_KhachHang.Location = new System.Drawing.Point(3, 70);
+            this.Data_KhachHang.Location = new System.Drawing.Point(30, 67);
             this.Data_KhachHang.Name = "Data_KhachHang";
+            this.Data_KhachHang.ReadOnly = true;
             this.Data_KhachHang.RowHeadersVisible = false;
-            this.Data_KhachHang.Size = new System.Drawing.Size(1490, 556);
+            this.Data_KhachHang.Size = new System.Drawing.Size(1444, 556);
             this.Data_KhachHang.TabIndex = 11;
             this.Data_KhachHang.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.Data_KhachHang.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -125,7 +127,7 @@ namespace QLKS
             this.Data_KhachHang.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.Data_KhachHang.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.Data_KhachHang.ThemeStyle.HeaderStyle.Height = 30;
-            this.Data_KhachHang.ThemeStyle.ReadOnly = false;
+            this.Data_KhachHang.ThemeStyle.ReadOnly = true;
             this.Data_KhachHang.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.Data_KhachHang.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.Data_KhachHang.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -151,6 +153,7 @@ namespace QLKS
             this.Textbox_Email.Name = "Textbox_Email";
             this.Textbox_Email.PasswordChar = '\0';
             this.Textbox_Email.PlaceholderText = "";
+            this.Textbox_Email.ReadOnly = true;
             this.Textbox_Email.SelectedText = "";
             this.Textbox_Email.Size = new System.Drawing.Size(531, 36);
             this.Textbox_Email.TabIndex = 9;
@@ -181,6 +184,23 @@ namespace QLKS
             this.guna2HtmlLabel1.TabIndex = 11;
             this.guna2HtmlLabel1.Text = "Email tài khoản:";
             // 
+            // BTN_CAPNHAT
+            // 
+            this.BTN_CAPNHAT.BorderRadius = 15;
+            this.BTN_CAPNHAT.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BTN_CAPNHAT.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BTN_CAPNHAT.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BTN_CAPNHAT.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BTN_CAPNHAT.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(223)))), ((int)(((byte)(229)))));
+            this.BTN_CAPNHAT.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTN_CAPNHAT.ForeColor = System.Drawing.Color.White;
+            this.BTN_CAPNHAT.Location = new System.Drawing.Point(977, 799);
+            this.BTN_CAPNHAT.Name = "BTN_CAPNHAT";
+            this.BTN_CAPNHAT.Size = new System.Drawing.Size(531, 36);
+            this.BTN_CAPNHAT.TabIndex = 12;
+            this.BTN_CAPNHAT.Text = "Cập nhật";
+            this.BTN_CAPNHAT.Click += new System.EventHandler(this.BTN_CAPNHAT_Click);
+            // 
             // KhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -188,6 +208,7 @@ namespace QLKS
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ClientSize = new System.Drawing.Size(1520, 842);
+            this.Controls.Add(this.BTN_CAPNHAT);
             this.Controls.Add(this.guna2HtmlLabel1);
             this.Controls.Add(this.Combox_TinhTrang);
             this.Controls.Add(this.Textbox_Email);
@@ -212,5 +233,6 @@ namespace QLKS
         private Guna.UI2.WinForms.Guna2TextBox Textbox_Email;
         private Guna.UI2.WinForms.Guna2ComboBox Combox_TinhTrang;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        private Guna.UI2.WinForms.Guna2Button BTN_CAPNHAT;
     }
 }

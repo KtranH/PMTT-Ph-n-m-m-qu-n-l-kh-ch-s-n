@@ -89,5 +89,30 @@ namespace QLKS
             }    
         }
         //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Xử lý cật nhật tài khoản người dùng
+        private void BTN_CAPNHAT_Click(object sender, EventArgs e)
+        {
+            KHACHHANG kh = db.GetFindKhachHangByID(Convert.ToInt32(Data_KhachHang.CurrentRow.Cells[0].Value.ToString()));
+            if (kh.PASSWORD.Length != 0)
+            {
+                if (Combox_TinhTrang.Text == "Hoạt động")
+                {
+                    kh.ISDELETED = false;
+                }
+                else
+                {
+                    kh.ISDELETED = true;
+                }
+                db.UpdateDeletedKH(kh);
+                LoadKH();
+                MessageBox.Show("Cập nhật tài khoản thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Khách hàng chưa tạo tài khoản", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        //-----------------------------------------------------------------------------------------------------
     }
 }

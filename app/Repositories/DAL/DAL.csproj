@@ -86,6 +86,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DANHGIA_DAL.cs" />
     <Compile Include="DICHVU_DAL.cs" />
     <Compile Include="KHACHHANG_DAL.cs" />
     <Compile Include="LOAIPHONG_DAL.cs" />

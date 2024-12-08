@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Text;
@@ -71,7 +72,11 @@ namespace QLKS
             {
                 DataGridViewRow row = Data_DichVu.Rows[e.RowIndex];
                 Textbox_TenDichVu.Text = row.Cells[1].Value.ToString();
-                Textbox_GiaDichVu.Text = row.Cells[2].Value.ToString();
+                CultureInfo culture = new CultureInfo("vi-VN");
+                culture.NumberFormat.NumberDecimalSeparator = ".";
+                culture.NumberFormat.CurrencyDecimalDigits = 0;
+                decimal giadichvu = Convert.ToDecimal(row.Cells[2].Value);
+                Textbox_GiaDichVu.Text = giadichvu.ToString("C", culture);
                 Textbox_MoTa.Text = row.Cells[3].Value.ToString();
             }    
         }
@@ -116,30 +121,37 @@ namespace QLKS
         }
         //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------
-        //THêm dịch vụ
+        //Xử lý nút thêm dịch vụ
         void Them()
         {
-            if(db.KTTrung(Textbox_TenDichVu.Text))
+            try
             {
-                MessageBox.Show("Tên dịch vụ bị trùng", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }    
+                if (db.KTTrung(Textbox_TenDichVu.Text))
+                {
+                    MessageBox.Show("Tên dịch vụ bị trùng", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
-            if (string.IsNullOrEmpty(Textbox_TenDichVu.Text) || string.IsNullOrEmpty(Textbox_MoTa.Text) || !decimal.TryParse(Textbox_GiaDichVu.Text, out decimal giaThue) || giaThue <= 0)
-            {
-                MessageBox.Show("Điền đầy đủ thông tin dịch vụ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                if (string.IsNullOrEmpty(Textbox_TenDichVu.Text) || string.IsNullOrEmpty(Textbox_MoTa.Text) || !decimal.TryParse(Textbox_GiaDichVu.Text, out decimal giaThue) || giaThue <= 0)
+                {
+                    MessageBox.Show("Điền đầy đủ thông tin dịch vụ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                DICHVU dv = new DICHVU();
+                dv.TENDICHVU = Textbox_TenDichVu.Text;
+                dv.GIA = giaThue;
+                dv.MOTA = Textbox_MoTa.Text;
+                if (db.ThemDichVu(dv))
+                {
+                    MessageBox.Show("Thêm dịch vụ thành công");
+                    loadDV();
+                }
+                else
+                {
+                    MessageBox.Show("Thêm không thành công");
+                }
             }
-            DICHVU dv = new DICHVU();
-            dv.TENDICHVU = Textbox_TenDichVu.Text;
-            dv.GIA = giaThue;
-            dv.MOTA = Textbox_MoTa.Text;
-            if (db.ThemDichVu(dv))
-            {
-                MessageBox.Show("Thêm dịch vụ thành công");
-                loadDV();
-            }
-            else
+            catch (Exception ex)
             {
                 MessageBox.Show("Thêm không thành công");
             }
@@ -176,34 +188,41 @@ namespace QLKS
         //Cập nhật dịch vụ
         void capnhat()
         {
-            if (!string.IsNullOrEmpty(Textbox_TenDichVu.Text.Trim()) &&
-                !string.IsNullOrEmpty(Textbox_GiaDichVu.Text.Trim()) &&
-                !string.IsNullOrEmpty(Textbox_MoTa.Text.Trim()))
+           try
             {
-                int id = Convert.ToInt32(MADV.Text);
-                string tenDichVu = Textbox_TenDichVu.Text;
-                decimal giaDichVu = Convert.ToDecimal(Textbox_GiaDichVu.Text);
-                string moTa = Textbox_MoTa.Text;
-
-                DICHVU dichVu = new DICHVU
+                if (!string.IsNullOrEmpty(Textbox_TenDichVu.Text.Trim()) &&
+               !string.IsNullOrEmpty(Textbox_GiaDichVu.Text.Trim()) &&
+               !string.IsNullOrEmpty(Textbox_MoTa.Text.Trim()))
                 {
-                    ID = id,
-                    TENDICHVU = tenDichVu,
-                    GIA = giaDichVu,
-                    MOTA = moTa
-                };
+                    int id = Convert.ToInt32(MADV.Text);
+                    string tenDichVu = Textbox_TenDichVu.Text;
+                    decimal giaDichVu = Convert.ToDecimal(Textbox_GiaDichVu.Text);
+                    string moTa = Textbox_MoTa.Text;
 
-                db.UpdateDichVu(dichVu);
+                    DICHVU dichVu = new DICHVU
+                    {
+                        ID = id,
+                        TENDICHVU = tenDichVu,
+                        GIA = giaDichVu,
+                        MOTA = moTa
+                    };
 
-                MessageBox.Show("Cập nhật dịch vụ thành công!");
+                    db.UpdateDichVu(dichVu);
 
-                loadDV();
+                    MessageBox.Show("Cập nhật dịch vụ thành công!");
 
-                LockControl();
+                    loadDV();
+
+                    LockControl();
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng điền đầy đủ thông tin!");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin!");
+                MessageBox.Show("Cập nhật dịch vụ thất bại");
             }
         }
         //-----------------------------------------------------------------------------------------------------
@@ -231,6 +250,9 @@ namespace QLKS
               
             }
         }
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Xử lí logic
         private void TEXT_GIADV_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -238,31 +260,40 @@ namespace QLKS
                 e.Handled = true; 
             }
         }
-
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Xử lí nút xóa
         private void Button_XoaDichVu_Click(object sender, EventArgs e)
         {
-            if (Data_DichVu.SelectedRows.Count > 0)
+            try
             {
-                int id = Convert.ToInt32(Data_DichVu.SelectedRows[0].Cells[0].Value);
-
-                DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa dịch vụ này không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (dialogResult == DialogResult.Yes)
+                if (Data_DichVu.SelectedRows.Count > 0)
                 {
-                    db.DeleteDichVu(id);
+                    int id = Convert.ToInt32(Data_DichVu.SelectedRows[0].Cells[0].Value);
 
-                    MessageBox.Show("Dịch vụ đã được xóa!");
+                    DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa dịch vụ này không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                    loadDV();
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        db.DeleteDichVu(id);
+
+                        MessageBox.Show("Dịch vụ đã được xóa!");
+
+                        loadDV();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Dịch vụ không được xóa!");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Dịch vụ không được xóa!");
+                    MessageBox.Show("Vui lòng chọn dịch vụ cần xóa!");
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Vui lòng chọn dịch vụ cần xóa!");
+                MessageBox.Show("Dịch vụ không được xóa, xóa thất bại!");
             }
         }
         //-----------------------------------------------------------------------------------------------------
