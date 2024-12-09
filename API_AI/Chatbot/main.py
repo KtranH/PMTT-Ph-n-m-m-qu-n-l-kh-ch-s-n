@@ -12,7 +12,7 @@ with gr.Blocks(theme=gr.themes.Soft()) as demo:
 
     chatbot = gr.Chatbot(
         label="Trò Chuyện Với Trợ Lý",
-        height=900,  
+        height=800,  
         bubble_full_width=False,  
         layout='bubble',
         type='messages'

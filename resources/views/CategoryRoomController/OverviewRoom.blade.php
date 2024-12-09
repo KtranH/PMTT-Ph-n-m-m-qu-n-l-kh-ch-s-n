@@ -417,6 +417,114 @@
                     </a>
                 </div>
             </div>
+            <style>
+            .review-section {
+            padding: 30px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            max-width: 1000px;
+            margin: 0 auto;
+            margin-top: 40px;
+            }
+
+            .section-title {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            border-bottom: 2px solid #f39c12;
+            padding-bottom: 10px;
+            }
+
+            .review-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            }
+
+            .review-card {
+            display: flex;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            gap: 15px;
+            max-width: 100%;
+            transition: all 0.3s ease;
+            }
+
+            .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+            }
+
+            .avatar img {
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            }
+
+            .review-content {
+            flex: 1;
+            }
+
+            .user-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            }
+
+            .user-name {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #333;
+            }
+
+            .rating {
+            font-size: 1.2rem;
+            }
+
+            .fa-star {
+            font-size: 1.4rem;
+            color: #f39c12;
+            margin-right: 2px;
+            }
+
+            .review-text {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.5;
+            margin-top: 10px;
+            }
+            </style>
+            <div class="review-section">
+                <h2 class="section-title">Đánh giá từ khách hàng khác</h2>
+                
+                <div class="review-container">
+                  @foreach ($Review as $item)
+                    <div class="review-card">
+                      <div class="avatar">
+                        <img src="{{ $item->khachHang->AVATAR }}" alt="Avatar">
+                      </div>
+                      <div class="review-content">
+                        <div class="user-info">
+                          <span class="user-name">{{ $item->khachHang->HOTEN }}</span>
+                          <span class="rating">
+                            @for ($i = 0; $i < $item->SOSAO; $i++)
+                                <i class="fas fa-star"></i> 
+                            @endfor
+                          </span>
+                        </div>
+                        <p class="review-text">{{ $item->NOIDUNG }}</p>
+                      </div>
+                    </div>
+                  @endforeach
+                </div>
+            </div>   
         </div>
     
         <!-- Slick Slider initialization -->

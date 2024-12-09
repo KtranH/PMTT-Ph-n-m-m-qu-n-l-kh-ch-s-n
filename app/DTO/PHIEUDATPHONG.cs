@@ -27,6 +27,8 @@ namespace DTO
         public Nullable<decimal> THANHTOAN { get; set; }
         public string TINHTRANG { get; set; }
         public Nullable<int> KHACHHANG_ID { get; set; }
+        public string MAPIN { get; set; }
+        public string LUUTRU { get; set; }
     
         public virtual KHACHHANG KHACHHANG { get; set; }
         public virtual LOAIPHONG LOAIPHONG { get; set; }

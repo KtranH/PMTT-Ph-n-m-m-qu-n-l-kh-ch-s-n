@@ -11,6 +11,7 @@ use App\Query;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -57,6 +58,11 @@ class Booking extends Controller
         }
         return view('BookingController.SetupBookingManyRooms', compact('listRoom'));
     }
+    public function HashCode()
+    {
+        $hashCode = substr(sprintf('%04x%04x%04x', mt_rand(0, 0xffff), mt_rand(0, 0xffff), mt_rand(0, 0xffff)), 0, 12);
+        return $hashCode;
+    }
     public function ConfirmBooking(Request $request)
     {
         $user = KhachHang::find(Auth::user()->ID);
@@ -65,18 +71,21 @@ class Booking extends Controller
         }
         try
         {
+            $code = $this->HashCode();
             $user->phieuDatPhong()->create([
             'LOAIPHONG_ID' => $request->roomID,
             'NGAYNHANPHONG' => $request->checkIn,
             'NGAYTRAPHONGDUKIEN' => $request->checkOut,
             'THANHTOAN' => $request->payment,
             'TINHTRANG' => 'Đã đặt phòng',
+            'MAPIN' => $code,
+            'LUUTRU' => $request->occupant_info ? $request->occupant_info : null
             ]);
 
             $roomType = LoaiPhong::find($request->roomID)->TENLOAIPHONG;
             $status = "Đã xác nhận";
 
-            Mail::to($user->EMAIL)->send(new ETicketMail($user, $roomType, $request->checkIn, $request->checkOut, $request->payment, $status));
+            Mail::to($user->EMAIL)->send(new ETicketMail($user, $roomType, $request->checkIn, $request->checkOut, $request->payment, $status, $request->occupant_info, $code));
 
             return response()->json(['success' => true]);
         }
@@ -97,6 +106,7 @@ class Booking extends Controller
             $checkOut = Carbon::parse($request->checkOut);
             $duration = $checkIn->diffInDays($checkOut);
             $bookingDetails = [];
+            $code = $this->HashCode();
             foreach ($request->listRoom as $item) {
                 for ($i = 0; $i < $item['pivot']['SOLUONG']; $i++) {
                     $user->phieuDatPhong()->create([
@@ -105,15 +115,19 @@ class Booking extends Controller
                     'NGAYTRAPHONGDUKIEN' => $request->checkOut,
                     'THANHTOAN' => ($item['pivot']['DONGIA'] / $item['pivot']['SOLUONG']) * $duration,
                     'TINHTRANG' => 'Đã đặt phòng',
+                    'MAPIN' => $code,
+                    'LUUTRU' => $request->occupant_info ? $request->occupant_info : null
                     ]);
                 }
                 $bookingDetails[] = [
                     'roomType' => $item['TENLOAIPHONG'],
                     'checkIn' => $request->checkIn,
                     'checkOut' => $request->checkOut,
-                    'payment' => ($item['pivot']['DONGIA'] / $item['pivot']['SOLUONG']) * $duration,
+                    'payment' => $item['pivot']['DONGIA'],
                     'quantity' => $item['pivot']['SOLUONG'],
                     'status' => 'Đã đặt phòng',
+                    'occupant_info' => $request->occupant_info,
+                    'code' => $code
                 ];
                 $user->gioHang()->detach($item['ID']);
             }

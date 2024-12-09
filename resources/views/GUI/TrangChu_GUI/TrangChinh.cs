@@ -103,5 +103,32 @@ namespace QLKS
 
         }
         //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Xử lý nút làm mới
+        private void Button_Reload_Click_1(object sender, EventArgs e)
+        {
+            Load_QUAHAN();
+        }
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Xử lý nút thanh toán quá hạn
+        private void Button_Checkout_Click(object sender, EventArgs e)
+        {
+            if(Data_QuaHan.CurrentRow == null)
+            {
+                MessageBox.Show("Vui lòng chọn một đơn trả phòng quá hạn để thanh toán!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                PHIEUTRAPHONG currentPTP = dbTraPhong.GetPTPByID(Convert.ToInt32(Data_QuaHan.CurrentRow.Cells[0].Value.ToString()));
+                CT_HoaDon Open_CT_HoaDon = new CT_HoaDon() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                Open_CT_HoaDon.userCurrent = this.userCurrent.ID.ToString();
+                Open_CT_HoaDon.PTP = currentPTP;
+                this.Controls.Clear();
+                this.Controls.Add(Open_CT_HoaDon);
+                Open_CT_HoaDon.Show();
+            }    
+        }
+        //-----------------------------------------------------------------------------------------------------
     }
 }

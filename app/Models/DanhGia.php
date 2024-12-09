@@ -13,6 +13,8 @@ class DanhGia extends Model
         'NOIDUNG', 'SOSAO', 'PHIEUTRAPHONG_ID', 'KHACHHANG_ID', 'ISDELETED'
     ];
 
+    public $timestamps = false;
+
     public function phieuTraPhong()
     {
         return $this->belongsTo(PhieuTraPhong::class, 'PHIEUTRAPHONG_ID');

@@ -19,11 +19,13 @@ class ETicketMail extends Mailable
     public $checkOut;
     public $payment;
     public $status;
+    public $occupant_info;
+    public $code;
 
     /**
      * Create a new message instance.
      */
-    public function __construct($user, $roomType, $checkIn, $checkOut, $payment, $status)
+    public function __construct($user, $roomType, $checkIn, $checkOut, $payment, $status, $occupant_info, $code)
     {
         $this->user = $user;
         $this->roomType = $roomType;
@@ -31,6 +33,8 @@ class ETicketMail extends Mailable
         $this->checkOut = $checkOut;
         $this->payment = $payment;
         $this->status = $status;
+        $this->occupant_info = $occupant_info;
+        $this->code = $code;
     }
 
     /**

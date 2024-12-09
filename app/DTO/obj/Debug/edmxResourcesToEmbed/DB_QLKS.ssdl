@@ -184,6 +184,8 @@
     <Property Name="THANHTOAN" Type="decimal" Precision="18" Scale="2" />
     <Property Name="TINHTRANG" Type="nvarchar" MaxLength="50" />
     <Property Name="KHACHHANG_ID" Type="int" />
+    <Property Name="MAPIN" Type="varchar" MaxLength="100" />
+    <Property Name="LUUTRU" Type="nvarchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="PHIEUNHANPHONG">
     <Key>

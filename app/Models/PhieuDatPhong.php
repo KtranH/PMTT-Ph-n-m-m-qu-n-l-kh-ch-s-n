@@ -10,7 +10,7 @@ class PhieuDatPhong extends Model
     protected $table = 'phieudatphong';
 
     protected $fillable = [
-        'LOAIPHONG_ID', 'NGAYNHANPHONG', 'NGAYTRAPHONGDUKIEN', 'THANHTOAN', 'TINHTRANG', 'KHACHHANG_ID'
+        'LOAIPHONG_ID', 'NGAYNHANPHONG', 'NGAYTRAPHONGDUKIEN', 'THANHTOAN', 'TINHTRANG', 'KHACHHANG_ID', 'MAPIN', 'LUUTRU'
     ];
     public $timestamps = false;
     public function loaiPhong()

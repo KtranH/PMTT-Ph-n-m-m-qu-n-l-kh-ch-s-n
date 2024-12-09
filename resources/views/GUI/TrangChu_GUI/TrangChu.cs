@@ -1,4 +1,5 @@
 using DTO;
+using GUI.AI_GUI;
 using GUI.DatNhanPhong_GUI;
 using GUI.TaiNguyen_GUI.Phong_GUI;
 using System;
@@ -358,6 +359,40 @@ namespace QLKS
                 this.ConvertForm.Controls.Clear();
                 this.ConvertForm.Controls.Add(HD);
                 HD.Show();
+            }
+        }
+        //-----------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------
+        //Xử lý khi ấn vào trợ lý AI
+        private void guna2GradientButton1_Click(object sender, EventArgs e)
+        {
+            if(ConfirmToMove())
+            {
+                Text2Image text2Image = new Text2Image(){ Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                this.ConvertForm.Controls.Clear();
+                this.ConvertForm.Controls.Add(text2Image);
+                text2Image.Show();
+            }    
+        }
+        private void guna2GradientButton2_Click(object sender, EventArgs e)
+        {
+            if (ConfirmToMove())
+            {
+                Image2Image image2Image = new Image2Image() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                this.ConvertForm.Controls.Clear();
+                this.ConvertForm.Controls.Add(image2Image);
+                image2Image.Show();
+            }
+        }
+
+        private void guna2GradientButton3_Click(object sender, EventArgs e)
+        {
+            if (ConfirmToMove())
+            {
+                Agent agent = new Agent() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                this.ConvertForm.Controls.Clear();
+                this.ConvertForm.Controls.Add(agent);
+                agent.Show();
             }
         }
         //-----------------------------------------------------------------------------------------------------

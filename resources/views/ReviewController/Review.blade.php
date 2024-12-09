@@ -30,8 +30,8 @@
                                 <button class="nav-link" data-bs-toggle="tab" data-bs-target="#lichSuDatPhong">Lịch sử đánh giá</button>
                             </li>
                         </ul>
-                                <div class="tab-content pt-2">
-
+                        
+                        <div class="tab-content pt-2">
                           <div class="tab-pane fade active show profile-overview" id="danhSachPhong">
                              <h5 class="card-title" style="font-family: 'Montserrat', sans-serif;
                              font-optical-sizing: auto;
@@ -66,31 +66,29 @@
                                     Quay lại trang chủ
                                   </a>
                                 </div>
-                              </div>     
+                            </div>     
                             @else
                             <table class="table table-borderless datatable" id = "adminTable">
                               <thead>
                                   <tr>
                                     <th scope="col">Tên loại phòng</th>
                                     <th scope="col">Tên phòng</th>
-                                    <th scope="col">Mã phiếu</th>
                                     <th scope="col">Ngày đặt</th>
                                     <th scope="col">Ngày trả</th>
                                     <th scope="col">Đánh giá</th>
                                   </tr>
                               </thead>
-                              <!--<tbody>
-                                @foreach ($listNeedReview as $item)
+                              <tbody>
+                              @foreach ($listNeedReview as $item)
                                   <tr>
-                                    <td>{{ $item->TENLOAIPHONG }}</td>
-                                    <td><a href="#" class="text-primary">{{ $item->TENPHONG }}</a></td>
-                                    <td>{{ $item->MAPHIEU }}</td>
-                                    <td>{{ $item->NGAYDAT }}</td>
-                                    <td>{{ $item->TRAPHONG }}</td>
-                                    <td><a href="{{ route("pushComment",["idkh" => $item->MAKH,"idphong" => $item->MAPHONG,"idphieu" => $item->MAPHIEU]) }}" type="button" class="btn btn-info" style="border-radius:20%;margin-right:20px;color:white;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;background-color:#74C0FC"><i class="fi fi-rr-file-edit"></i></a></td>
+                                    <th scope="row"><a href="{{ route("Overview_CateRoom", ['id' => $item->phieuNhanPhong->phong->loaiPhong->ID]) }}" class="text-primary">{{ $item->phieuNhanPhong->phong->loaiPhong->TENLOAIPHONG }}</a></th>
+                                    <td>{{ $item->phieuNhanPhong->phong->TENPHONG }}</td>
+                                    <td>{{ $item->phieuNhanPhong->NGAYNHANPHONG }}</td>
+                                    <td>{{ $item->phieuNhanPhong->NGAYTRAPHONG }}</td>
+                                    <td><a href="{{ route("writereview", ["id" => $item->phieuNhanPhong->phong->loaiPhong->ID, "checkout_id" => $item->ID]) }}" class="btn btn-success"><i class="fa-solid fa-check"></i></a></td>
                                   </tr>
-                                @endforeach
-                              </tbody> -->
+                              @endforeach
+                              </tbody> 
                             </table>                                                           
                             @endif
                           </div>
@@ -138,33 +136,21 @@
                                         <th scope="col">Ngày đặt</th>
                                         <th scope="col">Ngày trả</th>
                                         <th scope="col">Số sao</th>
-                                        <th scope="col">Đánh giá</th>
-                                        <th scope="col">Tình trạng</th>
+                                        <th scope="col">Nội dung</th>
                                       </tr>
                                   </thead>
                                   <tbody>
-                                    <!-- @foreach ($checkUser as $item)
-                                      <tr>
-                                        <td>{{ $item->TENLOAIPHONG }}</td>
-                                        <td><a href="#" class="text-primary">{{ $item->TENPHONG }}</a></td>
-                                        <td>{{ $item->NGAYDAT }}</td>
-                                        <td>{{ $item->TRAPHONG }}</td>
-                                        <td><a href="#" class="text-primary">{{ $item->SOSAO }}</a></td>
-                                        <td>{{ $item->BINHLUAN }}</td>
-                                        @foreach ($check as $item2)
-                                          @if ($item2->MADG == $item->MADG)
-                                              @if ($item2->ISDELETE === 0)
-                                                  <td><span class="badge bg-success">Đã duyệt</span></td>
-                                              @elseif ($item2->ISDELETE === 1)
-                                                  <td><span class="badge bg-warning">Đợi duyệt</span></td>
-                                              @else
-                                                  <td><span class="badge bg-danger">Từ chối</span></td>
-                                              @endif
-                                          @endif
-                                        @endforeach
-                                      </tr>
-                                    @endforeach
-                                  </tbody> -->
+                                  @foreach ($listReview as $item)
+                                    <tr>
+                                      <th scope="row"><a href="{{ route("Overview_CateRoom", ['id' => $item->phieuTraPhong->phieuNhanPhong->phong->loaiPhong->ID]) }}" class="text-primary">{{ $item->phieuTraPhong->phieuNhanPhong->phong->loaiPhong->TENLOAIPHONG }}</a></th>
+                                      <td>{{ $item->phieuTraPhong->phieuNhanPhong->phong->TENPHONG }}</td>
+                                      <td>{{ $item->phieuTraPhong->phieuNhanPhong->NGAYNHANPHONG }}</td>
+                                      <td>{{ $item->phieuTraPhong->phieuNhanPhong->NGAYTRAPHONG }}</td>
+                                      <td>{{ $item->SOSAO }}</td>
+                                      <td>{{ $item->NOIDUNG }}</td>
+                                    </tr>
+                                  @endforeach
+                                  </tbody> 
                                 </table>                                                           
                                 @endif
                             </div>

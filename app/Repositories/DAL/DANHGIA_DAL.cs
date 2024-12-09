@@ -12,7 +12,7 @@ namespace DAL
         public WEB_APP_QLKSEntities db = new WEB_APP_QLKSEntities();
         public List<DANHGIA> GetAllDanhGia()
         {
-            return db.DANHGIAs.Where(p => p.ISDELETED == false).ToList();
+            return db.DANHGIAs.Where(p => p.ISDELETED == true).ToList();
         }
         public void ApprovedDanhGia(int id)
         {

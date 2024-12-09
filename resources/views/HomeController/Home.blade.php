@@ -107,14 +107,15 @@
                       @foreach($roomFeature as $r)
                       @php
                         if(count($r->hinhLoaiPhong) == 0){
-                            $firstImage = 'https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif';
+                            $firstImage = null;
                           }
                         else {
                             $firstImage = $r->hinhLoaiPhong[0]->HINH;
                           }
                         $format_cost = number_format($r->GIATHUE, 0, ',', '.');
                       @endphp
-                      <div class="col-md-6 mb-4" style="max-width:800px">
+                      @if ($firstImage != null)
+                          <div class="col-md-6 mb-4" style="max-width:800px">
                           <div class="Ha card my-specific-card {{$r->ISDELETE==1 ? 'disabled':''}}">
                               <div class="card-img" data-aos="fade-up" data-aos-delay="500">
                                   <img src="{{$firstImage}}" loading="lazy" alt="" class="{{$r->ISDELETE==1? 'grayscale':''}}">
@@ -183,40 +184,12 @@
                               </div>
                           </div>
                       </div>
+                      @endif
                       @endforeach
                   </div>
                 </div>
             </div>
           <!-- End Recent Sales -->
-
-            <!-- Top Selling -->
-            <div class="col-12">
-              <div class="card top-selling overflow-auto" style="border-radius:20px" data-aos="zoom-in-up">
-                <div class="card-body pb-0">
-                  <h5 class="card-title" style="margin-top:-10px; font-family: 'Montserrat', sans-serif;
-                  font-optical-sizing: auto;
-                  font-weight: 600;
-                  font-style: normal;">Những đánh giá  <span>| tiêu biểu</span></h5>
-
-                  <table class="table table-borderless">
-                    <thead>
-                      <tr>
-                        <th scope="col">Khách hàng</th>
-                        <th scope="col">Loại phòng</th>
-                        <th scope="col">Đánh giá</th>
-                        <th scope="col">Số sao</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                    
-                    </tbody>
-                  </table>
-
-                </div>
-
-              </div>
-            </div><!-- End Top Selling -->
-
           </div>
         </div><!-- End Left side columns -->
         

@@ -69,10 +69,10 @@
     @include('Footer')
     <script>
       AOS.init({
-          duration: 800,
+          duration: 300,
           deplay: 200,
           once: false,
-          offset: 50,
+          offset: 20,
           easing: 'ease-in-sine',
       });
     </script>

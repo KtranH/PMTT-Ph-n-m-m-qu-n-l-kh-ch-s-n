@@ -181,6 +181,8 @@
     <EntitySetMapping Name="PHIEUDATPHONGs">
       <EntityTypeMapping TypeName="WEB_APP_QLKSModel.PHIEUDATPHONG">
         <MappingFragment StoreEntitySet="PHIEUDATPHONG">
+          <ScalarProperty Name="LUUTRU" ColumnName="LUUTRU" />
+          <ScalarProperty Name="MAPIN" ColumnName="MAPIN" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="LOAIPHONG_ID" ColumnName="LOAIPHONG_ID" />
           <ScalarProperty Name="NGAYNHANPHONG" ColumnName="NGAYNHANPHONG" />

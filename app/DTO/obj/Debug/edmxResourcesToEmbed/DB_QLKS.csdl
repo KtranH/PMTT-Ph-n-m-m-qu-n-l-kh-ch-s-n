@@ -197,6 +197,8 @@
     <NavigationProperty Name="KHACHHANG" Relationship="Self.FK_KHACHHANG_DATPHONG" FromRole="PHIEUDATPHONG" ToRole="KHACHHANG" />
     <NavigationProperty Name="LOAIPHONG" Relationship="Self.FK__PHIEUDATP__LOAIP__49C3F6B7" FromRole="PHIEUDATPHONG" ToRole="LOAIPHONG" />
     <NavigationProperty Name="PHIEUNHANPHONGs" Relationship="Self.FK__PHIEUNHAN__PHIEU__4D94879B" FromRole="PHIEUDATPHONG" ToRole="PHIEUNHANPHONG" />
+    <Property Name="MAPIN" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="LUUTRU" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="PHIEUNHANPHONG">
     <Key>

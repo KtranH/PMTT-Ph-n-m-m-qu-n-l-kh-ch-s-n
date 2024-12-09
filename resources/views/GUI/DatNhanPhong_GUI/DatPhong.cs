@@ -36,7 +36,7 @@ namespace GUI.DatNhanPhong_GUI
         public void loadData()
         {
             listPDP = db.GetAllPDPNew();
-            Data_DatPhong.DataSource = listPDP.Select(p => new { p.ID, p.NGAYNHANPHONG, p.NGAYTRAPHONGDUKIEN, p.LOAIPHONG.TENLOAIPHONG, p.KHACHHANG.HOTEN, p.KHACHHANG.EMAIL, p.TINHTRANG }).ToList();
+            Data_DatPhong.DataSource = listPDP.Select(p => new { p.ID, p.NGAYNHANPHONG, p.NGAYTRAPHONGDUKIEN, p.LOAIPHONG.TENLOAIPHONG, p.KHACHHANG.HOTEN, p.KHACHHANG.EMAIL, p.TINHTRANG, p.LUUTRU}).ToList();
             Data_DatPhong.Columns[0].HeaderText = "Mã đặt phòng";
             Data_DatPhong.Columns[1].HeaderText = "Ngày nhận phòng";
             Data_DatPhong.Columns[2].HeaderText = "Ngày trả phòng";
@@ -44,6 +44,7 @@ namespace GUI.DatNhanPhong_GUI
             Data_DatPhong.Columns[4].HeaderText = "Khách hàng";
             Data_DatPhong.Columns[5].HeaderText = "Email";
             Data_DatPhong.Columns[6].HeaderText = "Tình trạng";
+            Data_DatPhong.Columns[7].HeaderText = "Lưu trú";
         }
         //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------
@@ -76,8 +77,15 @@ namespace GUI.DatNhanPhong_GUI
             if(e.RowIndex >= 0)
             {
                 DataGridViewRow row = Data_DatPhong.Rows[e.RowIndex];
-                Textbox_DatPhong.Text = row.Cells[0].Value.ToString();
-                if(row.Cells[6].Value.ToString() == "Đã hủy")
+                if (row.Cells[7].Value != null)
+                {
+                    Textbox_DatPhong.Text = row.Cells[7].Value.ToString();
+                }
+                else
+                {
+                    Textbox_DatPhong.Text = row.Cells[4].Value.ToString();
+                }
+                if (row.Cells[6].Value.ToString() == "Đã hủy")
                 {
                     Button_TiepTuc.Enabled = false;
                     Button_Huy.Enabled = false;
@@ -100,7 +108,7 @@ namespace GUI.DatNhanPhong_GUI
         {
             if(Textbox_DatPhong.Text.Trim() != "")
             {
-                PHIEUDATPHONG find = db.GetFindPDPByID(Int32.Parse(Textbox_DatPhong.Text));
+                PHIEUDATPHONG find = db.GetFindPDPByID(Int32.Parse(Data_DatPhong.CurrentRow.Cells[0].Value.ToString()));
                 if (find != null)
                 {
                     if (find.TINHTRANG == "Đã hủy")
@@ -114,6 +122,10 @@ namespace GUI.DatNhanPhong_GUI
                         db.GetMinusPointsUser(find);
                         loadData();
                     }
+                    if(find.NGAYNHANPHONG.Value.Date != DateTime.Now.Date)
+                    {
+                        MessageBox.Show("Không thể tiếp tục vì yêu cầu đặt phòng này không phải trong ngày hôm nay!", " thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }    
                     else
                     {
                         if(DateTime.Now.Hour > 14 || DateTime.Now.Hour < 22)

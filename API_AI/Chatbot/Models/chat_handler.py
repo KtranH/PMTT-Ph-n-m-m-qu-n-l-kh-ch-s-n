@@ -4,15 +4,15 @@ from googlesearch import search
 from Models.memory_manager import MemoryManager
 from Models.database_handler import get_sql_data
 from Models.ollama_handler import query_ollama
-from Models.search_engine import search_web
+from Models.search_engine import get_search_results_descriptions
 from functools import lru_cache
 from concurrent.futures import ThreadPoolExecutor
 
 memory = MemoryManager(max_memory=10)
 
 @lru_cache(maxsize=100) 
-def search_web_cached(query, num_results=2):
-    return search_web(query, num_results)
+def search_web_cached(query, num_results=3):
+    return get_search_results_descriptions(query, num_results)
 
 def decimal_to_float(obj):
     if isinstance(obj, Decimal):
@@ -63,7 +63,7 @@ def handle_chat(user_input, is_new_session=False):
 
     web_results = None
     if any(keyword in user_input.lower() for keyword in search_keywords):
-        web_results = search_web_cached(user_input, num_results=2)
+        web_results = search_web_cached(user_input, num_results=3)
         input_data["web_results"] = web_results
 
     prompt_parts = []
@@ -85,14 +85,28 @@ def handle_chat(user_input, is_new_session=False):
 
     prompt = "\n".join(prompt_parts) + "\nHãy trả lời ngắn gọn và chính xác."
 
-    response = query_ollama("llama3.2:3b", prompt)
+    response = query_ollama("llama3.1:8b", prompt)
 
-    if "Không biết" in response or "Không có thông tin" in response or "Không tìm thấy" in response or "Không tìm thấy đủ kết quả" in response or "Không thể" in response or "Không trả lời được" in response:
+    if "Xin lỗi" in response or "Tìm kiếm" in response or "không biết" in response or "không có thông tin" in response or "không tìm thấy" in response or "không tìm thấy đủ kết quả" in response or "không thể" in response or "không trả lời được" in response:
         print("Model không trả lời được. Truy cập web...")
-        web_results = search_web(user_input, num_results=2)
+        web_results = get_search_results_descriptions(user_input, num_results=3)
+        if web_results:
+            print(f"Kết quả từ tìm kiếm web: {web_results}")
+            web_results_descriptions = []
+            for result in web_results:
+                web_results_descriptions.append(f"Tiêu đề: {result['title']}, Mô tả: {result['description']}")
+
+            prompt = f"""Câu hỏi của người dùng: {user_input}
+            Kết quả tìm kiếm từ web:
+            {', '.join(web_results_descriptions)}
+
+            Dựa trên các kết quả tìm kiếm này, hãy trả lời câu hỏi của người dùng một cách chính xác và ngắn gọn."""
+            response = query_ollama("llama3.1:8b", prompt)
+            print(f"Phản hồi từ model sau khi tìm kiếm: {response}")
+            
         input_data["web_results"] = web_results
         prompt = f"Câu hỏi: {user_input}\nKết quả tìm kiếm: {json.dumps(web_results, indent=2, ensure_ascii=False)}\nHãy trả lời ngắn gọn và chính xác."
-        response = query_ollama("llama3.2:1b", prompt)
+        response = query_ollama("llama3.1:8b", prompt)
 
     memory.add_message("bot", response)
 

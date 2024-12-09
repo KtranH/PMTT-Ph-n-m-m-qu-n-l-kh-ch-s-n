@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DanhGia;
 use App\Models\LoaiPhong;
 use Illuminate\Http\Request;
 
@@ -41,6 +42,9 @@ class CategoryRoom extends Controller
     public function Overview_CateRoom($id)
     {
         $Overview_CateRoom = LoaiPhong::find($id);
-        return view('CategoryRoomController.OverviewRoom', compact('Overview_CateRoom'));
+        $Review = DanhGia::whereHas('phieuTraPhong.phieuNhanPhong.phong.loaiPhong', function ($query) use ($id) {
+            $query->where('ID', $id)->where('ISDELETED', 0);
+        })->get();
+        return view('CategoryRoomController.OverviewRoom', compact('Overview_CateRoom', 'Review'));
     }
 }

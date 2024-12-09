@@ -18,11 +18,11 @@ namespace DAL
         }
         public List<PHIEUDATPHONG> AllPDPNew()
         {
-            return db.PHIEUDATPHONGs.ToList();
+            return db.PHIEUDATPHONGs.Where(p => p.TINHTRANG == "Đã đặt phòng").ToList();
         }
         public List<PHIEUDATPHONG> FindPDP(String find, int ID)
         {
-            return db.PHIEUDATPHONGs.Where(p => p.ID == ID || p.KHACHHANG.EMAIL.Contains(find)).ToList();
+            return db.PHIEUDATPHONGs.Where(p => p.ID == ID || p.KHACHHANG.EMAIL.Contains(find) || p.MAPIN.Contains(find) || p.KHACHHANG.CCCD.Contains(find)).ToList();
         }
         public int CountCateByIDInBooking(int ID)
         {

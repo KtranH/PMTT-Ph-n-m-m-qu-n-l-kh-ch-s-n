@@ -93,6 +93,12 @@ Route::middleware([CheckLogin::class])->group(function () {
 
     //Review
     Route::get('/review', [Review::class, 'Review'])->name('review');
+
+    //Write review
+    Route::get('/writereview/{id}{checkout_id}', [Review::class, 'WriteReview'])->name('writereview');
+
+    //Add review
+    Route::post('/addreview', [Review::class, 'AddReview'])->name('addreview');
     //------------------------------------------------------------------------------------------------------------------------//
 
 

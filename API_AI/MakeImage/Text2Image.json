@@ -1,0 +1,204 @@
+{
+  "7": {
+    "inputs": {
+      "ckpt_name": "dreamshaperXL_lightningDPMSDE.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "8": {
+    "inputs": {
+      "text": [
+        "29",
+        0
+      ],
+      "speak_and_recognation": true,
+      "clip": [
+        "7",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "9": {
+    "inputs": {
+      "text": "logo, text,word,cropped,low quality,normal quality,username,watermark,signature,blurry,soft,soft line,sketch,ugly,logo,pixelated,lowres, girl, man, men, women, woman, human",
+      "speak_and_recognation": true,
+      "clip": [
+        "7",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "11": {
+    "inputs": {
+      "width": 768,
+      "height": 768,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "12": {
+    "inputs": {
+      "add_noise": "enable",
+      "noise_seed": 1032101419237639,
+      "steps": 4,
+      "cfg": 2,
+      "sampler_name": "dpmpp_sde",
+      "scheduler": "normal",
+      "start_at_step": 0,
+      "end_at_step": 10000,
+      "return_with_leftover_noise": "disable",
+      "preview_method": "auto",
+      "vae_decode": "true",
+      "model": [
+        "22",
+        0
+      ],
+      "positive": [
+        "8",
+        0
+      ],
+      "negative": [
+        "9",
+        0
+      ],
+      "latent_image": [
+        "11",
+        0
+      ],
+      "optional_vae": [
+        "7",
+        2
+      ],
+      "script": [
+        "26",
+        0
+      ]
+    },
+    "class_type": "KSampler Adv. (Efficient)",
+    "_meta": {
+      "title": "KSampler Adv. (Efficient)"
+    }
+  },
+  "22": {
+    "inputs": {
+      "lora_name": "JJsBedroom_XL.safetensors",
+      "strength_model": 1,
+      "strength_clip": 1,
+      "model": [
+        "7",
+        0
+      ],
+      "clip": [
+        "23",
+        0
+      ]
+    },
+    "class_type": "LoraLoader",
+    "_meta": {
+      "title": "Load LoRA"
+    }
+  },
+  "23": {
+    "inputs": {
+      "stop_at_clip_layer": -2,
+      "clip": [
+        "7",
+        1
+      ]
+    },
+    "class_type": "CLIPSetLastLayer",
+    "_meta": {
+      "title": "CLIP Set Last Layer"
+    }
+  },
+  "24": {
+    "inputs": {},
+    "class_type": "Anything Everywhere",
+    "_meta": {
+      "title": "Anything Everywhere"
+    }
+  },
+  "26": {
+    "inputs": {
+      "upscale_type": "latent",
+      "hires_ckpt_name": "(use same)",
+      "latent_upscaler": "ttl_nn.SDXL",
+      "pixel_upscaler": "4x_NMKD-Siax_200k.pth",
+      "upscale_by": 1.5,
+      "use_same_seed": false,
+      "seed": 133815324887203,
+      "hires_steps": 4,
+      "denoise": 0.5,
+      "iterations": 1,
+      "use_controlnet": false,
+      "control_net_name": "depth-zoe-xl-v1.0-controlnet.safetensors",
+      "strength": 0.8,
+      "preprocessor": "DepthAnythingPreprocessor",
+      "preprocessor_imgs": true
+    },
+    "class_type": "HighRes-Fix Script",
+    "_meta": {
+      "title": "HighRes-Fix Script"
+    }
+  },
+  "29": {
+    "inputs": {
+      "text": [
+        "30",
+        0
+      ],
+      "find1": "man",
+      "replace1": ",",
+      "find2": "girl",
+      "replace2": ",",
+      "find3": "",
+      "replace3": ""
+    },
+    "class_type": "CR Text Replace",
+    "_meta": {
+      "title": "🔤 CR Text Replace"
+    }
+  },
+  "30": {
+    "inputs": {
+      "action": "append",
+      "tidy_tags": "yes",
+      "text_a": "a hotel room, bed room, curtain, sunny",
+      "text_b": "",
+      "text_c": "",
+      "speak_and_recognation": true
+    },
+    "class_type": "StringFunction|pysssss",
+    "_meta": {
+      "title": "String Function 🐍"
+    }
+  },
+  "31": {
+    "inputs": {
+      "file_path": "",
+      "speak_and_recognation": true,
+      "images": [
+        "12",
+        5
+      ]
+    },
+    "class_type": "SaveImageToLocal",
+    "_meta": {
+      "title": "Save Image To Local ♾️Mixlab"
+    }
+  }
+}

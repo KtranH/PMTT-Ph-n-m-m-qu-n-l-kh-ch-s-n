@@ -47,12 +47,23 @@ namespace DAL
 
             foreach (var pHIEUTRAPHONG in danhSachPhieu)
             {
-                int soNgayTre = (DateTime.Now - pHIEUTRAPHONG.PHIEUNHANPHONG.NGAYTRAPHONG)?.Days ?? 0;
-
-                if (soNgayTre > 0)
+                if (DateTime.Now.Date >= pHIEUTRAPHONG.PHIEUNHANPHONG.NGAYTRAPHONG.Value.Date)
                 {
-                    pHIEUTRAPHONG.TIENPHAT = soNgayTre * pHIEUTRAPHONG.PHIEUNHANPHONG.PHONG.LOAIPHONG.GIATHUE;
-                }
+                    if(pHIEUTRAPHONG.PHIEUNHANPHONG.NGAYTRAPHONG.Value.Date == DateTime.Now.Date &&
+                    pHIEUTRAPHONG.PHIEUNHANPHONG.NGAYTRAPHONG.Value.Hour > 12)
+                    {
+                        pHIEUTRAPHONG.TIENPHAT = 1 * pHIEUTRAPHONG.PHIEUNHANPHONG.PHONG.LOAIPHONG.GIATHUE;
+                    }    
+                   else
+                    {
+                        int soNgayTre = (DateTime.Now - pHIEUTRAPHONG.PHIEUNHANPHONG.NGAYTRAPHONG)?.Days ?? 0;
+
+                        if (soNgayTre > 0)
+                        {
+                            pHIEUTRAPHONG.TIENPHAT = soNgayTre * pHIEUTRAPHONG.PHIEUNHANPHONG.PHONG.LOAIPHONG.GIATHUE;
+                        }
+                    }    
+                }    
             }
             db.SaveChanges();
         }

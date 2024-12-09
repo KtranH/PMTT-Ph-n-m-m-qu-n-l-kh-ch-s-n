@@ -57,13 +57,29 @@
     </style>
 </head>
 <body>
+    @php
+        $occupant_info = null;
+    @endphp
+    @foreach ($bookingDetails as $detail)
+        @php
+            $occupant_info = $detail['occupant_info'];
+            break;
+        @endphp
+    @endforeach
     <div class="email-container">
         <div class="header">
             Xác nhận đặt phòng
         </div>
         <div class="content">
-            <p>Xin chào {{ $user->HOTEN }},</p>
-            <p>Cảm ơn bạn đã đặt phòng tại khách sạn của chúng tôi. Đây là danh sách phòng bạn đã đặt:</p>
+            <p>Xin chào 
+                @if ($occupant_info != null)
+                    {{ $occupant_info }}
+                @else
+                    {{ $user->HOTEN }}
+                @endif.
+            </p>
+            <p>Cảm ơn bạn đã đặt phòng tại khách sạn của chúng tôi.</p>
+            <p>Đây là danh sách phòng bạn đã đặt:</p>
             <div class="ticket-details">
                 <table>
                     <thead>
@@ -74,6 +90,7 @@
                             <th>Thanh toán</th>
                             <th>Số lượng</th>
                             <th>Tình trạng</th>
+                            <th>Mã pin phòng</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -82,15 +99,16 @@
                                 <td>{{ $detail['roomType'] }}</td>
                                 <td>{{ $detail['checkIn'] }}</td>
                                 <td>{{ $detail['checkOut'] }}</td>
-                                <td>{{ number_format($detail['payment'], 2) }}</td>
+                                <td>{{ number_format($detail['payment']) }} VNĐ</td>
                                 <td>{{ $detail['quantity'] }}</td>
                                 <td>{{ $detail['status'] }}</td>
+                                <td>{{ $detail['code'] }}
                             </tr>
                         @endforeach
                     </tbody>
                 </table>
             </div>
-            <p>Chúng tôi rất mong gặp bạn tại khách sạn! Vui lòng đến đúng ngày để nhận phòng</p>
+            <p class="mt-4">Chúng tôi rất mong gặp bạn tại khách sạn! Vui lòng đến đúng ngày để nhận phòng</p>
             <p>Thời gian nhận phòng bắt đầu từ 14 giờ chiều và thời gian trả phòng sau cùng là 12 giờ trưa</p>
         </div>
         <div class="footer">
