@@ -10,7 +10,7 @@ class Service extends Controller
     //
     public function AllService()
     {
-        $service = DichVu::paginate(6);
+        $service = DichVu::where('ISDELETED', 0)->paginate(6);
         return view('ServiceController.AllService', compact('service'));
     }
 }

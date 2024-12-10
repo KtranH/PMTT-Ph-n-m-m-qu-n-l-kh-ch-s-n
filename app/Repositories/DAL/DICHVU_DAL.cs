@@ -40,6 +40,7 @@ namespace DAL
                 serviceToUpdate.TENDICHVU = dichVu.TENDICHVU;
                 serviceToUpdate.GIA = dichVu.GIA;
                 serviceToUpdate.MOTA = dichVu.MOTA;
+                serviceToUpdate.ISDELETED = dichVu.ISDELETED;
 
                 db.SaveChanges();
             }
