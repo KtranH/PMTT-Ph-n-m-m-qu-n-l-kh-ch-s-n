@@ -20,6 +20,7 @@ namespace GUI.TaiNguyen_GUI.Phong_GUI
         public LOAIPHONG_BLL db = new LOAIPHONG_BLL();
         public R2 R2 = new R2();
         public XuLy_LoaiPhong xuLyLoaiPhong = new XuLy_LoaiPhong();
+        public NHANVIEN NHANVIEN = new NHANVIEN();
 
         public LoaiPhong()
         {
@@ -310,89 +311,110 @@ namespace GUI.TaiNguyen_GUI.Phong_GUI
         //Xử lý nút lưu
         private void Button_Luu_Click(object sender, EventArgs e)
         {
-            Them();
-            LockControl();
+           if (NHANVIEN.CHUCVU == "Lễ tân")
+           {
+                MessageBox.Show("Bạn không có quyền truy cập vào đây", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+           }
+           else
+           {
+                Them();
+                LockControl();
+           }    
         }
         //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------
         //Xử lý nút cập nhật
         private void Button_CapNhat_Click(object sender, EventArgs e)
         {
-            try
+           if (NHANVIEN.CHUCVU == "Lễ tân")
+           {
+                MessageBox.Show("Bạn không có quyền truy cập vào đây", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+           }
+           else
             {
-                DialogResult dialogResult = MessageBox.Show("Bạn có muốn cập nhật loại phòng?", "Xác nhận", MessageBoxButtons.OKCancel);
-
-                if (dialogResult == DialogResult.OK)
+                try
                 {
-                    int loaiPhongId = Convert.ToInt32(combox_LoaiPhong.SelectedValue);
-                    string tenLoaiPhong = Textbox_TenLoaiPhong.Text;
-                    string moTa = Textbox_MoTa.Text;
-                    int sucChua = Convert.ToInt32(Textbox_SucChua.Text);
-                    string giaThueText = Textbox_GiaThue.Text;
-                    giaThueText = giaThueText.Replace(" VNĐ", "");
-                    decimal giaThue = Convert.ToDecimal(giaThueText);
-                    string quyDinh = Textbox_QuyDinh.Text;
-                    string noiThat = Textbox_NoiThat.Text;
-                    string tienIch = Textbox_TienIch.Text;
+                    DialogResult dialogResult = MessageBox.Show("Bạn có muốn cập nhật loại phòng?", "Xác nhận", MessageBoxButtons.OKCancel);
 
-                    LOAIPHONG loaiPhongToUpdate = new LOAIPHONG
+                    if (dialogResult == DialogResult.OK)
                     {
-                        ID = loaiPhongId,
-                        TENLOAIPHONG = tenLoaiPhong,
-                        MOTA = moTa,
-                        SUCCHUA = sucChua,
-                        GIATHUE = giaThue,
-                        QUYDINH = quyDinh,
-                        NOITHAT = noiThat,
-                        TIENICH = tienIch,
-                        ISDELETED = false
-                    };
+                        int loaiPhongId = Convert.ToInt32(combox_LoaiPhong.SelectedValue);
+                        string tenLoaiPhong = Textbox_TenLoaiPhong.Text;
+                        string moTa = Textbox_MoTa.Text;
+                        int sucChua = Convert.ToInt32(Textbox_SucChua.Text);
+                        string giaThueText = Textbox_GiaThue.Text;
+                        giaThueText = giaThueText.Replace(" VNĐ", "");
+                        decimal giaThue = Convert.ToDecimal(giaThueText);
+                        string quyDinh = Textbox_QuyDinh.Text;
+                        string noiThat = Textbox_NoiThat.Text;
+                        string tienIch = Textbox_TienIch.Text;
 
-                    bool updateResult = db.UpdateLoaiPhong(loaiPhongToUpdate);
+                        LOAIPHONG loaiPhongToUpdate = new LOAIPHONG
+                        {
+                            ID = loaiPhongId,
+                            TENLOAIPHONG = tenLoaiPhong,
+                            MOTA = moTa,
+                            SUCCHUA = sucChua,
+                            GIATHUE = giaThue,
+                            QUYDINH = quyDinh,
+                            NOITHAT = noiThat,
+                            TIENICH = tienIch,
+                            ISDELETED = false
+                        };
 
-                    if (updateResult)
-                    {
-                        MessageBox.Show("Cập nhật loại phòng thành công!");
+                        bool updateResult = db.UpdateLoaiPhong(loaiPhongToUpdate);
+
+                        if (updateResult)
+                        {
+                            MessageBox.Show("Cập nhật loại phòng thành công!");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Cập nhật loại phòng không thành công. Vui lòng kiểm tra lại.");
+                        }
                     }
-                    else
-                    {
-                        MessageBox.Show("Cập nhật loại phòng không thành công. Vui lòng kiểm tra lại.");
-                    }
+                    UnlockControl();
                 }
-                UnlockControl();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Cập nhật loại phòng không thành công. Vui lòng kiểm tra lại.");
-            }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Cập nhật loại phòng không thành công. Vui lòng kiểm tra lại.");
+                }
+            }    
         }
         //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------
         //Xử lý nút xóa
         private void Button_Xoa_Click(object sender, EventArgs e)
         {
-            try
+            if(NHANVIEN.CHUCVU == "Lễ tân")
             {
-                if (combox_LoaiPhong.SelectedValue != null)
+                MessageBox.Show("Bạn không có quyền truy cập vào đây", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                try
                 {
-                    DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn xóa loại phòng này?", "Xác nhận xóa", MessageBoxButtons.YesNo);
-
-                    if (dialogResult == DialogResult.Yes)
+                    if (combox_LoaiPhong.SelectedValue != null)
                     {
-                        int loaiPhongId = Convert.ToInt32(combox_LoaiPhong.SelectedValue);
-                        db.DeleteLoaiPhong(loaiPhongId);
-                        MessageBox.Show("Loại phòng đã được xóa.");
+                        DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn xóa loại phòng này?", "Xác nhận xóa", MessageBoxButtons.YesNo);
+
+                        if (dialogResult == DialogResult.Yes)
+                        {
+                            int loaiPhongId = Convert.ToInt32(combox_LoaiPhong.SelectedValue);
+                            db.DeleteLoaiPhong(loaiPhongId);
+                            MessageBox.Show("Loại phòng đã được xóa.");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Vui lòng chọn loại phòng cần xóa.");
                     }
                 }
-                else
+                catch
                 {
-                    MessageBox.Show("Vui lòng chọn loại phòng cần xóa.");
+                    MessageBox.Show("Đã có lỗi xảy ra. Vui lòng xem lại.");
                 }
-            }
-            catch
-            {
-                MessageBox.Show("Đã có lỗi xảy ra. Vui lòng xem lại.");
-            }
+            }    
         }
         //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------

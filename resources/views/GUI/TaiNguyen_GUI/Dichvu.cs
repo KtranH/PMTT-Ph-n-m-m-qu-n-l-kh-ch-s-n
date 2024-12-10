@@ -18,15 +18,17 @@ namespace QLKS
     public partial class Dichvu : Form
     {
         public DICHVU_BLL db = new DICHVU_BLL();
+        public NHANVIEN_BLL dbNV = new NHANVIEN_BLL();
         private bool isAddingNewItem = true;
-
         public string UserCurrentDV { get; set; }
+        NHANVIEN NHANVIEN = new NHANVIEN();
         public Dichvu()
         {
             InitializeComponent();
         }
         private void Dichvu_Load(object sender, EventArgs e)
         {
+            NHANVIEN = dbNV.GetNhanVienById(Convert.ToInt32(UserCurrentDV));
             loadDV();
             loadCombox();
         }
@@ -230,25 +232,38 @@ namespace QLKS
         //Xử lí nút cập nhật
         private void BTN_UPDATEDV_Click(object sender, EventArgs e)
         {
-            UnlockControl();
-
+            if (NHANVIEN.CHUCVU == "Lễ tân")
+            {
+                MessageBox.Show("Bạn không có quyền truy cập vào đây", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                UnlockControl();
+            }    
         }
         //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------
         //Xử lí nút lưu
         private void BTN_SAVEDV_Click(object sender, EventArgs e)
         {
-            if (isAddingNewItem)
+            if (NHANVIEN.CHUCVU == "Lễ tân")
             {
-               
-                Them();
-                
+                MessageBox.Show("Bạn không có quyền truy cập vào đây", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else
-            {            
-                capnhat();
-              
-            }
+           else
+           {
+                if (isAddingNewItem)
+                {
+
+                    Them();
+
+                }
+                else
+                {
+                    capnhat();
+
+                }
+           }    
         }
         //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------
@@ -265,36 +280,43 @@ namespace QLKS
         //Xử lí nút xóa
         private void Button_XoaDichVu_Click(object sender, EventArgs e)
         {
-            try
+            if (NHANVIEN.CHUCVU == "Lễ tân")
             {
-                if (Data_DichVu.SelectedRows.Count > 0)
+                MessageBox.Show("Bạn không có quyền truy cập vào đây", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                try
                 {
-                    int id = Convert.ToInt32(Data_DichVu.SelectedRows[0].Cells[0].Value);
-
-                    DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa dịch vụ này không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                    if (dialogResult == DialogResult.Yes)
+                    if (Data_DichVu.SelectedRows.Count > 0)
                     {
-                        db.DeleteDichVu(id);
+                        int id = Convert.ToInt32(Data_DichVu.SelectedRows[0].Cells[0].Value);
 
-                        MessageBox.Show("Dịch vụ đã được xóa!");
+                        DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa dịch vụ này không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                        loadDV();
+                        if (dialogResult == DialogResult.Yes)
+                        {
+                            db.DeleteDichVu(id);
+
+                            MessageBox.Show("Dịch vụ đã được xóa!");
+
+                            loadDV();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Dịch vụ không được xóa!");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Dịch vụ không được xóa!");
+                        MessageBox.Show("Vui lòng chọn dịch vụ cần xóa!");
                     }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Vui lòng chọn dịch vụ cần xóa!");
+                    MessageBox.Show("Dịch vụ không được xóa, xóa thất bại!");
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Dịch vụ không được xóa, xóa thất bại!");
-            }
+            }    
         }
         //-----------------------------------------------------------------------------------------------------
     }

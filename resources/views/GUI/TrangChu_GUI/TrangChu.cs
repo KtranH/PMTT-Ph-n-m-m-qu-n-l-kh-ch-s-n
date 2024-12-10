@@ -277,7 +277,7 @@ namespace QLKS
         //Xử lý khi ấn vào nút nhân viên
         private void BTN_NHANVIEN_Click(object sender, EventArgs e)
         {
-           if(this.userCurrent.CHUCVU == "Lễ tân")
+           if (!CheckRole())
            {
                 MessageBox.Show("Bạn không có quyền truy cập vào đây", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
            }
@@ -326,6 +326,10 @@ namespace QLKS
         //Xử lý khi ấn vào nút khách hàng
         private void BTN_KHACHHANG_Click(object sender, EventArgs e)
         {
+            if(!CheckRole())
+            {
+                MessageBox.Show("Bạn không có quyền truy cập vào đây", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }    
             if(ConfirmToMove())
             {
                 KhachHang KH = new KhachHang() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
@@ -339,7 +343,11 @@ namespace QLKS
         //Xử lý khi ấn vào nút nhận phòng
         private void BTN_PDP_Click(object sender, EventArgs e)
         {
-           if(ConfirmToMove())
+           if (!CheckRole())
+           {
+                MessageBox.Show("Bạn không có quyền truy cập vào đây", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+           }
+           if (ConfirmToMove())
            {
                 TT_PDP PDP = new TT_PDP() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
                 PDP.currentUser = this.userCurrent.ID.ToString();
@@ -413,6 +421,14 @@ namespace QLKS
             {
                 return false;
             }    
+        }
+        public bool CheckRole()
+        {
+            if (this.userCurrent.CHUCVU == "Lễ tân")
+            {
+                return false;
+            }
+            return true;
         }
         //-----------------------------------------------------------------------------------------------------
     }

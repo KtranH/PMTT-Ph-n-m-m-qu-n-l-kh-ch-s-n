@@ -110,7 +110,7 @@ class Email extends Controller
             Session::forget('password');
 
             $this->PushAvatarR2($email, null);
-            $url = env('R2_URL') . "/Avatar/{$email}/default_avatar.jpg";
+            $url = "https://pub-c8adcbfebc8642f887468c77f77c44fe.r2.dev" . "/Avatar/{$email}/default_avatar.jpg";
 
             KhachHang::insert([
                 "HOTEN" => $name,

@@ -200,6 +200,9 @@ class Account extends Controller
         {
             if($request->hasFile('avatar')) {
                 $this->PushAvatarR2(Auth::user()->EMAIL, $request->file('avatar'));
+                $email = Auth::user()->EMAIL;
+                $nameAvatar = $request->file('avatar')->getClientOriginalName();
+                $user->AVATAR = "https://pub-c8adcbfebc8642f887468c77f77c44fe.r2.dev" . "/Avatar/{$email}/{$nameAvatar}";
             }
         }
         catch (Exception $e)

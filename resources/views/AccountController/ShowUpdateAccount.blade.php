@@ -56,13 +56,13 @@
                             <div class="tab-pane fade show active profile-edit pt-3" id="profile-edit">
                           
                                 <!-- Profile Edit Form -->
-                                <form class="needs-validation" novalidate method="POST" enctype="multipart/form-data" action="{{ route('updateAccount') }}">
+                                <form class="needs-validation" id="profileForm" novalidate method="POST" enctype="multipart/form-data" action="{{ route('updateAccount') }}">
                                   @csrf
                                   @method('PUT')
                                   <div class="row mb-3" data-aos="fade-up" data-aos-delay="200">
                                       <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Ảnh đại diện</label>
                                       <div class="col-md-8 col-lg-9">
-                                        <img id="avatarPreview" src="{{ $user->AVATAR}}" alt="Profile" style="max-width:120px;border-radius:50%">
+                                        <img id="avatarPreview" src="{{ $user->AVATAR}}" alt="Profile" style="width:50px; height:50px; border-radius:50%; object-fit: cover;">
                                         <div class="mb-3">
                                           <label for="formFile" class="form-label">Tải lên ảnh đại diện</label>
                                           <input class="form-control" type="file" id="formFile" name = "avatar" accept="image/*">
@@ -83,6 +83,18 @@
                                               reader.readAsDataURL(input.files[0]);
                                           }
                                       });
+                                      document.getElementById('profileForm').addEventListener('submit', function(event) {
+                                        Swal.fire({
+                                                    title: 'Đang xử lý...',
+                                                    html: '<div class="relative flex justify-center items-center"> <div class="absolute animate-ping w-8 h-8 rounded-full bg-blue-500 opacity-75"></div> <div class="relative w-8 h-8 rounded-full bg-blue-600 animate-pulse flex items-center justify-center"> <svg class="w-5 h-5 text-white animate-spin" fill="none" viewBox="0 0 24 24"> <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle> <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path> </svg> </div> </div>',
+                                                    showConfirmButton: false,
+                                                    allowOutsideClick: false,
+                                              didOpen: () => {
+                                                      Swal.showLoading();
+                                                  }
+                                              });
+                                      });
+                                      document
                                     </script>
 
                                     <div class="row mb-3" data-aos="fade-up" data-aos-delay="400">

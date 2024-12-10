@@ -17,7 +17,9 @@ namespace QLKS
     public partial class Phong : Form
     {
         PHONG_BLL db = new PHONG_BLL();
+        NHANVIEN_BLL dbNV = new NHANVIEN_BLL();
         LOAIPHONG_BLL loaiPhong = new LOAIPHONG_BLL();
+        NHANVIEN NHANVIEN = new NHANVIEN();
         private bool isAddingNewItem = true;
         public string UserCurrentPH { get; set; }
         public Phong()
@@ -26,6 +28,7 @@ namespace QLKS
         }
         private void Phong_Load(object sender, EventArgs e)
         {
+            NHANVIEN = dbNV.GetNhanVienById(Convert.ToInt32(UserCurrentPH));
             loadPhong();
             loadCombox();
         }
@@ -128,10 +131,16 @@ namespace QLKS
         //Xử lý nút thêm phòng
         private void BTN_THEMPHONG_Click(object sender, EventArgs e)
         {
-            isAddingNewItem = true;
-            load();
-            ResetTextBoxes();
-           
+           if (NHANVIEN.CHUCVU == "Lễ tân")
+           {
+                MessageBox.Show("Bạn không có quyền truy cập vào đây", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+           }
+           else
+           {
+                isAddingNewItem = true;
+                load();
+                ResetTextBoxes();
+           }    
         }
         //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------
@@ -196,7 +205,13 @@ namespace QLKS
         //Xử lý nút lưu
         private void BTN_SAVEROOM_Click(object sender, EventArgs e)
         {
-            if (isAddingNewItem)
+            if (NHANVIEN.CHUCVU == "Lễ tân")
+            {
+                MessageBox.Show("Bạn không có quyền truy cập vào đây", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                if (isAddingNewItem)
             {
                 them();
             }
@@ -204,6 +219,7 @@ namespace QLKS
             {
                 capnhat();
             }
+            }    
         }
         //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------
@@ -248,44 +264,58 @@ namespace QLKS
         //Xử lý nút cập nhật
         private void Button_CapNhat_Click(object sender, EventArgs e)
         {
-            isAddingNewItem = false;
-            load();
+            if (NHANVIEN.CHUCVU == "Lễ tân")
+            {
+                MessageBox.Show("Bạn không có quyền truy cập vào đây", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                isAddingNewItem = false;
+                load();
+            }    
         }
         //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------
         //Xử lý nút xóa
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
-            try
+            if (NHANVIEN.CHUCVU == "Lễ tân")
             {
-                if (Data_Phong.SelectedRows.Count > 0)
+                MessageBox.Show("Bạn không có quyền truy cập vào đây", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                try
                 {
-                    int id = Convert.ToInt32(Data_Phong.SelectedRows[0].Cells[0].Value);
-
-                    DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa phòng này không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                    if (dialogResult == DialogResult.Yes)
+                    if (Data_Phong.SelectedRows.Count > 0)
                     {
-                        db.XoaPhong(id);
+                        int id = Convert.ToInt32(Data_Phong.SelectedRows[0].Cells[0].Value);
 
-                        MessageBox.Show("Dịch vụ đã được xóa!");
+                        DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa phòng này không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                        loadPhong();
+                        if (dialogResult == DialogResult.Yes)
+                        {
+                            db.XoaPhong(id);
+
+                            MessageBox.Show("Dịch vụ đã được xóa!");
+
+                            loadPhong();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Phòng không được xóa!");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Phòng không được xóa!");
+                        MessageBox.Show("Vui lòng chọn phòng cần xóa!");
                     }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Vui lòng chọn phòng cần xóa!");
+                    MessageBox.Show("Xóa không thành công");
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Xóa không thành công");
-            }
+            }    
         }
         //-----------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------

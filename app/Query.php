@@ -22,7 +22,7 @@ trait Query
         {
             $img = $avatar;
             $imgName = $avatar->getClientOriginalName();
-            $path = "Avatar/{$email}/{$imgName}.png";
+            $path = "Avatar/{$email}/{$imgName}";
         }
         Storage::disk('r2')->put($path, file_get_contents($img));
     }
