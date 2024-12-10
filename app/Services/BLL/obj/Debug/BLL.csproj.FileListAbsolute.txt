@@ -105,3 +105,12 @@ D:\Laravel\New\PMTT_QLKS-main\app\Services\BLL\bin\Debug\System.Runtime.Compiler
 D:\Laravel\New\PMTT_QLKS-main\app\Services\BLL\obj\Debug\BLL.csproj.Up2Date
 D:\Laravel\New\PMTT_QLKS-main\app\Services\BLL\obj\Debug\BLL.dll
 D:\Laravel\New\PMTT_QLKS-main\app\Services\BLL\obj\Debug\BLL.pdb
+D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\app\Services\BLL\bin\Debug\runtimes\win-x86\native\WebView2Loader.dll
+D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\app\Services\BLL\bin\Debug\runtimes\win-x64\native\WebView2Loader.dll
+D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\app\Services\BLL\bin\Debug\runtimes\win-arm64\native\WebView2Loader.dll
+D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\app\Services\BLL\bin\Debug\Microsoft.Web.WebView2.Core.dll
+D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\app\Services\BLL\bin\Debug\Microsoft.Web.WebView2.WinForms.dll
+D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\app\Services\BLL\bin\Debug\Microsoft.Web.WebView2.Wpf.dll
+D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\app\Services\BLL\bin\Debug\Microsoft.Web.WebView2.Core.xml
+D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\app\Services\BLL\bin\Debug\Microsoft.Web.WebView2.WinForms.xml
+D:\ProjectWinform\App_TT\WEB_APP_QLKS\TT_QLKS\QLKS\app\Services\BLL\bin\Debug\Microsoft.Web.WebView2.Wpf.xml

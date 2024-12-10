@@ -31,7 +31,10 @@ namespace DAL
             int sumSao = 0;
             foreach(DANHGIA item in db.DANHGIAs)
             {
-                sumSao += item.SOSAO.Value;
+                if(item.SOSAO == 5)
+                {
+                    sumSao++;
+                }    
             }
             return sumSao;
         }    
